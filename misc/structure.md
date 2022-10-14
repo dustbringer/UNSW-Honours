@@ -11,12 +11,13 @@
 - outline the steps the steps that are needed to understand it
   - This should be reflected by the structure of the rest
 
-## Coxeter Groups
+## Background
+### Coxeter Groups
 - definition
 - examples: $A_n$ (specifically $A_2$)
 - properties
 
-## Hecke Algebra
+### Hecke Algebra
 - motivation, main idea
 - definition
 - examples
@@ -24,16 +25,16 @@
 - Kazhdan-Lusztig Polynomials
 
 
-## Soergel Bimodules
+### Soergel Bimodules
 - gradings, representations
 - definition
 - examples
 
 
 
-## Diagrammatics
+### Diagrammatics
 
-## [next part I havent figured out yet]
+### [next part I havent figured out yet]
 
 
 
