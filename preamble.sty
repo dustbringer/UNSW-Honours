@@ -1,7 +1,8 @@
 \ProvidesPackage{preamble}
 
 \usepackage[margin=1.15in]{geometry}
-\usepackage{amsmath, amssymb, amsfonts, amsthm, amscd}
+\usepackage{amsmath, amssymb, amsfonts, amscd}
+\usepackage{amsthm, thmtools}
 \usepackage{enumitem}
 \usepackage{framed,color}
 \usepackage{xcolor}
@@ -9,19 +10,30 @@
 \definecolor{shadecolor}{gray}{0.8}
 \setlength{\parindent}{0pt} % remove indents for new paragraphs
 
+% TODO: Hyperref?? ref??? links for refs?
+% https://tex.stackexchange.com/questions/2450/a-better-way-to-reference-theorem-like-environments
+% https://ctan.math.illinois.edu/macros/latex/contrib/thmtools/doc/thmtools-manual.pdf
+
+% Tikz
+\usepackage{tikz}
+
 % Font
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
 
 % Theorems
+\numberwithin{equation}{section} % changes equation numbering to sections
+
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
+\newtheorem{definition}[equation]{Definition}
 
 \theoremstyle{remark}
-\newtheorem{remark}{Remark}[section]
+\newtheorem{remark}[equation]{Remark}
+\newtheorem{example}[equation]{Example}
 
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{corollary}{Corollary}[section]
+\theoremstyle{plain}
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{proposition}[equation]{Proposition}
+\newtheorem{corollary}[equation]{Corollary}
 
