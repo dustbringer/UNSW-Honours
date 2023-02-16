@@ -8,11 +8,31 @@
 
 % Colourings
 \usepackage{framed,color}
-\usepackage{xcolor}
+\usepackage[dvipsnames,svgnames,x11names,hyperref]{xcolor}
 \usepackage{soul}
 \definecolor{shadecolor}{gray}{0.8}
 
 % \setlength{\parindent}{0pt} % remove indents for new paragraphs
+
+% References & Links
+\usepackage[
+	backend=bibtex,
+	natbib=true,
+	style=alphabetic,
+	sorting=ynt,
+	hyperref=true,
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{hyperref} 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=violet,
+    citecolor=YellowOrange,
+    urlcolor=Aquamarine,
+    hypertexnames=true,
+}
+% Colours taken from https://tex.stackexchange.com/a/176372
 
 % TODO: Hyperref?? ref??? links for refs?
 % https://tex.stackexchange.com/questions/2450/a-better-way-to-reference-theorem-like-environments
