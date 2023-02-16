@@ -1,9 +1,11 @@
 \ProvidesPackage{commands}
 
 % Structural
-\newcommand{\bigquestion}[2]{\begin{shaded}\textbf{#1} \quad #2\end{shaded}}
-\newcommand{\question}[2]{\textbf{#1} \ \textit{#2}}
-\newcommand{\n}{\vspace{1em}}
+% \newcommand{\bigquestion}[2]{\begin{shaded}\textbf{#1} \quad #2\end{shaded}}
+% \newcommand{\question}[2]{\textbf{#1} \ \textit{#2}}
+\newcommand{\nn}{\noindent}
+\newcommand{\nnn}{\vspace{1em}}
+
 
 % Math
 \newcommand{\op}[1]{\operatorname{#1}}
@@ -13,17 +15,28 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\K}{\mathbb{K}}
+
 \renewcommand{\vec}[1]{\mathbf{#1}} % bold
 \newcommand{\norm}[1]{{\left\lVert #1 \right\rVert}}
 \newcommand{\angl}[1]{{\left\langle #1 \right\rangle}}
 \newcommand{\anglsmall}[1]{{\langle #1 \rangle}}
+
 \newcommand{\xto}[1]{\xrightarrow{#1}}
 \newcommand{\ol}[1]{\overline{#1}}
 \renewcommand{\ul}[1]{\underline{#1}}
+% \newcommand{\hatt}[1]{\widehat #1}
+
 \newcommand{\pvec}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+
 % \renewcommand{\phi}{\varphi}
 \newcommand{\up}[1]{\textup{#1}}
 \newcommand{\mcal}[1]{\mathcal{#1}}
 
 \newcommand{\grey}[1]{{\color[HTML]{A9A9A9}#1}}
 \newcommand{\red}[1]{{\color{red}#1}}
+
+% Symbols
+\newcommand{\cH}{\mathcal{H}}
+
+% Operators
+\DeclareMathOperator{\Hom}{Hom}

@@ -4,11 +4,15 @@
 \usepackage{amsmath, amssymb, amsfonts, amscd}
 \usepackage{amsthm, thmtools}
 \usepackage{enumitem}
+\usepackage{mathtools}
+
+% Colourings
 \usepackage{framed,color}
 \usepackage{xcolor}
 \usepackage{soul}
 \definecolor{shadecolor}{gray}{0.8}
-\setlength{\parindent}{0pt} % remove indents for new paragraphs
+
+% \setlength{\parindent}{0pt} % remove indents for new paragraphs
 
 % TODO: Hyperref?? ref??? links for refs?
 % https://tex.stackexchange.com/questions/2450/a-better-way-to-reference-theorem-like-environments
@@ -26,10 +30,11 @@
 
 \theoremstyle{definition}
 \newtheorem{definition}[equation]{Definition}
+\newtheorem{notation}[equation]{Notation}
 
 \theoremstyle{remark}
-\newtheorem{remark}[equation]{Remark}
 \newtheorem{example}[equation]{Example}
+\newtheorem{remark}[equation]{Remark}
 
 \theoremstyle{plain}
 \newtheorem{theorem}[equation]{Theorem}
