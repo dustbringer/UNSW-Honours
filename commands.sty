@@ -1,13 +1,14 @@
 \ProvidesPackage{commands}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Structural
 % \newcommand{\bigquestion}[2]{\begin{shaded}\textbf{#1} \quad #2\end{shaded}}
 % \newcommand{\question}[2]{\textbf{#1} \ \textit{#2}}
 \newcommand{\nn}{\noindent}
 \newcommand{\nnn}{\vspace{1em}}
 
-
-% Math
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math macros
 \newcommand{\op}[1]{\operatorname{#1}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -35,8 +36,46 @@
 \newcommand{\grey}[1]{{\color[HTML]{A9A9A9}#1}}
 \newcommand{\red}[1]{{\color{red}#1}}
 
-% Symbols
+% Specifics
 \newcommand{\cH}{\mathcal{H}}
 
-% Operators
 \DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\bsbim}{\mathbb{BS}Bim}
+\DeclareMathOperator{\sbim}{\mathbb{S}Bim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Diagrams
+
+% Reference: https://tex.stackexchange.com/questions/27278/a-macro-of-drawing-a-rectangle-with-several-parameters-in-tikz
+% \tikzset{
+%     enddot/.style n args={4}{
+%             circle,
+%             fill,
+%             inner sep=0pt, % no inside-rectangle
+%             minimum size=5pt % min diameter 5pt
+%         }
+% }
+
+\tikzset{
+    enddot/.style={
+            circle,
+            fill={#1},
+            inner sep=0pt, % no inside-rectangle
+            minimum size=5pt % min diameter 5pt
+        },
+    enddot/.default={black}
+}
+
+\tikzset{
+    vcenter/.style={
+            baseline={([yshift=-.5ex]current bounding box.center)}
+        },
+}
+
+\newcommand{\overcrossing}{
+    \tikz[baseline=0,scale=0.25]{
+        \draw (1,0) -- ++(-1,1);
+        \draw[preaction={draw=white,line width=3pt,-}] (0,0) -- ++(1,1);
+    }
+}
+

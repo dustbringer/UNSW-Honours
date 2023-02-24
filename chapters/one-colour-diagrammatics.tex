@@ -1,0 +1,66 @@
+\chapter{One-Colour Diagrammatics}
+
+In this section, we describe one-colour diagrammatics for morphisms in $\bsbim$. The morphisms in this category have a presentation in terms of generators and relations. % TODO: mention isotopy at the end, and stop putting in isotopy relations
+
+The generators are the following univalent and trivalent vertices, along with boxes.
+\begin{align}
+    \tikz[vcenter, scale=0.4]{
+        \coordinate (mid) at (2,2);
+        \coordinate (bot) at (2,0);
+        %
+        \path
+        (bot) edge[very thick, red] (mid);
+        %
+        \node [enddot=red] at (mid) {};
+        \draw[rounded corners, draw=black!10, very thick] (-0.25,0) rectangle (4.25,4);
+    }
+    \quad , \quad
+    \tikz[vcenter, scale=0.4]{
+        \coordinate (mid) at (2,2);
+        \coordinate (top) at (2,4);
+        %
+        \path
+        (top) edge[very thick, red] (mid);
+        %
+        \node [enddot=red] at (mid) {};
+        \draw [rounded corners, draw=black!10, very thick] (-0.25,0) rectangle (4.25,4);
+    }
+    \quad , \quad
+    \tikz[vcenter, scale=0.4]{
+        \coordinate (mid) at (2,2);
+        \coordinate (bot) at (2,0);
+        \coordinate (top) at (2,4);
+        \coordinate (topl) at (0,4);
+        \coordinate (topr) at (4,4);
+        %
+        \path
+        (mid) edge[very thick, red] (bot)
+        (mid) edge[very thick, red] (topl)
+        (mid) edge[very thick, red] (topr);
+        %
+        \draw[rounded corners, draw=black!10, very thick] (-0.25,0) rectangle (4.25,4);
+    }
+    \quad , \quad
+    \tikz[vcenter, scale=0.4]{
+        \coordinate (mid) at (2,2);
+        \coordinate (bot) at (2,0);
+        \coordinate (top) at (2,4);
+        \coordinate (botl) at (0,0);
+        \coordinate (botr) at (4,0);
+        %
+        \path
+        (mid) edge[very thick, red] (top)
+        (mid) edge[very thick, red] (botl)
+        (mid) edge[very thick, red] (botr);
+        %
+        \draw[rounded corners, draw=black!10, very thick] (-0.25,0) rectangle (4.25,4);
+    }\quad , \quad
+    \tikz[vcenter, scale=0.4]{
+        \coordinate (mid) at (2,2);
+        %
+        \node[draw, rounded corners] at (mid) {$f$};
+        \draw [rounded corners, draw=black!10, very thick] (-0.25,0) rectangle (4.25,4);
+    }
+\end{align}
+
+These are the unit, multiplication, counit and comultiplication maps from the Frobenius algebra structure of $B_s \in \bsbim$.
