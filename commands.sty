@@ -35,6 +35,7 @@
 
 \newcommand{\grey}[1]{{\color[HTML]{A9A9A9}#1}}
 \newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\blue}[1]{{\color[HTML]{0096FF}#1}}
 
 % Specifics
 \newcommand{\cH}{\mathcal{H}}
@@ -66,6 +67,27 @@
         },
     enddot/.default={black}
 }
+
+% To draw string in diagrams
+\tikzset{
+    string/.style={
+            very thick,
+            {#1},
+            line cap=round
+        },
+    string/.default={black}
+}
+
+
+% To draw box in diagrams
+\tikzset{
+    box/.style={
+            draw,
+            rounded corners
+        }
+}
+
+
 
 % Centers inline tikz to the text
 \tikzset{

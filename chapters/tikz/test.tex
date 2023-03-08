@@ -1,4 +1,6 @@
 \documentclass[tikz, border=5px]{standalone}
+\usetikzlibrary{calc} % for coordinate calculations
+
 \tikzset{
     enddot/.style={
             circle,
@@ -7,6 +9,22 @@
             minimum size=5pt % min diameter 5pt
         },
     enddot/.default={black}
+}
+
+\tikzset{
+    string/.style={
+            very thick,
+            {#1},
+            line cap=round
+        },
+    string/.default={black}
+}
+
+\tikzset{
+    box/.style={
+            draw,
+            rounded corners
+        }
 }
 
 \tikzset{
@@ -50,20 +68,20 @@
     \squarecoord
     %
     \path
-    (midr2) edge[very thick, red] (topr)
-    (midr2) edge[very thick, red] (mid)
-    (mid) edge[very thick, red] (top)
-    (mid) edge[very thick, red] (midb2)
-    (midr2) edge[very thick, red] (botr);
+    (top) edge[string=red] (mid)
+    ($(midt)+(1.25,0)$) edge[string=red] ($(midb)+(1.25,0)$)
+    ($(midt)-(1.25,0)$) edge[string=red] ($(midb)-(1.25,0)$)
+    ;
+    \draw[string=red] ($(bot) - (1,0)$)
+    to[out=90,in=200] (mid)
+    to[out=-20,in=90] ($(bot) + (1,0)$)
+    ;
     %
-    \node [enddot=red] at (midb2) {};
-    \draw[rounded corners, draw=black!10, very thick] (-0.25,0) rectangle (4.25,4);
-    \draw[draw=none, fill=black!40]
-    (-0.25,0) --
-    ++(1.75,0) --
-    ++(0,4) {[rounded corners] --
-        ++(-1.75,0) --
-        cycle};
+    \node [enddot=red] at ($(midt)+(1.25,0)$) {};
+    \node [enddot=red] at ($(midb)+(1.25,0)$) {};
+    \node [enddot=red] at ($(midt)-(1.25,0)$) {};
+    \node [enddot=red] at ($(midb)-(1.25,0)$) {};
+    \draw [rounded corners, draw=black!10, very thick] (-0.25,0) rectangle (4.25,4);
 \end{tikzpicture}
 
 \end{document}

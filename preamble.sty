@@ -8,6 +8,9 @@
 % \usepackage{parskip} % removes indents and adds paragraph spacing
 % \setlength{\parindent}{0pt} % remove indents for new paragraphs
 
+\allowdisplaybreaks
+% https://tex.stackexchange.com/questions/57338/how-can-i-allow-gather-to-break-between-pages
+
 % Colourings
 \usepackage{framed,color}
 \usepackage[dvipsnames,svgnames,x11names,hyperref]{xcolor}
@@ -42,6 +45,7 @@
 
 % Tikz
 \usepackage{tikz}
+\usetikzlibrary{calc} % for coordinate calculations
 
 % Font
 \usepackage{lmodern}
