@@ -124,6 +124,12 @@
     \coordinate (botr) at (4,0);
 }
 
+% Spawns two invisible points
+\newcommand{\tikzfixsize}[2]{%
+    \node at #1 {};
+    \node at #2 {};
+}
+
 \newcommand{\overcrossing}{
     \tikz[baseline=0,scale=0.25]{
         \draw (1,0) -- ++(-1,1);
