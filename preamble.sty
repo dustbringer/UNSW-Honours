@@ -46,6 +46,9 @@
 % Tikz
 \usepackage{tikz}
 \usetikzlibrary{calc} % for coordinate calculations
+\usetikzlibrary{external} % compile tikz externally
+\tikzexternalize[prefix=tikz-output/] % activate and define figures/ as cache folder
+
 
 % Font
 \usepackage{lmodern}
