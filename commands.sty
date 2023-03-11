@@ -58,6 +58,7 @@
 % }
 
 % To draw enddot in diagrams
+% Params: Dot colour, scale
 \tikzset{
     enddot/.style={
             circle,
@@ -65,29 +66,32 @@
             inner sep=0pt, % no inside-rectangle
             minimum size=5pt % min diameter 5pt
         },
-    enddot/.default={black}
+    enddot/.default={black},
+    enddot/scaled/.style 2 args={
+            circle,
+            fill={#1},
+            inner sep=0pt, % no inside-rectangle
+            minimum size=5/0.4*#2 pt % min diameter 5pt
+        },
+    enddot/scaled/.default={black}{0.4}
 }
 
 % To draw string in diagrams
+% Params: Line colour, scale
 \tikzset{
     string/.style={
-            very thick,
-            {#1},
-            line cap=round
+            % line cap=round,
+            line width=1.2pt,
+            {#1}
         },
-    string/.default={black}
+    string/.default={black},
+    string/scaled/.style 2 args={
+            % line cap=round,
+            line width=1.2/0.4*#2 pt, % default very thick=1.2pt
+            {#1}
+        },
+    string/scaled/.default={black}{0.4}
 }
-
-
-% To draw box in diagrams
-\tikzset{
-    box/.style={
-            draw,
-            rounded corners
-        }
-}
-
-
 
 % Centers inline tikz to the text
 \tikzset{
@@ -130,10 +134,63 @@
     \node at #2 {};
 }
 
+% Right wall
+% Params: far right x-coordinate, height, width
+\newcommand{\wallr}[3]{%
+    % \draw[draw=none, fill=black!40, path fading = east]
+    % (#1,#2) --
+    % ++(-#3/2,0) --
+    % ++(0,-#2) --
+    % ++(#3/2,0) --
+    % cycle;
+    \shade [left color=transparent!50, right color=transparent!0, middle color=black!30] (#1,#2) rectangle (#1-#3,0);
+}
+
+% Left wall
+% Params: far left x-coordinate, height, width
+\newcommand{\walll}[3]{%
+    % \draw[draw=none, fill=black!40]
+    % (#1,#2) --
+    % ++(#3,0) --
+    % ++(0,-#2) --
+    % ++(-#3,0) --
+    % cycle;
+    \shade [left color=transparent!50, right color=transparent!0, middle color=black!30] (#1,#2) rectangle (#1+#3,0);
+}
+
+% Draw a cap
+\newcommand{\diagcap}[4][red]{%
+    \draw[string=#1] (#2)
+    to[out=90,in=180,looseness=1] (#3)
+    to[out=0,in=90,looseness=1] (#4)
+    ;
+}
+
+% Draw a trivalent vertex
+\newcommand{\trivert}[5][red]{%
+    % \draw[string=#1] (#2)
+    % to[out=90,in=180,looseness=1] (#3)
+    % to[out=0,in=90,looseness=1] (#4)
+    % ;
+    \diagcap[red]{#2}{#3}{#4};
+    \path (#3) edge[string=#1] (#5);
+}
+
 \newcommand{\overcrossing}{
     \tikz[baseline=0,scale=0.25]{
         \draw (1,0) -- ++(-1,1);
         \draw[preaction={draw=white,line width=3pt,-}] (0,0) -- ++(1,1);
+    }
+}
+
+\newcommand{\barbell}[1][red]{
+    \tikzsetnextfilename{inline-barbell}
+    \tikz[baseline=0,scale=0.25]{
+        \tikzfixsize{(0,0)}{(0.2,0.2)};
+        %
+        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1);
+        \node [enddot/scaled={#1}{0.25}] at (0.1,0) {};
+        \node [enddot/scaled={#1}{0.25}] at (0.1,1) {};
     }
 }
 
