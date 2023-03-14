@@ -8,7 +8,21 @@ This module category has elements copied from $\cH(S_2)$ and morphisms are gener
 \end{equation*}
 Then, diagrams are related to the wall by
 \begin{equation}
-    \input{tikz/3.2/relation-wall-barbell.tex} = 0.
+    \label{rel:right-barbell}
+    \input{tikz/3.2/relation-barbell-wall.tex} = 0.
 \end{equation}
 
-% TODO: Maybe simplify this relation to barbell or $\alpha_s$ which generate the non-constant polynomials
+\red{What happens when i have 0 concatenated to a diagram? Is it also 0 (its a tensor product)?}
+
+Notice that all the morphisms in $\cH(S_2)$ appear in this modular category, although they may have been annihilated by \eqref{rel:right-barbell}.
+
+\begin{example}
+    We use the new relation \eqref{rel:right-barbell} to further simplify the morphism in Example \eqref{eg:one-col-relations}.
+    \begin{align*}
+        \input{tikz/3.2/relation-example1.tex}
+         & = 2 \input{tikz/3.2/relation-example2.1.tex} - \input{tikz/3.2/relation-example2.2.tex}
+         \\ & = 2 \left( 2 \input{tikz/3.2/relation-example3.1.tex} - \input{tikz/3.2/relation-example3.2.tex} \right) - 0
+         \\ & = 4 \input{tikz/3.2/relation-example3.1.tex}
+    \end{align*}
+\end{example}
+

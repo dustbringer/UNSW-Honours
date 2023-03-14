@@ -15,41 +15,45 @@ These morphisms are subject to the following local relations.
 \begin{subequations} \label{eq:one-col-sbim-rel}
     \begin{gather}
         % Unit and counit
-        \label{subeqn:one-col-frob-unit}
+        \label{rel:one-col-frob-unit}
         \input{tikz/3.1/relation1-frob-unit.tex} = \input{tikz/3.1/relation1-identity.tex}
         \\
         % Frobenius associativity
-        \label{subeqn:one-col-frob-ass}
+        \label{rel:one-col-frob-ass}
         \input{tikz/3.1/relation2-frob-ass1.tex} = \input{tikz/3.1/relation2-frob-ass2.tex}
         \\
         % Needle annihilation
+        \label{rel:one-col-needle}
         \input{tikz/3.1/relation3-needle.tex} = 0
         \\
         % Polynomial forcing for S_2
+        \label{rel:one-col-poly-forcing}
         \input{tikz/3.1/relation4-left-bar.tex} = 2 \input{tikz/3.1/relation4-split-line.tex} - \input{tikz/3.1/relation4-right-bar.tex}
     \end{gather}
 \end{subequations}
 
+\red{Mention that the morphisms are enriched over the category of $\Z$-modules. What is $0$? the "zero module"? Also is $\identity$ the identity morphism? in what context?}
+
 \begin{remark}
-    The object $s$ is a Frobenius algebra object in $\cH(S_2)$. The generators \eqref{eq:one-col-gen} and their horizontal reflections are the unit, multiplication, counit and comultiplication maps. The unit, associativity and Frobenius associativity axioms are satisfied by the relations \eqref{subeqn:one-col-frob-unit} and \eqref{subeqn:one-col-frob-ass}.
+    The object $s$ is a Frobenius algebra object in $\cH(S_2)$. The generators \eqref{eq:one-col-gen} and their horizontal reflections are the unit, multiplication, counit and comultiplication maps. The unit, associativity and Frobenius associativity axioms are satisfied by the relations \eqref{rel:one-col-frob-unit} and \eqref{rel:one-col-frob-ass}.
 \end{remark}
 
 \begin{example}
+    \label{eg:one-col-relations}
     Let us use the relations in \eqref{eq:one-col-sbim-rel} to simplify the following morphism in $\Hom((s,s),(s))$.
     \begin{align*}
         \input{tikz/3.1/relation-example1.tex}
          & = \input{tikz/3.1/relation-example2.tex}
         \\ & = 2 \input{tikz/3.1/relation-example3.1.tex} - \input{tikz/3.1/relation-example3.2.tex}
-        \\ & = 2 \input{tikz/3.1/relation-example4.1.tex} - \input{tikz/3.1/relation-example4.2.tex}.
+        \\ & = 2 \input{tikz/3.1/relation-example4.1.tex} - \input{tikz/3.1/relation-example4.2.tex}
     \end{align*}
 \end{example}
 
-
-There is a $\Z[\barbell]$-bimodule basis for $\Hom(s^n, s^m)$ introduced by Libedinsky \cite{libedinsky-doubleleavesbasis} called the Double Leaves basis. We first define morphisms known as Light leaves. Given a word $w = s^n$, a subexpression is a binary string of length $n$. For example, $0000, 0110$ and $1011$ are subexpressions of $s^4=ssss$. Given a subexpression $e$ of an object $w$, we can apply it for an element $w^e \in S_2$, e.g. $ssss^{1011} = s*1*s*s = s$. \red{Maybe use subscript here to avoid confusion with $s^n = ss...s$}. Each term of the subexpression is a decision of whether to include the corresponding $s$ in the word, where the decision to exclude an $s$ amounts to multiplying by $1$.
+There is a right (or left) $\Z[\barbell]$-basis for $\Hom(s^n, s^m)$ described in \cite{elias-williamson-soergel-calculus} called the Double Leaves basis. To define this basis we must first look at morphisms known as Light leaves. Given a word $w = s^n$, a subexpression is a binary string of length $n$. For example, $0000, 0110$ and $1011$ are subexpressions of $s^4=ssss$. Given a subexpression $e$ of an object $w$, we can apply it to produce an element $w^e \in S_2$, e.g. $ssss^{1011} = s*1*s*s = s$. \red{Maybe use subscript here to avoid confusion with $s^n = ss...s$}. Each term of the subexpression is a decision of whether to include the corresponding $s$ in the word, where the decision to exclude an $s$ amounts to multiplying by $1$.
 
 For a subexpression $e$ of an expression $w$, we can label each term by $U_0,U_1,D_0$ or $D_1$. The label is $U_*$ if the partial subexpression up to the current term evaluates to $1 \in S_2$ and $D_*$ if it evaluates to $s \in S_2$, where the subscript corresponds to the term in $e$.
 
-\begin{example} \label{eg:light-leaf}
+\begin{example} \label{eg:one-col-light-leaf}
     For the object $ssss$ and subexpression $0101$, we can find the labels:
     \begin{center}
         \begin{tabular}{ |r||p{6em}|p{6em}|p{6em}|p{6em}| }
@@ -65,16 +69,16 @@ For a subexpression $e$ of an expression $w$, we can label each term by $U_0,U_1
 
 The light leaf $LL_{w,e} \in \Hom(w, w^e)$, corresponding to the object $w$ and subexpression $e$, is defined iteratively as follows. Let $LL_{\varnothing,\varnothing} = \varnothing$ be the empty diagram. Given $LL_{w',e'}$ and $i \in \{0,1\}$, $LL_{w's,e'i}$ is one of
 \begin{equation}
-    \input{tikz/3.1/light-leaves-u0.tex} \:,\:
-    \input{tikz/3.1/light-leaves-u1.tex} \:,\:
-    \input{tikz/3.1/light-leaves-d0.tex} \:,\:
-    \input{tikz/3.1/light-leaves-d1.tex}
+    \input{tikz/3.1/light-leaves-def-u0.tex} \:,\:
+    \input{tikz/3.1/light-leaves-def-u1.tex} \:,\:
+    \input{tikz/3.1/light-leaves-def-d0.tex} \:,\:
+    \input{tikz/3.1/light-leaves-def-d1.tex}
 \end{equation}
-depending on the next label, where $w'$ and $e'$ are appropriate subwords of $w$ and $e$. Observe that the codomain of a light leaf $LL_{w,e}$ corresponds to the evaluation $w^e \in S_2$ of the subexpression. The recursive definition is consistent, since if the next label is $U_*$ then the codomain of $LL_{w',e'}$ (the evaluation of the partial subexpression $w'^{e'}$ up to the label) is $1$, and when the next label is $D_*$ the codomain is $s$. \red{Rewrite this to make sense.}
+depending on the next label, where $w'$ and $e'$ are appropriate subwords of $w$ and $e$. Observe that the codomain of a light leaf $LL_{w,e}$ corresponds to the evaluation $w^e \in S_2$ of the subexpression. The recursive definition is consistent, since if the next label is $U_*$ then the codomain of $LL_{w',e'}$ (the evaluation of the partial subexpression $w'^{e'}$ up to the label) is $1$, and when the next label is $D_*$ the codomain of $LL_{w',e'}$ is $s$. \red{Rewrite this to make sense.}
 \red{Do we need to talk about 'degree' of light leaves?}
 
 \begin{example}
-    Following from Example \eqref{eg:light-leaf} for $w = ssss$ and $e = 0101$, we have labels $U_0 U_1 D_0 D_1$ so the light leaf $LL_{w,e}$ is built as follows.
+    Following from Example \eqref{eg:one-col-light-leaf} for $w = ssss$ and $e = 0101$, we have labels $U_0 U_1 D_0 D_1$ so the light leaf $LL_{w,e}$ is built as follows.
     \[
         \varnothing
         \to \input{tikz/3.1/light-leaves-example1.tex}
@@ -92,6 +96,7 @@ for subexpressions $e$ of $w$ and $f$ of $y$ such that $w^e = f^y$. Visually thi
 \[
     \input{tikz/3.1/double-leaves.tex}.
 \]
+\red{Maybe give some indication of why we use trapeziums}
 
 \begin{example}
     Let $w = ssss$ and $y = sss$. Let $e=0111$ be a subexpression of $w$, and $f=010$ be a subexpression of $y$. The corresponding light leaves are
@@ -100,9 +105,22 @@ for subexpressions $e$ of $w$ and $f$ of $y$ such that $w^e = f^y$. Visually thi
         \text{ and }
         LL_{y,f} = \input{tikz/3.1/double-leaves-example1.2.tex}.
     \]
-    Then the double leaf $\mathbb{LL}_{f,e} = \ol{LL}_{y,f} \circ LL_{w,e} : w \to y$ is
+    Then the double leaf $\mathbb{LL}_{f,e} = \ol{LL}_{y,f} \circ LL_{w,e} : w \to y$, factoring through $s$, is
     \[
         \input{tikz/3.1/double-leaves-example2.tex}.
     \]
 \end{example}
+
+Notice that these double leaves have no floating diagrams such as $\barbell$. In order for these double leaves to be a basis for a morphism space, we insert these floating diagrams by taking linear combinations as a right $\Z[\barbell]$-module. Here, the right $\barbell$-action on a diagram is just concatenation by $\barbell$ on the right. Since we can move barbells to the left, via. the relation \eqref{rel:one-col-poly-forcing}, we can equivalently act by $\Z[\barbell]$ on the left. \red{Why do we default to right module?} This leads us to the following theorem.
+
+\begin{theorem}[Elias-Williamson \cite{elias-williamson-soergel-calculus}, Theorem 1.2]
+    \label{thm:one-col-double-leaves-basis}
+    Given objects $w,y$ in $\cH(S_2)$, let \blue{$\mathbb{LL}_{w,y}$} \footnote{\blue{this can be confused with the double leaves themselves, maybe write $\mathbb{LL}(w,y)$}} be the collection of double leaves $\mathbb{LL}_{f,e}$ for subexpressions $e$ of $w$ and $f$ of $y$, such that $w^e = y^f$. Then \blue{$\mathbb{LL}_{w,y}$} is a right (or left) $\Z[\barbell]$-module basis for $\Hom(w,y)$.
+\end{theorem}
+The purely diagrammatic proof (of a more general theorem) can be found in \cite{elias-williamson-soergel-calculus}.
+\red{What is it used for?}
+
+\begin{remark}
+    The above light leaves and double leaves, introduced in \cite{elias-williamson-soergel-calculus}, are diagrammatic analogues of Libedinsky's work in \cite{libedinsky-lightleavesbasis} and \cite{libedinsky-doubleleavesbasis}.
+\end{remark}
 

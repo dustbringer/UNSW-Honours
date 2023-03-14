@@ -1,23 +1,35 @@
-\documentclass[tikz, border=5px]{standalone}
-\usetikzlibrary{calc} % for coordinate calculations
+\ProvidesPackage{diagrams}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Diagrams
+
+% Reference: https://tex.stackexchange.com/questions/27278/a-macro-of-drawing-a-rectangle-with-several-parameters-in-tikz
+% \tikzset{
+%     enddot/.style n args={4}{
+%             circle,
+%             fill,
+%             inner sep=0pt, % no inside-rectangle
+%             minimum size=5pt % min diameter 5pt
+%         }
+% }
 
 % To draw enddot in diagrams
 % Params: Dot colour, scale
 \tikzset{
-enddot/.style={
-        circle,
-        fill={#1},
-        inner sep=0pt, % no inside-rectangle
-        minimum size=5pt % min diameter 5pt
-    },
-enddot/.default={black},
-enddot/scaled/.style 2 args={
-circle,
-fill={#1},
-inner sep=0pt, % no inside-rectangle
-minimum size=5/0.4*#2 pt % min diameter 5pt
-},
-enddot/scaled/.default={black}{0.4}
+    enddot/.style={
+            circle,
+            fill={#1},
+            inner sep=0pt, % no inside-rectangle
+            minimum size=5pt % min diameter 5pt
+        },
+    enddot/.default={black},
+    enddot/scaled/.style 2 args={
+            circle,
+            fill={#1},
+            inner sep=0pt, % no inside-rectangle
+            minimum size=5/0.4*#2 pt % min diameter 5pt
+        },
+    enddot/scaled/.default={black}{0.4}
 }
 
 % To draw string in diagrams
@@ -102,7 +114,6 @@ enddot/scaled/.default={black}{0.4}
     \shade [left color=transparent!50, right color=transparent!0, middle color=black!30] (#1,#2) rectangle (#1+#3,0);
 }
 
-
 % Draw a cap
 \newcommand{\diagcap}[4][red]{%
     \draw[string=#1] (#2)
@@ -131,41 +142,33 @@ enddot/scaled/.default={black}{0.4}
     \path (#3) edge[string=#1] (#5);
 }
 
-\begin{document}
-\begin{tikzpicture}[vcenter, scale=0.4]
-    % \tikzfixsize{(0,0)}{(4,4)}
-    \squarecoord
-    %
-    \path
-    % Top half
-    (4,6) edge[string=red] (4,2)
-    (4,4) edge[string=red] (1,4)
-    (2,4) edge[string=red] (2,4.5)
-    (2,4.5) edge[string=red] (2.5,5)
-    (2,4.5) edge[string=red] (1.5,5)
-    % Barbells
-    (3.25,2) edge[string=red] (3.25,3)
-    (1.75,1) edge[string=red] (1.75,2)
-    ;
-    % Bottom curve
-    \draw[string=red] (4,2)
-    to[out=270,in=0] (3.25,1)
-    to[out=180,in=270] (2.5,2)
-    to[out=90,in=0] (1.75,3)
-    to[out=180,in=90] (1,2);
-    \path
-    (3.25,1) edge[string=red] (3.25,0)
-    (1,2) edge[string=red] (1,0)
-    ;
-    \node [enddot=red] at (1,4) {};
-    \node [enddot=red] at (2.5,5) {};
-    \node [enddot=red] at (1.5,5) {};
-    \node [enddot=red] at (3.25,2) {};
-    \node [enddot=red] at (3.25,3) {};
-    \node [enddot=red] at (1.75,1) {};
-    \node [enddot=red] at (1.75,2) {};
-    %
-    \wallr{6}{6}{1.5}
-\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inline Diagrams
 
-\end{document}
+\newcommand{\overcrossing}{
+    \tikz[baseline=0,scale=0.25]{
+        \draw (1,0) -- ++(-1,1);
+        \draw[preaction={draw=white,line width=3pt,-}] (0,0) -- ++(1,1);
+    }
+}
+
+\newcommand{\barbell}[1][red]{
+    \tikzsetnextfilename{inline-barbell}
+    \tikz[baseline=0,scale=0.25]{
+        \tikzfixsize{(0,0)}{(0.2,1)};
+        %
+        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1);
+        \node [enddot/scaled={#1}{0.25}] at (0.1,0) {};
+        \node [enddot/scaled={#1}{0.25}] at (0.1,1) {};
+    }
+}
+
+\newcommand{\identity}[1][red]{
+    \tikzsetnextfilename{inline-identity}
+    \tikz[baseline=0,scale=0.25]{
+        \tikzfixsize{(0,0)}{(0.2,1.25)};
+        %
+        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1.25);
+    }
+}
+
