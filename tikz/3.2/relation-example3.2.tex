@@ -1,0 +1,19 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(4,4)}
+    \squarecoord
+    %
+    \path
+    ($(top)-(1,0)$) edge[string=red] ($(midt)-(1,0)$)
+    ($(bot)-(1,0)$) edge[string=red] ($(midb)-(1,0)$)
+    ($(midt)+(1,0)$) edge[string=red] ($(midb)+(1,0)$)
+    (bot) edge[string=red] (midb)
+    ;
+    %
+    \node [enddot=red] at ($(midt)-(1,0)$) {};
+    \node [enddot=red] at ($(midb)-(1,0)$) {};
+    \node [enddot=red] at ($(midb)$) {};
+    \node [enddot=red] at ($(midt)+(1,0)$) {};
+    \node [enddot=red] at ($(midb)+(1,0)$) {};
+    %
+    \wallr{5}{4}{1.25}
+}

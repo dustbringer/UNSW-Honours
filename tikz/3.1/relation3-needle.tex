@@ -1,0 +1,10 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(4,4)}
+    \squarecoord
+    %
+    \path
+    (midt2) edge[string=red] (top)
+    (midb2) edge[string=red] (bot);
+    \draw[string=red] (midt2) let \p1 = ($0.5*(midt2) - 0.5*(midb2)$) in arc (90 : 360+90 : ({veclen(\x1,\y1)});); % circle with radius half distance from midt2 to midb2
+    %
+}

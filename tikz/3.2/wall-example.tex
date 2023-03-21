@@ -1,0 +1,14 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(4,4)}
+    \squarecoord
+    %
+    \path
+    (midl2) edge[string=red] (topl)
+    (midl2) edge[string=red] (mid)
+    (mid) edge[string=red] (top)
+    (mid) edge[string=red] (midb2)
+    (midl2) edge[string=red] (botl);
+    %
+    \node [enddot=red] at (midb2) {};
+    \wallr{4}{4}{1.5}
+}

@@ -1,0 +1,16 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(5,4)}
+    %
+    \path
+    (1,0) edge[string=red] (1,2)
+    (2,0) edge[string=red] (2,2)
+    (3,0) edge[string=red] (3,2)
+    (4,0) edge[string=red] (4,4)
+    ;
+    \diagcap[red]{2,2}{2.5,2.5}{3,2};
+    \node[enddot=red] at (1,2) {};
+    \coordinate[label=below:\tiny${U_0}$] () at (1,0);
+    \coordinate[label=below:\tiny${U_1}$] () at (2,0);
+    \coordinate[label=below:\tiny${D_1}$] () at (3,0);
+    \coordinate[label=below:\tiny${U_1}$] () at (4,0);
+}
