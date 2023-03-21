@@ -24,9 +24,6 @@ which are maps $s \to \varnothing$ and $ss \to s$ respectively. Note that we put
 
 
 % TODO: Something about the line being red
-% TODO: Empty diagram being identity?
-% TODO: Vertical lines being identity?
-% TODO: Z-module? Zero morphism?
 
 Such diagrams are subject to the following local relations.
 \begin{subequations} \label{eq:one-col-sbim-rel}
@@ -49,8 +46,6 @@ Such diagrams are subject to the following local relations.
     \end{gather}
 \end{subequations}
 
-\red{Mention that the morphisms are enriched over the category of $\Z$-modules. What is $0$? the "zero module"? Also is $\identity$ the identity morphism? in what context?}
-
 \begin{remark}
     The object $s$ is a Frobenius algebra object in $\cH(S_2)$. The generators \eqref{eq:one-col-gen} and their horizontal reflections are the unit, multiplication, counit and comultiplication maps. The unit, associativity and Frobenius associativity axioms are satisfied by the relations \eqref{rel:one-col-frob-unit} and \eqref{rel:one-col-frob-ass}.
 \end{remark}
@@ -66,32 +61,33 @@ Such diagrams are subject to the following local relations.
     \end{align*}
 \end{example}
 
-There is a right (or left) $\Z[\barbell]$-basis for $\Hom(s^n, s^m)$ described in \cite{elias-williamson-soergel-calculus} called the Double Leaves basis. To define this basis we must first look at morphisms known as Light leaves. Given a word $w = s^n$, a subexpression is a binary string of length $n$. For example, $0000, 0110$ and $1011$ are subexpressions of $s^4=ssss$. Given a subexpression $e$ of an object $w$, we can apply it to produce an element $w^e \in S_2$, e.g. $ssss^{1011} = s*1*s*s = s$. \red{Maybe use subscript here to avoid confusion with $s^n = ss...s$}. Each term of the subexpression is a decision of whether to include the corresponding $s$ in the word, where the decision to exclude an $s$ amounts to multiplying by $1$.
+There is a right (or left) $\Z[\barbell]$-basis for $\Hom(s^n, s^m)$ described in \cite{elias-williamson-soergel-calculus} called the Double Leaves basis. To define this basis we must first look at morphisms known as Light Leaves. Given a word $w = s^n$, a subexpression is a binary string of length $n$. For example, $0000, 0110$ and $1011$ are subexpressions of $s^4=ssss$. Given a subexpression $e$ of an object $w$, we can apply it to produce an element $w(e) \in S_2$, e.g. $ssss(1011) = s*1*s*s = s$. Each term of the subexpression is a decision of whether to include the corresponding $s$ in the word, where excluding an $s$ amounts to multiplying by $1$.
+\red{Talk about how $s$ could mean an object of $\cH$ or an object of $S_2$.}
 
-For a subexpression $e$ of an expression $w$, we can label each term by $U_0,U_1,D_0$ or $D_1$. The label is $U_*$ if the partial subexpression up to the current term evaluates to $1 \in S_2$ and $D_*$ if it evaluates to $s \in S_2$, where the subscript corresponds to the term in $e$.
+For a subexpression $e$ of an expression $w$, we can label each term by $U_0,U_1,D_0$ or $D_1$. The label is $U_*$ if the partial subexpression up to the current term evaluates to $1 \in S_2$ and $D_*$ if it evaluates to $s \in S_2$, where the subscript is the corresponding term in $e$.
 
 \begin{example} \label{eg:one-col-light-leaf}
     For the object $ssss$ and subexpression $0101$, we can find the labels:
     \begin{center}
         \begin{tabular}{ |r||p{6em}|p{6em}|p{6em}|p{6em}| }
             \hline
-            Choice        & 1     & 2         & 3             & 4                 \\ \hline
-            Partial $w$   & $s$   & $ss$      & $sss$         & $ssss$            \\ \hline
-            Partial $e$   & $0$   & $01$      & $010$         & $0101$            \\ \hline
-            Partial $w^e$ & $1$   & $1*s = s$ & $1*s*1=s$     & $1*s*1*s=1$       \\ \hline
-            Labels        & $U_0$ & $U_0 U_1$ & $U_0 U_1 D_0$ & $U_0 U_1 D_0 D_1$ \\ \hline
+            Choice         & 1     & 2         & 3             & 4                 \\ \hline
+            Partial $w$    & $s$   & $ss$      & $sss$         & $ssss$            \\ \hline
+            Partial $e$    & $0$   & $01$      & $010$         & $0101$            \\ \hline
+            Partial $w(e)$ & $1$   & $1*s = s$ & $1*s*1=s$     & $1*s*1*s=1$       \\ \hline
+            Labels         & $U_0$ & $U_0 U_1$ & $U_0 U_1 D_0$ & $U_0 U_1 D_0 D_1$ \\ \hline
         \end{tabular}
     \end{center}
 \end{example}
 
-The light leaf $LL_{w,e} \in \Hom(w, w^e)$, corresponding to the object $w$ and subexpression $e$, is defined iteratively as follows. Let $LL_{\varnothing,\varnothing} = \varnothing$ be the empty diagram. Given $LL_{w',e'}$ and $i \in \{0,1\}$, $LL_{w's,e'i}$ is one of
+The light leaf $LL_{w,e} \in \Hom(w, w(e))$ \red{$w(e)$ here is an element of $S_2$ that we identify with one of the objects $\varnothing$ or $s$}, corresponding to the object $w$ and subexpression $e$, is defined iteratively as follows. Let $LL_{\varnothing,\varnothing} = \varnothing$ be the empty diagram. Given $LL_{w',e'}$ and $i \in \{0,1\}$, $LL_{w's,e'i}$ is one of
 \begin{equation}
     \inputtikz{3.1/light-leaves-def-u0} \:,\:
     \inputtikz{3.1/light-leaves-def-u1} \:,\:
     \inputtikz{3.1/light-leaves-def-d0} \:,\:
     \inputtikz{3.1/light-leaves-def-d1}
 \end{equation}
-depending on the next label, where $w'$ and $e'$ are appropriate subwords of $w$ and $e$. Observe that the codomain of a light leaf $LL_{w,e}$ corresponds to the evaluation $w^e \in S_2$ of the subexpression. The recursive definition is consistent, since if the next label is $U_*$ then the codomain of $LL_{w',e'}$ (the evaluation of the partial subexpression $w'^{e'}$ up to the label) is $1$, and when the next label is $D_*$ the codomain of $LL_{w',e'}$ is $s$. \red{Rewrite this to make sense.}
+depending on the next label, where $w'$ and $e'$ are appropriate subwords of $w$ and $e$. Observe that the codomain of a light leaf $LL_{w,e}$ is the object corresponding to the evaluation $w(e) \in S_2$ of the subexpression. The recursive definition is consistent, since if the next label is $U_*$ then the codomain of $LL_{w',e'}$ (the evaluation of the partial subexpression $w'(e')$ up to the label) is $1$, and when the next label is $D_*$ the codomain of $LL_{w',e'}$ is $s$. \red{Rewrite this to make sense.}
 \red{Do we need to talk about 'degree' of light leaves?}
 
 \begin{example}
@@ -105,11 +101,11 @@ depending on the next label, where $w'$ and $e'$ are appropriate subwords of $w$
     \]
 \end{example}
 
-Let $\ol{LL}_{w,e}$ denote the vertical reflection of $LL_{w,e}$. A double leaf associated to expressions $w,y$ is a composition
+Let $\ol{LL}_{w,e}$ denote the vertical reflection of $LL_{w,e}$. A \textit{double leaf} associated to expressions $w,y$ is a composition
 \[
     \mathbb{LL}_{f,e} \coloneqq \ol{LL}_{y,f} \circ LL_{w,e} : w \to y
 \]
-for subexpressions $e$ of $w$ and $f$ of $y$ such that $w^e = f^y$. Visually this looks like a morphism from $w$ to $y$ factoring through $w^e = y^f \in \{1,s\}$,
+for subexpressions $e$ of $w$ and $f$ of $y$ such that $w(e) = f(y)$. Visually this looks like a morphism from $w$ to $y$ factoring through $w(e) = y(f) \in \{1,s\}$,
 \[
     \inputtikz{3.1/double-leaves}.
 \]
@@ -128,19 +124,24 @@ for subexpressions $e$ of $w$ and $f$ of $y$ such that $w^e = f^y$. Visually thi
     \]
 \end{example}
 
-Notice that these double leaves have no floating diagrams such as $\barbell$. In order for these double leaves to be a basis for a morphism space, we insert these floating diagrams by taking linear combinations as a right $\Z[\barbell]$-module. Here, the right $\barbell$-action on a diagram is just concatenation by $\barbell$ on the right. Since we can move barbells to the left, via. the relation \eqref{rel:one-col-poly-forcing}, we can equivalently act by $\Z[\barbell]$ on the left. \red{Why do we default to right module?} This leads us to the following theorem.
+Notice that these double leaves have no floating diagrams such as $\barbell$. In order for these double leaves to be a basis for a morphism space, we insert these floating diagrams by taking linear combinations as a left $\Z[\barbell]$-module. Here, the left $\barbell$-action on a diagram is just concatenation by $\barbell$ on the left. Since we can move barbells to the right via. the relation \eqref{rel:one-col-poly-forcing}, we can equivalently act by $\Z[\barbell]$ on the right. This leads us to the following theorem.
 
 \begin{theorem}[Elias-Williamson \cite{elias-williamson-soergel-calculus}, Theorem 1.2]
     \label{thm:one-col-double-leaves-basis}
-    Given objects $w,y$ in $\cH(S_2)$, let \blue{$\mathbb{LL}_{w,y}$} \footnote{\blue{this can be confused with the double leaves themselves, maybe write $\mathbb{LL}(w,y)$}} be the collection of double leaves $\mathbb{LL}_{f,e}$ for subexpressions $e$ of $w$ and $f$ of $y$, such that $w^e = y^f$. Then \blue{$\mathbb{LL}_{w,y}$} is a right (or left) $\Z[\barbell]$-module basis for $\Hom(w,y)$.
+    Given objects $w,y \in \cH(S_2)$, let \blue{$\mathbb{LL}_{w,y}$} \footnote{\blue{this can be confused with the double leaves themselves, maybe write $\mathbb{LL}(w,y)$}} be the collection of double leaves $\mathbb{LL}_{f,e}$ for subexpressions $e$ of $w$ and $f$ of $y$, such that $w(e) = y(f)$. Then \blue{$\mathbb{LL}_{w,y}$} is a left (or right) $\Z[\barbell]$-module basis for $\Hom(w,y)$.
 \end{theorem}
-The purely diagrammatic proof (of a more general theorem) can be found in \cite{elias-williamson-soergel-calculus}.
-\red{What is it used for?}
+A purely diagrammatic proof (of a more general theorem) can be found in \cite{elias-williamson-soergel-calculus}.
 
 \begin{remark}
     The above light leaves and double leaves, introduced in \cite{elias-williamson-soergel-calculus}, are diagrammatic analogues of Libedinsky's work in \cite{libedinsky-lightleavesbasis}.
 \end{remark}
 
-\red{Put equivalence of karoubian additive closure with category of soergel bimodules. Is this equivalent to category of bott-samelson bimodules?}
+The morphisms can be graded such that the univalent vertices has degree $1$ and trivalent vertices have degree $-1$. The degree of a general diagram is the sum of the degrees of the generators that appear in it. \red{How do you do degree of a $\Z$-linear combination?}
 
+The double leaves bases allow us to show that the Karoubi envelope of $\cH(S_2)$ is equivalent to the category of Soergel Bimodules $\sbim$ over $S_2$ as monoidal categories.
+
+\begin{theorem}[Elias-Williamson \cite{elias-williamson-soergel-calculus}, Theorem 6.30]
+    There is an equivalence of categories between $\Kar(\cH(S_2))$ and the category of Soergel Bimodules $\sbim$ over $S_2$.
+\end{theorem}
+The proof gives an equivalence of categories $\cH(S_2) \cong \bsbim$ of Bott-Samelson bimodules over $S_2$, by comparing the dimensions of morphism spaces using double leaves.
 
