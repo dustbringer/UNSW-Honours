@@ -49,7 +49,7 @@
 \usetikzlibrary{calc} % for coordinate calculations
 \usetikzlibrary{external} % compile tikz externally
 \tikzexternalize[prefix=figures/] % activate and define figures/ as cache folder
-
+\tikzset{external/only named=true} % only externalize when \tikzsetnextfilename{}
 
 % Font
 \usepackage{lmodern}

@@ -1,5 +1,12 @@
 \ProvidesPackage{diagrams}
 
+% Name file tikz output
+% https://tex.stackexchange.com/questions/57737/automatically-set-file-name-of-externalized-graphics-equal-to-the-file-name-of-t
+\newcommand{\inputtikz}[1]{
+    \tikzsetnextfilename{#1}
+    \input{tikz/#1.tex}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Diagrams
 
