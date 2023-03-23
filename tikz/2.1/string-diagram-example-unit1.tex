@@ -1,0 +1,9 @@
+\tikz[vcenter, scale=0.4]{
+    \squarecoord
+    \tikzfixsize{(2,0)}{(2,5)}
+    %
+    \path
+    (bot) edge[string=black] (mid);
+    \node[enddot=black] at (mid) {};
+    \coordinate[label=below:$a$] () at (bot);
+}

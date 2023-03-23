@@ -1,14 +1,31 @@
 \section{Drawing Monoidal Categories}
 
-A monoidal category $\mathcal{C}$ is a category equipped with a bifunctor $\otimes: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\bbone$, such that certain associativity and unit relations hold\footnote{For more details see \cite{tensor-categories}.}. We will assume that monoidal categories are strict, since all monoidal categories are monoidally equivalent to a strict one \red{[Reference?]}. The morphisms of $C$ can be drawn as string diagrams, where we read from bottom to top and functions are labelled dots. For example
+A monoidal category $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold\footnote{For more details see \cite{tensor-categories}.}. We will assume that monoidal categories are strict, since all monoidal categories are monoidally equivalent to a strict one \red{[Reference?]}. The morphisms of $C$ can be drawn as string diagrams. We can think of maps from bottom to top, and functions that make up the morphism are dots. For example
 \begin{center}
     \inputtikz{2.1/string-diagram-example}
 \end{center}
-describes a morphism $f: a \to b \otimes c$. By convention, $\bbone$ is blank and morphisms to $\bbone$ are blank. For example 
+describes a morphism $f: a \to b \tensor c$. For identity morphisms we drop the dot and only draw a vertical line, so $\id_a$ is the diagram
+\begin{center}
+    \inputtikz{2.1/string-diagram-example-identity}.
+\end{center}
+The tensor product of morphisms is the horizontal concatenation of diagrams, such that strings from separate functions don't interact. For example the following is a morphism $f \tensor g: a \tensor x \to b \tensor c \tensor y$
+\begin{center}
+    \inputtikz{2.1/string-diagram-example-tensor}
+\end{center}
+By convention, $\mathbbb{1}$ is blank and unlabelled, and strings that would join to $\mathbbb{1}$ are blank. Particularly, $\id_\mathbbb{1}$ is a blank diagram, and we have diagrams such as
+\begin{center}
+    \inputtikz{2.1/string-diagram-example-unit1}: $a \to \mathbbb{1}$
+    \quad and \quad
+    \inputtikz{2.1/string-diagram-example-unit2}: $\mathbbb{1} \to b \tensor c$.
+\end{center}
+The compositions of morphisms is the vertical stacking of diagrams where domains and codomains match.
 
-The vertical stacking of diagrams depicts composition.
+
+
+
 % \begin{center}
 %     \inputtikz{2.1/string-diagram-example}
 % \end{center}
+
 
 

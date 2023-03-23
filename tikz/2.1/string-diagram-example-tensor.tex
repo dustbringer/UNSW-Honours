@@ -1,0 +1,19 @@
+\tikz[vcenter, scale=0.4]{
+    \squarecoord
+    % f
+    \path
+    (bot) edge[string=black] (mid)
+    (mid) edge[string=black] ($(top) - (1.5,0)$)
+    (mid) edge[string=black] ($(top) + (1.5,0)$);
+    \node[enddot=black, label=right:$f$] at (mid) {};
+    \coordinate[label=$b$] () at ($(top) - (1.5,0)$);
+    \coordinate[label=$c$] () at ($(top) + (1.5,0)$);
+    \coordinate[label=below:$a$] () at (bot);
+    %g
+    \path
+    ($(bot) + (3,0)$) edge[string=black] ($(mid) + (3,0)$)
+    ($(mid) + (3,0)$) edge[string=black] ($(top) + (3,0)$);
+    \node[enddot=black, label=right:$g$] at ($(mid) + (3,0)$) {};
+    \coordinate[label=$y$] () at ($(top) + (3,0)$);
+    \coordinate[label=below:$x$] () at ($(bot) + (3,0)$);
+}
