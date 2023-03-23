@@ -34,7 +34,10 @@
             line width=1.2/0.4*#2 pt, % default very thick=1.2pt
             {#1}
         },
-    string/scaled/.default={black}{0.4}
+    string/scaled/.default={black}{0.4},
+    round/.style={
+            line cap=round
+        },
 }
 
 % To draw box in diagrams (for nodes)
@@ -44,6 +47,10 @@
             fill=white,
             rounded corners
         }
+}
+
+\newcommand{\bigbox}[3]{%
+    \draw[rounded corners, fill=white] ($ #2 $) rectangle node{#1} ($ #3 $);
 }
 
 % Centers inline tikz to the text
@@ -142,15 +149,19 @@
 \begin{document}
 \begin{tikzpicture}[vcenter, scale=0.4]
     \squarecoord
-    % f
+    %
     \path
-    (bot) edge[string=black] (mid)
+    ($(bot) - (1,0)$) edge[string=black] (mid)
+    ($(bot) + (1,0)$) edge[string=black] (mid)
     (mid) edge[string=black] ($(top) - (1.5,0)$)
+    (mid) edge[string=black] (top)
     (mid) edge[string=black] ($(top) + (1.5,0)$);
-    \node[box] at (mid) {$f$};
+    \node[box] at (mid) {$f \oplus g$};
     \coordinate[label=$b$] () at ($(top) - (1.5,0)$);
-    \coordinate[label=$c$] () at ($(top) + (1.5,0)$);
-    \coordinate[label=below:$a$] () at (bot);
+    \coordinate[label=$c$] () at (top);
+    \coordinate[label=$y$] () at ($(top) + (1.5,0)$);
+    \coordinate[label=below:$a$] () at ($(bot) - (1,0)$);
+    \coordinate[label=below:$x$] () at ($(bot) + (1,0)$);
 \end{tikzpicture}
 
 \end{document}

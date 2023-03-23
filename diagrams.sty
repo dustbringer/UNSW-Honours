@@ -43,17 +43,18 @@
 % Params: Line colour, scale
 \tikzset{
     string/.style={
-            % line cap=round,
             line width=1.2pt,
             {#1}
         },
     string/.default={black},
     string/scaled/.style 2 args={
-            % line cap=round,
             line width=1.2/0.4*#2 pt, % default very thick=1.2pt
             {#1}
         },
-    string/scaled/.default={black}{0.4}
+    string/scaled/.default={black}{0.4},
+    round/.style={
+            line cap=round
+        },
 }
 
 % To draw box in diagrams (for nodes)
@@ -63,6 +64,10 @@
             fill=white,
             rounded corners
         }
+}
+
+\newcommand{\bigbox}[3]{%
+    \draw[rounded corners, fill=white] ($ #2 $) rectangle node{#1} ($ #3 $);
 }
 
 % Centers inline tikz to the text
