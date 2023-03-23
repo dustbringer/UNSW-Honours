@@ -1,0 +1,14 @@
+\section{Drawing Monoidal Categories}
+
+A monoidal category $\mathcal{C}$ is a category equipped with a bifunctor $\otimes: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\bbone$, such that certain associativity and unit relations hold\footnote{For more details see \cite{tensor-categories}.}. We will assume that monoidal categories are strict, since all monoidal categories are monoidally equivalent to a strict one \red{[Reference?]}. The morphisms of $C$ can be drawn as string diagrams, where we read from bottom to top and functions are labelled dots. For example
+\begin{center}
+    \inputtikz{2.1/string-diagram-example}
+\end{center}
+describes a morphism $f: a \to b \otimes c$. By convention, $\bbone$ is blank and morphisms to $\bbone$ are blank. For example 
+
+The vertical stacking of diagrams depicts composition.
+% \begin{center}
+%     \inputtikz{2.1/string-diagram-example}
+% \end{center}
+
+

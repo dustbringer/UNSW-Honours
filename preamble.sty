@@ -1,5 +1,9 @@
 \ProvidesPackage{preamble}
 
+% Font
+% \usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
 \usepackage[margin=1.15in]{geometry}
 \usepackage{amsmath, amssymb, amsfonts, amscd}
 \usepackage{amsthm, thmtools}
@@ -21,15 +25,15 @@
 
 % References & Links
 \usepackage[
-	backend=bibtex,
-	natbib=true,
-	style=alphabetic,
-	sorting=nyt,
-	hyperref=true,
+    backend=bibtex,
+    natbib=true,
+    style=alphabetic,
+    sorting=nyt,
+    hyperref=true,
 ]{biblatex}
 \addbibresource{references.bib}
 
-\usepackage{hyperref} 
+\usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=violet,
@@ -51,9 +55,24 @@
 \tikzexternalize[prefix=figures/] % activate and define figures/ as cache folder
 \tikzset{external/only named=true} % only externalize when \tikzsetnextfilename{}
 
-% Font
-\usepackage{lmodern}
-\usepackage[T1]{fontenc}
+% Blackboard one from bbold
+\newcommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
+\MakeRobust{\bbone}
+% \usepackage{unicode-math}
+% \setmathfont[Scale = MatchUppercase, range=\Bbbone]{XITS Math}
+
+% Font for Xelatex
+% https://tex.stackexchange.com/questions/385256/swapping-from-pdflatex-to-xelatex
+% https://tex.stackexchange.com/questions/307745/xelatex-latin-modern-mathbb-and-mathcal
+% \usepackage{unicode-math}
+% % \usepackage{fontspec}
+% \setmainfont{Latin Modern Roman}
+% \setsansfont{Latin Modern Sans}
+% \setmonofont{Latin Modern Mono}
+% \setmathfont{Latin Modern Math}
+% \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+% \let\mathbb\relax % remove the definition by unicode-math
+% \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
 
 % Theorems
 \numberwithin{equation}{section} % changes equation numbering to sections
