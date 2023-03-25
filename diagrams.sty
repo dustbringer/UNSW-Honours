@@ -184,12 +184,32 @@
     }
 }
 
+\newcommand{\unit}[1][red]{
+    \tikzsetnextfilename{line-dot}
+    \tikz[baseline=0,scale=0.25]{
+        \tikzfixsize{(0,0)}{(0.2,1)};
+        %-
+        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1);
+        \node [enddot/scaled={#1}{0.25}] at (0.1,1) {};
+    }
+}
+
+\newcommand{\counit}[1][red]{
+    \tikzsetnextfilename{dot-line}
+    \tikz[baseline=0,scale=0.25]{
+        \tikzfixsize{(0,0)}{(0.2,1)};
+        %
+        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1);
+        \node [enddot/scaled={#1}{0.25}] at (0.1,0) {};
+    }
+}
+
 \newcommand{\identity}[1][red]{
     \tikzsetnextfilename{inline-identity}
     \tikz[baseline=0,scale=0.25]{
-        \tikzfixsize{(0,0)}{(0.2,1.25)};
+        \tikzfixsize{(0,0)}{(0.2,1)};
         %
-        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1.25);
+        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1);
     }
 }
 

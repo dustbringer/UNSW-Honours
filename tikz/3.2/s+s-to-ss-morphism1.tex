@@ -1,0 +1,13 @@
+\tikz[vcenter, scale=0.25]{
+    \tikzfixsize{(0,0)}{(4,4)}
+    \squarecoord
+    %
+    \path
+    (topl) edge[string=red] (mid)
+    (topr) edge[string=red] (mid)
+    (bot) edge[string=red] (mid);
+    \path
+    ($(mid) + (.5,1.5)$) edge[string=red] ($(mid) + (-.5,1.5)$);
+    \node[enddot/scaled={red}{0.25}] at ($(mid) + (.5,1.5)$) {};
+    \node[enddot/scaled={red}{0.25}] at ($(mid) + (-.5,1.5)$) {};
+}

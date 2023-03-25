@@ -148,20 +148,17 @@
 
 \begin{document}
 \begin{tikzpicture}[vcenter, scale=0.4]
+    \tikzfixsize{(0,0)}{(4,4)}
     \squarecoord
     %
     \path
-    ($(bot) - (1,0)$) edge[string=black] (mid)
-    ($(bot) + (1,0)$) edge[string=black] (mid)
-    (mid) edge[string=black] ($(top) - (1.5,0)$)
-    (mid) edge[string=black] (top)
-    (mid) edge[string=black] ($(top) + (1.5,0)$);
-    \node[box] at (mid) {$f \oplus g$};
-    \coordinate[label=$b$] () at ($(top) - (1.5,0)$);
-    \coordinate[label=$c$] () at (top);
-    \coordinate[label=$y$] () at ($(top) + (1.5,0)$);
-    \coordinate[label=below:$a$] () at ($(bot) - (1,0)$);
-    \coordinate[label=below:$x$] () at ($(bot) + (1,0)$);
+    (botl) edge[string=red] (mid)
+    (botr) edge[string=red] (mid)
+    (top) edge[string=red] (mid);
+    \path
+    ($(mid) + (.5,-1.5)$) edge[string=red] ($(mid) + (-.5,-1.5)$);
+    \node[enddot=red] at ($(mid) + (.5,-1.5)$) {};
+    \node[enddot=red] at ($(mid) + (-.5,-1.5)$) {};
 \end{tikzpicture}
 
 \end{document}
