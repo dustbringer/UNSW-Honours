@@ -3,12 +3,12 @@
     \squarecoord
     %
     \path
-    (top) edge[string=red] (midt)
+    (top) edge[string=red] ($(mid) + (0,.75)$)
     (0.5,0.75) edge[string=red] (0.5,1.75)
     (3.5,0.75) edge[string=red] (3.5,1.75)
     ;
     \draw[string=red] ($(bot) - (1,0)$)
-    to[out=90,in=200] (midt)
+    to[out=90,in=200] ($(mid) + (0,.75)$)
     to[out=-20,in=90] ($(bot) + (1,0)$)
     ;
     %

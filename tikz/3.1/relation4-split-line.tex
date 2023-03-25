@@ -3,8 +3,8 @@
     \squarecoord
     %
     \path
-    (midt) edge[string=red] (top)
-    (midb) edge[string=red] (bot);
-    \node [enddot=red] at (midt) {};
-    \node [enddot=red] at (midb) {};
+    ($(mid)+(0,.75)$) edge[string=red] (top)
+    ($(mid)+(0,-.75)$) edge[string=red] (bot);
+    \node [enddot=red] at ($(mid)+(0,.75)$) {};
+    \node [enddot=red] at ($(mid)+(0,-.75)$) {};
 }

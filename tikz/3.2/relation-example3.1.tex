@@ -3,14 +3,14 @@
     \squarecoord
     %
     \path
-    ($(top)-(1,0)$) edge[string=red] ($(midt)-(1,0)$)
-    ($(bot)-(1,0)$) edge[string=red] ($(midb)-(1,0)$)
-    (bot) edge[string=red] (midb)
+    ($(top)-(1,0)$) edge[string=red] ($(mid)+(-1,.75)$)
+    ($(bot)-(1,0)$) edge[string=red] ($(mid)+(-1,-.75)$)
+    (bot) edge[string=red] ($(mid)+(0,-.75)$)
     ;
     %
-    \node [enddot=red] at ($(midt)-(1,0)$) {};
-    \node [enddot=red] at ($(midb)-(1,0)$) {};
-    \node [enddot=red] at ($(midb)$) {};
+    \node [enddot=red] at ($(mid)+(-1,.75)$) {};
+    \node [enddot=red] at ($(mid)+(-1,-.75)$) {};
+    \node [enddot=red] at ($(mid)+(0,-.75)$) {};
     %
     \wallr{4}{4}{1.25}
 }

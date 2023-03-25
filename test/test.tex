@@ -66,22 +66,6 @@
     \coordinate (topr) at (4,4);
     %
     \coordinate (mid) at (2,2);
-    \coordinate (midl) at (1.25,2);
-    \coordinate (midr) at (2.75,2);
-    \coordinate (midb) at (2,1.25);
-    \coordinate (midt) at (2,2.75);
-    \coordinate (midl2) at (1,2);
-    \coordinate (midr2) at (3,2);
-    \coordinate (midb2) at (2,1);
-    \coordinate (midt2) at (2,3);
-    \coordinate (midl3) at (0.75,2);
-    \coordinate (midr3) at (3.25,2);
-    \coordinate (midb3) at (2,0.75);
-    \coordinate (midt3) at (2,3.25);
-    \coordinate (midl4) at (0.5,2);
-    \coordinate (midr4) at (3.5,2);
-    \coordinate (midb4) at (2,0.5);
-    \coordinate (midt4) at (2,3.5);
     %
     \coordinate (bot) at (2,0);
     \coordinate (botl) at (0,0);
@@ -152,13 +136,10 @@
     \squarecoord
     %
     \path
-    (botl) edge[string=red] (mid)
-    (botr) edge[string=red] (mid)
-    (top) edge[string=red] (mid);
-    \path
-    ($(mid) + (.5,-1.5)$) edge[string=red] ($(mid) + (-.5,-1.5)$);
-    \node[enddot=red] at ($(mid) + (.5,-1.5)$) {};
-    \node[enddot=red] at ($(mid) + (-.5,-1.5)$) {};
+    ($(mid)+(0,1)$) edge[string=red] (top)
+    ($(mid)-(0,1)$) edge[string=red] (bot);
+    \draw[string=red] ($(mid)+(0,1)$) arc (90 : 360+90 : 1);
+    % circle with radius half distance from (mid + (0,1)) to (mid - (0,1))
 \end{tikzpicture}
 
 \end{document}

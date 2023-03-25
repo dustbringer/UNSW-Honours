@@ -3,9 +3,9 @@
     \squarecoord
     %
     \path
-    (topl) edge[string=red] (midl)
-    (topr) edge[string=red] (midr)
-    (botl) edge[string=red] (midl)
-    (botr) edge[string=red] (midr)
-    (midl) edge[string=red] (midr);
+    (topl) edge[string=red] ($(mid)+(-.75,0)$)
+    (topr) edge[string=red] ($(mid)+(.75,0)$)
+    (botl) edge[string=red] ($(mid)+(-.75,0)$)
+    (botr) edge[string=red] ($(mid)+(.75,0)$)
+    ($(mid)+(-.75,0)$) edge[string=red] ($(mid)+(.75,0)$);
 }
