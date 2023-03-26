@@ -1,29 +1,96 @@
 \section{Drawing Monoidal Categories}
 
-A monoidal category $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold\footnote{For more details see \cite{tensor-categories}.}. We will assume that monoidal categories are strict, since all monoidal categories are monoidally equivalent to a strict one \red{[Reference?]}. The morphisms of $C$ can be drawn as string diagrams. We can think of maps from bottom to top, and functions that make up the morphism are boxes. For example
+A monoidal category $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold\footnote{For more details see \cite{tensor-categories}.}. We assume that monoidal categories are strict, since all monoidal categories are monoidally equivalent to a strict one\footnote{See \cite[\nopp VII.2]{maclane-category-theory} or \cite[Thm 2.8.5]{tensor-categories}}.
+
+The morphisms of $\mcal{C}$ can be drawn as string diagrams, where the morphism maps from the bottom to the top. Functions that make up the morphism are drawn as tokens or boxes. For example
 \begin{center}
     \inputtikz{2.1/string-diagram-example}
 \end{center}
-describes a morphism $f: a \to b \tensor c$. For identity morphisms we drop the box and only draw a vertical line, so $\id_a$ is the diagram
+depicts a morphism $f: a \to b \tensor c$. For identity morphisms we drop the box and only draw a vertical line, so $\id_a$ is the diagram
 \begin{center}
     \inputtikz{2.1/string-diagram-example-identity}.
 \end{center}
-The tensor product of morphisms is the horizontal concatenation of diagrams, such that strings from separate functions don't interact. For example a morphism $f \tensor g: a \tensor x \to b \tensor c \tensor y$ is drawn as
+The tensor product of morphisms is the horizontal concatenation of diagrams, such that strings from separate functions don't interact. For example, given $g:x \to y$, the tensor product $f \tensor g: a \tensor x \to b \tensor c \tensor y$ is drawn as
 \begin{center}
     \inputtikz{2.1/string-diagram-example-tensor1}
-    = 
+    =
     \inputtikz{2.1/string-diagram-example-tensor2}.
 \end{center}
-By convention, $\mathbbb{1}$ is blank and unlabelled, and strings that would join to $\mathbbb{1}$ are blank. Particularly, $\id_\mathbbb{1}$ is a blank diagram, and we have diagrams such as
+By convention, $\mathbbb{1}$ is blank and unlabelled, and strings that would join to $\mathbbb{1}$ are blank. Particularly, $\id_\mathbbb{1}$ is an empty diagram, and we have diagrams such as
 \begin{center}
     \inputtikz{2.1/string-diagram-example-unit1}: $a \to \mathbbb{1}$
     \quad and \quad
     \inputtikz{2.1/string-diagram-example-unit2}: $\mathbbb{1} \to b \tensor c$.
 \end{center}
-The compositions of morphisms is the vertical stacking of diagrams where domains and codomains match. For example, a composition $h \circ f: a \to b \tensor c \to a \tensor c$ of $f: a \to b \tensor c$ with $h: b \tensor c \to a \tensor c$ has the diagram
+The compositions of morphisms is the vertical stacking of diagrams where domains and codomains match. For example, the composition $h \circ f: a \to b \tensor c \to a \tensor c$ of $f: a \to b \tensor c$ with $h: b \tensor c \to a \tensor c$ has the diagram
 \begin{center}
     \inputtikz{2.1/string-diagram-example-composition1}
     =
     \inputtikz{2.1/string-diagram-example-composition2}.
 \end{center}
+
+Before looking at our main example of a diagrammatic monoidal category, we first define some terminology.
+
+\begin{definition}
+    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and composition of maps is $R$-bilinear.
+\end{definition}
+
+\begin{example}
+    Let $\Bbbk$ be a field. The category of vector spaces over $\Bbbk$, $\cat{Vect}_\Bbbk$, is a $\Bbbk$-linear category. This makes sense by the classical theory of linear algebra.
+\end{example}
+
+For a strict $R$-linear monoidal category $\mcal{C}$, the bifunctoriality of $- \tensor -$ implies the following \textit{interchange law}. For morphisms $f: a \to b$ and $g: c \to d$, $(\id_b \tensor g) \circ (f \tensor \id_c) = f \tensor g = (f \tensor \id_d) \circ (\id_a \tensor g)$. In other words the following diagram commutes.
+
+\begin{center}
+    \begin{mytikzcd}[sep=large]
+        a \tensor c \arrow[r,"f \tensor \id_c"] \arrow[d, "\id_a \tensor g"'] \arrow[dr, "f \tensor g"]
+        & b \tensor c \arrow[d, "\id_b \tensor g"] \\
+        a \tensor d \arrow[r,"f \tensor \id_d"]
+        & b \tensor d
+    \end{mytikzcd}
+\end{center}
+Written with string diagrams, this is
+\begin{center}
+    \inputtikz{2.1/interchange-law1}
+    = \inputtikz{2.1/interchange-law2}
+    = \inputtikz{2.1/interchange-law3}
+\end{center}
+which holds up to deformation of the diagram.
+
+
+\begin{definition}
+    A monoidal category $\mcal{C}$ is \textit{generated} by finite set $S_o$ of objects and $S_m$ of morphisms, when all non-unit objects are a finite tensor of objects in $S_o$ and all non-identity morphisms are a finite combination of tensors and compositions of morphisms in $S_m$.
+\end{definition}
+
+\begin{example}
+    Our first example of a diagrammatic monoidal category is the \textit{Temperley-Lieb category}. The Temperley-Lieb category $\mcal{TL}$ is a strict $R$-linear monoidal category whose objects are generated by the vertical line $\mathsf{I}$ and morphisms generated by the cup $\cup: \mathbbb{1} \to \mathsf{I} \tensor \mathsf{I}$ and cap $\cap: \mathsf{I} \tensor \mathsf{I} \to \mathbbb{1}$, with relations
+    \begin{center}
+        \inputtikz{2.1/tl-relation1}
+        = \inputtikz{2.1/tl-relation2}
+        = \inputtikz{2.1/tl-relation3}.
+    \end{center}
+
+    \red{Some example}
+    
+    \red{Mention bubbles and specialisation to some $\delta \in R$}
+
+    \red{Mention that these are crossingless matchings}
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

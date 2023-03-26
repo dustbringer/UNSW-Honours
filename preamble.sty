@@ -3,6 +3,7 @@
 \usepackage[margin=1.15in]{geometry}
 \usepackage{amsmath, amssymb, amsfonts, amscd}
 \usepackage{amsthm, thmtools}
+\usepackage{environ}
 \usepackage{enumitem}
 \usepackage{mathtools}
 \usepackage{array} % some commands for tabular
@@ -50,6 +51,17 @@
 \usetikzlibrary{external} % compile tikz externally
 \tikzexternalize[prefix=figures/] % activate and define figures/ as cache folder
 \tikzset{external/only named=true} % only externalize when \tikzsetnextfilename{}
+
+\usetikzlibrary{cd} % commutative diagrams
+% Problem with tikzcd and externalize, https://tex.stackexchange.com/a/208524
+\def\temp{&} \catcode`&=\active \let&=\temp
+\NewEnviron{mytikzcd}[1][]{%
+    \begin{tikzpicture}[baseline=(current bounding box.west)]
+        \node[inner sep=0, outer sep=0] {\begin{tikzcd}[#1]
+                \BODY
+            \end{tikzcd}};
+    \end{tikzpicture}
+}
 
 
 % Font
