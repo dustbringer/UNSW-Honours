@@ -1,0 +1,55 @@
+\newsavebox\subtikzUnit
+\savebox{\subtikzUnit}{
+    \tikz[baseline=0,scale=0.25]{
+        \path (0,0) edge[string/scaled={red}{0.25}] (0,1);
+        \node [enddot/scaled={red}{0.25}] at (0,1) {};
+    }
+}
+
+\newsavebox\subtikzCounit
+\savebox{\subtikzCounit}{
+    \tikz[baseline=0,scale=0.25]{
+        \path (0,0) edge[string/scaled={red}{0.25}] (0,1);
+        \node [enddot/scaled={red}{0.25}] at (0,0) {};
+    }
+}
+
+\newsavebox\subtikzIdentity
+\savebox{\subtikzIdentity}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={red}{0.25}] (0,3);
+    }
+}
+
+\newsavebox\subtikzCounitUnit
+\savebox{\subtikzCounitUnit}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={red}{0.25}] (0,1);
+        \node [enddot/scaled={red}{0.25}] at (0,1) {};
+        %
+        \path (0,3) edge[string/scaled={red}{0.25}] (0,2);
+        \node [enddot/scaled={red}{0.25}] at (0,2) {};
+    }
+}
+
+\tikz{
+    \node[state] (s) at (0,0) {$s$};
+    \node[state] (e) at (0,1.5) {$\varnothing$};
+    \path[->, >=stealth']
+    (s) edge[loop below, min distance=7mm, in=240-20,out=240+20] node[left] {\usebox\subtikzIdentity} (s)
+    (s) edge[loop below, min distance=7mm, in=300-20,out=300+20] node[right] {\usebox\subtikzCounitUnit} (s)
+    (s) edge[bend right] node[right] {\usebox\subtikzUnit} (e)
+    (e) edge[bend right] node[left] {\usebox\subtikzCounit} (s)
+    (e) edge[loop above, min distance=7mm, in=90-20,out=90+20] node[red] {$\varnothing$} (e);
+    %
+    \node at (1.5,.75) {$\xmapsto{F}$};
+    %
+    \node[state] (Ps) at (3,0) {$P_s$};
+    \node[state] (Pe) at (3,1.5) {$P_\varnothing$};
+    \path[->, >=stealth']
+    (Ps) edge[loop below, min distance=7mm, in=240-20,out=240+20] node {$\id_{P_s}$} (Ps)
+    (Ps) edge[loop below, min distance=7mm, in=300-20,out=300+20] node {$i \circ p$} (Ps)
+    (Ps) edge[bend right] node[right] {$p$} (Pe)
+    (Pe) edge[bend right] node[left] {$i$} (Ps)
+    (Pe) edge[loop above, min distance=7mm, in=90-20,out=90+20] node {$\id_{P_\varnothing}$} (Pe);
+}

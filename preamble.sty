@@ -48,6 +48,7 @@
 % Tikz
 \usepackage{tikz}
 \usetikzlibrary{calc} % for coordinate calculations
+\usetikzlibrary{automata,arrows} % for transition diagrams
 \usetikzlibrary{external} % compile tikz externally
 \tikzexternalize[prefix=figures/] % activate and define figures/ as cache folder
 \tikzset{external/only named=true} % only externalize when \tikzsetnextfilename{}
@@ -56,12 +57,13 @@
 % Problem with tikzcd and externalize, https://tex.stackexchange.com/a/208524
 \def\temp{&} \catcode`&=\active \let&=\temp
 \NewEnviron{mytikzcd}[1][]{%
-    \begin{tikzpicture}[baseline=(current bounding box.west)]
-        \node[inner sep=0, outer sep=0] {\begin{tikzcd}[#1]
-                \BODY
-            \end{tikzcd}};
-    \end{tikzpicture}
+\begin{tikzpicture}[baseline=(current bounding box.west)]
+    \node[inner sep=0, outer sep=0] {\begin{tikzcd}[#1]
+        \BODY
+    \end{tikzcd}};
+\end{tikzpicture}
 }
+
 
 
 % Font

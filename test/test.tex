@@ -131,17 +131,13 @@
 }
 
 \begin{document}
-\begin{tikzpicture}[vcenter, scale=0.4]
+\begin{tikzpicture}[
+        vcenter,
+        % scale=0.4,
+    ]
     \squarecoord
     %
-    \draw[string=black] (topr)
-    to ++(0,-2)
-    to[out=270,in=0,looseness=1] ++(-1,-1)
-    to[out=180,in=270,looseness=1] ++(-1,1)
-    to[out=90,in=0,looseness=1] ++(-1,1)
-    to[out=180,in=90,looseness=1] ++(-1,-1)
-    to ++(0,-2)
-    ;
+    \node at (0,0) {$s$};
 \end{tikzpicture}
 
 \end{document}
