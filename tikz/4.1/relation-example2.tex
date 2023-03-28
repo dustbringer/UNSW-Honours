@@ -1,0 +1,30 @@
+\tikz[vcenter, scale=0.45]{
+    \squarecoord
+    \tikzfixsize{(-.25,0)}{(4,4)}
+    % barbell
+    \path
+    (0,1.5) edge[string=dBlue] (0,2.5)
+    (1,1.5) edge[string=dRed] (1,2.5);
+    \node[enddot=dBlue] at (0,1.5) {};
+    \node[enddot=dBlue] at (0,2.5) {};
+    \node[enddot=dRed] at (1,1.5) {};
+    \node[enddot=dRed] at (1,2.5) {};
+    % stalactite and stalagmite
+    \path
+    (1,0) edge[string=dBlue] (1,.75)
+    (2.25,4) edge[string=dRed] (2.25,3.25)
+    (3.75,0) edge[string=dBlue] (3.75,.75)
+    ;
+    \node[enddot=dBlue] at (1,.75) {};
+    \node[enddot=dRed] at (2.25,3.25) {};
+    \node[enddot=dBlue] at (3.75,.75) {};
+    % cups and caps
+    \path
+    (2.25,0) edge[string=dBlue] (2.25,2.25);
+    \draw[string=dBlue] (1.5,4)
+    to[out=270,in=180-20,looseness=.9] (2.25,2.25)
+    to[out=0+20,in=270,looseness=.9] (3,4);
+    \draw[string=dRed] (3,0)
+    to[out=90,in=180,looseness=.9] (3.75,1.5)
+    to[out=0,in=90,looseness=.9] (4.5,0);
+}

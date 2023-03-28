@@ -23,10 +23,10 @@ which are maps $s \to \vn$ and $ss \to s$ respectively. Note that we put a large
 % \end{gather}
 
 
-% TODO: Something about the line being red
+% TODO: Something about the line being red, and not labelling domain and codomain
 
 Such diagrams are subject to the following local relations.
-\begin{subequations} \label{eq:one-col-sbim-rel}
+\begin{subequations} \label{eq:one-col-hecke-rel}
     \begin{gather}
         % Unit and counit
         \label{rel:one-col-frob-unit}
@@ -41,7 +41,7 @@ Such diagrams are subject to the following local relations.
         \inputtikz{3.1/relation3-needle} = 0
         \\
         % Polynomial forcing for S_2
-        \label{rel:one-col-poly-forcing}
+        \label{rel:one-col-barbell-forcing}
         \inputtikz{3.1/relation4-left-bar} = 2 \inputtikz{3.1/relation4-split-line} - \inputtikz{3.1/relation4-right-bar}
     \end{gather}
 \end{subequations}
@@ -52,7 +52,7 @@ Such diagrams are subject to the following local relations.
 
 \begin{example}
     \label{eg:one-col-relations}
-    Let us use the relations in \eqref{eq:one-col-sbim-rel} to simplify the following morphism in $\Hom((s,s),(s))$.
+    Let us use the relations in \eqref{eq:one-col-hecke-rel} to simplify the following morphism in $\Hom((s,s),(s))$.
     \begin{align*}
         \inputtikz{3.1/relation-example1}
          & = \inputtikz{3.1/relation-example2}
@@ -60,6 +60,8 @@ Such diagrams are subject to the following local relations.
         \\ & = 2 \inputtikz{3.1/relation-example4.1} - \inputtikz{3.1/relation-example4.2}
     \end{align*}
 \end{example}
+
+\red{Add example of frob associativity}
 
 There is a right (or left) $\Z[\barbell]$-basis for $\Hom(s^n, s^m)$ described in \cite{elias-williamson-soergel-calculus} called the Double Leaves basis. To define this basis we must first look at morphisms known as Light Leaves. Given a word $w = s^n$, a subexpression is a binary string of length $n$. For example, $0000, 0110$ and $1011$ are subexpressions of $s^4=ssss$. Given a subexpression $e$ of an object $w$, we can apply it to produce an element $w(e) \in S_2$, e.g. $ssss(1011) = s*1*s*s = s$. Each term of the subexpression is a decision of whether to include the corresponding $s$ in the word, where excluding an $s$ amounts to multiplying by $1$.
 \red{Talk about how $s$ could mean an object of $\cH$ or an object of $S_2$.}
@@ -124,7 +126,7 @@ for subexpressions $e$ of $w$ and $f$ of $y$ such that $w(e) = f(y)$. Visually t
     \]
 \end{example}
 
-Notice that these double leaves have no floating diagrams such as $\barbell$. In order for these double leaves to be a basis for a morphism space, we insert these floating diagrams by taking linear combinations as a left $\Z[\barbell]$-module. Here, the left $\barbell$-action on a diagram is just concatenation by $\barbell$ on the left. Since we can move barbells to the right via. the relation \eqref{rel:one-col-poly-forcing}, we can equivalently act by $\Z[\barbell]$ on the right. This leads us to the following theorem.
+Notice that these double leaves have no floating diagrams such as $\barbell$. In order for these double leaves to be a basis for a morphism space, we insert these floating diagrams by taking linear combinations as a left $\Z[\barbell]$-module. Here, the left $\barbell$-action on a diagram is just concatenation by $\barbell$ on the left. Since we can move barbells to the right via. the relation \eqref{rel:one-col-barbell-forcing}, we can equivalently act by $\Z[\barbell]$ on the right. This leads us to the following theorem.
 
 \begin{theorem}[Elias-Williamson \cite{elias-williamson-soergel-calculus}, Theorem 1.2]
     \label{thm:one-col-double-leaves-basis}
@@ -145,5 +147,5 @@ The double leaves bases allow us to show that the Karoubi envelope of $\cH(S_2)$
 \begin{theorem}[Elias-Williamson \cite{elias-williamson-soergel-calculus}, Theorem 6.30] \label{thm:one-col-sbim-equiv}
     There is an equivalence of categories between $\Kar(\cH(S_2))$ and the category of Soergel Bimodules $\sbim$ over $S_2$.
 \end{theorem}
-The proof gives an equivalence of categories $\cH(S_2) \cong \bsbim$ of Bott-Samelson bimodules over $S_2$, by comparing the dimensions of morphism spaces using double leaves. Since $\Kar(\bsbim) \cong \sbim$ and Karoubi envelope preserves equivalences, we obtain $\Kar(\cH(S_2)) \cong \sbim$.
+The proof gives an equivalence of categories $\cH(S_2) \cong \bsbim$ of Bott-Samelson bimodules over $S_2$, by comparing the graded dimensions of morphism spaces using double leaves. Since $\Kar(\bsbim) \cong \sbim$ and Karoubi envelope preserves equivalences, we obtain $\Kar(\cH(S_2)) \cong \sbim$.
 

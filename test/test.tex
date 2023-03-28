@@ -1,6 +1,12 @@
 \documentclass[tikz, border=5px]{standalone}
 \usetikzlibrary{calc} % for coordinate calculations
 
+% Colours
+\definecolor{dBlue}{HTML}{157DEC}
+\definecolor{dRed}{HTML}{FF2400}
+\newcommand{\dRed}[1]{{\color{dRed}#1}}
+\newcommand{\dBlue}[1]{{\color{dBlue}#1}}
+
 % To draw enddot in diagrams
 % Params: Dot colour, scale
 \tikzset{
@@ -131,11 +137,37 @@
 \begin{document}
 \begin{tikzpicture}[
         vcenter,
-        % scale=0.4,
+        scale=0.4,
     ]
     \squarecoord
-    %
-    \node at (0,0) {$s$};
+    \tikzfixsize{(.75,0)}{(6,4)}
+    % barbell
+    \path
+    (4.75,1.5) edge[string=dRed] (4.75,2.5);
+    \node[enddot=dRed] at (4.75,1.5) {};
+    \node[enddot=dRed] at (4.75,2.5) {};
+    \path
+    (5.75,1.5) edge[string=dBlue] (5.75,2.5);
+    \node[enddot=dBlue] at (5.75,1.5) {};
+    \node[enddot=dBlue] at (5.75,2.5) {};
+    % stalactite and stalagmite
+    \path
+    (1,0) edge[string=dRed] (1,.75)
+    (2,4) edge[string=dRed] (2,3.25)
+    (3.5,0) edge[string=dBlue] (3.5,.75)
+    ;
+    \node[enddot=dRed] at (1,.75) {};
+    \node[enddot=dRed] at (2,3.25) {};
+    \node[enddot=dBlue] at (3.5,.75) {};
+    % cups and caps
+    \path
+    (2,2.5) edge[string=dBlue] (2,0);
+    \draw[string=dBlue] (1.25,4)
+    to[out=270,in=180,looseness=.9] (2,2.5)
+    to[out=0,in=270,looseness=.9] (2.75,4);
+    \draw[string=dRed] (2.75,0)
+    to[out=90,in=180,looseness=.9] (3.5,1.5)
+    to[out=0,in=90,looseness=.9] (4.25,0);
 \end{tikzpicture}
 
 \end{document}
