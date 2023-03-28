@@ -3,17 +3,17 @@
     \squarecoord
     %
     \path
-    ($(top)-(1,0)$) edge[string=red] ($(mid)+(-1,.75)$)
-    ($(bot)-(1,0)$) edge[string=red] ($(mid)+(-1,-.75)$)
-    ($(mid)+(1,.75)$) edge[string=red] ($(mid)+(1,-.75)$)
-    (bot) edge[string=red] ($(mid)+(0,-.75)$)
+    ($(top)-(1,0)$) edge[string=dRed] ($(mid)+(-1,.75)$)
+    ($(bot)-(1,0)$) edge[string=dRed] ($(mid)+(-1,-.75)$)
+    ($(mid)+(1,.75)$) edge[string=dRed] ($(mid)+(1,-.75)$)
+    (bot) edge[string=dRed] ($(mid)+(0,-.75)$)
     ;
     %
-    \node [enddot=red] at ($(mid)+(-1,.75)$) {};
-    \node [enddot=red] at ($(mid)+(-1,-.75)$) {};
-    \node [enddot=red] at ($(mid)+(0,-.75)$) {};
-    \node [enddot=red] at ($(mid)+(1,.75)$) {};
-    \node [enddot=red] at ($(mid)+(1,-.75)$) {};
+    \node [enddot=dRed] at ($(mid)+(-1,.75)$) {};
+    \node [enddot=dRed] at ($(mid)+(-1,-.75)$) {};
+    \node [enddot=dRed] at ($(mid)+(0,-.75)$) {};
+    \node [enddot=dRed] at ($(mid)+(1,.75)$) {};
+    \node [enddot=dRed] at ($(mid)+(1,-.75)$) {};
     %
     \wallr{5}{4}{1.25}
 }

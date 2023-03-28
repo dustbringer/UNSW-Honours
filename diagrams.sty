@@ -120,7 +120,7 @@
 }
 
 % Draw a cap
-\newcommand{\diagcap}[4][red]{%
+\newcommand{\diagcap}[4][dRed]{%
     \draw[string=#1] (#2)
     to[out=90,in=180,looseness=1] (#3)
     to[out=0,in=90,looseness=1] (#4)
@@ -128,7 +128,7 @@
 }
 
 % Draw a cup
-\newcommand{\diagcup}[4][red]{%
+\newcommand{\diagcup}[4][dRed]{%
     \draw[string=#1] (#2)
     to[out=270,in=180,looseness=1] (#3)
     to[out=0,in=270,looseness=1] (#4)
@@ -136,14 +136,14 @@
 }
 
 % Draw a merge trivalent vertex
-\newcommand{\diagmult}[5][red]{%
-    \diagcap[red]{#2}{#3}{#4};
+\newcommand{\diagmult}[5][dRed]{%
+    \diagcap[#1]{#2}{#3}{#4};
     \path (#3) edge[string=#1] (#5);
 }
 
 % Draw a split trivalent vertex
-\newcommand{\diagcomult}[5][red]{%
-    \diagcup[red]{#2}{#3}{#4};
+\newcommand{\diagcomult}[5][dRed]{%
+    \diagcup[#1]{#2}{#3}{#4};
     \path (#3) edge[string=#1] (#5);
 }
 
@@ -157,7 +157,7 @@
     }
 }
 
-\newcommand{\barbell}[1][red]{
+\newcommand{\barbell}[1][dRed]{
     \tikzsetnextfilename{inline-barbell}
     \tikz[baseline=0,scale=0.25]{
         \tikzfixsize{(0,0)}{(0.2,1)};
@@ -168,7 +168,7 @@
     }
 }
 
-\newcommand{\unit}[1][red]{
+\newcommand{\unit}[1][dRed]{
     \tikzsetnextfilename{line-dot}
     \tikz[baseline=0,scale=0.25]{
         \tikzfixsize{(0,0)}{(0.2,1)};
@@ -178,7 +178,7 @@
     }
 }
 
-\newcommand{\counit}[1][red]{
+\newcommand{\counit}[1][dRed]{
     \tikzsetnextfilename{dot-line}
     \tikz[baseline=0,scale=0.25]{
         \tikzfixsize{(0,0)}{(0.2,1)};
@@ -188,7 +188,7 @@
     }
 }
 
-\newcommand{\identity}[1][red]{
+\newcommand{\identity}[1][dRed]{
     \tikzsetnextfilename{inline-identity}
     \tikz[baseline=0,scale=0.25]{
         \tikzfixsize{(0,0)}{(0.2,1)};

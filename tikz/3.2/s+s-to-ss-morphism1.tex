@@ -3,11 +3,11 @@
     \squarecoord
     %
     \path
-    (topl) edge[string=red] (mid)
-    (topr) edge[string=red] (mid)
-    (bot) edge[string=red] (mid);
+    (topl) edge[string=dRed] (mid)
+    (topr) edge[string=dRed] (mid)
+    (bot) edge[string=dRed] (mid);
     \path
-    ($(mid) + (.5,1.5)$) edge[string=red] ($(mid) + (-.5,1.5)$);
-    \node[enddot/scaled={red}{0.25}] at ($(mid) + (.5,1.5)$) {};
-    \node[enddot/scaled={red}{0.25}] at ($(mid) + (-.5,1.5)$) {};
+    ($(mid) + (.5,1.5)$) edge[string=dRed] ($(mid) + (-.5,1.5)$);
+    \node[enddot/scaled={dRed}{0.25}] at ($(mid) + (.5,1.5)$) {};
+    \node[enddot/scaled={dRed}{0.25}] at ($(mid) + (-.5,1.5)$) {};
 }

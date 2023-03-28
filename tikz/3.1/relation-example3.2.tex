@@ -3,17 +3,17 @@
     \squarecoord
     %
     \path
-    (top) edge[string=red] ($(mid) + (0,.75)$)
-    (0.5,0.75) edge[string=red] (0.5,1.75)
-    (3.5,0.75) edge[string=red] (3.5,1.75)
+    (top) edge[string=dRed] ($(mid) + (0,.75)$)
+    (0.5,0.75) edge[string=dRed] (0.5,1.75)
+    (3.5,0.75) edge[string=dRed] (3.5,1.75)
     ;
-    \draw[string=red] ($(bot) - (1,0)$)
+    \draw[string=dRed] ($(bot) - (1,0)$)
     to[out=90,in=200] ($(mid) + (0,.75)$)
     to[out=-20,in=90] ($(bot) + (1,0)$)
     ;
     %
-    \node [enddot=red] at (0.5,0.75) {};
-    \node [enddot=red] at (0.5,1.75) {};
-    \node [enddot=red] at (3.5,0.75) {};
-    \node [enddot=red] at (3.5,1.75) {};
+    \node [enddot=dRed] at (0.5,0.75) {};
+    \node [enddot=dRed] at (0.5,1.75) {};
+    \node [enddot=dRed] at (3.5,0.75) {};
+    \node [enddot=dRed] at (3.5,1.75) {};
 }

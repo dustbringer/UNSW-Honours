@@ -9,25 +9,26 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Math macros
-\newcommand{\op}[1]{\operatorname{#1}}
-\newcommand{\cat}[1]{\mathbf{#1}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\K}{\mathbb{K}}
+\newcommand{\vn}{\varnothing}
 \newcommand{\tensor}{\otimes}
 
+\newcommand{\op}[1]{\operatorname{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\renewcommand{\ul}[1]{\underline{#1}}
+\newcommand{\cat}[1]{\mathbf{#1}}
 \renewcommand{\vec}[1]{\mathbf{#1}} % bold
 \newcommand{\norm}[1]{{\left\lVert #1 \right\rVert}}
 \newcommand{\angl}[1]{{\left\langle #1 \right\rangle}}
 \newcommand{\anglsmall}[1]{{\langle #1 \rangle}}
-
 \newcommand{\xto}[1]{\xrightarrow{#1}}
-\newcommand{\ol}[1]{\overline{#1}}
-\renewcommand{\ul}[1]{\underline{#1}}
-% \newcommand{\hatt}[1]{\widehat #1}
+\newcommand{\what}[1]{\widehat{#1}}
+\newcommand{\wtilde}[1]{\widetilde{#1}}
 
 \newcommand{\pvec}[1]{\begin{pmatrix} #1 \end{pmatrix}}
 
@@ -35,9 +36,17 @@
 \newcommand{\up}[1]{\textup{#1}}
 \newcommand{\mcal}[1]{\mathcal{#1}}
 
+% Colours
+\definecolor{dBlue}{HTML}{157DEC}
+\definecolor{dRed}{HTML}{FF2400}
+\newcommand{\dRed}[1]{{\color{dRed}#1}}
+\newcommand{\dBlue}[1]{{\color{dBlue}#1}}
+
+\newcommand{\red}[1]{{\color[HTML]{F6358A}#1}}
+\newcommand{\green}[1]{{\color[HTML]{52D017}#1}}
 \newcommand{\grey}[1]{{\color[HTML]{A9A9A9}#1}}
-\newcommand{\red}[1]{{\color{red}#1}}
 \newcommand{\blue}[1]{{\color[HTML]{0096FF}#1}}
+
 
 % Specifics
 \newcommand{\cH}{\mathcal{H}}
