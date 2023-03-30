@@ -44,12 +44,12 @@
     %
     \node at (1.5,.75) {$\xmapsto{F}$};
     %
-    \node (Ps) at (3,0) {$P_s$};
-    \node (Pe) at (3,1.5) {$P_\vn$};
+    \node (Ps) at (3,0) {$P(s)$};
+    \node (Pe) at (3,1.5) {$P(\vn)$};
     \path[->, >=stealth']
-    (Ps) edge[loop below, min distance=7mm, in=240-20,out=240+20] node {$\id_{P_s}$} (Ps)
+    (Ps) edge[loop below, min distance=7mm, in=240-20,out=240+20] node {$\id_{P(s)}$} (Ps)
     (Ps) edge[loop below, min distance=7mm, in=300-20,out=300+20] node {$i \circ p$} (Ps)
     (Ps) edge[bend right] node[right] {$p$} (Pe)
     (Pe) edge[bend right] node[left] {$i$} (Ps)
-    (Pe) edge[loop above, min distance=7mm, in=90-20,out=90+20] node {$\id_{P_\vn}$} (Pe);
+    (Pe) edge[loop above, min distance=7mm, in=90-20,out=90+20] node {$\id_{P(\vn)}$} (Pe);
 }
