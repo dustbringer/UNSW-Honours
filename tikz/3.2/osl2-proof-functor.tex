@@ -33,8 +33,8 @@
 }
 
 \tikz{
-    \node[state] (s) at (0,0) {$s$};
-    \node[state] (e) at (0,1.5) {$\vn$};
+    \node (s) at (0,0) {$s$};
+    \node (e) at (0,1.5) {$\vn$};
     \path[->, >=stealth']
     (s) edge[loop below, min distance=7mm, in=240-20,out=240+20] node[left] {\usebox\subtikzIdentity} (s)
     (s) edge[loop below, min distance=7mm, in=300-20,out=300+20] node[right] {\usebox\subtikzCounitUnit} (s)
@@ -44,8 +44,8 @@
     %
     \node at (1.5,.75) {$\xmapsto{F}$};
     %
-    \node[state] (Ps) at (3,0) {$P_s$};
-    \node[state] (Pe) at (3,1.5) {$P_\vn$};
+    \node (Ps) at (3,0) {$P_s$};
+    \node (Pe) at (3,1.5) {$P_\vn$};
     \path[->, >=stealth']
     (Ps) edge[loop below, min distance=7mm, in=240-20,out=240+20] node {$\id_{P_s}$} (Ps)
     (Ps) edge[loop below, min distance=7mm, in=300-20,out=300+20] node {$i \circ p$} (Ps)
