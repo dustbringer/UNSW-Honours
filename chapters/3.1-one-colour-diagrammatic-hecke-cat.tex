@@ -73,35 +73,35 @@ The first one-colour diagrammatic we explore is the \textit{one-colour (diagramm
 The morphism space $\Hom(s^n, s^m)$ has a left (or right) $\C[\barbell]$-basis called the \textit{double leaves} basis, as described in \cite{elias-williamson-soergel-calculus}. To define this basis, we must first define morphisms known as \textit{light leaves}.
 
 
-Define $\phi: (\op{ob}(\cH(S_2)), \tensor) \to (S_2, *)$ to be the monoid homomorphism\footnote{A map that preserves the monoidal product and identity element.} mapping $s \mapsto s$ and $\vn \mapsto 1$, and $\psi: S_2 \to \op{ob}(\cH(S_2))$ to be the function that maps $s \to s$ and $1 \to \vn$. \red{Should this be a definition?}
+Let $\phi: (\op{ob}(\cH(S_2)), \tensor) \to (S_2, *)$ be the monoid homomorphism\footnote{A map that preserves the monoidal product and identity element.} mapping $s \mapsto s$ and $\vn \mapsto 1$, and $\psi: S_2 \to \op{ob}(\cH(S_2))$ be the function that maps $s \to s$ and $1 \to \vn$. \red{Should this be a definition?}
 The maps $\phi$ and $\psi$ allow words $w = s^n$ to be seen as elements of $S_2$, and $1,s \in S_2$ to be seen as the objects $\vn, s \in \cH(S_2)$. Clearly, $\phi \psi$ is the identity map on $S_2$, and the map $\psi \phi: \cH(S_2) \to \cH(S_2)$ takes objects to one of $\vn$ or $s$ in $\cH(S_2)$ by considering them as elements in $S_2$.
 
 \begin{definition}(Subexpression for $S_2$)
-    Given a word $w = s^n$, a \textit{subexpression} $e$ is a binary string of length $n$. We can \textit{apply} a subexpression to produce an object $w(e) \in \cH(S_2)$, which is $w$ where terms corresponding to $0$ in $e$ are replaced with $\vn$.
+    Given a word $w = s^n$, a \textit{subexpression} $e$ is a binary string of length $n$. We can \textit{apply} a subexpression to produce an object $w(e) \in \cH(S_2)$, which is $w$ where terms corresponding to $0$ in $e$ are replaced with $\vn$. For $0 \leq i \leq n$, write $w(e,i)$ for the resultant object of the first $i$ terms in $e$ applied to the first $i$ terms in $w$. Particularly $w(e,0) = \vn$ and $w(e,n) = w(e)$.
 \end{definition}
 % TODO: \red{Maybe define expressions and subexpressions for general groups}
 
-For example, $0000, 0110$ and $1011$ are subexpressions of $s^4=ssss$. Applying the third subexpression gives $ssss(1011) = s\vn ss = sss$, by strictness of the monoidal category. Here, each term of the subexpression is a decision to include or exclude the corresponding $s$ in the word, where excluding an $s$ amounts to tensoring with $\vn$. 
+For example, $0000, 0110$ and $1011$ are subexpressions of $s^4=ssss$. Applying the third subexpression gives $ssss(1011) = s\vn ss = sss$ and $ssss(1011,3) = sss(101) = s \vn s = \vn$, by strictness of the monoidal category. Here, each term of the subexpression is a decision to include or exclude the corresponding $s$ in the word, where excluding an $s$ amounts to tensoring with $\vn$.
 
-For a word $w$ and subexpression $e$, we label each term by $U_0,U_1,D_0$ or $D_1$. A term is labelled $U_*$ if $\phi$ applied to the partial subexpression up to the current term is $1 \in S_2$, and labelled $D_*$ if it evaluates to $s \in S_2$. The label's subscript is the corresponding term in $e$.
+For a word $w$ and subexpression $e$, we label each term by $U_0,U_1,D_0$ or $D_1$. The $i$-th term is labelled $U_*$ if $\phi(w(e,i-1)) = 1 \in S_2$, and labelled $D_*$ if $\phi(w(e,i-1)) = s \in S_2$. The label's subscript is the corresponding term in $e$.
 
 \begin{example} \label{eg:one-col-light-leaf}
     For the object $ssss$ and subexpression $0101$, we can find the labels:
     \begin{center}
         \begin{tabular}{ |r||p{6em}|p{6em}|p{6em}|p{6em}| }
             \hline
-            Choice         & 1     & 2         & 3             & 4                 \\ \hline
-            Partial $w$    & $s$   & $ss$      & $sss$         & $ssss$            \\ \hline
-            Partial $e$    & $0$   & $01$      & $010$         & $0101$            \\ \hline
-            Partial $w(e)$ & $\vn$   & $\vn s = s$ & $\vn s \vn=s$     & $\vn s \vn s=ss$       \\ \hline
-            Labels         & $U_0$ & $U_0 U_1$ & $U_0 U_1 D_0$ & $U_0 U_1 D_0 D_1$ \\ \hline
+            Choice $i$  & 1     & 2           & 3             & 4                 \\ \hline
+            Partial $w$ & $s$   & $ss$        & $sss$         & $ssss$            \\ \hline
+            Partial $e$ & $0$   & $01$        & $010$         & $0101$            \\ \hline
+            $w(e,i)$    & $\vn$ & $\vn s = s$ & $\vn s \vn=s$ & $\vn s \vn s=ss$  \\ \hline
+            Labels      & $U_0$ & $U_0 U_1$   & $U_0 U_1 D_0$ & $U_0 U_1 D_0 D_1$ \\ \hline
         \end{tabular}
     \end{center}
 \end{example}
 
 \begin{definition}
     The \textit{light leaf} $LL_{w,e} \in \Hom(w, \psi\phi(w(e)))$ for a word $w$ and subexpression $e$, is defined iteratively as follows. Let $LL_{\vn,\vn} = \vn$ be the empty diagram. Given $LL_{w',e'}$ and $i \in \{0,1\}$, the light leaf $LL_{w's,e'i}$ is one of
-    
+
 \end{definition}
 \begin{equation}
     \inputtikz{3.1/light-leaves-def-u0} \:,\:
@@ -161,6 +161,11 @@ A purely diagrammatic proof (of a more general theorem) can be found in \cite{el
 \end{remark}
 
 The morphisms in this category can be graded such that the univalent vertices has degree $1$ and trivalent vertices have degree $-1$. The degree of a general diagram is the sum of the degrees of the generators that appear in it.
+
+
+\red{How is grading on objects defined? Do we just grade them all to be 0 (like identity map)?}
+
+\red{Say more about how this puts a grading on the category.}
 
 \red{Put example}
 
