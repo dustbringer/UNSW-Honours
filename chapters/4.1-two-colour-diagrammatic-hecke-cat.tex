@@ -42,29 +42,58 @@ that are maps $s \to \vn$, $ss \to s$, $t \to \vn$ and $tt \to t$ respectively. 
     Notice that the red and blue lines never cross as no generators that allow crossings. This is a consequence of working over affine $S_2$ in which the generators $s$ and $t$ have no relation. \red{Mention example of crossing and $S_3$.}
 \end{remark}
 
+% This stuff needs to be cleaned up
 
-Double leaves can also be defined for this category. Let $w \in \cH(\wtilde{S}_2)$ be an object of length $n$. A subexpression of $w$ is a binary string $e$ of length $n$, which can be applied to produce an element $w(e) \in \wtilde{S}_2$. For example if $w = sstst$ and $e=11001$ then $w(e) = s * s* 1 * 1 * t = t \in \wtilde{S}_2$.
+\begin{definition}
+    For a group with a presentation in terms of generators and relations, the \textit{length} of a product of generators is the number of generators in the product. We say that a product of generators is \textit{reduced} if it's length cannot be shortened with relations.
+\end{definition}
 
-An expression of an element in $\wtilde{S}_s$ is the element written as a proejct of the generators $s$ and $t$. We say an expression is \textit{reduced} if it cannot be shortened by a relation i.e. by $s^2 = 1$ or $t^2 = 1$. For example, $sttst$ is not reduced becayse $sttsts = ssts = ts$ in $\wtilde{S}_2$, but $stst$ is reduced. Note that all reduced expressions in $\wtilde{S}_2$ are either $1$ or alternate $s$ and $t$, and is \textit{unique}. Uniqueness follows from the relations $s^2 = t^2 = 1$, where two expressions cannot be equal unless they can be reduced even further to the same expression. Define the function $\phi: \wtilde{S}_2 \to \op{ob}(\cH(\wtilde{S}_2))$ which sends an object to the tensor product corresponding to its reduced expression. For example, we have $\phi(1) = \vn$, $\phi(s) = s$, $\phi(sts) = s \tensor t \tensor s$ and $\phi(sttsts) = t \tensor s$. This is well defined because the reduced expressions is unique.
+In $\wtilde{S}_2$ products can be shortened by the relation $s^2 = t^2 = 1$. For instance, $sttsts$ is not reduced because it is equal to $ts$ which is reduced. Notice that for $\wtilde{S}_2$ each element can be written uniquely as a reduced product of generators. This is true since otherwise we have two distinct reduced products for the same element in $\wtilde{S}_2$ so they must be related by $s^2 = t^2$. This means they can be reduced further by $s^2 = t^2 = 1$, which contradicts minimality of their length.
 
-Let $w(e,i)$ be the partially evaluated reduced expression up to and including the $i$-th term. So if $w = sttsts$ and $e = 111010$, then
+Notice that there is a notational similarity between products in the group and words in $\cH(\wtilde{S}_2)$. This motivates the following definitions. Let $\phi: (\op{ob}(\cH(\wtilde{S}_2)), \tensor) \to (\wtilde{S}_2, *)$ be the monoid homomorphism mapping $\vn \mapsto 1$, $s \mapsto s$ and $t \mapsto t$. Also define $\psi: \wtilde{S}_2 \to \op{ob}(\cH(\wtilde{S}_2))$ to be the function mapping elements $x \in \wtilde{S}_2$ to the tensor product of $s$ and $t$ in $\cH(\wtilde{S}_2)$ corresponding to the reduced product of $x$ in $\wtilde{S}_2$. This is well defined because reduced products are unique and two different reduced products cannot equal the same element of $\wtilde{S}_2$. The composition $\psi\phi: \cH(\wtilde{S}_2) \to \cH(\wtilde{S}_2)$ maps words $w$ to the tensor of $s$ and $t$ corresponding to the reduced product of $\phi(w)$, and $\phi\psi$ is the identity map on $\wtilde{S}_2$.
 
-\begin{center}
-    \begin{tabular}{ |r||l|l|l|l|l|l|l| }
-        \hline
-        $i$      & 0   & 1   & 2    & 3         & 4          & 5            & 6              \\ \hline
-        $w(e,i)$ & $1$ & $s$ & $st$ & $stt = s$ & $stt1 = s$ & $stt1t = st$ & $stt1ts = sts$ \\ \hline
-    \end{tabular}
-\end{center}
-Particularly if $w$ is length $n$, then $w(e,n) = w(e)$.
+The following definition is a more general version of \autoref{def:subexpression-S2}.
+\begin{definition}[Subexpression]
+    Given a word $w$ of length $n$, a \textit{subexpression} $e$ is a binary string of length $n$. A subexpression can be \textit{applied} to produce an word $w(e)$, which is $w$ where terms corresponding to $0$ in $e$ are replaced with $\vn$. For $1 \leq i \leq n$, we write $w(e,i)$ for the result of the first $i$ terms of $e$ applied to the first $i$ terms in $w$. Particularly $w(e,0) = \vn$ and $w(e,n) = w(e)$.
+\end{definition}
 
-As before, given an object $w$ and subexpression $e$ of $w$, we can label each of the $n$ terms in $e$ by one of $U_0, U_1, D_0, D_1$. For $i \geq 1$, let the $i$-th term of $w$ be $x$. Then the $i$-th term is labelled $U_*$ if the reduced expression of $\phi(w(e,i-1) * x)$ is longer than $\phi(w(e,i-1))$. In other words we write $U_*$ if the next term of $w$ will make the evaluated subexpression longer, regardless if it is a $1$ or a $0$ in $e$. We label $D_*$ if $\phi(w(e,i-1) * x)$ is longer than $\phi(w(e,i-1))$.
+For example, in $\cH(\wtilde{S}_2)$, if $w = sttts$ and $e=11001$ then $w(e) = st \vn \vn s = sts$ and $w(e,3) = sts(110) = st\vn = st$ in $\cH(\wtilde{S}_2)$.
 
-\green{Note that $\phi(w(e,i-1) * x)$ is always going to be either longer or shorter, because the last element of the reduced expression is either $s$ or $t$, and the next term in $w$ is either $s$ or $t$. When they are the same, it is shorter via $s^2 = t^2 = 1$, and when they are different it is longer because no relations can make it shorter.}
+Let the \textit{length} of a word be the number of generators in its tensor product. As before, given an object $w$ and a subexpression $e$ of $w$, we label each of the $n$ terms by one of $U_0, U_1, D_0, D_1$. Let $i \geq 0$, and write $x$ for the $i$-th term of $w$. We label the $i$-th term $U_*$ if $\psi\phi(w(e,i-1) \tensor x)$ is longer than $\psi\phi(w(e,i-1))$. In other words we write $U_*$ if the next term of $w$ will make $\psi\phi$ applied to the partially evaluated subexpression longer, regardless of the $i$-term of $e$. We label $D_*$ if $\psi\phi(w(e,i-1) \tensor x)$ is longer than $\psi\phi(w(e,i-1))$. The label's subscript is the $i$-th term of $e$. Note that this construction is well defined because $\psi\phi(w(e,i-1) \tensor x) = \psi(\phi(w(e,i-1)) * \phi(x)) = \psi(\phi(w(e,i-1)) * x)$ is always either longer or shorter, since the last element of the reduced product is either the same as $x$ or different. When they are the same, the word is shorter via $s^2 = t^2 = 1$, and when they are different it is longer as no relations can make it shorter.
 
-\red{Maybe, instead, use an easier definition like for $S_2$. If last term in reduced expression of $\phi(w(e,i-1))$ is the same as the $i$-th term in $w$, then $U_*$, and otherwise if they are different we label $D_*$.}
+% Alternate, easier definition
+% If last term in $\psi\phi(w(e,i-1))$ is the same as the $i$-th term in $w$, then $U_*$, and otherwise if they are different we label $D_*$.
 
 \begin{remark}
-    This definition of labels via. reduced expressions is more akin to the general definition for Coxeter groups.
+    This description of the labels (via. reduced products) is more akin to the definition for general Coxeter groups than in \autoref{sec:3.1}.
 \end{remark}
+
+\begin{example}
+    Consider the word $w = sttts$ and subexpression $e = 11001$. The labels can be constructed as in the following table.
+
+    \begin{center}
+        \begin{tabular}{ |r||l|l|l|l|l| }
+            \hline
+            Term $i$  & 1     & 2           & 3             & 4                 & 5                 \\ \hline
+            Partial $w$ & $s$   & $st$        & $stt$         & $sttt$            & $sttts$           \\ \hline
+            Partial $e$ & $1$   & $11$        & $110$         & $1100$            & $11001$           \\ \hline
+            $w(e,i)$    & $s$ & $st$ & $st\vn=st$ & $st \vn\vn = st$  & $st\vn\vn s=sts$  \\ \hline
+            Labels      & $U_1$ & $U_1 U_1$   & $U_1 U_1 D_0$ & $U_1 U_1 D_0 D_0$ & $U_1 U_1 D_0 D_0 U_1$ \\ \hline
+        \end{tabular}
+    \end{center}
+\end{example}
+
+\begin{definition}
+    The \textit{light leaf} $LL_{w,e} \in \Hom(w, \psi\phi(w(e)))$ for a word $w$ and a subexpression $e$ is defined iteratively as follows. Let $LL_{\vn,\vn} = \vn$ be the empty diagram. Given appropriate subwords $w'$ and $e'$ of $w$ and $e$ respectively, and if the next terms are $x$ in $w$ and $i$ in $e$, the light leaf $LL_{w'x, e'i}$ is one of
+    \begin{equation}
+        \inputtikz{4.1/light-leaves-def-u0} \:,\:
+        \inputtikz{4.1/light-leaves-def-u1} \:,\:
+        \inputtikz{4.1/light-leaves-def-d0} \:,\:
+        \inputtikz{4.1/light-leaves-def-d1}
+    \end{equation}
+    corresponding to the next label. The \dPurp{purple} strand represents either \dRed{red} or \dBlue{blue} corresponding to whether the next term $x$ is $s$ or $t$, respectively.
+\end{definition}
+
+Notice that the codomain of a light leaf $LL_{w,e}$ is the object $\psi\phi(w(e))$. So if the next label is $U_*$ then the codomain of $LL_{w',e'}$ does not end with the colour corresponding to $x$, and if the next label is $D_*$ the codomain of $LL_{w',e'}$ ends with a strand with the colour corresponding to $x$. This implies the recursive definition in the diagram above is consistent. Note that in the case of $D_*$, one of the black strands in the domain of $LL_{w',e'}$ must have the colour of $x$ in order for the colour to appear in its codomain.
+
 

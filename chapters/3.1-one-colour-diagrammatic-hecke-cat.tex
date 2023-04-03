@@ -73,10 +73,11 @@ The first one-colour diagrammatic we explore is the \textit{one-colour (diagramm
 The morphism space $\Hom(s^n, s^m)$ has a left (or right) $\C[\barbell]$-basis called the \textit{double leaves} basis, as described in \cite{elias-williamson-soergel-calculus}. To define this basis, we must first define morphisms known as \textit{light leaves}.
 
 
-Let $\phi: (\op{ob}(\cH(S_2)), \tensor) \to (S_2, *)$ be the monoid homomorphism\footnote{A map that preserves the monoidal product and identity element.} mapping $s \mapsto s$ and $\vn \mapsto 1$, and $\psi: S_2 \to \op{ob}(\cH(S_2))$ be the function that maps $s \to s$ and $1 \to \vn$. \red{Should this be a definition?}
-The maps $\phi$ and $\psi$ allow words $w = s^n$ to be seen as elements of $S_2$, and $1,s \in S_2$ to be seen as the objects $\vn, s \in \cH(S_2)$. Clearly, $\phi \psi$ is the identity map on $S_2$, and the map $\psi \phi: \cH(S_2) \to \cH(S_2)$ takes objects to one of $\vn$ or $s$ in $\cH(S_2)$ by considering them as elements in $S_2$.
+To make use of the group structure of $S_2$, we need to translate between words in $\cH(S_2)$ and elements in $S_2$. Let $\phi: (\op{ob}(\cH(S_2)), \tensor) \to (S_2, *)$ be the monoid homomorphism\footnote{A map that preserves the monoidal product and identity element.} mapping $s \mapsto s$ and $\vn \mapsto 1$, and $\psi: S_2 \to \op{ob}(\cH(S_2))$ be the function that maps $s \mapsto s$ and $1 \mapsto \vn$. \red{Should this be a definition?}
+The maps $\phi$ allows words $w = s^n$ to be seen as elements of $S_2$, and $\psi$ allows $1,s \in S_2$ to be seen as the objects $\vn, s \in \cH(S_2)$. Clearly, $\phi \psi$ is the identity map on $S_2$, and the map $\psi \phi: \cH(S_2) \to \cH(S_2)$ takes objects to one of $\vn$ or $s$ in $\cH(S_2)$ by considering them as elements in $S_2$.
 
 \begin{definition}(Subexpression for $S_2$)
+    \label{def:subexpression-S2}
     Given a word $w = s^n$, a \textit{subexpression} $e$ is a binary string of length $n$. We can \textit{apply} a subexpression to produce an object $w(e) \in \cH(S_2)$, which is $w$ where terms corresponding to $0$ in $e$ are replaced with $\vn$. For $0 \leq i \leq n$, write $w(e,i)$ for the resultant object of the first $i$ terms in $e$ applied to the first $i$ terms in $w$. Particularly $w(e,0) = \vn$ and $w(e,n) = w(e)$.
 \end{definition}
 % TODO: \red{Maybe define expressions and subexpressions for general groups}
@@ -85,12 +86,12 @@ For example, $0000, 0110$ and $1011$ are subexpressions of $s^4=ssss$. Applying 
 
 For a word $w$ and subexpression $e$, we label each term by $U_0,U_1,D_0$ or $D_1$. The $i$-th term is labelled $U_*$ if $\phi(w(e,i-1)) = 1 \in S_2$, and labelled $D_*$ if $\phi(w(e,i-1)) = s \in S_2$. The label's subscript is the corresponding term in $e$.
 
-\begin{example} \label{eg:one-col-light-leaf}
-    For the object $ssss$ and subexpression $0101$, we can find the labels:
+\begin{example} \label{eg:one-col-light-leaf-label}
+    For the object $w = ssss$ and subexpression $e = 0101$, we find the labels as recorded in the following table.
     \begin{center}
-        \begin{tabular}{ |r||p{6em}|p{6em}|p{6em}|p{6em}| }
+        \begin{tabular}{ |r||l|l|l|l| }
             \hline
-            Choice $i$  & 1     & 2           & 3             & 4                 \\ \hline
+            Term $i$    & 1     & 2           & 3             & 4                 \\ \hline
             Partial $w$ & $s$   & $ss$        & $sss$         & $ssss$            \\ \hline
             Partial $e$ & $0$   & $01$        & $010$         & $0101$            \\ \hline
             $w(e,i)$    & $\vn$ & $\vn s = s$ & $\vn s \vn=s$ & $\vn s \vn s=ss$  \\ \hline
@@ -102,17 +103,19 @@ For a word $w$ and subexpression $e$, we label each term by $U_0,U_1,D_0$ or $D_
 \begin{definition}
     The \textit{light leaf} $LL_{w,e} \in \Hom(w, \psi\phi(w(e)))$ for a word $w$ and subexpression $e$, is defined iteratively as follows. Let $LL_{\vn,\vn} = \vn$ be the empty diagram. Given $LL_{w',e'}$ and $i \in \{0,1\}$, the light leaf $LL_{w's,e'i}$ is one of
 
+    \begin{equation}
+        \inputtikz{3.1/light-leaves-def-u0} \:,\:
+        \inputtikz{3.1/light-leaves-def-u1} \:,\:
+        \inputtikz{3.1/light-leaves-def-d0} \:,\:
+        \inputtikz{3.1/light-leaves-def-d1}
+    \end{equation}
+    corresponding to the next label, where $w'$ and $e'$ are appropriate subwords\footnote{A word with some letters removed.} of $w$ and $e$ respectively.
 \end{definition}
-\begin{equation}
-    \inputtikz{3.1/light-leaves-def-u0} \:,\:
-    \inputtikz{3.1/light-leaves-def-u1} \:,\:
-    \inputtikz{3.1/light-leaves-def-d0} \:,\:
-    \inputtikz{3.1/light-leaves-def-d1}
-\end{equation}
-corresponding to the next label, where $w'$ and $e'$ are appropriate subwords\footnote{A word with some letters removed.} of $w$ and $e$ respectively. Here, the codomain of a light leaf $LL_{w,e}$ is the object $\psi\phi(w(e))$. So if the next label is $U_*$ then the codomain of $LL_{w',e'}$ is $\vn$, and when the next label is $D_*$ the codomain of $LL_{w',e'}$ is $s$. This implies that the recursive definition is consistent.
+
+Here, the codomain of a light leaf $LL_{w,e}$ is the object $\psi\phi(w(e))$. So if the next label is $U_*$ then the codomain of $LL_{w',e'}$ is $\vn$, and when the next label is $D_*$ the codomain of $LL_{w',e'}$ is $s$. This implies that the recursive definition is consistent.
 
 \begin{example}
-    Following from Example \eqref{eg:one-col-light-leaf} for $w = ssss$ and $e = 0101$, we have labels $U_0 U_1 D_0 D_1$ so the light leaf $LL_{w,e}$ is built as follows.
+    Following from \autoref{eg:one-col-light-leaf-label} for $w = ssss$ and $e = 0101$, we have labels $U_0 U_1 D_0 D_1$ so the light leaf $LL_{w,e}$ is built as follows.
     \[
         \vn
         \to \inputtikz{3.1/light-leaves-example1}

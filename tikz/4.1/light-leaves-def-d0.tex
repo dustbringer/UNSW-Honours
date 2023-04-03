@@ -1,0 +1,18 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(4,4)}
+    % previous
+    \path
+    (0.5,0) edge[string=black] (0.5,0.75)
+    (3,0) edge[string=black] (3,0.75)
+    (0.5,2.75) edge[string=black] (0.5,4)
+    ;
+    \node at (1.85, 0.375) {\,\dots};
+    \node at (1.85, 3.25) {\,\dots};
+    % new
+    \path
+    (4,0) edge[string=dPurp] (4,2.75);
+    \diagmult[dPurp]{3,2.75}{3.5,3.25}{4,2.75}{3.5,4};
+    \coordinate[label=below:\small${D_0}$] () at (4,0);
+    %
+    \draw[draw=black] (0,0.75) rectangle ++(3.5,2) node[pos=.5] {$LL_{w',e'}$};
+}
