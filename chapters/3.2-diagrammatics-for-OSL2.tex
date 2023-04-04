@@ -59,7 +59,7 @@ The objects of this category are identical to objects in $\cH(S_2)$ and the morp
 
 \begin{lemma}
     \label{lem:ss-equal-2s}
-    In the additive closure of $\cH(S_2)$ we have an isomorphism $s\tensor s \cong s \oplus s$.
+    In the additive closure \red{Do we need more?} of $\cH(S_2)$ \red{Not this! Morphisms need to be over a field!} we have an explicit isomorphisms $s\tensor s \cong s \oplus s$, as detailed in the proof.
 \end{lemma}
 \begin{proof}
     In $\cH(S_2)$ we have the relation
@@ -112,18 +112,18 @@ Before giving the main theorem, \red{(Reword this, this may be wrong)} we provid
 
     % In $\cO$, the Soergel module action of $\Theta_s$ corresponds to left tensor of the identity morphism.
 
-    Define the functor $F: \mcal{DO}_0 \to \proj(\cO_0)$ that sends the empty object $\vn$ to the trivial module $P(\vn)$, and the Soergel module action corresponding to $s$ to the translation functor $\Theta_s$. Then the object $s$ maps to $\Theta_s(P(\vn)) \eqqcolon P(s)$, and $s^3$ maps to $\Theta_s^3(P(\vn)) = \Theta_s\Theta_s\Theta_s(P(\vn))$. In order for $F$ to be functorial, it must map identity diagrams $s^n \to s^n$ to $\id_{\Theta_s^n(P(\vn))}$. For non-identity maps, we let $F(\counit) = i$ be the inclusion $P(\vn) \to P(s)$ and $F(\unit) = p$ be the projection $P(s) \to P(\vn)$. \red{Should we talk about the Soergel module action of a diagram} The mapping of $F$ is depicted by the following diagram.
+    Define the functor $F: \mcal{DO}_0 \to \proj(\cO_0)$ that sends the empty object $\vn$ to the trivial module $P(\vn)$, and the Soergel module action corresponding to $s$ to the translation functor $\Theta_s$. Then the object $s$ maps to $\Theta_s(P(\vn)) \eqqcolon P(s)$, and for example $s^3$ maps to $\Theta_s^3(P(\vn)) = \Theta_s\Theta_s\Theta_s(P(\vn))$. In order for $F$ to be functorial, it must map identity diagrams $s^n \to s^n$ to $\id_{\Theta_s^n(P(\vn))}$. For non-identity maps, we let $F(\counit) = i$ be the inclusion $P(\vn) \to P(s)$ and $F(\unit) = p$ be the projection $P(s) \to P(\vn)$. The mapping of $F$ is depicted by the following picture.
     \begin{center}
         \inputtikz{3.2/osl2-proof-functor}
     \end{center}
-    Note that the projection and inclusion maps are exactly the unit and counit of $\Theta_s$ evaluated at $P(\vn)$. This completely determines the image of $F$ by linearity, additivity and the isomorphism $\Theta_s \Theta_s \cong \Theta_s \oplus \Theta_s$ \red{What are the details here?}. Applying the natural transformations in the Frobenius object structure for $\Theta_s$ to $P(\vn)$ give corresponding maps for $P(\vn), P(s)$ and $\Theta_s^2(P(\vn))$. Along with the analogous barbell-wall relation in $\proj(\cO_0)$, we have that $F$ is well defined. Note that by construction $F$ preserves $\C$-linearity and the Soregel module structure in \cite{soergel-category-O}.
+    Note that the projection and inclusion maps are exactly the unit and counit of $\Theta_s$ evaluated at $P(\vn)$. This completely determines \red{Details? Ref?} the image of $F$ by linearity, additivity and the isomorphism given in the proof of \autoref{lem:ss-equal-2s}. Applying the natural transformations in the Frobenius object structure for $\Theta_s$ to $P(\vn)$ result in the corresponding maps for $P(\vn), P(s)$ and $\Theta_s^2(P(\vn))$. Along with the analogous barbell-wall relation in $\proj(\cO_0)$, we have that $F$ is well defined. Note that by construction $F$ preserves $\C$-linearity and the Soregel module structure in \cite{soergel-category-O}.
 
-    Now we show that $F$ is fully faithful. It follows from $\Theta_s \Theta_s \cong \Theta_s \oplus \Theta_s$ and the description of $P(\vn)$ and $P(s)$ in \cite[Section 5.2]{mazorchuk-lectures-sl2-modules} that the image of $\unit$ and $\counit$ generate all morphisms of the form $\Theta_s^n(P(\vn)) \to \Theta_s^m(P(\vn))$. Hence $F$ is full. For the faithfulness of $F$, it suffices \red{Why?} to match the dimensions of $\C$-bases for morphism spaces involving $P(\vn)$ and $P(s)$. By \autoref{lem:DO_0-double-leaves}, $\Hom(\vn, \vn)$ has a basis $\{\vn = \id_\vn\}$, $\Hom(s, \vn)$ has a basis $\{\unit\}$, $\Hom(\vn, s)$ has a basis $\{\counit\}$, and $\Hom(s, s)$ has a basis $\{\id_s, \counit \circ \unit\}$. The dimensions coincide with the corresponding morphism spaces in $\proj(\cO_0)$ \red{Ref?}. Therefore $F$ is fully faithful.
+    We show that $F$ is fully faithful. It follows from \autoref{lem:ss-equal-2s} and the description of $P(\vn)$ and $P(s)$ in \cite[Section 5.2]{mazorchuk-lectures-sl2-modules} that the image of $\unit$ and $\counit$ generate all morphisms of the form $\Theta_s^n(P(\vn)) \to \Theta_s^m(P(\vn))$. Hence $F$ is full. Now the mapping of $F$ on all morphism spaces are determined by those depicted in the above picture. So, for faithfulness, it suffices \red{How does this work?} to compare the $\C$-dimensions of morphism spaces shown in the picture. By \autoref{lem:DO_0-double-leaves}, $\Hom(\vn, \vn)$ has a basis $\{\vn = \id_\vn\}$, $\Hom(s, \vn)$ has a basis $\{\unit\}$, $\Hom(\vn, s)$ has a basis $\{\counit\}$, and $\Hom(s, s)$ has a basis $\{\id_s, \counit \circ \unit\}$. These dimensions coincide with the corresponding morphism spaces in $\proj(\cO_0)$ \red{Ref? - that these are actually the bases of the hom spaces}. Therefore $F$ is fully faithful.
 
     Since objects in $\proj(\cO_0)$ are direct sums and direct summands of the elements $\Theta_s^n(P(\vn))$ for non-negative integers $n$, the additive Karoubi envelope induces the equivalence $\Kar(\mcal{DO}_0) \cong \proj(\cO_0)$ as $\C$-linear left $\cH(S_2)$-module \red{Should this be $\Kar(\cH(S_2))$} categories.
 \end{proof}
 
 \begin{remark}
-    The category $\mcal{DO}_0$ is graded by the same grading as $\cH(S_2)$ in \autoref{sec:3.1}. The equivalence $\Kar(\mcal{DO}_0) \cong \proj(\cO_0)$ includes a grading of $\proj(\cO_0)$ and hence a grading of $\cO$, which would otherwise be ungraded. \red{Check}
+    The morphisms spaces in $\mcal{DO}_0$ are graded by the same grading as $\cH(S_2)$ in \autoref{sec:3.1}. The equivalence $\Kar(\mcal{DO}_0) \cong \proj(\cO_0)$ includes a grading of morphisms in $\proj(\cO_0)$ and hence a grading morphisms of $\cO$, which would otherwise be ungraded. \red{Check}
 \end{remark}
 
