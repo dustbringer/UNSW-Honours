@@ -2,6 +2,10 @@
 
 \red{A little bit about category $\cO$, and our example of $\mfrak{sl}_2$}
 
+\red{Talk about extending the scalars for $\cH(S_2)$ to $\C$. Need to indicate that the double leaves basis are still a basis.}
+% For basis, maybe see https://math.stackexchange.com/questions/3399387/basis-of-extension-of-scalars
+
+
 With the diagrammatic category $\cH(S_2)$, we can describe diagrammatics for the category $\mcal{O}_0$ for the Lie algebra $\fraksl_2$. In particular, we define module category $\mcal{DO}_0(\fraksl_2)$ with a left-action of $\cH(S_2)$. At the end, we give a description of $\mcal{O}_0(\fraksl_2)$ and a proof for a type of equivalence of these categories.
 % TODO: Check the wording and notation here
 
@@ -118,10 +122,12 @@ Before giving the main theorem, \red{(Reword this, this may be wrong)} we provid
     \end{center}
     Note that the projection and inclusion maps are exactly the unit and counit of $\Theta_s$ evaluated at $P(\vn)$. This completely determines \red{Details? Ref?} the image of $F$ by linearity, additivity and the isomorphism given in the proof of \autoref{lem:ss-equal-2s}. Applying the natural transformations in the Frobenius object structure for $\Theta_s$ to $P(\vn)$ result in the corresponding maps for $P(\vn), P(s)$ and $\Theta_s^2(P(\vn))$. Along with the analogous barbell-wall relation in $\proj(\cO_0)$, we have that $F$ is well defined. Note that by construction $F$ preserves $\C$-linearity and the Soregel module structure in \cite{soergel-category-O}.
 
-    We show that $F$ is fully faithful. It follows from \autoref{lem:ss-equal-2s} and the description of $P(\vn)$ and $P(s)$ in \cite[Section 5.2]{mazorchuk-lectures-sl2-modules} that the image of $\unit$ and $\counit$ generate all morphisms of the form $\Theta_s^n(P(\vn)) \to \Theta_s^m(P(\vn))$. Hence $F$ is full. Now the mapping of $F$ on all morphism spaces are determined by those depicted in the above picture. So, for faithfulness, it suffices \red{How does this work?} to compare the $\C$-dimensions of morphism spaces shown in the picture. By \autoref{lem:DO_0-double-leaves}, $\Hom(\vn, \vn)$ has a basis $\{\vn = \id_\vn\}$, $\Hom(s, \vn)$ has a basis $\{\unit\}$, $\Hom(\vn, s)$ has a basis $\{\counit\}$, and $\Hom(s, s)$ has a basis $\{\id_s, \counit \circ \unit\}$. These dimensions coincide with the corresponding morphism spaces in $\proj(\cO_0)$ \red{Ref? - that these are actually the bases of the hom spaces}. Therefore $F$ is fully faithful.
+    We show that $F$ is fully faithful. It follows from \autoref{lem:ss-equal-2s} and the description of $P(\vn)$ and $P(s)$ in \cite[Section 5.2]{mazorchuk-lectures-sl2-modules} that the image of $\unit$ and $\counit$ generate all morphisms of the form $\Theta_s^n(P(\vn)) \to \Theta_s^m(P(\vn))$. Hence $F$ is full. Now the mapping of $F$ on all morphism spaces are determined by those depicted in the above picture. So, for faithfulness, it suffices to compare the $\C$-dimensions of morphism spaces between objects shown in the picture. By \autoref{lem:DO_0-double-leaves}, $\Hom(\vn, \vn)$ has a basis $\{\vn = \id_\vn\}$, $\Hom(s, \vn)$ has a basis $\{\unit\}$, $\Hom(\vn, s)$ has a basis $\{\counit\}$, and $\Hom(s, s)$ has a basis $\{\id_s, \counit \circ \unit\}$. The basis for the corresponding morphism spaces in $\proj{\cO_0}$ are exactly those in the image \red{Ref? - that these are actually the bases of the hom spaces}, so these dimensions coincide. Therefore $F$ is fully faithful.
 
     Since objects in $\proj(\cO_0)$ are direct sums and direct summands of the elements $\Theta_s^n(P(\vn))$ for non-negative integers $n$, the additive Karoubi envelope induces the equivalence $\Kar(\mcal{DO}_0) \cong \proj(\cO_0)$ as $\C$-linear left $\cH(S_2)$-module \red{Should this be $\Kar(\cH(S_2))$} categories.
 \end{proof}
+
+\red{Maybe talk about Soergel modules and $\cH(S_2)$-modules vs $\Kar(\cH(S_2))$-modules}
 
 \begin{remark}
     The morphisms spaces in $\mcal{DO}_0$ are graded by the same grading as $\cH(S_2)$ in \autoref{sec:3.1}. The equivalence $\Kar(\mcal{DO}_0) \cong \proj(\cO_0)$ includes a grading of morphisms in $\proj(\cO_0)$ and hence a grading morphisms of $\cO$, which would otherwise be ungraded. \red{Check}

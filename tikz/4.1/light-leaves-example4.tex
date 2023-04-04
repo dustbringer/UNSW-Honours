@@ -1,0 +1,14 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(5,4)}
+    %
+    \path
+    (1,0) edge[string=dRed] (1,1.25)
+    (2,0) edge[string=dBlue] (2,1.25)
+    (3,0) edge[string=dBlue] (3,1.25)
+    (4,0) edge[string=dRed] (4,1.25)
+    ;
+    \node[enddot=dBlue] at (2,1.25) {};
+    \node[enddot=dBlue] at (3,1.25) {};
+    \diagcap[dRed]{1,1.25}{2.5,2.75}{4,1.25};
+    \coordinate[label=below:\small${D_1}$] () at (4,0);
+}

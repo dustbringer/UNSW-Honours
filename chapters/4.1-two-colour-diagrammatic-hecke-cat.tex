@@ -48,9 +48,9 @@ that are maps $s \to \vn$, $ss \to s$, $t \to \vn$ and $tt \to t$ respectively. 
     For a group with a presentation in terms of generators and relations, the \textit{length} of a product of generators is the number of generators in the product. We say that a product of generators is \textit{reduced} if it's length cannot be shortened with relations.
 \end{definition}
 
-In $\wtilde{S}_2$ products can be shortened by the relation $s^2 = t^2 = 1$. For instance, $sttsts$ is not reduced because it is equal to $ts$ which is reduced. Notice that for $\wtilde{S}_2$ each element can be written uniquely as a reduced product of generators. This is true since otherwise we have two distinct reduced products for the same element in $\wtilde{S}_2$ so they must be related by $s^2 = t^2$. This means they can be reduced further by $s^2 = t^2 = 1$, which contradicts minimality of their length.
+In $\wtilde{S}_2$ products can be shortened by the relation $s^2 = t^2 = 1$. For instance, $sttsts$ is not reduced because it is equal to $ts$ which is reduced. Notice that for $\wtilde{S}_2$ each element can be written uniquely as a reduced product of generators. This is true since otherwise we have two distinct reduced products for the same element in $\wtilde{S}_2$ so they must be related by $s^2 = t^2$. This means they can be reduced further by $s^2 = t^2 = 1$, which contradicts minimality of their length. Note that the reduced products in $\wtilde{S}_2$ are either the identity or alternating products of $s$ and $t$.
 
-Notice that there is a notational similarity between products in the group and words in $\cH(\wtilde{S}_2)$. This motivates the following definitions. Let $\phi: (\op{ob}(\cH(\wtilde{S}_2)), \tensor) \to (\wtilde{S}_2, *)$ be the monoid homomorphism mapping $\vn \mapsto 1$, $s \mapsto s$ and $t \mapsto t$. Also define $\psi: \wtilde{S}_2 \to \op{ob}(\cH(\wtilde{S}_2))$ to be the function mapping elements $x \in \wtilde{S}_2$ to the tensor product of $s$ and $t$ in $\cH(\wtilde{S}_2)$ corresponding to the reduced product of $x$ in $\wtilde{S}_2$. This is well defined because reduced products are unique and two different reduced products cannot equal the same element of $\wtilde{S}_2$. The composition $\psi\phi: \cH(\wtilde{S}_2) \to \cH(\wtilde{S}_2)$ maps words $w$ to the tensor of $s$ and $t$ corresponding to the reduced product of $\phi(w)$, and $\phi\psi$ is the identity map on $\wtilde{S}_2$.
+Notice that there is a notational similarity between products in the group and words in $\cH(\wtilde{S}_2)$. This motivates the following definitions. Let $\phi: (\op{ob}(\cH(\wtilde{S}_2)), \tensor) \to (\wtilde{S}_2, *)$ be the monoid homomorphism mapping $\vn \mapsto 1$, $s \mapsto s$ and $t \mapsto t$. Also define the function $\psi: \wtilde{S}_2 \to \op{ob}(\cH(\wtilde{S}_2))$ to map elements $x \in \wtilde{S}_2$ to the tensor product of $s$ and $t$ in $\cH(\wtilde{S}_2)$ corresponding to the reduced product of $x$ in $\wtilde{S}_2$. This is well defined because reduced products are unique and two different reduced products cannot equal the same element of $\wtilde{S}_2$. Note that the image $\psi(\wtilde{S}_2)$ is the set containing $\vn$ and words of alternating $s$ and $t$. The composition $\psi\phi: \cH(\wtilde{S}_2) \to \cH(\wtilde{S}_2)$ maps words $w$ to the tensor of $s$ and $t$ corresponding to the reduced product of $\phi(w)$, and $\phi\psi$ is the identity map on $\wtilde{S}_2$.
 
 The following definition is a more general version of \autoref{def:subexpression-S2}.
 \begin{definition}[Subexpression]
@@ -69,16 +69,17 @@ Let the \textit{length} of a word be the number of generators in its tensor prod
 \end{remark}
 
 \begin{example}
-    Consider the word $w = sttts$ and subexpression $e = 11001$. The labels can be constructed as in the following table.
+    \label{eg:two-col-light-leaf-label}
+    Consider the word $w = sttst$ and subexpression $e = 10011$. The labels can be constructed as in the following table.
 
     \begin{center}
         \begin{tabular}{ |r||l|l|l|l|l| }
             \hline
-            Term $i$  & 1     & 2           & 3             & 4                 & 5                 \\ \hline
-            Partial $w$ & $s$   & $st$        & $stt$         & $sttt$            & $sttts$           \\ \hline
-            Partial $e$ & $1$   & $11$        & $110$         & $1100$            & $11001$           \\ \hline
-            $w(e,i)$    & $s$ & $st$ & $st\vn=st$ & $st \vn\vn = st$  & $st\vn\vn s=sts$  \\ \hline
-            Labels      & $U_1$ & $U_1 U_1$   & $U_1 U_1 D_0$ & $U_1 U_1 D_0 D_0$ & $U_1 U_1 D_0 D_0 U_1$ \\ \hline
+            Term $i$    & 1     & 2         & 3             & 4                 & 5                     \\ \hline
+            Partial $w$ & $s$   & $st$      & $stt$         & $stts$            & $sttst$               \\ \hline
+            Partial $e$ & $1$   & $10$      & $100$         & $1001$            & $10011$               \\ \hline
+            $w(e,i)$    & $s$   & $s\vn$    & $s\vn\vn=s$   & $s\vn\vn s = ss$  & $s\vn\vn s t=sst$     \\ \hline
+            Labels      & $U_1$ & $U_1 U_0$ & $U_1 U_0 U_0$ & $U_1 U_0 U_0 D_1$ & $U_1 U_0 U_0 D_1 U_1$ \\ \hline
         \end{tabular}
     \end{center}
 \end{example}
@@ -91,9 +92,48 @@ Let the \textit{length} of a word be the number of generators in its tensor prod
         \inputtikz{4.1/light-leaves-def-d0} \:,\:
         \inputtikz{4.1/light-leaves-def-d1}
     \end{equation}
-    corresponding to the next label. The \dPurp{purple} strands represent either \dRed{red} or \dBlue{blue} corresponding to whether the next term $x$ is $s$ or $t$, respectively.
+    corresponding to the next label. The \dPurp{purple} strands are \dRed{red} if $x=s$ and \dBlue{blue} if $x=t$.
 \end{definition}
 
 Notice that the codomain of a light leaf $LL_{w,e}$ is the object $\psi\phi(w(e))$. So if the next label is $U_*$ then the codomain of $LL_{w',e'}$ does not end with the colour corresponding to $x$, and if the next label is $D_*$ the codomain of $LL_{w',e'}$ ends with a strand with the colour corresponding to $x$. This implies the recursive definition in the diagram above is consistent. Note that in the case of $D_*$, one of the black strands in the domain of $LL_{w',e'}$ must have the colour of $x$ in order for the colour to appear in its codomain.
 
+\begin{example}
+    Following from \autoref{eg:two-col-light-leaf-label}, with $w=sttst$, $e=10011$ and labels $U_1 U_0 U_0 D_1 U_1$, the light leaf $LL_{w,e}$ is build as follows.
+    \[
+        \vn
+        \to \inputtikz{4.1/light-leaves-example1}
+        \to \inputtikz{4.1/light-leaves-example2}
+        \to \inputtikz{4.1/light-leaves-example3}
+        \to \inputtikz{4.1/light-leaves-example4}
+        \to \inputtikz{4.1/light-leaves-example5}
+    \]
+\end{example}
+
+We can define double leaves exactly as we did in \autoref{def:double-leaves}.
+
+\begin{definition}
+    Let $\ol{LL}_{w,e}$ denote the vertical reflection of $LL_{w,e}$. The \textit{double leaf} for words $w,y$ in $\cH(\wtilde{S}_2)$ is a composition
+    \[
+        \mathbb{LL}_{f,e} \coloneqq \ol{LL}_{y,f} \circ LL_{w,e} : w \to y
+    \]
+    for subexpressions $e$ of $w$ and $f$ of $y$ such that $\psi\phi(w(e)) = \psi\phi(f(y))$.
+\end{definition}
+
+Diagrammatically these are morphisms from $w$ to $y$ factoring through $\psi\phi(w(e)) = \psi\phi(f(y)) \in \psi(\wtilde{S}_2)$,
+\[
+    \inputtikz{4.1/double-leaves}.
+\]
+
+\begin{example}
+    Let $w = sst$ with the subexpression $e=101$ and $y = tstst$ with the subexpression $f=01001$. The corresponding light leaves are
+    \[
+        LL_{w,e} = \inputtikz{4.1/double-leaves-example1.1}
+        \text{ and }
+        LL_{y,f} = \inputtikz{4.1/double-leaves-example1.2}.
+    \]
+    Then the double leaf $\mathbb{LL}_{f,e} = \ol{LL}_{y,f} \circ LL_{w,e} : sst \to tstst$, factoring through $st$, is
+    \[
+        \inputtikz{4.1/double-leaves-example2}.
+    \]
+\end{example}
 

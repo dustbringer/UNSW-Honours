@@ -128,13 +128,14 @@ Here, the codomain of a light leaf $LL_{w,e}$ is the object $\psi\phi(w(e))$. So
 \end{example}
 
 \begin{definition}
-    Let $\ol{LL}_{w,e}$ denote the vertical reflection of $LL_{w,e}$. The \textit{double leaf} for words $w,y$ is a composition
+    \label{def:double-leaves}
+    Let $\ol{LL}_{w,e}$ denote the vertical reflection of $LL_{w,e}$. The \textit{double leaf} for words $w,y$ in $\cH(S_2)$ is a composition
     \[
         \mathbb{LL}_{f,e} \coloneqq \ol{LL}_{y,f} \circ LL_{w,e} : w \to y
     \]
-    for subexpressions $e$ of $w$ and $f$ of $y$ such that $w(e) = f(y)$.
+    for subexpressions $e$ of $w$ and $f$ of $y$ such that $\psi\phi(w(e)) = \psi\phi(f(y))$.
 \end{definition}
-Visually this looks like a morphism from $w$ to $y$ factoring through $w(e) = y(f) \in \{\vn,s\}$,
+Visually these are diagrams from $w$ to $y$ factoring through $\psi\phi(w(e)) = \psi\phi(f(y)) \in \{\vn,s\}$,
 \[
     \inputtikz{3.1/double-leaves}.
 \]
@@ -147,7 +148,7 @@ Visually this looks like a morphism from $w$ to $y$ factoring through $w(e) = y(
         \text{ and }
         LL_{y,f} = \inputtikz{3.1/double-leaves-example1.2}.
     \]
-    Then the double leaf $\mathbb{LL}_{f,e} = \ol{LL}_{y,f} \circ LL_{w,e} : w \to y$, factoring through $s$, is
+    Then the double leaf $\mathbb{LL}_{f,e} = \ol{LL}_{y,f} \circ LL_{w,e} : ssss \to sss$, factoring through $s$, is
     \[
         \inputtikz{3.1/double-leaves-example2}.
     \]
@@ -157,7 +158,7 @@ Note that these double leaves have no floating diagrams such as $\barbell$. In o
 
 \begin{theorem}[Elias-Williamson {\cite[Theorem 1.2]{elias-williamson-soergel-calculus}}]
     \label{thm:one-col-double-leaves-basis}
-    Given objects $w,y \in \cH(S_2)$, let $\mathbb{LL}(w,y)$ be the collection of double leaves $\mathbb{LL}_{f,e}$ for subexpressions $e$ of $w$ and $f$ of $y$, such that $w(e) = y(f)$. Then $\mathbb{LL}(w,y)$ is a basis for $\Hom(w,y)$ as a left (or right) $\Z[\barbell]$-module.
+    Given objects $w,y \in \cH(S_2)$, let $\mathbb{LL}(w,y)$ be the collection of double leaves $\mathbb{LL}_{f,e}$ for subexpressions $e$ of $w$ and $f$ of $y$, such that $\psi\phi(w(e)) = \psi\phi(y(f))$. Then $\mathbb{LL}(w,y)$ is a basis for $\Hom(w,y)$ as a left (or right) $\Z[\barbell]$-module.
 \end{theorem}
 A purely diagrammatic proof (of a more general theorem) can be found in \cite{elias-williamson-soergel-calculus}.
 

@@ -1,0 +1,10 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(3,4)}
+    %
+    \path
+    (1,0) edge[string=dRed] (1,4)
+    (2,0) edge[string=dBlue] (2,2)
+    ;
+    \node[enddot=dBlue] at (2,2) {};
+    \coordinate[label=below:\small${U_0}$] () at (2,0);
+}
