@@ -1,0 +1,47 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(2,4)}
+    \squarecoord
+    %
+    \path
+    ($(mid)+(-2,.75)$) edge[string=dBlue] ($(mid)+(-2,-.75)$)
+    (1,0) edge[string=dRed] (1,4)
+    ;
+    \node[enddot=dBlue] at ($(mid)+(-2,.75)$) {};
+    \node[enddot=dBlue] at ($(mid)+(-2,-.75)$) {};
+}
+=
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(3,4)}
+    \squarecoord
+    %
+    \path
+    ($(mid)+(0,.75)$) edge[string=dBlue] ($(mid)+(0,-.75)$)
+    (1,0) edge[string=dRed] (1,4)
+    ;
+    \node[enddot=dBlue] at ($(mid)+(0,.75)$) {};
+    \node[enddot=dBlue] at ($(mid)+(0,-.75)$) {};
+}
++ 2
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(3,4)}
+    \squarecoord
+    %
+    \path
+    ($(mid)+(0,.75)$) edge[string=dRed] ($(mid)+(0,-.75)$)
+    (1,0) edge[string=dRed] (1,4)
+    ;
+    \node[enddot=dRed] at ($(mid)+(0,.75)$) {};
+    \node[enddot=dRed] at ($(mid)+(0,-.75)$) {};
+}
+- 2
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(3,4)}
+    \squarecoord
+    %
+    \path
+    (1,0) edge[string=dRed] (1,1.25)
+    (1,4) edge[string=dRed] (1,2.75)
+    ;
+    \node[enddot=dRed] at (1,2.75) {};
+    \node[enddot=dRed] at (1,1.25) {};
+}

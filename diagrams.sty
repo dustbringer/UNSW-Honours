@@ -95,6 +95,14 @@
     \node at #2 {};
 }
 
+% invisible labels
+% \tikzset{
+%     hide label/.style={
+%             text opacity=0
+%         }
+% }
+\tikzset{hide labels/.style={label/.append style={text opacity=0}}}
+
 % Right wall
 % Params: far right x-coordinate, height, width
 \newcommand{\wallr}[3]{%
@@ -158,7 +166,7 @@
 }
 
 \newcommand{\barbell}[1][dRed]{
-    \tikzsetnextfilename{inline-barbell}
+    \tikzsetnextfilename{inline-barbell-#1}
     \tikz[baseline=0,scale=0.25]{
         \tikzfixsize{(0,0)}{(0.2,1)};
         %
@@ -169,7 +177,7 @@
 }
 
 \newcommand{\unit}[1][dRed]{
-    \tikzsetnextfilename{line-dot}
+    \tikzsetnextfilename{line-dot-#1}
     \tikz[baseline=0,scale=0.25]{
         \tikzfixsize{(0,0)}{(0.2,1)};
         %
@@ -179,7 +187,7 @@
 }
 
 \newcommand{\counit}[1][dRed]{
-    \tikzsetnextfilename{dot-line}
+    \tikzsetnextfilename{dot-line-#1}
     \tikz[baseline=0,scale=0.25]{
         \tikzfixsize{(0,0)}{(0.2,1)};
         %
@@ -189,7 +197,7 @@
 }
 
 \newcommand{\identity}[1][dRed]{
-    \tikzsetnextfilename{inline-identity}
+    \tikzsetnextfilename{inline-identity-#1}
     \tikz[baseline=0,scale=0.25]{
         \tikzfixsize{(0,0)}{(0.2,1)};
         %

@@ -1,0 +1,142 @@
+\section{Frobenius Objects}
+\label{sec:2.3}
+
+\red{Something something about }
+\red{Many relations in categorical structures can be written in diagrammatic terms - adjunctions, monoid}
+
+Let $\mcal{C}$ be a (strict) monoidal category. We can define the following objects.
+
+\begin{definition}
+    A \textit{monoid object} in $\mcal{C}$ is a triple $(M,\mu,\eta)$ for an object $M \in \mcal{C}$, a \textit{multiplication} map $\mu: M \tensor M \to M$ and a \textit{unit} map $\eta: \mathbbb{1} \to M$, such that
+    \begin{center}
+        \begin{mytikzcd}
+            & M \tensor M \tensor M \arrow[dl,"\mu \tensor \id_M"'] \arrow[dr, "\id_M \tensor \mu"] \\
+            M \tensor M \arrow[dr, "\mu"']
+            && M \tensor M \arrow[dl, "\mu"] \\
+            & M
+        \end{mytikzcd}
+    \end{center}
+    and
+    \begin{center}
+        \begin{mytikzcd}
+            \mathbbb{1} \tensor M
+            \arrow[r, "\eta \tensor \id_M"]
+            \arrow[dr, "\id_M"']
+            & M \tensor M
+            \arrow[d, "\mu"]
+            & M \tensor \mathbbb{1}
+            \arrow[l, "\id_M \tensor \eta"']
+            \arrow[dl, "\id_M"]
+            \\
+            & M
+        \end{mytikzcd}
+    \end{center}
+    commute. The first diagram is the \textit{associativity} relation $\mu \circ (\mu \tensor \id_M) = \mu \circ (\id_M \tensor \mu)$ and the second diagram is the \textit{unit} relation $\id_M = \mu \circ (\eta \tensor \id_M) = \mu \circ (\id_M \tensor \eta)$.
+
+    Dually, a \textit{comonoid} object in $\mcal{C}$ is a triple $(M,\delta,\epsilon)$ for an object $M \in \mcal{C}$, a \textit{comultiplication} map $\delta: M \to M \tensor M$ and a \textit{counit} map $\epsilon: M \to \mathbbb{1}$, satisfying the \textit{coassociativity} relation
+    \begin{center}
+        \begin{mytikzcd}[arrows=<-]
+            & M \tensor M \tensor M \arrow[dl,"\delta \tensor \id_M"'] \arrow[dr, "\id_M \tensor \delta"] \\
+            M \tensor M \arrow[dr, "\delta"']
+            && M \tensor M \arrow[dl, "\delta"] \\
+            & M
+        \end{mytikzcd}
+    \end{center}
+    and \textit{counit} relation
+    \begin{center}
+        \begin{mytikzcd}[arrows=<-]
+            \mathbbb{1} \tensor M
+            \arrow[r, "\epsilon \tensor \id_M"]
+            \arrow[dr, "\id_M"']
+            & M \tensor M
+            \arrow[d, "\delta"]
+            & M \tensor \mathbbb{1}
+            \arrow[l, "\id_M \tensor \epsilon"']
+            \arrow[dl, "\id_M"]
+            \\
+            & M
+        \end{mytikzcd}.
+    \end{center}
+\end{definition}
+
+Monoid objects generalise monoids, i.e. sets with an identity equipped with an associative binary operation.
+
+\begin{definition}
+    A Frobenius object in $\mcal{C}$ is a quintuple $(A,\mu,\eta,\delta,\epsilon)$ such that $(A,\mu,\eta)$ is a monoid object, $(A,\delta,\epsilon)$ is a comonoid object satisfying the \textit{Frobenius relations}
+    \begin{center}
+        \begin{mytikzcd}
+            & A \tensor A
+            \arrow[dl, "\delta \tensor \id_A"']
+            \arrow[d, "\mu"]
+            \arrow[dr, "\id_A \tensor \delta"]
+            \\
+            A \tensor A \tensor A
+            \arrow[dr, "\id_A \tensor \mu"']
+            & A
+            \arrow[d, "\delta"]
+            & A \tensor A \tensor A
+            \arrow[dl, "\mu \tensor \id_A"]
+            \\
+            & A \tensor A
+        \end{mytikzcd},
+    \end{center}
+    that is $(\id_A \tensor \mu) \circ (\delta \tensor \id_A) = \delta \circ \mu = (\mu \tensor \id_A) \circ (\id_A \tensor \delta)$.
+\end{definition}
+
+The maps and relations for a Frobenius object $(A,\mu,\eta,\delta,\epsilon)$ have a nice diagrammatic description. The structure maps are
+\begin{center}
+    \tikz[vcenter, scale=0.4]{
+        % \tikzfixsize{(0,0)}{(4,4)}
+        % \node[below] (dom) at (-3,0) {$A \tensor A$};
+        % \node[above] (cod) at (-3,4) {$A$};
+        % \path[|->, >=stealth']
+        % (dom) edge node[left] {$\mu$} (cod);
+        %
+        \path
+        (0,0) edge[string=black] (1.5,2)
+        (3,0) edge[string=black] (1.5,2)
+        (1.5,2) edge[string=black] (1.5,4);
+        \node[box] at (1.5,2) {$\mu$};
+        % labels
+        \node[below] at (0,0) {$A$};
+        \node[below] at (3,0) {$A$};
+        \node[above] at (1.5,4) {$A$};
+    }
+    \quad , \quad
+    \tikz[vcenter, scale=0.4]{
+        \tikzfixsize{(0,0)}{(2,4)}
+        %
+        \path
+        (1,2) edge[string=black] (1,4);
+        \node[box] at (1,2) {$\eta$};
+        % labels
+        \node[above] at (1,4) {$A$};
+        \node[below] at (1,0) {\phantom{$\mathbbb{1}$}};
+    }
+    \quad , \quad
+    \tikz[vcenter, scale=0.4]{
+        % \tikzfixsize{(0,0)}{(4,4)}
+        %
+        \path
+        (0,4) edge[string=black] (1.5,2)
+        (3,4) edge[string=black] (1.5,2)
+        (1.5,2) edge[string=black] (1.5,0);
+        \node[box] at (1.5,2) {$\delta$};
+        % labels
+        \node[below] at (1.5,0) {$A$};
+        \node[above] at (0,4) {$A$};
+        \node[above] at (3,4) {$A$};
+    }
+    \quad , \quad
+    \tikz[vcenter, scale=0.4]{
+        \tikzfixsize{(0,0)}{(2,4)}
+        %
+        \path
+        (1,2) edge[string=black] (1,0);
+        \node[box] at (1,2) {$\epsilon$};
+        % labels
+        \node[below] at (1,0) {$A$};
+        \node[above] at (1,4) {\phantom{$\mathbbb{1}$}};
+    }
+\end{center}
+
