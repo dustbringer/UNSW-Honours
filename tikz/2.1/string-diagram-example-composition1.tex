@@ -6,14 +6,14 @@
     (mid) edge[string=black, round] ($(top) - (1.5,0)$)
     (mid) edge[string=black, round] ($(top) + (1.5,0)$);
     \node[box] at (mid) {$f$};
-    \coordinate[label=left:$b$] () at ($(top) - (1.5,0)$);
-    \coordinate[label=left:$c$] () at ($(top) + (1.5,0)$);
-    \coordinate[label=below:$a$] () at (bot);
+    \node[left] at ($(top) - (1.5,0)$) {$b$};
+    \node[left] at ($(top) + (1.5,0)$) {$c$};
+    \node[below] at (bot) {$a$};
     % h
     \path
     ($(top) + (-1.5,0)$) edge[string=black] ($(top) + (-1.5,4)$)
     ($(top) + (1.5,0)$) edge[string=black] ($(top) + (1.5,4)$);
     \bigbox{$h$}{(top) + (2,2-0.75)}{(top) + (-2,2+0.75)};
-    \coordinate[label=$a$] () at ($(top) + (-1.5,4)$);
-    \coordinate[label=$c$] () at ($(top) + (1.5,4)$);
+    \node[above] at ($(top) + (-1.5,4)$) {$a$};
+    \node[above] at ($(top) + (1.5,4)$) {$c$};
 }

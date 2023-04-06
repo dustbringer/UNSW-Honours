@@ -137,6 +137,42 @@ The maps and relations for a Frobenius object $(A,\mu,\eta,\delta,\epsilon)$ hav
         % labels
         \node[below] at (1,0) {$A$};
         \node[above] at (1,4) {\phantom{$\mathbbb{1}$}};
-    }
+    }.
 \end{center}
 
+For the rest of this section, we identify $A$ with the identity strand and stop labelling the functions. Then we draw these structure maps, in the order above, as
+\begin{center}
+    \tikz[vcenter, scale=0.4]{
+        % \tikzfixsize{(0,0)}{(4,4)}
+        % 
+        \path
+        (0,0) edge[string=black] (2,2)
+        (4,0) edge[string=black] (2,2)
+        (2,2) edge[string=black] (2,4);
+    }
+    \quad , \quad
+    \tikz[vcenter, scale=0.4]{
+        \tikzfixsize{(0,0)}{(2,4)}
+        %
+        \path
+        (1,2) edge[string=black] (1,4);
+        \node[enddot=black] at (1,2) {};
+    }
+    \quad , \quad
+    \tikz[vcenter, scale=0.4]{
+        % \tikzfixsize{(0,0)}{(4,4)}
+        %
+        \path
+        (0,4) edge[string=black] (2,2)
+        (4,4) edge[string=black] (2,2)
+        (2,2) edge[string=black] (2,0);
+    }
+    \quad , \quad
+    \tikz[vcenter, scale=0.4]{
+        \tikzfixsize{(0,0)}{(2,4)}
+        %
+        \path
+        (1,2) edge[string=black] (1,0);
+        \node[enddot=black] at (1,2) {};
+    }.
+\end{center}

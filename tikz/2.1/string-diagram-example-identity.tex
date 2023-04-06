@@ -3,6 +3,6 @@
     %
     \path
     (bot) edge[string=black] (mid);
-    \coordinate[label=$a$] () at (mid);
-    \coordinate[label=below:$a$] () at (bot);
+    \node[above] at (mid) {$a$};
+    \node[below] at (bot) {$a$};
 }

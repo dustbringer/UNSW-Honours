@@ -4,12 +4,12 @@
     \path
     ($(top) + (-1,0)$) edge[string=black] ($(bot) + (-1,0)$);
     \node[box] at ($(mid)+(-1,-.75)$) {$f$};
-    \coordinate[label=$b$] () at ($(top) + (-1,0)$);
-    \coordinate[label=below:$a$] () at ($(bot) + (-1,0)$);
+    \node[above] at ($(top) + (-1,0)$) {$b$};
+    \node[below] at ($(bot) + (-1,0)$) {$a$};
     % g
     \path
     ($(top) + (1,0)$) edge[string=black] ($(bot) + (1,0)$);
     \node[box] at ($(mid)+(1,.75)$) {$g$};
-    \coordinate[label=$d$] () at ($(top) + (1,0)$);
-    \coordinate[label=below:$c$] () at ($(bot) + (1,0)$);
+    \node[above] at ($(top) + (1,0)$) {$d$};
+    \node[below] at ($(bot) + (1,0)$) {$c$};
 }

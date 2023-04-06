@@ -6,7 +6,7 @@
     (mid) edge[string=black] ($(top) - (1.5,0)$)
     (mid) edge[string=black] ($(top) + (1.5,0)$);
     \node[box] at (mid) {$f$};
-    \coordinate[label=$b$] () at ($(top) - (1.5,0)$);
-    \coordinate[label=$c$] () at ($(top) + (1.5,0)$);
-    \coordinate[label=below:$a$] () at (bot);
+    \node[above] at ($(top) - (1.5,0)$) {$b$};
+    \node[above] at ($(top) + (1.5,0)$) {$c$};
+    \node[below] at (bot) {$a$};
 }
