@@ -62,7 +62,7 @@ Let $\mcal{C}$ be a (strict) monoidal category. We can define the following obje
 Monoid objects generalise monoids, i.e. sets with an identity equipped with an associative binary operation.
 
 \begin{definition}
-    A Frobenius object in $\mcal{C}$ is a quintuple $(A,\mu,\eta,\delta,\epsilon)$ such that $(A,\mu,\eta)$ is a monoid object, $(A,\delta,\epsilon)$ is a comonoid object satisfying the \textit{Frobenius relations}
+    A Frobenius object in $\mcal{C}$ is a quintuple $(A,\mu,\eta,\delta,\epsilon)$ such that $(A,\mu,\eta)$ is a monoid object, $(A,\delta,\epsilon)$ is a comonoid object, and the maps satisfy the \textit{Frobenius relations}
     \begin{center}
         \begin{mytikzcd}
             & A \tensor A
@@ -83,7 +83,8 @@ Monoid objects generalise monoids, i.e. sets with an identity equipped with an a
     that is $(\id_A \tensor \mu) \circ (\delta \tensor \id_A) = \delta \circ \mu = (\mu \tensor \id_A) \circ (\id_A \tensor \delta)$.
 \end{definition}
 
-The maps and relations for a Frobenius object $(A,\mu,\eta,\delta,\epsilon)$ have a nice diagrammatic description. The structure maps are
+
+The maps and relations for a Frobenius object $(A,\mu,\eta,\delta,\epsilon)$ have a nice description with the diagrams given in \autoref{sec:2.1}. The structure maps are drawn as
 \begin{center}
     \tikz[vcenter, scale=0.4]{
         % \tikzfixsize{(0,0)}{(4,4)}
@@ -140,7 +141,203 @@ The maps and relations for a Frobenius object $(A,\mu,\eta,\delta,\epsilon)$ hav
     }.
 \end{center}
 
-For the rest of this section, we identify $A$ with the identity strand and stop labelling the functions. Then we draw these structure maps, in the order above, as
+For the rest of this section, we only work with the Frobenius object $A$ and $\mathbbb{1}$, so we can identify the identity strand $\mathsf{I} = \id_A$ so we can stop putting the label $A$. Diagrammatically, the associativity relation $\mu \circ (\mu \tensor \id_M) = \mu \circ (\id_M \tensor \mu)$ is
+\begin{center}
+    \tikz[vcenter, scale=0.3]{
+        \tikzfixsize{(0,0)}{(6+.5,8)}
+        %
+        \path
+        (0,0) edge[string=black] (2,2)
+        (4,0) edge[string=black] (2,2)
+        (2,2) edge[string=black] (2,4);
+        \node[box] at (2,2) {$\mu$};
+        \path
+        (2,4) edge[string=black, round] (4,6)
+        (6,4) edge[string=black, round] (4,6)
+        (4,6) edge[string=black] (4,8);
+        \node[box] at (4,6) {$\mu$};
+        \path (6,0) edge[string=black] (6,4);
+    }
+    =
+    \tikz[vcenter, scale=0.3]{
+        \tikzfixsize{(0-.5,0)}{(6,8)}
+        %
+        \path (0,0) edge[string=black] (0,4);
+        \path
+        (6,0) edge[string=black] (4,2)
+        (2,0) edge[string=black] (4,2)
+        (4,2) edge[string=black] (4,4);
+        \node[box] at (4,2) {$\mu$};
+        \path
+        (4,4) edge[string=black, round] (2,6)
+        (0,4) edge[string=black, round] (2,6)
+        (2,6) edge[string=black] (2,8);
+        \node[box] at (2,6) {$\mu$};
+    },
+\end{center}
+the coassociativity relation $(\delta \tensor \id_A) \circ \delta = (\id_A \tensor \delta) \circ \delta$ is
+\begin{center}
+    \tikz[vcenter, scale=0.3]{
+        \tikzfixsize{(0,0)}{(6+.5,8)}
+        %
+        \path
+        (0,8) edge[string=black] (2,6)
+        (4,8) edge[string=black] (2,6)
+        (2,6) edge[string=black] (2,4);
+        \node[box] at (2,6) {$\delta$};
+        \path
+        (2,4) edge[string=black, round] (4,2)
+        (6,4) edge[string=black, round] (4,2)
+        (4,2) edge[string=black] (4,0);
+        \node[box] at (4,2) {$\delta$};
+        \path (6,8) edge[string=black] (6,4);
+    }
+    =
+    \tikz[vcenter, scale=0.3]{
+        \tikzfixsize{(0-.5,0)}{(6,8)}
+        %
+        \path (0,8) edge[string=black] (0,4);
+        \path
+        (6,8) edge[string=black] (4,6)
+        (2,8) edge[string=black] (4,6)
+        (4,6) edge[string=black] (4,4);
+        \node[box] at (4,6) {$\delta$};
+        \path
+        (4,4) edge[string=black, round] (2,2)
+        (0,4) edge[string=black, round] (2,2)
+        (2,2) edge[string=black] (2,0);
+        \node[box] at (2,2) {$\delta$};
+    },
+\end{center}
+the unit relation $\id_A = \mu \circ (\eta \tensor \id_A) = \mu \circ (\id_A \tensor \eta)$ is
+\begin{center}
+    \tikz[vcenter, scale=0.3]{
+        \tikzfixsize{(0,0)}{(2,8)}
+        %
+        \path
+        (1,0) edge[string=black] (1,8);
+    }
+    =
+    \tikz[vcenter, scale=0.3]{
+        \tikzfixsize{(0-.5,0)}{(4+.5,8)}
+        %
+        \path (4,0) edge[string=black] (4,4);
+        \path
+        (0,2) edge[string=black] (0,4);
+        \node[box] at (0,2) {$\eta$};
+        \path
+        (0,4) edge[string=black, round] (2,6)
+        (4,4) edge[string=black, round] (2,6)
+        (2,6) edge[string=black] (2,8);
+        \node[box] at (2,6) {$\mu$};
+    }
+    =
+    \tikz[vcenter, scale=0.3]{
+        \tikzfixsize{(0-.5,0)}{(4,8)}
+        %
+        \path (0,0) edge[string=black] (0,4);
+        \path
+        (4,2) edge[string=black] (4,4);
+        \node[box] at (4,2) {$\eta$};
+        \path
+        (0,4) edge[string=black, round] (2,6)
+        (4,4) edge[string=black, round] (2,6)
+        (2,6) edge[string=black] (2,8);
+        \node[box] at (2,6) {$\mu$};
+    },
+\end{center}
+the counit relation $\id_A = (\epsilon \tensor \id_A) \circ \delta = (\id_A \tensor \epsilon) \circ \delta$ is
+\begin{center}
+    \tikz[vcenter, scale=0.3]{
+        \tikzfixsize{(0,0)}{(2,8)}
+        %
+        \path
+        (1,0) edge[string=black] (1,8);
+    }
+    =
+    \tikz[vcenter, scale=0.3]{
+        \tikzfixsize{(0-.5,0)}{(4+.5,8)}
+        %
+        \path (4,8) edge[string=black] (4,4);
+        \path
+        (0,6) edge[string=black] (0,4);
+        \node[box] at (0,6) {$\epsilon$};
+        \path
+        (0,4) edge[string=black, round] (2,2)
+        (4,4) edge[string=black, round] (2,2)
+        (2,2) edge[string=black] (2,0);
+        \node[box] at (2,2) {$\delta$};
+    }
+    =
+    \tikz[vcenter, scale=0.3]{
+        \tikzfixsize{(0-.5,0)}{(4+.5,8)}
+        %
+        \path (0,8) edge[string=black] (0,4);
+        \path
+        (4,6) edge[string=black] (4,4);
+        \node[box] at (4,6) {$\epsilon$};
+        \path
+        (0,4) edge[string=black, round] (2,2)
+        (4,4) edge[string=black, round] (2,2)
+        (2,2) edge[string=black] (2,0);
+        \node[box] at (2,2) {$\delta$};
+    },
+\end{center}
+and the Frobenius relation $(\id_A \tensor \mu) \circ (\delta \tensor \id_A) = \delta \circ \mu = (\mu \tensor \id_A) \circ (\id_A \tensor \delta)$ is
+\begin{center}
+    \tikz[vcenter, scale=0.35]{
+        \tikzfixsize{(0,0)}{(6,6)}
+        %
+        \path (6,0) edge[string=black] (6,2);
+        \path
+        (0,4) edge[string=black] (2,2)
+        (4,4) edge[string=black] (2,2)
+        (2,2) edge[string=black] (2,0);
+        \node[box] at (2,2) {$\delta$};
+        %
+        \path (0,4) edge[string=black] (0,6);
+        \path
+        % (2,2) edge[string=black] (4,4)
+        (6,2) edge[string=black] (4,4)
+        (4,4) edge[string=black] (4,6);
+        \node[box] at (4,4) {$\mu$};
+    }
+    =
+    \tikz[vcenter, scale=0.35]{
+        \tikzfixsize{(0-.5,0)}{(4+.5,7)}
+        %
+        \path
+        (0,0) edge[string=black] (2,2)
+        (4,0) edge[string=black] (2,2)
+        (2,2) edge[string=black] (2,5)
+        (0,7) edge[string=black] (2,5)
+        (4,7) edge[string=black] (2,5)
+        ;
+        \node[box] at (2,2) {$\mu$};
+        \node[box] at (2,5) {$\delta$};
+    }
+    =
+    \tikz[vcenter, scale=0.35]{
+        \tikzfixsize{(0,0)}{(6,6)}
+        %
+        \path (6,6) edge[string=black] (6,4);
+        \path
+        (0,2) edge[string=black] (2,4)
+        (4,2) edge[string=black] (2,4)
+        (2,4) edge[string=black] (2,6);
+        \node[box] at (2,4) {$\mu$};
+        %
+        \path (0,2) edge[string=black] (0,0);
+        \path
+        % (2,4) edge[string=black] (4,2)
+        (6,4) edge[string=black] (4,2)
+        (4,2) edge[string=black] (4,0);
+        \node[box] at (4,2) {$\delta$};
+    }.
+\end{center}
+
+
+If we stop labelling the functions and draw the structure maps as
 \begin{center}
     \tikz[vcenter, scale=0.4]{
         % \tikzfixsize{(0,0)}{(4,4)}
@@ -174,5 +371,21 @@ For the rest of this section, we identify $A$ with the identity strand and stop 
         \path
         (1,2) edge[string=black] (1,0);
         \node[enddot=black] at (1,2) {};
-    }.
+    },
 \end{center}
+then the relations become... \red{Talk about isotopy}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\red{Maybe something about the (diagrammatic?) category Frob, capturing the data of a frobenius object}
+

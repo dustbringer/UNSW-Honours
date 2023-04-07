@@ -33,14 +33,14 @@ The compositions of morphisms is the vertical stacking of diagrams where domains
 Before looking at our main example of a diagrammatic monoidal category, we first define some terminology.
 
 \begin{definition}
-    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear.
+    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear. A \textit{(strict) $R$-linear monoidal category} is a monoidal category and $R$-linear category such that the monoidal product on morphisms is $R$-bilinear. \red{Check this, check also the order i define things}
 \end{definition}
 
 \begin{example}
     Let $\Bbbk$ be a field. The category of vector spaces over $\Bbbk$, $\cat{Vect}_\Bbbk$, is a $\Bbbk$-linear category. This makes sense by the classical theory of linear algebra.
 \end{example}
 
-For a strict $R$-linear monoidal category $\mcal{C}$, the bifunctoriality of $- \tensor -$ implies the following \textit{interchange law}. For morphisms $f: a \to b$ and $g: c \to d$, $(\id_b \tensor g) \circ (f \tensor \id_c) = f \tensor g = (f \tensor \id_d) \circ (\id_a \tensor g)$. In other words the following diagram commutes.
+For a strict $R$-linear monoidal category $\mcal{C}$, \red{Do we even need this?} the bifunctoriality of $- \tensor -$ implies the following \textit{interchange law}. For morphisms $f: a \to b$ and $g: c \to d$, $(\id_b \tensor g) \circ (f \tensor \id_c) = f \tensor g = (f \tensor \id_d) \circ (\id_a \tensor g)$. In other words the following diagram commutes.
 
 \begin{center}
     \begin{mytikzcd}[sep=large]

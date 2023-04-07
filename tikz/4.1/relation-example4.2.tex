@@ -1,22 +1,22 @@
 \tikz[vcenter, scale=0.4]{
     \squarecoord
-    \tikzfixsize{(.5,0)}{(5,4)}
+    \tikzfixsize{(.75,0)}{(6,4)}
     % barbell
-    \path
-    (1-.25,1.5) edge[string=dRed] (1-.25,2.5);
-    \node[enddot=dRed] at (1-.25,1.5) {};
-    \node[enddot=dRed] at (1-.25,2.5) {};
     \path
     (4.75,1.5) edge[string=dBlue] (4.75,2.5);
     \node[enddot=dBlue] at (4.75,1.5) {};
     \node[enddot=dBlue] at (4.75,2.5) {};
+    \path
+    (5.75,1.5) edge[string=dBlue] (5.75,2.5);
+    \node[enddot=dBlue] at (5.75,1.5) {};
+    \node[enddot=dBlue] at (5.75,2.5) {};
     % stalactite and stalagmite
     \path
-    (1-.25,0) edge[string=dBlue] (1-.25,.75)
+    (1,0) edge[string=dBlue] (1,1)
     (2,4) edge[string=dRed] (2,3.25)
     (3.5,0) edge[string=dBlue] (3.5,.75)
     ;
-    \node[enddot=dBlue] at (1-.25,.75) {};
+    \node[enddot=dBlue] at (1,1) {};
     \node[enddot=dRed] at (2,3.25) {};
     \node[enddot=dBlue] at (3.5,.75) {};
     % cups and caps
