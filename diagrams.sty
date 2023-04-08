@@ -155,6 +155,48 @@
     \path (#3) edge[string=#1] (#5);
 }
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Savebox
+
+\newsavebox\subtikzUnit
+\savebox{\subtikzUnit}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.25]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1) {};
+    }
+}
+
+\newsavebox\subtikzCounit
+\savebox{\subtikzCounit}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.25]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1);
+        \node [enddot/scaled={dRed}{0.25}] at (0,0) {};
+    }
+}
+
+\newsavebox\subtikzIdentity
+\savebox{\subtikzIdentity}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,3);
+    }
+}
+
+\newsavebox\subtikzCounitUnit
+\savebox{\subtikzCounitUnit}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1) {};
+        %
+        \path (0,3) edge[string/scaled={dRed}{0.25}] (0,2);
+        \node [enddot/scaled={dRed}{0.25}] at (0,2) {};
+    }
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Inline Diagrams
 
