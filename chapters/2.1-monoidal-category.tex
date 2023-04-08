@@ -1,7 +1,7 @@
 \section{Drawing Monoidal Categories}
 \label{sec:2.1}
 
-A monoidal category $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold\footnote{For more details see \cite{tensor-categories}.}. We assume that monoidal categories are strict, since all monoidal categories are monoidally equivalent to a strict one\footnote{See \cite[\nopp VII.2]{maclane-category-theory} or \cite[Thm 2.8.5]{tensor-categories}}.
+A monoidal category $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold\footnote{For more details see \cite{tensor-categories}.}. The bifunctor $\tensor$ is called the \textit{tensor} or \textit{monoidal product}. A monoidal category is \textit{strict} if $A \tensor (B \tensor C) = (A \tensor B) \tensor C$ and $A = \mathbbb{1} \tensor A = A \tensor \mathbbb{1}$ for objects and similarly for morphisms. In this paper, we will assume that monoidal categories are strict, since all monoidal categories are monoidally equivalent to a strict one\footnote{See \cite[\nopp VII.2]{maclane-category-theory} or \cite[Thm 2.8.5]{tensor-categories}}.
 
 The morphisms of $\mcal{C}$ can be drawn as string diagrams, where the morphism maps from the bottom to the top. Functions that make up the morphism are drawn as tokens or boxes. For example
 \begin{center}
@@ -19,10 +19,11 @@ The tensor product of morphisms is the horizontal concatenation of diagrams, suc
 \end{center}
 By convention, $\mathbbb{1}$ is blank and unlabelled, and strings that would join to $\mathbbb{1}$ are blank. Particularly, $\id_\mathbbb{1}$ is an empty diagram, and we have diagrams such as
 \begin{center}
-    \inputtikz{2.1/string-diagram-example-unit1}: $a \to \mathbbb{1}$
+    \inputtikz{2.1/string-diagram-example-unit1}
     \quad and \quad
-    \inputtikz{2.1/string-diagram-example-unit2}: $\mathbbb{1} \to b \tensor c$.
+    \inputtikz{2.1/string-diagram-example-unit2}
 \end{center}
+for morphisms $f_1: a \to \mathbbb{1}$ and $f_2: \mathbbb{1} \to b \tensor c$.
 The compositions of morphisms is the vertical stacking of diagrams where domains and codomains match. For example, the composition $h \circ f: a \to b \tensor c \to a \tensor c$ of $f: a \to b \tensor c$ with $h: b \tensor c \to a \tensor c$ has the diagram
 \begin{center}
     \inputtikz{2.1/string-diagram-example-composition1}
@@ -33,14 +34,14 @@ The compositions of morphisms is the vertical stacking of diagrams where domains
 Before looking at our main example of a diagrammatic monoidal category, we first define some terminology.
 
 \begin{definition}
-    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear. A \textit{(strict) $R$-linear monoidal category} is a monoidal category and $R$-linear category such that the monoidal product on morphisms is $R$-bilinear. \red{Check this, check also the order i define things}
+    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear. A \textit{$R$-linear monoidal category} is a category that is both monoidal and $R$-linear such that the monoidal product on morphisms is $R$-bilinear.
 \end{definition}
 
 \begin{example}
-    Let $\Bbbk$ be a field. The category of vector spaces over $\Bbbk$, $\cat{Vect}_\Bbbk$, is a $\Bbbk$-linear category. This makes sense by the classical theory of linear algebra.
+    Let $\Bbbk$ be a field. The category of vector spaces over $\Bbbk$, $\cat{Vect}_\Bbbk$, is a $\Bbbk$-linear monoidal category. This makes sense by the classical theory of linear algebra.
 \end{example}
 
-For a strict $R$-linear monoidal category $\mcal{C}$, \red{Do we even need this?} the bifunctoriality of $- \tensor -$ implies the following \textit{interchange law}. For morphisms $f: a \to b$ and $g: c \to d$, $(\id_b \tensor g) \circ (f \tensor \id_c) = f \tensor g = (f \tensor \id_d) \circ (\id_a \tensor g)$. In other words the following diagram commutes.
+For a monoidal category $\mcal{C}$, the bifunctoriality of $- \tensor -$ implies the following \textit{interchange law}. For morphisms $f: a \to b$ and $g: c \to d$, $(\id_b \tensor g) \circ (f \tensor \id_c) = f \tensor g = (f \tensor \id_d) \circ (\id_a \tensor g)$. In other words the following diagram commutes.
 
 \begin{center}
     \begin{mytikzcd}[sep=large]
