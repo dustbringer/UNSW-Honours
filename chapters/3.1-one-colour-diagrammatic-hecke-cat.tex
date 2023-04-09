@@ -170,10 +170,10 @@ The morphisms in this category can be graded such that the univalent vertices ha
 
 \red{Put example}
 
-The double leaves bases allow us to show that the Karoubi envelope of $\cH(S_2)$ is equivalent to the category of Soergel Bimodules $\sbim$ over $S_2$ as monoidal categories.
+The category $\cH(S_2)$ (under the additive Karoubi Envelope) is a diagrammatic version of the category of Soergel bimodules $\sbim$ for $S_2$. However $\sbim$ is not well behaved with morphisms over $\Z$, so we must first alter the morphisms spaces in $\cH(S_2)$ to be over $\C$ instead\footnote{The equivalence actually holds in more generality, but we choose $\C$ because it is easy to work with.}. Formally we merely tensor the morphism spaces on the left by the $\C$-$\Z$-bimodule $\C$, where the right action is induced by the inclusion $\Z \subset \C$. We write $\cH_\C(S_2)$ for this $\C$-linear monoidal category. This process is quite simple and does little to the category itself. In particular, double leaves in $\cH_\C(S_2)$ remain as $\C[\barbell]$-bases\footnote{It is not hard to check that double leaves tensored with $1 \in \C$ on the left form a basis.} for the morphisms.
 
 \begin{theorem}[Elias-Williamson {\cite[Theorem 6.30]{elias-williamson-soergel-calculus}}] \label{thm:one-col-sbim-equiv}
-    The category $\Kar(\cH(S_2))$ and the category of Soergel Bimodules $\sbim$ over $S_2$ are equivalent as graded $\Z$-linear monoidal categories.
+    The diagrammatic category $\Kar(\cH_\C(S_2))$ and the category of Soergel Bimodules $\sbim$ over $S_2$ are equivalent as graded \red{is it graded?} $\C$-linear monoidal categories.
 \end{theorem}
-The proof in \cite{elias-williamson-soergel-calculus} gives an equivalence of graded $\Z$-linear monoidal categories $\cH(S_2) \cong \bsbim$ where $\bsbim$ is the category of Bott-Samelson bimodules over $S_2$. This was done by comparing the graded dimensions of morphism spaces using double leaves bases. Since $\Kar(\bsbim) \cong \sbim$ and Karoubi envelope preserves equivalences, we obtain $\Kar(\cH(S_2)) \cong \sbim$.
+The proof in \cite{elias-williamson-soergel-calculus} gives an equivalence of graded $\C$-linear monoidal categories $\cH_\C(S_2) \cong \bsbim$ where $\bsbim$ is the category of Bott-Samelson bimodules over $S_2$. Since the additive Karoubi envelope preserves equivalences, $\Kar(\bsbim) \cong \sbim$ implies $\Kar(\cH_\C(S_2)) \cong \sbim$.
 
