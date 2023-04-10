@@ -1,0 +1,19 @@
+\tikz[vcenter, scale=0.4]{
+    % barbell
+    \path
+    (2,1.5) edge[string=red] (2,2.5);
+    \node[enddot=red] at (2,1.5) {};
+    \node[enddot=red] at (2,2.5) {};
+    % bubbles
+    \path
+    (2,3) edge[string=dRed] (2,3.5)
+    (2,1) edge[string=dRed] (2,.75)
+    (2,-.25) edge[string=dRed] (2,-.5)
+    (2,-1.5) edge[string=dRed] (2,-2)
+    ;
+    \node[enddot=red] at (2,3.5) {};
+    \node[enddot=red] at (2,-2) {};
+    \draw[string=dRed] (2,3) arc (90 : 360+90 : 1);
+    \draw[string=dRed] (2,.75) arc (90 : 360+90 : .5);
+    \draw[string=dRed] (2,-.5) arc (90 : 360+90 : .5);
+}

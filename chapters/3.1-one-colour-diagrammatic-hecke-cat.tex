@@ -72,6 +72,22 @@ The first one-colour diagrammatic we explore is the \textit{one-colour (diagramm
 
 \red{Add example of using frob associativity}
 
+\begin{proposition}
+    \label{prop:floating-diagram-barbell}
+    All diagrams with floating diagrams, i.e. diagrams not connected to the domain or codomain by a red strand, are linear combination of diagrams where all floating diagrams are barbells.
+\end{proposition}
+\begin{proof}
+    By isotopy and \eqref{rel:one-col-frob-unit}, floating diagrams can be drawn as barbells with `bubbles' and possibly floating subdiagrams inside each bubble. For example,
+    \begin{center}
+        \inputtikz{3.1/bubbles-example}.
+    \end{center}
+    The Frobeius relation \eqref{rel:one-col-frob-ass} allows us to `straighten out' the bubbles to a chain of individual bubbles. The diagram above becomes
+    \begin{center}
+        \inputtikz{3.1/bubbles-chain-example}.
+    \end{center}
+    For a floating diagram without floating subdiagrams, it is either $0$ by \eqref{rel:one-col-needle}, or $\barbell$ which can be removed from the entire floating diagram via \eqref{rel:one-col-barbell-forcing}. Repeating this process produces a linear combination of diagrams where all floating diagrams are barbells.
+\end{proof}
+
 The morphism space $\Hom(s^n, s^m)$ has a left (or right) $\Z[\barbell]$-basis called the \textit{double leaves} basis, as described in \cite{elias-williamson-soergel-calculus}. To define this basis, we must first define morphisms known as \textit{light leaves}.
 
 
@@ -154,7 +170,7 @@ Visually these are diagrams from $w$ to $y$ factoring through $\psi\phi(w(e)) = 
     \]
 \end{example}
 
-Note that these double leaves have no floating diagrams such as $\barbell$. In order for these double leaves to be a basis for a morphism space, we insert these floating diagrams by taking linear combinations as a left $\Z[\barbell]$-module, where the (left) $\barbell$-action is left concatenation by $\barbell$. Since we can move barbells to the right via. the relation \eqref{rel:one-col-barbell-forcing} and double leaves cut down the middle are double leaves factoring through $\varnothing$, we can equivalently act by $\Z[\barbell]$ on the right. This leads us to the following theorem.
+Note that these double leaves have no floating diagrams, which are $\barbell$ by \autoref{prop:floating-diagram-barbell}. In order for these double leaves to be a basis for a morphism space, we insert these floating diagrams by taking linear combinations as a left $\Z[\barbell]$-module, where the (left) $\barbell$-action is left concatenation by $\barbell$. Since we can move barbells to the right via. the relation \eqref{rel:one-col-barbell-forcing} and double leaves cut down the middle are double leaves factoring through $\varnothing$, we can equivalently act by $\Z[\barbell]$ on the right. This leads us to the following theorem.
 
 \begin{theorem}[Elias-Williamson {\cite[Theorem 1.2]{elias-williamson-soergel-calculus}}]
     \label{thm:one-col-double-leaves-basis}
