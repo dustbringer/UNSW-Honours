@@ -35,9 +35,43 @@ The objects of this category are identical to objects in $\cH(\wtilde{S}_2)$ and
     We consider morphisms $\Hom(w,y)$ in $\mcal{DT}$ for fixed objects $w,y$, and write $\mathbb{LL} \coloneqq \pi(\mathbb{LL}(w,y))$ for the set of double leaves in $\mcal{DT}$. Any diagram in $\mcal{DT}$ can be written as a $\C$-linear combination of morphisms without floating diagrams by pulling floating diagrams to the right with \eqref{rel:one-col-barbell-forcing} and \eqref{rel:two-col-barbell-forcing} then applying the wall relation \eqref{rel:two-col-wall}. We can write each of these as a $\Z[\barbell, \barbell[dBlue]]$-linear combination of double leaves with a right action, and reduce it to a $\Z$-linear combination by \eqref{rel:two-col-wall}. This implies that $\mathbb{LL}$ spans $\Hom(w,y)$ as a $\Z$-module. Now $\mathbb{LL}$ may not be linearly independent because the two-colour wall relation \eqref{rel:two-col-wall} reduces all diagrams factoring through a word ending with $t$ to $0$. The set of light leaves after removing morphisms killed by \eqref{rel:two-col-wall}, i.e. $\mathbb{LL} \setminus \{0\}$, still spans $\Hom(w,y)$ by the argument above. This set is linearly independent since, by construction, \eqref{rel:two-col-wall} has no effect on $\Z$-linear combinations of $\mathbb{LL} \setminus \{0\}$. Then it follows from linear independence over $\Z[\barbell, \barbell[dBlue]]$ that this set is linearly independent over $\Z$ in $\mcal{DT}$.
 \end{proof}
 
-We aim to show this diagrammatic category is equivalent to $\Tilt(\fraksl_2)$. So, from now on, we write $\mcal{DT}$ for the $\C$-linear $\cH_\C(\wtilde{S}_2)$-module category obtained by replacing $\Z$ with $\C$ and $\cH(\wtilde{S}_2)$ with $\cH_\C(\wtilde{S}_2)$ in \autoref{def:DT}. The above discussion and \autoref{lem:DT-double-leaves} still apply to $\mcal{DT}$ over $\C$.
+We aim to show that this diagrammatic category is equivalent to $\Tilt(\fraksl_2)$. So, from now on, we write $\mcal{DT}$ for the $\C$-linear $\cH_\C(\wtilde{S}_2)$-module category obtained by replacing $\Z$ with $\C$ and $\cH(\wtilde{S}_2)$ with $\cH_\C(\wtilde{S}_2)$ in \autoref{def:DT}. The above discussion and \autoref{lem:DT-double-leaves} still apply to $\mcal{DT}$ over $\C$.
 
 Since $\cH_\C(S_2)$ appears inside $\cH_\C(\wtilde{S}_2)$ for each colour, \autoref{lem:ss-equal-2s} provides explicit isomorphisms $ss \cong s \oplus s$ and $tt \cong t \oplus t$ in the additive closure of $\cH_\C(\wtilde{S}_2)$.
+
+\begin{definition}
+    Let $F: \Kar(\mcal{DT}) \to \Tilt(\fraksl_2)$ to be the additive $\C$-linear $\cH_\C(\wtilde{S}_2)$-module functor defined as follows \red{What about gradings?}. Map the empty word $\vn$ to the \red{check:} trivial module $T(\vn)$. Given a general word $s_1 ... s_n$ in $\mcal{DT}$, for $s_i \in \{s,t\}$, map $F(s_1 ... s_n) = \Theta_{s_n} ... \Theta_{s_1} T(\vn)$ where $\Theta_s, \Theta_t$ are translation functors associated to generators of $\wtilde{S}_2$. On morphisms, map identity to the corresponding identity, $\counit$ to the inclusion map $i_0: T(\vn) \to \Theta_s T(\vn)$ and $\unit$ to the projection map $p_0: \Theta_s T(\vn) \to T(\vn)$. Consider diagrams of the form
+    \begin{center}
+        \inputtikz{4.2/tilt-inclusion}
+        \quad , \quad
+        \inputtikz{4.2/tilt-projection}
+    \end{center}
+    where the colours of the diagram alternate, ``$\dots$'' stands for zero or more identity strands and the purple is either red or blue such that the colours alternate. The functor $F$ maps them to the inclusion $i_k: \Theta_x ... \Theta_s T(\vn) \to \Theta_y ... \Theta_s T(\vn)$ and projection $p_k: \Theta_y ... \Theta_s T(\vn) \to \Theta_x ... \Theta_s T(\vn)$, respectively, where $x, y \in \{s,t\}$ are different and $k$ is the number of identity strands. The mappings are summarised in the picture below.
+    \begin{equation}
+        \label{img:tilt-functor}
+        \inputtikz{4.2/tilt-proof-functor}
+    \end{equation}
+    The right wall on each diagram is not shown to reduce clutter. We extend the functor by additivity, composition and linearity. \red{Do we need to define where JW-projectors go?}
+\end{definition}
+
+\begin{lemma}
+    The functor $F$ is well defined.
+\end{lemma}
+\begin{proof} \red{CHECK}
+    Consider the additive closure $\mcal{DT}^\oplus$ of $\mcal{DT}$. For red and blue, the isomorphisms given in \autoref{lem:ss-equal-2s} imply that any diagram in $\mcal{DT}$ is isomorphic to a matrix of $\C$-linear combinations of diagrams where the domain and codomain have alternating colours. Due to \eqref{rel:two-col-wall} non-trivial diagrams do not have blue strands next to the wall, so the alternating colours must end in red, i.e. the domain and codomain end in $s$. We constructed $F$ to be additive, so it suffices to consider morphisms between indecomposable summands of words alternating $s,t$ and ending in $s$. Recall that these alternating words have idempotents given by their Jones-Wenzl projectors. The discussion in \cite[Section 5.4.2]{elias-dihedral-cathedral} states that the images of Jones-Wenzl projectors give all the indecomposables \red{Is this right? Is the ref right--maybe see book thm9.22} and \cite[Corollary 4.21]{anderson-tubbenhauer-tilt} shows that all morphisms not killed by Jones-Wenzl Projectors are of the form
+    \begin{center}
+        \inputtikz{4.2/tilt-projection}
+        \quad , \quad
+        \inputtikz{4.2/tilt-inclusion}
+        \quad , \quad
+        \inputtikz{4.2/tilt-proj-incl}
+    \end{center}
+    with alternating colours, purple being either red or blue, and ``...'' are zero or more identity strands. Therefore the morphisms in the picture \eqref{img:tilt-functor} are enough to define a mapping on $\mcal{DT}$ by going through $\Kar(\mcal{DT})$ \red{Word this better}.
+
+    Next, we check that all relations are preserved. From \cite[Proposition 5.84 and Lemma 5.87]{mazorchuk-lectures-sl2-modules} \red{Is this the right ref?}, we know that $\Theta_s$ is a Frobenius object in the category of endofunctors of $\cO$ and there are unit, counit, multiplication and comultiplication natural transformations from the Frobenius object structure. Applying these to $T(\vn)$ result in the same relations in $\Tilt(\fraksl_2)$ for $T(\vn), \Theta_s T(\vn)$ and $\Theta_s^2(T(\vn))$. Note that the projection and inclusion maps in the picture \eqref{img:tilt-functor} are exactly the unit and counit of $\Theta_s$ evaluated at $T(\vn)$, and the trivalent vertices provided by projecting the isomorphisms in \autoref{lem:ss-equal-2s} map exactly to the multiplication and comultiplication maps. Furthermore, in \cite[Section 2.4]{soergel-category-O} \red{Ref?} we see that $p_0 \circ i_0 = 0$ and \red{Is this right:} $\id_{\Theta_t(T(\vn))} = 0$ in $\Tilt(\fraksl_2)$ which is analogous to the two-colour wall relations \eqref{rel:two-col-wall}. Furthermore there is a relation $i_k \circ p_k = p_{k+1} \circ i_{k+1}$ up to a scalar multiple \red{ref?} which is analogous to [\red{PUT THE RELATION HERE}]. \red{What about $p_{k+1} \circ p_k = 0$?} Hence all the relations in $\mcal{DT}$ are preserved by $F$. By construction, $F$ preserves direct sums, $\C$-linear combinations and the Soregel module structure in \cite{soergel-category-O}, so $F$ is well defined as a functor between $\C$-linear $\cH(S_2)$-module categories.
+
+    \red{Talk about how extending by composition makes sense.}
+\end{proof}
 
 \red{Say something here?}
 
@@ -45,32 +79,23 @@ The following result states that $\mcal{DT}$ is indeed a diagrammatic incarnatio
 
 \red{Be clear that I don't understand $\Tilt$ very well.}
 
+
+
 \begin{theorem}[\red{???}]
     The diagrammatic category $\Kar(\mcal{DT}(\fraksl_2))$ and $\Tilt(\fraksl_2)$ are equivalent as $\C$-linear $\cH_\C(\wtilde{S}_2)$-module categories.
 \end{theorem}
 
-
-
-\red{Check all of this \& Put precise references}
-
-\red{Maybe write description as a soergel module outside the proof}
-
 \begin{proof}
     As a shorthand, we write $\cT$ for $\Tilt(\fraksl_2)$.
-    \grey{The work of Soergel in \cite[Section 2.4]{soergel-category-O} shows that $\proj(\cO_0)$ is a Soergel module, i.e. it has a left action of the category of Soergel bimodules defined by applications of the translation functors $\Theta_\vn, \Theta_s \in \End(\cO)$ (corresponding to elements in $S_2$). \red{Explains what this means, how its related to the $\cH(S_2)$ module category} We will construct a functor that will map faithfully into a full subcategory of $\proj(\cO_0)$, which will become the whole projective category under the additive Karoubi envelope. This mimics the strategy in the proof for \autoref{thm:one-col-sbim-equiv}.
-    
-    Define the functor $F: \mcal{DO}_0 \to \proj(\cO_0)$ that sends the empty object $\vn$ to the trivial module $P(\vn)$, and the Soergel module action corresponding to $s$ to the translation functor $\Theta_s$. Then the object $s$ maps to $\Theta_s(P(\vn)) \eqqcolon P(s)$, and for example $s^3$ maps to $\Theta_s^3(P(\vn)) = \Theta_s\Theta_s\Theta_s(P(\vn))$. In order for $F$ to be functorial, it must map identity diagrams $s^n \to s^n$ to $\id_{\Theta_s^n(P(\vn))}$. On non-identity maps, we let $F(\counit) = i$ be the inclusion $P(\vn) \to P(s)$ and $F(\unit) = p$ be the projection $P(s) \to P(\vn)$. The mapping of $F$ is depicted by the following picture.
-    \begin{center}
-        \inputtikz{4.2/tiltsl2-proof-functor}
-    \end{center}
-    Now \cite[Proposition 5.90]{mazorchuk-lectures-sl2-modules} shows that there is a natural isomorphism $\Theta_s \Theta_s \cong \Theta_s \oplus \Theta_s$ analogous to the isomorphism $ss \cong s \oplus s$ given in the proof of \autoref{lem:ss-equal-2s}. We will eventually take the additive closure of $\mcal{DO}_0$, so it does not hurt to use these isomorphisms. Given a morphism in $\mcal{DO}_0$ from $s^n$ to $s^m$, repeated precomposition and postcomposition with $ss \to s \oplus s$ and $ss \oplus s \to s$ from \autoref{lem:ss-equal-2s} results in a matrix of morphisms with domain and codomain in $\{\vn, s\}$. By \eqref{rel:one-col-barbell-forcing} and \eqref{rel:barbell-wall} we can draw the entries of the matrix without floating diagrams, so the only diagrams are $\counit \circ \unit$ and $\dRed{\mathsf{I}}$ up to linear combinations. Therefore, extending by linearity, the picture above completely describes the image of $F$. We can similarly pull back the matrices of morphisms in $\proj(\cO_0)$ to a morphism between $\Theta_s^n(P(\vn))$ and $\Theta_s^m(P(\vn))$ via the analogous maps defining $\Theta_s \Theta_s \cong \Theta_s \oplus \Theta_s$.
+    \grey{
+        We now prove that $F$ is fully faithful. It follows from \autoref{lem:ss-equal-2s} and the description of $P(\vn)$ and $P(s)$ in \cite[Section 5.2]{mazorchuk-lectures-sl2-modules} that the image of $\unit$ and $\counit$ generate all morphisms of the form $\Theta_s^n(P(\vn)) \to \Theta_s^m(P(\vn))$. Hence $F$ is full. Now the mapping of $F$ on all morphism spaces are determined by those depicted in the above picture. So, for faithfulness, it suffices to compare the $\C$-dimensions of morphism spaces between objects shown in the picture. By \autoref{lem:DO_0-double-leaves}, $\Hom(\vn, \vn)$ has a basis $\{\vn = \id_\vn\}$, $\Hom(s, \vn)$ has a basis $\{\unit\}$, $\Hom(\vn, s)$ has a basis $\{\counit\}$, and $\Hom(s, s)$ has a basis $\{\id_s, \counit \circ \unit\}$. The bases for the corresponding morphism spaces in $\proj(\cO_0)$ are exactly those in the image \red{Ref? - that these are actually the bases of the hom spaces}, so these dimensions coincide. Therefore $F$ is fully faithful.
 
-    From classical results e.g. \cite[Proposition 5.84 and Lemma 5.87]{mazorchuk-lectures-sl2-modules}, it follows that $\Theta_s$ is a Frobenius object in the category of endofunctors of $\cO$. Then there are unit, counit, multiplication and comultiplication natural transformations satisfying coherence relations in the Frobenius object structure. Applying these to $P(\vn)$ result in the same relations in $\proj(\cO_0)$ for $P(\vn), P(s)$ and $\Theta_s^2(P(\vn))$. Note that the projection and inclusion maps above are exactly the unit and counit of $\Theta_s$ evaluated at $P(\vn)$, and the trivalent vertices provided by projecting the isomorphisms in \autoref{lem:ss-equal-2s} are exactly the multiplication and comultiplication maps. Furthermore, in \cite[Section 2.4]{soergel-category-O} we see that $p \circ i = 0$ in $\proj(\cO_0)$ which is analogous\footnote{This relation extends to the analogue of the local barbell-wall relation, as all `barbell on the right' morphisms in $\proj(\cO_0)$ are linear combinations of applications of $\Theta_s$ to $p \circ i$, which is $0$.} to the barbell-wall relation \eqref{rel:barbell-wall}. Hence all the relations in $\mcal{DO}_0$ are preserved by $F$. By construction, $F$ preserves $\C$-linear combinations and the Soregel module structure in \cite{soergel-category-O}, so $F$ is well defined as a functor between $\C$-linear $\cH(S_2)$-module categories.
-
-    We now prove that $F$ is fully faithful. It follows from \autoref{lem:ss-equal-2s} and the description of $P(\vn)$ and $P(s)$ in \cite[Section 5.2]{mazorchuk-lectures-sl2-modules} that the image of $\unit$ and $\counit$ generate all morphisms of the form $\Theta_s^n(P(\vn)) \to \Theta_s^m(P(\vn))$. Hence $F$ is full. Now the mapping of $F$ on all morphism spaces are determined by those depicted in the above picture. So, for faithfulness, it suffices to compare the $\C$-dimensions of morphism spaces between objects shown in the picture. By \autoref{lem:DO_0-double-leaves}, $\Hom(\vn, \vn)$ has a basis $\{\vn = \id_\vn\}$, $\Hom(s, \vn)$ has a basis $\{\unit\}$, $\Hom(\vn, s)$ has a basis $\{\counit\}$, and $\Hom(s, s)$ has a basis $\{\id_s, \counit \circ \unit\}$. The bases for the corresponding morphism spaces in $\proj(\cO_0)$ are exactly those in the image \red{Ref? - that these are actually the bases of the hom spaces}, so these dimensions coincide. Therefore $F$ is fully faithful.
-
-    All objects in $\proj(\cO_0)$ appear as direct sums and direct summands of the elements $\Theta_s^n(P(\vn))$ for non-negative integers $n$. Therefore the additive Karoubi envelope induces an equivalence $\Kar(\mcal{DO}_0) \cong \proj(\cO_0)$ as $\C$-linear left $\cH(S_2)$-module categories.
+        All objects in $\proj(\cO_0)$ appear as direct sums and direct summands of the elements $\Theta_s^n(P(\vn))$ for non-negative integers $n$. Therefore the additive Karoubi envelope induces an equivalence $\Kar(\mcal{DO}_0) \cong \proj(\cO_0)$ as $\C$-linear left $\cH(S_2)$-module categories.
     }
 \end{proof}
 
 \red{Comment on grading?}
+
+\red{Comment on consequences}
+
+

@@ -159,6 +159,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Savebox
 
+% s
 \newsavebox\subtikzUnit
 \savebox{\subtikzUnit}{
     \tikzset{external/optimize=false}
@@ -194,6 +195,131 @@
         %
         \path (0,3) edge[string/scaled={dRed}{0.25}] (0,2);
         \node [enddot/scaled={dRed}{0.25}] at (0,2) {};
+    }
+}
+
+% ts
+\newsavebox\subtikzUnitOne
+\savebox{\subtikzUnitOne}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,1.5);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+    }
+}
+
+\newsavebox\subtikzCounitOne
+\savebox{\subtikzCounitOne}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,1.5) edge[string/scaled={dBlue}{0.25}] (0,3);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+    }
+}
+
+\newsavebox\subtikzIdentityOne
+\savebox{\subtikzIdentityOne}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,3);
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+    }
+}
+
+\newsavebox\subtikzCounitUnitOne
+\savebox{\subtikzCounitUnitOne}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,1);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,1) {};
+        %
+        \path (0,3) edge[string/scaled={dBlue}{0.25}] (0,2);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,2) {};
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+    }
+}
+
+% sts
+\newsavebox\subtikzUnitTwo
+\savebox{\subtikzUnitTwo}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1.5);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
+    }
+}
+
+\newsavebox\subtikzCounitTwo
+\savebox{\subtikzCounitTwo}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,1.5) edge[string/scaled={dRed}{0.25}] (0,3);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
+    }
+}
+
+\newsavebox\subtikzIdentityTwo
+\savebox{\subtikzIdentityTwo}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,3);
+        %
+        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
+    }
+}
+
+\newsavebox\subtikzCounitUnitTwo
+\savebox{\subtikzCounitUnitTwo}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1) {};
+        %
+        \path (0,3) edge[string/scaled={dRed}{0.25}] (0,2);
+        \node [enddot/scaled={dRed}{0.25}] at (0,2) {};
+        %
+        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
+    }
+}
+
+% tsts
+\newsavebox\subtikzUnitThree
+\savebox{\subtikzUnitThree}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,1.5);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dBlue}{0.25}] (2,3);
+        \path (3,0) edge[string/scaled={dRed}{0.25}] (3,3);
+    }
+}
+
+\newsavebox\subtikzCounitThree
+\savebox{\subtikzCounitThree}{
+    \tikzset{external/optimize=false}
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,1.5) edge[string/scaled={dBlue}{0.25}] (0,3);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dBlue}{0.25}] (2,3);
+        \path (3,0) edge[string/scaled={dRed}{0.25}] (3,3);
     }
 }
 

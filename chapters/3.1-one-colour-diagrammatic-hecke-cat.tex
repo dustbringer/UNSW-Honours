@@ -85,7 +85,7 @@ The first one-colour diagrammatic we explore is the \textit{one-colour (diagramm
     \begin{center}
         \inputtikz{3.1/bubbles-chain-example}.
     \end{center}
-    For a floating diagram without floating subdiagrams, it is either $0$ by \eqref{rel:one-col-needle}, or $\barbell$ which can be removed from the entire floating diagram via \eqref{rel:one-col-barbell-forcing}. Repeating this process produces a linear combination of diagrams where all floating diagrams are barbells.
+    For a floating diagram without floating subdiagrams, it is either $0$ by \eqref{rel:one-col-needle}, or $\barbell$ which can be removed from any diagrams containing it via \eqref{rel:one-col-barbell-forcing}. Repeating this process produces a linear combination of diagrams where all floating diagrams are barbells.
 \end{proof}
 
 The morphism space $\Hom(s^n, s^m)$ has a left (or right) $\Z[\barbell]$-basis called the \textit{double leaves} basis, as described in \cite{elias-williamson-soergel-calculus}. To define this basis, we must first define morphisms known as \textit{light leaves}.
@@ -182,14 +182,16 @@ A purely diagrammatic proof (of a more general theorem) can be found in \cite{el
     The above light leaves and double leaves, introduced in \cite{elias-williamson-soergel-calculus}, are diagrammatic analogues of Libedinsky's construction in \cite{libedinsky-lightleavesbasis}.
 \end{remark}
 
-The morphisms in this category can be graded such that the univalent vertices has degree $1$ and trivalent vertices have degree $-1$. The degree of a diagram is the sum of the degrees of the generators that appear in it. This induces a grading for the morphism spaces of $\cH(S_2)$. \red{Maybe mention what a grading is.}
+The morphisms in this category can be graded such that the univalent vertices has degree $1$ and trivalent vertices have degree $-1$. The degree of a diagram is the sum of the degrees of the generators that appear in it. This makes $\cH(S_2)$ a $\Z$-graded category. \red{Maybe mention what a grading is.}
+
+\red{Put graded category definition in background}
 
 \red{Put example}
 
 The category $\cH(S_2)$ (under the additive Karoubi Envelope) is a diagrammatic version of the category of Soergel bimodules $\sbim$ for $S_2$. However $\sbim$ is not well behaved with morphisms over $\Z$, so we must first alter the morphisms spaces in $\cH(S_2)$ to be over $\C$ instead\footnote{The equivalence actually holds in more generality, but we choose $\C$ because it is easy to work with.}. Formally we merely tensor the morphism spaces on the left by the $\C$-$\Z$-bimodule $\C$, where the right action is induced by the inclusion $\Z \subset \C$. We write $\cH_\C(S_2)$ for this $\C$-linear monoidal category. This process is quite simple and does little to the category itself. In particular, double leaves in $\cH_\C(S_2)$ remain as $\C[\barbell]$-bases\footnote{It is not hard to check that double leaves tensored with $1 \in \C$ on the left form a basis.} for the morphisms.
 
 \begin{theorem}[Elias-Williamson {\cite[Theorem 6.30]{elias-williamson-soergel-calculus}}] \label{thm:one-col-sbim-equiv}
-    The diagrammatic category $\Kar(\cH_\C(S_2))$ and the category of Soergel Bimodules $\sbim$ over $S_2$ are equivalent as graded \red{is it graded?} $\C$-linear monoidal categories.
+    The diagrammatic category $\Kar(\cH_\C(S_2))$ and the category of Soergel Bimodules $\sbim$ over $S_2$ are equivalent as graded $\C$-linear monoidal categories.
 \end{theorem}
 The proof in \cite{elias-williamson-soergel-calculus} gives an equivalence of graded $\C$-linear monoidal categories $\cH_\C(S_2) \cong \bsbim$ where $\bsbim$ is the category of Bott-Samelson bimodules over $S_2$. Since the additive Karoubi envelope preserves equivalences, $\Kar(\bsbim) \cong \sbim$ implies $\Kar(\cH_\C(S_2)) \cong \sbim$.
 

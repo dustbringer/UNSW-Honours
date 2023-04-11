@@ -136,28 +136,226 @@
     \path (#3) edge[string=#1] (#5);
 }
 
+\usepackage{amsmath, amssymb, amsfonts, amscd}
+\newcommand{\vn}{\varnothing}
+\usetikzlibrary{automata,arrows} % for transition diagrams
+\usepackage{amsthm, thmtools}
+\usepackage{environ}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\DeclareMathOperator{\id}{id}
+
+\newsavebox\subtikzUnit
+\savebox{\subtikzUnit}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1.5);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1.5) {};
+    }
+}
+
+\newsavebox\subtikzCounit
+\savebox{\subtikzCounit}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,1.5) edge[string/scaled={dRed}{0.25}] (0,3);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1.5) {};
+    }
+}
+
+\newsavebox\subtikzIdentity
+\savebox{\subtikzIdentity}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,3);
+    }
+}
+
+\newsavebox\subtikzCounitUnit
+\savebox{\subtikzCounitUnit}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1) {};
+        %
+        \path (0,3) edge[string/scaled={dRed}{0.25}] (0,2);
+        \node [enddot/scaled={dRed}{0.25}] at (0,2) {};
+    }
+}
+
+% ts
+\newsavebox\subtikzUnitOne
+\savebox{\subtikzUnitOne}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,1.5);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+    }
+}
+
+\newsavebox\subtikzCounitOne
+\savebox{\subtikzCounitOne}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,1.5) edge[string/scaled={dBlue}{0.25}] (0,3);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+    }
+}
+
+\newsavebox\subtikzIdentityOne
+\savebox{\subtikzIdentityOne}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,3);
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+    }
+}
+
+\newsavebox\subtikzCounitUnitOne
+\savebox{\subtikzCounitUnitOne}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,1);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,1) {};
+        %
+        \path (0,3) edge[string/scaled={dBlue}{0.25}] (0,2);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,2) {};
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+    }
+}
+
+
+% sts
+\newsavebox\subtikzUnitTwo
+\savebox{\subtikzUnitTwo}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1.5);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
+    }
+}
+
+\newsavebox\subtikzCounitTwo
+\savebox{\subtikzCounitTwo}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,1.5) edge[string/scaled={dRed}{0.25}] (0,3);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
+    }
+}
+
+\newsavebox\subtikzIdentityTwo
+\savebox{\subtikzIdentityTwo}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,3);
+        %
+        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
+    }
+}
+
+\newsavebox\subtikzCounitUnitTwo
+\savebox{\subtikzCounitUnitTwo}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1);
+        \node [enddot/scaled={dRed}{0.25}] at (0,1) {};
+        %
+        \path (0,3) edge[string/scaled={dRed}{0.25}] (0,2);
+        \node [enddot/scaled={dRed}{0.25}] at (0,2) {};
+        %
+        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
+    }
+}
+% tsts
+\newsavebox\subtikzUnitThree
+\savebox{\subtikzUnitThree}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,1.5);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dBlue}{0.25}] (2,3);
+        \path (3,0) edge[string/scaled={dRed}{0.25}] (3,3);
+    }
+}
+
+\newsavebox\subtikzCounitThree
+\savebox{\subtikzCounitThree}{
+    \tikz[baseline=0,scale=0.15]{
+        \path (0,1.5) edge[string/scaled={dBlue}{0.25}] (0,3);
+        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
+        %
+        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
+        \path (2,0) edge[string/scaled={dBlue}{0.25}] (2,3);
+        \path (3,0) edge[string/scaled={dRed}{0.25}] (3,3);
+    }
+}
+
 \begin{document}
+
+
 \begin{tikzpicture}[
         vcenter,
-        scale=0.4,
+        % scale=0.4,
     ]
-    % barbell
-    \path
-    (2,1.5) edge[string=red] (2,2.5);
-    \node[enddot=red] at (2,1.5) {};
-    \node[enddot=red] at (2,2.5) {};
-    % bubbles
-    \path
-    (2,3) edge[string=dRed] (2,3.5)
-    (2,1) edge[string=dRed] (2,.75)
-    (2,-.25) edge[string=dRed] (2,-.5)
-    (2,-1.5) edge[string=dRed] (2,-2)
+    \node (e) at (0,0) {$\vn$};
+    \node (s) at (0,-1.5) {$s$};
+    \node (ts) at (0,-3) {$ts$};
+    \node (sts) at (0,-4.5) {$sts$};
+    \node (dots1) at (0,-6) {$\vdots$};
+    \path[->, >=stealth']
+    % empty
+    (e) edge[loop above, min distance=7mm, in=90-20,out=90+20] node {$\vn$} (e)
+    (e) edge[bend right] node[left] {\usebox\subtikzCounit} (s)
+    (s) edge[bend right] node[right,xshift=-5] {\usebox\subtikzUnit} (e)
+    % s
+    (s) edge[out=20, in=-20, loop] node[right,xshift=-5] {\usebox\subtikzCounitUnit} (s)
+    (s) edge[out=160, in=200, loop] node[left] {\usebox\subtikzIdentity} (s)
+    (s) edge[bend right] node[left] {\usebox\subtikzCounitOne} (ts)
+    (ts) edge[bend right] node[right,xshift=-5] {\usebox\subtikzUnitOne} (s)
+    % ts
+    (ts) edge[out=20, in=-20, loop] node[right,xshift=-5] {\usebox\subtikzCounitUnitOne} (s)
+    (ts) edge[out=160, in=200, loop] node[left] {\usebox\subtikzIdentityOne} (ts)
+    (ts) edge[bend right] node[left] {\usebox\subtikzCounitTwo} (sts)
+    (sts) edge[bend right] node[right,xshift=-5] {\usebox\subtikzUnitTwo} (ts)
+    % sts
+    (sts) edge[out=20, in=-20, loop] node[right,xshift=-5] {\usebox\subtikzCounitUnitTwo} (s)
+    (sts) edge[out=160, in=200, loop] node[left] {\usebox\subtikzIdentityTwo} (sts)
+    (sts) edge[bend right] node[left] {\usebox\subtikzCounitThree} (dots1)
+    (dots1) edge[bend right] node[right,xshift=-5] {\usebox\subtikzUnitThree} (sts)
     ;
-    \node[enddot=red] at (2,3.5) {};
-    \node[enddot=red] at (2,-2) {};
-    \draw[string=dRed] (2,3) arc (90 : 360+90 : 1);
-    \draw[string=dRed] (2,.75) arc (90 : 360+90 : .5);
-    \draw[string=dRed] (2,-.5) arc (90 : 360+90 : .5);
+    %%
+    \node at (2.5,-.5) {$\xmapsto{F}$};
+    %%
+    \node (Te) at (5,0) {$T(\vn)$};
+    \node (Ts) at (5,-1.5) {$\Theta_s T(\vn)$};
+    \node (Tts) at (5,-3) {$\Theta_t \Theta_s T(\vn)$};
+    \node (Tsts) at (5,-4.5) {$\Theta_s \Theta_t \Theta_s T(\vn)$};
+    \node (dots2) at (5,-6) {$\vdots$};
+    \path[->, >=stealth']
+    % empty
+    (Te) edge[loop above, min distance=7mm, in=90-20,out=90+20] node {$\id$} (Te)
+    (Te) edge[bend right] node[left] {$i_0$} (Ts)
+    (Ts) edge[bend right] node[right] {$p_0$} (Te)
+    % Ts
+    (Ts) edge[out=20, in=-20, loop, looseness=4] node[right] {$i_1 \circ p_1$} (Ts)
+    (Ts) edge[out=160, in=200, loop, looseness=4] node[left] {$\id$} (Ts)
+    (Ts) edge[bend right] node[left] {$i_1$} (Tts)
+    (Tts) edge[bend right] node[right] {$p_1$} (Ts)
+    % Tts
+    (Tts) edge[out=20, in=-20, loop, looseness=4] node[right] {$i_2 \circ p_2$} (Tts)
+    (Tts) edge[out=160, in=200, loop, looseness=4] node[left] {$\id$} (Tts)
+    (Tts) edge[bend right] node[left] {$i_2$} (Tsts)
+    (Tsts) edge[bend right] node[right] {$p_2$} (Tts)
+    % Tsts
+    (Tsts) edge[out=20, in=-20, loop, looseness=4] node[right] {$i_3 \circ p_3$} (Tsts)
+    (Tsts) edge[out=160, in=200, loop, looseness=4] node[left] {$\id$} (Tsts)
+    (Tsts) edge[bend right] node[left] {$i_3$} (dots2)
+    (dots2) edge[bend right] node[right] {$p_3$} (Tsts)
+    ;
 \end{tikzpicture}
 
 \end{document}
