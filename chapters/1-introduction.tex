@@ -2,17 +2,13 @@
 
 Visual interpretations of functions simplify calculations and often provides insights into the mathematical objects they encode. \red{More detail about what this is} This general philosophy takes form in various settings. A simple example are string diagrams for finite permutations. A permutation can be drawn as strings between two copies of a set determining how the objects are permuted. Compositions of these permutations is the operation of joining corresponding strings start to end in order to create a larger string diagram representing their product. 
 
-A more significant example are \textit{planar algebras} in the study of von Neumann algebras, particularly for subfactors, first introduced by Jones in 1999, \cite{jones-planar-algebra}. These are algebras where operations are indexed by planar diagrams made up of disks, and which combine in planar ways. The development of planar algebras really kick-started study of subfactors, and there have been a wide range of applications for this technology. \red{Add more here}
-% THIS WAS ALL BEFORE PLANAR ALGEBRAS: A notable one is in knot theory, where Jones came across an important knot invariant we now know as the Jones polynomial. There are a wide range of implications in the study of for example statistical mechanics, combinatorial group theory, quantum groups, particle physics and untangling of DNA in biology.
+A significant example are \textit{planar algebras} in the work of Jones. These are certain algebras of planar diagrams that describe operators. His study of the Temperley-Lieb planar algebra lead to the discovery of an important invariant in knot theory in the 1983, which we know now as the Jones polynomial. For this and surrounding works he received a Fields medal. This technology of planar algebras have been since used to study subfactors in functional analysis \cite{jones-planar-algebra}\footnote{Originally from 1999, and was recently published.} and have consequences in for example statistical mechanics and mathematical physics.
 
-% https://news.vanderbilt.edu/2011/04/06/vaughan-jones/
-% https://www.britannica.com/biography/Vaughan-Jones
+In representation theory, our main motivational example is given by the proof of the Kazhdan--Lusztig conjecture through the diagrammatics of Soergel bimodules. The conjecture relates Kazhdan--Lusztig polynomials, arising from the Weyl group associated with a Lie algebra, to Jordan--H\"older multiplicities of particular representations of Lie algebras called Verma modules. Proofs were discovered independently by Beilinson--Bernstein and Brylinski--Kashiwara in 1981 but by geometric methods, which was unsatisfying to many. Around this time, Soergel was working toward an algebraic proof by Soergel bimodules, however he hit a technical road block. In 2010's, Elias and Williamson \red{Ref?} developed planar diagrams for morphisms on Soergel bimodules and were able to overcome the technical point where Soergel got stuck, to prove the conjecture algebraically. The diagrams can greatly simplify algebraic calculations and the diagrammatic category can be considered independently from Soergel bimodules. We explore this diagrammatic category for $S_2$ in \autoref{sec:3.1}.
 
-Another appearance is in representation theory of Lie algebras.
-
-Kazhdan--Lustig conjecture, geometric proof by ...
-
-We will look into this more.
+\grey{
+    From another perspective, diagrammatic versions of categories can give rise to structures previously unknown. Characters in the category of Tilting modules \red{What are they?} can be calculated with Kazhdan--Lusztig polynomial in characteristic zero, however these polynomial were unknown in characteristic $p$. Riche and Williamson in \cite{riche-williamson-tilt-modules-p-canon-basis} went through an equivalent category of Soergel modules for which the desired characteristic $p$ structures existed, and passing back to the tilting modules produced the right object. \red{Where does this use diagrammatics?}
+}
 
 
 % TODO: Talk about versatility of diagrammatics - about the same but can describe lots of different things
@@ -25,7 +21,15 @@ We will look into this more.
 % see also https://ncatlab.org/nlab/show/string+diagram for other
 % see also survey on drawing monoidal category
 
-Assumed knowledge
+In this paper we give an introduction to drawing morphisms in monoidal categories, \red{put more here} and define some mechanisms to form an additive and idempotent complete category. In \autoref{chapter:one-col-diagrammatics} we define diagrammatic Soergel bimodules associated with the symmetric group $S_2$, construct a basis for its morphism spaces and state the theorem for its equivalence to the category of algebraic Soergel bimodules. We use this diagrammatic category to construct a diagrammatic module category with an extra relation, then prove its equivalence to the category of projective objects in the principle block of the category $\cO$. In \autoref{chapter:two-col-diagrammatics} we consider the affine symmetric group $\wtilde{S}_2$ to define the diagrammatic Soergel bimodules associated it, construct a basis for its morphism spaces and state the theorem for its equivalence to the category of algebraic Soergel bimodules. The extra generator in $\wtilde{S}_2$ compared with $S_2$ provides some additional complexity to the structure of the category. We then form a module category with two extra relations and provide a proof of its equivalence to the category of tilting modules for $\fraksl_2$. In the last chapter we discuss the advantages \red{and disadvantages} of diagrammatics in relation to \autoref{chapter:one-col-diagrammatics} and \autoref{chapter:two-col-diagrammatics}, mention generalisations of the results \red{and further areas of interest}.
+
+The contents of this thesis are for honours students and future readers that are interested in this topic. The reader is assumed to have some familiarity with the following.
+
+\begin{itemize}
+    \item Undergraduate algebra such as groups, rings, algebras and fields.
+    \item Representation theory of finite groups.
+    \item Basic category theory and monoidal categories.
+\end{itemize}
 
 
 
