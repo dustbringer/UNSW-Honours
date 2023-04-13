@@ -1,0 +1,60 @@
+\ProvidesPackage{preamble}
+
+% \usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath, amssymb, amsfonts, amscd}
+\usepackage{amsthm, thmtools}
+\usepackage{environ}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{array} % some commands for tabular
+% \usepackage{parskip} % removes indents and adds paragraph spacing
+% \setlength{\parindent}{0pt} % remove indents for new paragraphs
+
+% Autoref names
+\def\sectionautorefname{Section}
+\def\chapterautorefname{Chapter}
+
+% Tikz
+\usepackage{tikz}
+\usetikzlibrary{calc} % for coordinate calculations
+\usetikzlibrary{automata,arrows} % for transition diagrams
+% \usetikzlibrary{external} % compile tikz externally
+% \tikzexternalize[prefix=figures/] % activate and define figures/ as cache folder
+% \tikzset{external/only named=true} % only externalize when \tikzsetnextfilename{}
+
+\usetikzlibrary{cd} % commutative diagrams
+% Problem with tikzcd and externalize, https://tex.stackexchange.com/a/208524
+% \def\temp{&} \catcode`&=\active \let&=\temp
+% \NewEnviron{mytikzcd}[1][]{%
+% \begin{tikzpicture}[baseline=(current bounding box.west)]
+%     \node[inner sep=0, outer sep=0] {\begin{tikzcd}[#1]
+%         \BODY
+%     \end{tikzcd}};
+% \end{tikzpicture}
+% }
+
+% Font
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Blackboard one from bbold
+\DeclareMathAlphabet{\mathbbb}{U}{bbold}{m}{n}
+
+
+% Theorems
+% \numberwithin{equation}{section} % changes equation numbering to sections
+
+% \theoremstyle{definition}
+% \newtheorem{definition}[equation]{Definition}
+% \newtheorem{notation}[equation]{Notation}
+
+% \theoremstyle{remark}
+% \newtheorem{example}[equation]{Example}
+% \newtheorem{remark}[equation]{Remark}
+
+% \theoremstyle{plain}
+% \newtheorem{theorem}[equation]{Theorem}
+% \newtheorem{lemma}[equation]{Lemma}
+% \newtheorem{proposition}[equation]{Proposition}
+% \newtheorem{corollary}[equation]{Corollary}
+

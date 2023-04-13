@@ -1,0 +1,16 @@
+\tikz[vcenter, scale=0.4]{
+    \squarecoord
+    %
+    \path
+    ($(bot) - (1,0)$) edge[string=black] (mid)
+    ($(bot) + (1,0)$) edge[string=black] (mid)
+    (mid) edge[string=black] ($(top) - (1.5,0)$)
+    (mid) edge[string=black] (top)
+    (mid) edge[string=black] ($(top) + (1.5,0)$);
+    \node[box] at (mid) {$f \tensor h$};
+    \node[above] at ($(top) - (1.5,0)$) {$b$};
+    \node[above] at (top) {$c$};
+    \node[above] at ($(top) + (1.5,0)$) {$y$};
+    \node[below] at ($(bot) - (1,0)$) {$a$};
+    \node[below] at ($(bot) + (1,0)$) {$x$};
+}

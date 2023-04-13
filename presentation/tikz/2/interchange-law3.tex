@@ -1,0 +1,15 @@
+\tikz[vcenter, scale=0.4]{
+    \squarecoord
+    % f
+    \path
+    ($(top) + (-1,0)$) edge[string=black] ($(bot) + (-1,0)$);
+    \node[box] at ($(mid)+(-1,.75)$) {$f$};
+    \node[above] at ($(top) + (-1,0)$) {$b$};
+    \node[below] at ($(bot) + (-1,0)$) {$a$};
+    % g
+    \path
+    ($(top) + (1,0)$) edge[string=black] ($(bot) + (1,0)$);
+    \node[box] at ($(mid)+(1,-.75)$) {$g$};
+    \node[above] at ($(top) + (1,0)$) {$d$};
+    \node[below] at ($(bot) + (1,0)$) {$c$};
+}

@@ -1,0 +1,194 @@
+\ProvidesPackage{diagrams}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Diagrams
+
+% Reference: https://tex.stackexchange.com/questions/27278/a-macro-of-drawing-a-rectangle-with-several-parameters-in-tikz
+% \tikzset{
+%     enddot/.style n args={4}{
+%             circle,
+%             fill,
+%             inner sep=0pt, % no inside-rectangle
+%             minimum size=5pt % min diameter 5pt
+%         }
+% }
+
+% To draw enddot in diagrams
+% Params: Dot colour, scale
+\tikzset{
+    enddot/.style={
+            circle,
+            fill={#1},
+            inner sep=0pt, % no inside-rectangle
+            minimum size=5pt % min diameter 5pt
+        },
+    enddot/.default={black},
+    enddot/scaled/.style 2 args={
+            circle,
+            fill={#1},
+            inner sep=0pt, % no inside-rectangle
+            minimum size=5/0.4*#2 pt % min diameter 5pt
+        },
+    enddot/scaled/.default={black}{0.4}
+}
+
+% To draw string in diagrams
+% Params: Line colour, scale
+\tikzset{
+    string/.style={
+            line width=1.2pt,
+            {#1}
+        },
+    string/.default={black},
+    string/scaled/.style 2 args={
+            line width=1.2/0.4*#2 pt, % default very thick=1.2pt
+            {#1}
+        },
+    string/scaled/.default={black}{0.4},
+    round/.style={
+            line cap=round
+        },
+}
+
+% To draw box in diagrams (for nodes)
+\tikzset{
+    box/.style={
+            draw,
+            fill=white,
+            rounded corners
+        }
+}
+
+\newcommand{\bigbox}[3]{%
+    \draw[rounded corners, fill=white] ($ #2 $) rectangle node{#1} ($ #3 $);
+}
+
+% Centers inline tikz to the text
+\tikzset{
+    vcenter/.style={
+            baseline={([yshift=-.5ex]current bounding box.center)}
+        },
+}
+
+\newcommand{\squarecoord}{%
+    \coordinate (top) at (2,4);
+    \coordinate (topl) at (0,4);
+    \coordinate (topr) at (4,4);
+    %
+    \coordinate (mid) at (2,2);
+    %
+    \coordinate (bot) at (2,0);
+    \coordinate (botl) at (0,0);
+    \coordinate (botr) at (4,0);
+}
+
+% Spawns two invisible points
+\newcommand{\tikzfixsize}[2]{%
+    \node at #1 {};
+    \node at #2 {};
+}
+
+% invisible labels
+% Fix: Just use phantom{$a$}
+% \tikzset{
+%     hide label/.style={
+%             text opacity=0
+%         }
+% }
+% \tikzset{hide labels/.style={label/.append style={text opacity=0}}}
+
+% Right wall
+% Params: far right x-coordinate, height, width
+\newcommand{\wallr}[3]{%
+    % \draw[draw=none, fill=black!40, path fading = east]
+    % (#1,#2) --
+    % ++(-#3/2,0) --
+    % ++(0,-#2) --
+    % ++(#3/2,0) --
+    % cycle;
+    \shade [left color=transparent!50, right color=transparent!0, middle color=black!30] (#1,#2) rectangle (#1-#3,0);
+}
+
+% Left wall
+% Params: far left x-coordinate, height, width
+\newcommand{\walll}[3]{%
+    % \draw[draw=none, fill=black!40]
+    % (#1,#2) --
+    % ++(#3,0) --
+    % ++(0,-#2) --
+    % ++(-#3,0) --
+    % cycle;
+    \shade [left color=transparent!50, right color=transparent!0, middle color=black!30] (#1,#2) rectangle (#1+#3,0);
+}
+
+% Draw a cap
+\newcommand{\diagcap}[4][dRed]{%
+    \draw[string=#1] (#2)
+    to[out=90,in=180,looseness=1] (#3)
+    to[out=0,in=90,looseness=1] (#4)
+    ;
+}
+
+% Draw a cup
+\newcommand{\diagcup}[4][dRed]{%
+    \draw[string=#1] (#2)
+    to[out=270,in=180,looseness=1] (#3)
+    to[out=0,in=270,looseness=1] (#4)
+    ;
+}
+
+% Draw a merge trivalent vertex
+\newcommand{\diagmult}[5][dRed]{%
+    \diagcap[#1]{#2}{#3}{#4};
+    \path (#3) edge[string=#1] (#5);
+}
+
+% Draw a split trivalent vertex
+\newcommand{\diagcomult}[5][dRed]{%
+    \diagcup[#1]{#2}{#3}{#4};
+    \path (#3) edge[string=#1] (#5);
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Inline Diagrams
+
+\newcommand{\barbell}[1][dRed]{
+    \tikzsetnextfilename{inline-barbell-#1}
+    \tikz[baseline=0,scale=0.25]{
+        \tikzfixsize{(0,0)}{(0.2,1)};
+        %
+        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1);
+        \node [enddot/scaled={#1}{0.25}] at (0.1,0) {};
+        \node [enddot/scaled={#1}{0.25}] at (0.1,1) {};
+    }
+}
+
+\newcommand{\unit}[1][dRed]{
+    \tikzsetnextfilename{inline-line-dot-#1}
+    \tikz[baseline=0,scale=0.25]{
+        \tikzfixsize{(0,0)}{(0.2,1)};
+        %
+        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1);
+        \node [enddot/scaled={#1}{0.25}] at (0.1,1) {};
+    }
+}
+
+\newcommand{\counit}[1][dRed]{
+    \tikzsetnextfilename{inline-dot-line-#1}
+    \tikz[baseline=0,scale=0.25]{
+        \tikzfixsize{(0,0)}{(0.2,1)};
+        %
+        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1);
+        \node [enddot/scaled={#1}{0.25}] at (0.1,0) {};
+    }
+}
+
+\newcommand{\identity}[1][dRed]{
+    \tikzsetnextfilename{inline-identity-#1}
+    \tikz[baseline=0,scale=0.25]{
+        \tikzfixsize{(0,0)}{(0.2,1)};
+        %
+        \path (0.1,0) edge[string/scaled={#1}{0.25}] (0.1,1);
+    }
+}
+

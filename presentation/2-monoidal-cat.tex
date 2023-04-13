@@ -1,0 +1,127 @@
+\begin{frame}
+    \frametitle{Monoidal Categories}
+
+    A \textit{monoidal category} is a category with an associative multiplication $\tensor$ for objects and morphisms, and a unit object $\mathbbb{1}$, such that the multiplication works well with composition. \newline
+
+    Let $\mcal{C}$ be a monoidal category.
+
+    % \only<1->{Testing}
+    % \onslide<2>{Testing}
+\end{frame}
+
+% Basic
+\begin{frame}
+    \frametitle{Monoidal Categories}
+
+    \begin{center}
+        $f: a \to b$ \\ \vspace{0.5em}
+        \input{tikz/2/string-diagram-example1.tex}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Monoidal Categories}
+
+    \begin{center}
+        $f: a \to b \tensor c$ \\ \vspace{0.5em}
+        \input{tikz/2/string-diagram-example2.tex}
+    \end{center}
+\end{frame}
+
+% Composition
+\begin{frame}
+    \frametitle{Monoidal Categories}
+
+    \begin{center}
+        $f: a \to b \tensor c$ \\
+        $g: b \tensor c \to a \tensor c$ \\ \vspace{0.5em}
+
+        \only<1>{
+            \input{tikz/2/string-diagram-example-composition0.1.tex}
+            \quad , \quad
+            \input{tikz/2/string-diagram-example-composition0.2.tex}
+        }
+        \only<2->{
+            \input{tikz/2/string-diagram-example-composition1.tex}
+        }
+        \only<3->{
+            = \input{tikz/2/string-diagram-example-composition2.tex}
+        }
+    \end{center}
+\end{frame}
+
+
+% Identity
+\begin{frame}
+    \frametitle{Monoidal Categories}
+
+    \begin{center}
+        $\id_a: a \to a$ \\ \vspace{0.5em}
+        \input{tikz/2/string-diagram-example-identity.tex}
+    \end{center}
+\end{frame}
+
+% Tensor
+\begin{frame}
+    \frametitle{Monoidal Categories}
+
+    \begin{center}
+        $f: a \to b \tensor c$ \\
+        $h: x \to y$ \\ \vspace{0.5em}
+        \only<1>{
+            \input{tikz/2/string-diagram-example-tensor0.1.tex}
+            \quad , \quad
+            \input{tikz/2/string-diagram-example-tensor0.2.tex}
+        }
+        \only<2->{
+            \input{tikz/2/string-diagram-example-tensor1.tex}
+        }
+        \only<3->{
+            = \input{tikz/2/string-diagram-example-tensor2.tex}
+        }
+    \end{center}
+\end{frame}
+
+% Unit
+\begin{frame}
+    \frametitle{Monoidal Categories}
+
+    \begin{center}
+        \only<1>{
+            $f_1: a \to \mathbbb{1}$ \\ \vspace{0.5em}
+            \input{tikz/2/string-diagram-example-unit1.tex}
+        }
+        \only<2>{
+            $f_2: \mathbbb{1} \to b \tensor c$ \\ \vspace{0.5em}
+            \input{tikz/2/string-diagram-example-unit2.tex}
+        }
+    \end{center}
+\end{frame}
+
+% interchange law
+\begin{frame}
+    \frametitle{Monoidal Categories}
+
+    \begin{center}
+        \textit{Interchange Law} \\ \vspace{0.5em}
+        \input{tikz/2/interchange-law1.tex}
+        = \input{tikz/2/interchange-law2.tex}
+        = \input{tikz/2/interchange-law3.tex}
+    \end{center}
+\end{frame}
+
+
+% Frobenius Object %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+    \frametitle{Frobenius Object}
+
+    In a monoidal category, a Frobenius object is an object $a$ with four maps
+    \begin{center}
+        
+    \end{center}
+\end{frame}
+
+% k-linear category
+

@@ -1,0 +1,12 @@
+\tikz[vcenter, scale=0.4]{
+    \squarecoord
+    % h
+    \path
+    ($(bot) + (-1.5,0)$) edge[string=black] ($(bot) + (-1.5,4)$)
+    ($(bot) + (1.5,0)$) edge[string=black] ($(bot) + (1.5,4)$);
+    \bigbox{$g$}{(mid) + (2,-0.75)}{(mid) + (-2,+0.75)};
+    \node[above] at ($(top) + (-1.5,0)$) {$a$};
+    \node[above] at ($(top) + (1.5,0)$) {$c$};
+    \node[below] at ($(bot) - (1.5,0)$) {$b$};
+    \node[below] at ($(bot) + (1.5,0)$) {$c$};
+}
