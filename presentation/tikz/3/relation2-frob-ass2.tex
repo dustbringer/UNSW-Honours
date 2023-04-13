@@ -1,0 +1,11 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(4,4)}
+    \squarecoord
+    %
+    \path
+    (topl) edge[string=dRed] ($(mid)+(-.75,0)$)
+    (topr) edge[string=dRed] ($(mid)+(.75,0)$)
+    (botl) edge[string=dRed] ($(mid)+(-.75,0)$)
+    (botr) edge[string=dRed] ($(mid)+(.75,0)$)
+    ($(mid)+(-.75,0)$) edge[string=dRed] ($(mid)+(.75,0)$);
+}

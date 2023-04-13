@@ -42,66 +42,93 @@ Monoid objects generalise monoids, i.e. sets with an identity equipped with an a
 
 The maps and relations for a Frobenius object $(A,\mu,\eta,\delta,\epsilon)$ have a nice description with the diagrams given in \autoref{sec:2.1}. The structure maps are drawn as
 \begin{center}
-    \input{tikz/2.2/frob-multiplication.tex}
+    \inputtikz{2.2/frob-multiplication}
     \quad , \quad
-    \input{tikz/2.2/frob-unit.tex}
+    \inputtikz{2.2/frob-unit}
     \quad , \quad
-    \input{tikz/2.2/frob-comultiplication.tex}
+    \inputtikz{2.2/frob-comultiplication}
     \quad , \quad
-    \input{tikz/2.2/frob-counit.tex}.
+    \inputtikz{2.2/frob-counit}.
 \end{center}
 
 For the rest of this section, we only work with the Frobenius object $A$ and $\mathbbb{1}$. We can stop putting the label $A$ by identifying $A$ with the identity strand $\mathsf{I} = \id_A$. Diagrammatically, the associativity relation $\mu \circ (\mu \tensor \id_M) = \mu \circ (\id_M \tensor \mu)$ is
 \begin{center}
-    \input{tikz/2.2/frob-relation-associativity1.tex}
+    \inputtikz{2.2/frob-relation-associativity1}
     =
-    \input{tikz/2.2/frob-relation-associativity2.tex},
+    \inputtikz{2.2/frob-relation-associativity2},
 \end{center}
 the coassociativity relation $(\delta \tensor \id_A) \circ \delta = (\id_A \tensor \delta) \circ \delta$ is
 \begin{center}
-    \input{tikz/2.2/frob-relation-coassociativity1.tex}
+    \inputtikz{2.2/frob-relation-coassociativity1}
     =
-    \input{tikz/2.2/frob-relation-coassociativity2.tex},
+    \inputtikz{2.2/frob-relation-coassociativity2},
 \end{center}
 the unit relation $\id_A = \mu \circ (\eta \tensor \id_A) = \mu \circ (\id_A \tensor \eta)$ is
 \begin{center}
-    \input{tikz/2.2/frob-relation-unit1.tex}
+    \inputtikz{2.2/frob-relation-unit1}
     =
-    \input{tikz/2.2/frob-relation-unit2.tex}
+    \inputtikz{2.2/frob-relation-unit2}
     =
-    \input{tikz/2.2/frob-relation-unit3.tex},
+    \inputtikz{2.2/frob-relation-unit3},
 \end{center}
 the counit relation $\id_A = (\epsilon \tensor \id_A) \circ \delta = (\id_A \tensor \epsilon) \circ \delta$ is
 \begin{center}
-    \input{tikz/2.2/frob-relation-counit1.tex}
+    \inputtikz{2.2/frob-relation-counit1}
     =
-    \input{tikz/2.2/frob-relation-counit2.tex}
+    \inputtikz{2.2/frob-relation-counit2}
     =
-    \input{tikz/2.2/frob-relation-counit3.tex},
+    \inputtikz{2.2/frob-relation-counit3},
 \end{center}
 and the Frobenius relation $(\id_A \tensor \mu) \circ (\delta \tensor \id_A) = \delta \circ \mu = (\mu \tensor \id_A) \circ (\id_A \tensor \delta)$ is
 \begin{center}
-    \input{tikz/2.2/frob-relation-frob1.tex}
+    \inputtikz{2.2/frob-relation-frob1}
     =
-    \input{tikz/2.2/frob-relation-frob2.tex}
+    \inputtikz{2.2/frob-relation-frob2}
     =
-    \input{tikz/2.2/frob-relation-frob3.tex}.
+    \inputtikz{2.2/frob-relation-frob3}.
 \end{center}
 
 
-If we stop labelling the functions and draw the structure maps as
+To simplify the diagrams, we stop labelling the functions and draw the structure maps as
 \begin{center}
-    \input{tikz/2.2/frob-simple-multiplication.tex}
+    \inputtikz{2.2/frob-simple-multiplication}
     \quad , \quad
-    \input{tikz/2.2/frob-simple-unit.tex}
+    \inputtikz{2.2/frob-simple-unit}
     \quad , \quad
-    \input{tikz/2.2/frob-simple-comultiplication.tex}
+    \inputtikz{2.2/frob-simple-comultiplication}
     \quad , \quad
-    \input{tikz/2.2/frob-simple-counit.tex},
+    \inputtikz{2.2/frob-simple-counit}.
 \end{center}
-then the relations become...
+So the relations become
+\begin{center}
+    \inputtikz{2.2/frob-simple-relation-associativity1}
+    =
+    \inputtikz{2.2/frob-simple-relation-associativity2}, \\
 
+    \inputtikz{2.2/frob-simple-relation-coassociativity1}
+    =
+    \inputtikz{2.2/frob-simple-relation-coassociativity2}, \\
 
+    \inputtikz{2.2/frob-simple-relation-unit1}
+    =
+    \inputtikz{2.2/frob-simple-relation-unit2}
+    =
+    \inputtikz{2.2/frob-simple-relation-unit3}, \\
+
+    \inputtikz{2.2/frob-simple-relation-counit1}
+    =
+    \inputtikz{2.2/frob-simple-relation-counit2}
+    =
+    \inputtikz{2.2/frob-simple-relation-counit3},
+\end{center}
+and
+\begin{center}
+    \inputtikz{2.2/frob-simple-relation-frob1}
+    =
+    \inputtikz{2.2/frob-simple-relation-frob2}
+    =
+    \inputtikz{2.2/frob-simple-relation-frob3}.
+\end{center}
 
 
 

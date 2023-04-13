@@ -1,0 +1,10 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(0,0)}{(2,4)}
+    %
+    \path
+    (1,2) edge[string=black] (1,4);
+    \node[box] at (1,2) {$\eta$};
+    % labels
+    \node[above] at (1,4) {$A$};
+    \node[below] at (1,0) {\phantom{$\mathbbb{1}$}};
+}

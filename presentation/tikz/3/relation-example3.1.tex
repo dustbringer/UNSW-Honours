@@ -1,0 +1,19 @@
+\tikz[vcenter, scale=0.6]{
+    \tikzfixsize{(0,0)}{(4,4)}
+    \squarecoord
+    %
+    \path
+    (top) edge[string=dRed] ($(mid) + (0,.75)$)
+    (.5,0.75) edge[string=dRed] (.5,1.75)
+    ;
+    \draw[string=dRed] ($(bot) - (1,0)$)
+    to[out=90,in=200] ($(mid) + (0,.75)$)
+    to[out=-20,in=90] (2.9,1.75)
+    ;
+    \path ($(bot) + (1,0)$) edge[string=dRed] (3,0.75);
+    %
+    \node [enddot=dRed] at (3,0.75) {};
+    \node [enddot=dRed] at (2.9,1.75) {};
+    \node [enddot=dRed] at (.5,0.75) {};
+    \node [enddot=dRed] at (.5,1.75) {};
+}

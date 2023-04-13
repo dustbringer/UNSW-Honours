@@ -1,0 +1,34 @@
+\tikz[vcenter, scale=0.6]{
+    \tikzfixsize{(0,0)}{(4,4)}
+    \squarecoord
+    %
+    \path
+    % Top half
+    (4,6) edge[string=dRed] (4,2)
+    (4,4) edge[string=dRed] (1,4)
+    (2,4) edge[string=dRed] (2,4.5)
+    (2,4.5) edge[string=dRed] (2.5,5)
+    (2,4.5) edge[string=dRed] (1.5,5)
+    % Barbells
+    (3.25,2) edge[string=dRed] (3.25,3)
+    (1.75,1) edge[string=dRed] (1.75,2)
+    ;
+    % Bottom curve
+    \draw[string=dRed] (4,2)
+    to[out=270,in=0] (3.25,1)
+    to[out=180,in=270] (2.5,2)
+    to[out=90,in=0] (1.75,3)
+    to[out=180,in=90] (1,2);
+    \path
+    (3.25,1) edge[string=dRed] (3.25,0)
+    (1,2) edge[string=dRed] (1,0)
+    ;
+    %
+    \node [enddot=dRed] at (1,4) {};
+    \node [enddot=dRed] at (2.5,5) {};
+    \node [enddot=dRed] at (1.5,5) {};
+    \node [enddot=dRed] at (3.25,2) {};
+    \node [enddot=dRed] at (3.25,3) {};
+    \node [enddot=dRed] at (1.75,1) {};
+    \node [enddot=dRed] at (1.75,2) {};
+}

@@ -1,0 +1,18 @@
+\tikz[vcenter, scale=0.4]{
+    \squarecoord
+    \tikzfixsize{(1,0)}{(4,4)}
+    %
+    \path
+    (bot) edge[string=black] (mid);
+    \node[box] at (mid) {$f_1$};
+    \node[below] at (bot) {$a$};
+    \node[above] at (top) {\phantom{$a$}};
+    %
+    \path
+    ($(mid)+(2,0)$) edge[string=black] ($(top) + (-1.5+2,0)$)
+    ($(mid)+(2,0)$) edge[string=black] ($(top) + (1.5+2,0)$);
+    \node[box] at ($(mid)+(2,0)$) {$f_2$};
+    \node[above] at ($(top) + (-1.5+2,0)$) {$b$};
+    \node[above] at ($(top) + (1.5+2,0)$) {$c$};
+    \node[below] at ($(bot)+(2,0)$) {\phantom{$a$}};
+}

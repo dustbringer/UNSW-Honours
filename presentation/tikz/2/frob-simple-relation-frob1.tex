@@ -1,0 +1,15 @@
+\tikz[vcenter, scale=0.35]{
+    \tikzfixsize{(0,0)}{(6,6)}
+    %
+    \path (6,0) edge[string=black] (6,2);
+    \path
+    (0,4) edge[string=black] (2,2)
+    (4,4) edge[string=black] (2,2)
+    (2,2) edge[string=black] (2,0);
+    %
+    \path (0,4) edge[string=black] (0,6);
+    \path
+    % (2,2) edge[string=black] (4,4)
+    (6,2) edge[string=black] (4,4)
+    (4,4) edge[string=black] (4,6);
+}
