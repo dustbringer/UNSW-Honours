@@ -1,0 +1,113 @@
+\section{Frobenius Objects}
+\label{sec:2.2}
+
+\red{Something something about }
+\red{Many relations in categorical structures can be written in diagrammatic terms - adjunctions, monoid}
+
+\red{Something about isotopy}
+
+Let $\mcal{C}$ be a (strict) monoidal category. We can define the following objects.
+
+\begin{definition}
+    A \textit{monoid object} in $\mcal{C}$ is a triple $(M,\mu,\eta)$ for an object $M \in \mcal{C}$, a \textit{multiplication} map $\mu: M \tensor M \to M$ and a \textit{unit} map $\eta: \mathbbb{1} \to M$, such that
+    \begin{center}
+        \input{tikz/2.2/cd-unit.tex}
+    \end{center}
+    and
+    \begin{center}
+        \input{tikz/2.2/cd-multiplication.tex}
+    \end{center}
+    commute. The first diagram is the \textit{associativity} relation $\mu \circ (\mu \tensor \id_M) = \mu \circ (\id_M \tensor \mu)$ and the second diagram is the \textit{unit} relation $\id_M = \mu \circ (\eta \tensor \id_M) = \mu \circ (\id_M \tensor \eta)$.
+
+    Dually, a \textit{comonoid object} in $\mcal{C}$ is a triple $(M,\delta,\epsilon)$ for an object $M \in \mcal{C}$, a \textit{comultiplication} map $\delta: M \to M \tensor M$ and a \textit{counit} map $\epsilon: M \to \mathbbb{1}$, satisfying the \textit{coassociativity} relation
+    \begin{center}
+        \input{tikz/2.2/cd-counit.tex}
+    \end{center}
+    and \textit{counit} relation
+    \begin{center}
+        \input{tikz/2.2/cd-comultiplication.tex}.
+    \end{center}
+\end{definition}
+
+Monoid objects generalise monoids, i.e. sets with an identity equipped with an associative binary operation.
+
+\begin{definition}
+    A \textit{Frobenius object} in $\mcal{C}$ is a quintuple $(A,\mu,\eta,\delta,\epsilon)$ such that $(A,\mu,\eta)$ is a monoid object, $(A,\delta,\epsilon)$ is a comonoid object, and the maps satisfy the \textit{Frobenius relations}
+    \begin{center}
+        \input{tikz/2.2/cd-frob-relation.tex},
+    \end{center}
+    that is $(\id_A \tensor \mu) \circ (\delta \tensor \id_A) = \delta \circ \mu = (\mu \tensor \id_A) \circ (\id_A \tensor \delta)$.
+\end{definition}
+
+
+The maps and relations for a Frobenius object $(A,\mu,\eta,\delta,\epsilon)$ have a nice description with the diagrams given in \autoref{sec:2.1}. The structure maps are drawn as
+\begin{center}
+    \input{tikz/2.2/frob-multiplication.tex}
+    \quad , \quad
+    \input{tikz/2.2/frob-unit.tex}
+    \quad , \quad
+    \input{tikz/2.2/frob-comultiplication.tex}
+    \quad , \quad
+    \input{tikz/2.2/frob-counit.tex}.
+\end{center}
+
+For the rest of this section, we only work with the Frobenius object $A$ and $\mathbbb{1}$. We can stop putting the label $A$ by identifying $A$ with the identity strand $\mathsf{I} = \id_A$. Diagrammatically, the associativity relation $\mu \circ (\mu \tensor \id_M) = \mu \circ (\id_M \tensor \mu)$ is
+\begin{center}
+    \input{tikz/2.2/frob-relation-associativity1.tex}
+    =
+    \input{tikz/2.2/frob-relation-associativity2.tex},
+\end{center}
+the coassociativity relation $(\delta \tensor \id_A) \circ \delta = (\id_A \tensor \delta) \circ \delta$ is
+\begin{center}
+    \input{tikz/2.2/frob-relation-coassociativity1.tex}
+    =
+    \input{tikz/2.2/frob-relation-coassociativity2.tex},
+\end{center}
+the unit relation $\id_A = \mu \circ (\eta \tensor \id_A) = \mu \circ (\id_A \tensor \eta)$ is
+\begin{center}
+    \input{tikz/2.2/frob-relation-unit1.tex}
+    =
+    \input{tikz/2.2/frob-relation-unit2.tex}
+    =
+    \input{tikz/2.2/frob-relation-unit3.tex},
+\end{center}
+the counit relation $\id_A = (\epsilon \tensor \id_A) \circ \delta = (\id_A \tensor \epsilon) \circ \delta$ is
+\begin{center}
+    \input{tikz/2.2/frob-relation-counit1.tex}
+    =
+    \input{tikz/2.2/frob-relation-counit2.tex}
+    =
+    \input{tikz/2.2/frob-relation-counit3.tex},
+\end{center}
+and the Frobenius relation $(\id_A \tensor \mu) \circ (\delta \tensor \id_A) = \delta \circ \mu = (\mu \tensor \id_A) \circ (\id_A \tensor \delta)$ is
+\begin{center}
+    \input{tikz/2.2/frob-relation-frob1.tex}
+    =
+    \input{tikz/2.2/frob-relation-frob2.tex}
+    =
+    \input{tikz/2.2/frob-relation-frob3.tex}.
+\end{center}
+
+
+If we stop labelling the functions and draw the structure maps as
+\begin{center}
+    \input{tikz/2.2/frob-simple-multiplication.tex}
+    \quad , \quad
+    \input{tikz/2.2/frob-simple-unit.tex}
+    \quad , \quad
+    \input{tikz/2.2/frob-simple-comultiplication.tex}
+    \quad , \quad
+    \input{tikz/2.2/frob-simple-counit.tex},
+\end{center}
+then the relations become...
+
+
+
+
+
+
+\red{Talk about isotopy}
+
+
+\red{Maybe something about the (diagrammatic?) category Frob, capturing the data of a frobenius object}
+

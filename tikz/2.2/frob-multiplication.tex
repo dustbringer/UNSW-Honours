@@ -1,0 +1,17 @@
+\tikz[vcenter, scale=0.4]{
+    % \tikzfixsize{(0,0)}{(4,4)}
+    % \node[below] (dom) at (-3,0) {$A \tensor A$};
+    % \node[above] (cod) at (-3,4) {$A$};
+    % \path[|->, >=stealth']
+    % (dom) edge node[left] {$\mu$} (cod);
+    %
+    \path
+    (0,0) edge[string=black] (1.5,2)
+    (3,0) edge[string=black] (1.5,2)
+    (1.5,2) edge[string=black] (1.5,4);
+    \node[box] at (1.5,2) {$\mu$};
+    % labels
+    \node[below] at (0,0) {$A$};
+    \node[below] at (3,0) {$A$};
+    \node[above] at (1.5,4) {$A$};
+}

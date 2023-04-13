@@ -1,0 +1,13 @@
+\tikz[vcenter, scale=0.3]{
+    \tikzfixsize{(0-.5,0)}{(4+.5,8)}
+    %
+    \path (4,8) edge[string=black] (4,4);
+    \path
+    (0,6) edge[string=black] (0,4);
+    \node[box] at (0,6) {$\epsilon$};
+    \path
+    (0,4) edge[string=black, round] (2,2)
+    (4,4) edge[string=black, round] (2,2)
+    (2,2) edge[string=black] (2,0);
+    \node[box] at (2,2) {$\delta$};
+}

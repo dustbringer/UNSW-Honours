@@ -1,0 +1,13 @@
+\tikz[vcenter, scale=0.4]{
+    % \tikzfixsize{(0,0)}{(4,4)}
+    %
+    \path
+    (0,4) edge[string=black] (1.5,2)
+    (3,4) edge[string=black] (1.5,2)
+    (1.5,2) edge[string=black] (1.5,0);
+    \node[box] at (1.5,2) {$\delta$};
+    % labels
+    \node[below] at (1.5,0) {$A$};
+    \node[above] at (0,4) {$A$};
+    \node[above] at (3,4) {$A$};
+}
