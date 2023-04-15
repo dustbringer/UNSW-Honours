@@ -1,8 +1,8 @@
 \tikz{
     \node (e) at (0,0) {$\vn$};
-    \node (s) at (0,-1.5) {$s$};
-    \node (ts) at (0,-3) {$ts$};
-    \node (sts) at (0,-4.5) {$sts$};
+    \node (s) at (0,-1.5) {$b_s$};
+    \node (ts) at (0,-3) {$b_{ts}$};
+    \node (sts) at (0,-4.5) {$b_{sts}$};
     \node (dots1) at (0,-6) {$\vdots$};
     \path[->, >=stealth']
     % empty
@@ -26,12 +26,12 @@
     (dots1) edge[bend right] node[right,xshift=-5] {\usebox\subtikzUnitThree} (sts)
     ;
     %%
-    \node at (2.5,-.5) {$\xmapsto{F}$};
+    \node at (2.5,-.5) {$\xmapsto{F'}$};
     %%
     \node (Te) at (5,0) {$T(\vn)$};
-    \node (Ts) at (5,-1.5) {$\Theta_s T(\vn)$};
-    \node (Tts) at (5,-3) {$\Theta_t \Theta_s T(\vn)$};
-    \node (Tsts) at (5,-4.5) {$\Theta_s \Theta_t \Theta_s T(\vn)$};
+    \node (Ts) at (5,-1.5) {$T(s)$};
+    \node (Tts) at (5,-3) {$T(ts)$};
+    \node (Tsts) at (5,-4.5) {$T(sts)$};
     \node (dots2) at (5,-6) {$\vdots$};
     \path[->, >=stealth']
     % empty

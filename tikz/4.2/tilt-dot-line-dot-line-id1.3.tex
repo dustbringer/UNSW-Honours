@@ -1,0 +1,15 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(-.25,0)}{(0,0)}
+    %
+    \path (1,4) edge[string=dBlue] (1,3);
+    \node[enddot=dBlue] at (1,3) {};
+    \draw[string=dRed] (0,4)
+    to[out=270,in=180-20,looseness=.9] (1,2)
+    to[out=0+20,in=270,looseness=.9] (2,4);
+    \path (1,0) edge[string=dRed] (1,2);
+    \path (0,1) edge[string=dRed] (0,2);
+    \node[enddot=dRed] at (0,1) {};
+    \node[enddot=dRed] at (0,2) {};
+    % 
+    \wallr{3.5}{4}{1}
+}
