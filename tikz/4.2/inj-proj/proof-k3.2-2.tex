@@ -1,0 +1,14 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(-.25,0)}{(0,0)}
+    % barbell
+    \path (1,1.25) edge[string=dBlue] (1,2.75);
+    \node[enddot=dBlue] at (1,1.25) {};
+    \node[enddot=dBlue] at (1,2.75) {};
+    %
+    \path
+    (0,0) edge[string=dRed] (0,4)
+    (2,0) edge[string=dBlue] (2,4)
+    (3,0) edge[string=dRed] (3,4)
+    ;
+    \wallr{5}{4}{1}
+}

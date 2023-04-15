@@ -3,7 +3,7 @@
 
 A \textit{monoidal category} $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold\footnote{For more details see \cite{tensor-categories}.}. The bifunctor $\tensor$ is called the \textit{tensor} or \textit{monoidal product}. A monoidal category is \textit{strict} if $A \tensor (B \tensor C) = (A \tensor B) \tensor C$ and $A = \mathbbb{1} \tensor A = A \tensor \mathbbb{1}$ for objects and similarly for morphisms. In this paper, we will assume that monoidal categories are strict, since all monoidal categories are monoidally equivalent to a strict one\footnote{See \cite[\nopp VII.2]{maclane-category-theory} or \cite[Thm 2.8.5]{tensor-categories}}.
 
-The morphisms of $\mcal{C}$ can be drawn as string diagrams, where the morphism maps from the bottom to the top. Functions that make up the morphism are drawn as tokens or boxes. For example
+The morphisms of $\mcal{C}$ can be drawn as string diagrams, where the morphism maps from the bottom to the top. Functions that make up the morphism are drawn as tokens or boxes. \red{Say something about this being in a planar strip, with domain and codomain as bottom and top.} For example
 \begin{center}
     \inputtikz{2.1/string-diagram-example}
 \end{center}
@@ -54,6 +54,9 @@ Before looking at our main example of a diagrammatic monoidal category, we first
 \begin{definition}
     For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear. A \textit{$R$-linear monoidal category} is a category that is both monoidal and $R$-linear such that the monoidal product on morphisms is $R$-bilinear.
 \end{definition}
+
+\red{Talk about composition with 0 is 0}
+\red{Talk about tensor with 0 is 0 (is this even right?)}
 
 \begin{example}
     Let $\Bbbk$ be a field. The category of vector spaces over $\Bbbk$, $\cat{Vect}_\Bbbk$, is a $\Bbbk$-linear monoidal category. This follows by the classical theory of linear algebra.

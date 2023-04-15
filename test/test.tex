@@ -1,13 +1,28 @@
 \documentclass[tikz, border=5px]{standalone}
+\usepackage{amsmath, amssymb, amsfonts, amscd}
+\usepackage{amsthm, thmtools}
+\usepackage{environ}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\newcommand{\vn}{\varnothing}
+\DeclareMathOperator{\id}{id}
 \usetikzlibrary{calc} % for coordinate calculations
+\usetikzlibrary{automata,arrows} % for transition diagrams
+\usetikzlibrary{decorations.pathreplacing}
 
 % Colours
 \definecolor{dBlue}{HTML}{157DEC}
 \definecolor{dRed}{HTML}{FF2400}
-\definecolor{dPurp}{HTML}{DA70D6}
+\definecolor{dPurp}{HTML}{9932CC}
+\definecolor{dPink}{HTML}{EE82EE}
 \newcommand{\dRed}[1]{{\color{dRed}#1}}
 \newcommand{\dBlue}[1]{{\color{dBlue}#1}}
 \newcommand{\dPurp}[1]{{\color{dPurp}#1}}
+\newcommand{\dPink}[1]{{\color{dPink}#1}}
+
+\definecolor{grey}{HTML}{A9A9A9}
+
 
 % To draw enddot in diagrams
 % Params: Dot colour, scale
@@ -52,6 +67,29 @@
             draw,
             fill=white,
             rounded corners
+        }
+}
+
+% Drawing braces
+\tikzset{
+    overbrace/.style={
+            thick,
+            decoration={
+                    brace,
+                    raise=1pt
+                },
+            decorate
+        }
+}
+\tikzset{
+    underbrace/.style={
+            thick,
+            decoration={
+                    brace,
+                    mirror,
+                    raise=1pt
+                },
+            decorate
         }
 }
 
@@ -136,195 +174,30 @@
     \path (#3) edge[string=#1] (#5);
 }
 
-\usepackage{amsmath, amssymb, amsfonts, amscd}
-\newcommand{\vn}{\varnothing}
-\usetikzlibrary{automata,arrows} % for transition diagrams
-\usepackage{amsthm, thmtools}
-\usepackage{environ}
-\usepackage{enumitem}
-\usepackage{mathtools}
-\DeclareMathOperator{\id}{id}
-
-\newsavebox\subtikzUnit
-\savebox{\subtikzUnit}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1.5);
-        \node [enddot/scaled={dRed}{0.25}] at (0,1.5) {};
-    }
-}
-
-\newsavebox\subtikzCounit
-\savebox{\subtikzCounit}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,1.5) edge[string/scaled={dRed}{0.25}] (0,3);
-        \node [enddot/scaled={dRed}{0.25}] at (0,1.5) {};
-    }
-}
-
-\newsavebox\subtikzIdentity
-\savebox{\subtikzIdentity}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,3);
-    }
-}
-
-\newsavebox\subtikzCounitUnit
-\savebox{\subtikzCounitUnit}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1);
-        \node [enddot/scaled={dRed}{0.25}] at (0,1) {};
-        %
-        \path (0,3) edge[string/scaled={dRed}{0.25}] (0,2);
-        \node [enddot/scaled={dRed}{0.25}] at (0,2) {};
-    }
-}
-
-% ts
-\newsavebox\subtikzUnitOne
-\savebox{\subtikzUnitOne}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,1.5);
-        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
-        %
-        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
-    }
-}
-
-\newsavebox\subtikzCounitOne
-\savebox{\subtikzCounitOne}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,1.5) edge[string/scaled={dBlue}{0.25}] (0,3);
-        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
-        %
-        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
-    }
-}
-
-\newsavebox\subtikzIdentityOne
-\savebox{\subtikzIdentityOne}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,3);
-        %
-        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
-    }
-}
-
-\newsavebox\subtikzCounitUnitOne
-\savebox{\subtikzCounitUnitOne}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,1);
-        \node [enddot/scaled={dBlue}{0.25}] at (0,1) {};
-        %
-        \path (0,3) edge[string/scaled={dBlue}{0.25}] (0,2);
-        \node [enddot/scaled={dBlue}{0.25}] at (0,2) {};
-        %
-        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
-    }
-}
-
-
-% sts
-\newsavebox\subtikzUnitTwo
-\savebox{\subtikzUnitTwo}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1.5);
-        \node [enddot/scaled={dRed}{0.25}] at (0,1.5) {};
-        %
-        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
-        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
-    }
-}
-
-\newsavebox\subtikzCounitTwo
-\savebox{\subtikzCounitTwo}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,1.5) edge[string/scaled={dRed}{0.25}] (0,3);
-        \node [enddot/scaled={dRed}{0.25}] at (0,1.5) {};
-        %
-        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
-        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
-    }
-}
-
-\newsavebox\subtikzIdentityTwo
-\savebox{\subtikzIdentityTwo}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,3);
-        %
-        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
-        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
-    }
-}
-
-\newsavebox\subtikzCounitUnitTwo
-\savebox{\subtikzCounitUnitTwo}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,0) edge[string/scaled={dRed}{0.25}] (0,1);
-        \node [enddot/scaled={dRed}{0.25}] at (0,1) {};
-        %
-        \path (0,3) edge[string/scaled={dRed}{0.25}] (0,2);
-        \node [enddot/scaled={dRed}{0.25}] at (0,2) {};
-        %
-        \path (1,0) edge[string/scaled={dBlue}{0.25}] (1,3);
-        \path (2,0) edge[string/scaled={dRed}{0.25}] (2,3);
-    }
-}
-% tsts
-\newsavebox\subtikzUnitThree
-\savebox{\subtikzUnitThree}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,0) edge[string/scaled={dBlue}{0.25}] (0,1.5);
-        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
-        %
-        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
-        \path (2,0) edge[string/scaled={dBlue}{0.25}] (2,3);
-        \path (3,0) edge[string/scaled={dRed}{0.25}] (3,3);
-    }
-}
-
-\newsavebox\subtikzCounitThree
-\savebox{\subtikzCounitThree}{
-    \tikz[baseline=0,scale=0.15]{
-        \path (0,1.5) edge[string/scaled={dBlue}{0.25}] (0,3);
-        \node [enddot/scaled={dBlue}{0.25}] at (0,1.5) {};
-        %
-        \path (1,0) edge[string/scaled={dRed}{0.25}] (1,3);
-        \path (2,0) edge[string/scaled={dBlue}{0.25}] (2,3);
-        \path (3,0) edge[string/scaled={dRed}{0.25}] (3,3);
-    }
-}
-
 \begin{document}
-
 
 \begin{tikzpicture}[
         vcenter,
-        % scale=0.4,
+        scale=0.4,
     ]
-    % barbell
+    \tikzfixsize{(-.25,0)}{(0,0)}
+    %
     \path
-    (2,1.8) edge[string=red] (2,2.5);
-    \node[enddot=red] at (2,1.8) {};
-    \node[enddot=red] at (2,2.5) {};
-    % bubbles
+    (0,0) edge[string=dRed] (1,2)
+    (2,0) edge[string=dRed] (1,2)
+    (1,4) edge[string=dRed] (1,2)
+    ;
+    % 
     \path
-    (2,3) edge[string=dRed] (2,4)
-    (2.5,-.5) edge[string=dRed] (2.5,-1)
-    % (2.7,.8) edge[string=dRed] (2.5,1.12)
-    (2,3-1.62) edge[string=dRed] (2,3-2)
+    (4.1,0) edge[string=dRed] (4.1,1)
+    (4.1,3) edge[string=dRed] (4.1,4)
+    (2.5,0) edge[string=dPurp] (2.5,1)
+    (2.5,3) edge[string=dPurp] (2.5,4)
     ;
-    \node[enddot=red] at (2,4) {};
-    \node[enddot=red] at (2.5,-1) {};
-    \draw[string=dRed] (2,3) arc (90 : 360+90 : .81);
-    \draw[string=dRed] (2,1) arc (90 : 360+90 : .5);
-    \draw[string=dRed] (2,0) arc (-180 : 90 : .5);
-    % indicator
-    \draw[black!50, dashed, very thick]
-    (1.6,0) -- ++(.9,.85)
-    -- ++(.35,-.38)
-    -- ++(-.9,-.85)
-    -- cycle;
-    ;
+    \node at (3.4,.5) {\dots};
+    \node at (3.4,3.5) {\dots};
+    \bigbox{$\id^d_k$}{(2,1)}{(4.5,3)};
+    \wallr{6}{4}{1}
 \end{tikzpicture}
 
 \end{document}

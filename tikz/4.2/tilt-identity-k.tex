@@ -1,0 +1,15 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(-.25,0)}{(0,0)}
+    %
+    \path
+    (0,0) edge[string=dPink] (0,4)
+    (1,0) edge[string=dPurp] (1,4)
+    (3,0) edge[string=dRed] (3,4)
+    ;
+    % 
+    \node at (2.1,2) {$\dots$};
+    \wallr{4.5}{4}{1}
+    \draw[underbrace] (0,0) -- (3,0);
+    \node[below] at (1.5,-.25) {\small$k$};
+    \node[above] at (1.5,4.25) {\phantom{\small$k$}};
+}

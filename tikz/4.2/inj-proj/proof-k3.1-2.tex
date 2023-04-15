@@ -1,0 +1,20 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(-.25,0)}{(0,0)}
+    % split
+    \path
+    (1,0) edge[string=dBlue] (1,1.25)
+    (1,4) edge[string=dBlue] (1,2.75)
+    ;
+    \node[enddot=dBlue] at (1,1.25) {};
+    \node[enddot=dBlue] at (1,2.75) {};
+    %
+    \path
+    (0,0) edge[string=dRed] (0,4)
+    (2,0) edge[string=dRed] (2,4)
+    (0,2) edge[string=dRed] (.5,2)
+    (2,2) edge[string=dRed] (1.5,2)
+    ;
+    \node[enddot=dRed] at (.5,2) {};
+    \node[enddot=dRed] at (1.5,2) {};
+    \wallr{4}{4}{1}
+}

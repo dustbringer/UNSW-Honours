@@ -1,10 +1,15 @@
 \tikz[vcenter, scale=0.4]{
-    \path (0,4) edge[string=dPurp] (0,2.75);
+    \tikzfixsize{(-.25,0)}{(0,0)}
+    %
+    \path
+    (0,4) edge[string=dPurp] (0,2.75)
+    (1,0) edge[string=dPink] (1,4)
+    ;
     \node[enddot=dPurp] at (0,2.75) {};
     % 
     \path
-    (2,0) edge[string=dRed] (2,4)
+    (3,0) edge[string=dRed] (3,4)
     ;
-    \node at (1.1,2) {\dots};
-    \wallr{4}{4}{1.5}
+    \node at (2.1,2) {$\dots$};
+    \wallr{4.5}{4}{1}
 }

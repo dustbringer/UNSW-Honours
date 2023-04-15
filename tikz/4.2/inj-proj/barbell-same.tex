@@ -1,0 +1,18 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(-.25,0)}{(0,0)}
+    % barbell
+    \path (0,1.25) edge[string=dPurp] (0,2.75);
+    \node[enddot=dPurp] at (0,1.25) {};
+    \node[enddot=dPurp] at (0,2.75) {};
+    %
+    \path
+    (1,0) edge[string=dPurp] (1,4)
+    (2,0) edge[string=dPink] (2,4)
+    (4,0) edge[string=dRed] (4,4)
+    ;
+    \node at (3.1,2) {$\dots$};
+    \wallr{5.5}{4}{1}
+    \draw[underbrace] (1,0) -- (4,0);
+    \node[below] at (2.5,-.25) {\small$k$};
+    \node[above] at (2.5,4.25) {\phantom{\small$k$}};
+}

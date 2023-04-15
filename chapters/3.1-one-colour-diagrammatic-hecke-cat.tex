@@ -17,22 +17,22 @@ The first one-colour diagrammatic we explore is the \textit{one-colour (diagramm
 
     % TODO: mention isotopy in the background section
     The morphisms are generated, up to isotopy, by univalent and trivalent vertices
-    \begin{align} \label{eq:one-col-gen}
+    \begin{align}\tag{G1}\label{eq:one-col-gen}
         \inputtikz{3.1/generator1}
         \quad , \quad
         \inputtikz{3.1/generator2},
     \end{align}
     that are maps $s \to \vn$ and $ss \to s$ respectively, and their vertical reflections. We put a large dot on univalent vertices to signify that the line stops abruptly and does not connect to the top. The composition of such diagrams is appropriate vertical stacking, and the tensor product is horizontal concatenation (without intersection). The free $\Z$-module structure on each morphism space $\Hom(s^n, s^m)$ produces $\Z$-linear combinations of such diagrams. \red{Something about composition/tensor and addition commuting} Then, composition or tensors with the zero morphism $0$ result in $0$. To abuse notation, the empty diagram $\vn \to \vn$ will be denoted $\vn$. The identity morphism in $\Hom(s^n, s^n)$ is the diagram consisting of $n$ (red) vertical lines
-    \begin{gather}
+    \begin{gather*}
         \inputtikz{3.1/identity-diagram},
-    \end{gather}
+    \end{gather*}
     which we may identify with $s^n$.
 
 
     % TODO: Something about the line being red, and not labelling domain and codomain (using identity strand as the label)
 
     Such diagrams are subject to the following local relations
-    \begin{subequations} \label{eq:one-col-hecke-rel}
+    \begin{varsubequations}{R1} \label{eq:one-col-hecke-rel}
         \begin{gather}
             % Unit and counit
             \label{rel:one-col-frob-unit}
@@ -50,7 +50,7 @@ The first one-colour diagrammatic we explore is the \textit{one-colour (diagramm
             \label{rel:one-col-barbell-forcing}
             \inputtikz{3.1/relation4-left-bar} = 2 \inputtikz{3.1/relation4-split-line} - \inputtikz{3.1/relation4-right-bar}.
         \end{gather}
-    \end{subequations}
+    \end{varsubequations}
 \end{definition}
 
 
@@ -58,10 +58,12 @@ The first one-colour diagrammatic we explore is the \textit{one-colour (diagramm
     The object $s$ is a Frobenius object in $\cH(S_2)$. The generators \eqref{eq:one-col-gen} and their vertical reflections are the unit, multiplication, counit and comultiplication maps. The unit, associativity and Frobenius associativity axioms are satisfied by the relations \eqref{rel:one-col-frob-unit} and \eqref{rel:one-col-frob-ass}.
 \end{remark}
 \red{Put a definition of frob object in intro}
+\red{Talk about how the underlying thing that inspired these diagrams is frobenius object $s$. Isotopy is natural for frob objects.}
+\red{Talk about isotopy}
 
 \begin{example}
     \label{eg:one-col-relations}
-    Using the relations in \eqref{eq:one-col-hecke-rel} we can simplify the morphism in $\Hom(ss,s)$,
+    Using isotopy and the relations in \eqref{eq:one-col-hecke-rel} we can simplify the morphism in $\Hom(ss,s)$,
     \begin{align*}
         \inputtikz{3.1/relation-example1}
          & = \inputtikz{3.1/relation-example2}
@@ -121,7 +123,7 @@ For a word $w$ and subexpression $e$, we label each term by $U_0,U_1,D_0$ or $D_
 \begin{definition}
     The \textit{light leaf} $LL_{w,e} \in \Hom(w, \psi\phi(w(e)))$ for a word $w$ and subexpression $e$, is defined iteratively as follows. Let $LL_{\vn,\vn} = \vn$ be the empty diagram. Given $LL_{w',e'}$ and $i \in \{0,1\}$, the light leaf $LL_{w's,e'i}$ is one of
 
-    \begin{equation}
+    \begin{equation}\tag{LL1}
         \inputtikz{3.1/light-leaves-def-u0} \:,\:
         \inputtikz{3.1/light-leaves-def-u1} \:,\:
         \inputtikz{3.1/light-leaves-def-d0} \:,\:

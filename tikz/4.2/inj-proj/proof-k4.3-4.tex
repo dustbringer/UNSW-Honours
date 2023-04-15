@@ -1,0 +1,18 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(1-.25,0)}{(1,0)}
+    % split
+    \path
+    (2,0) edge[string=dPink] (2,1.25)
+    (2,4) edge[string=dPink] (2,2.75)
+    ;
+    \node[enddot=dPink] at (2,1.25) {};
+    \node[enddot=dPink] at (2,2.75) {};
+    %
+    \path
+    (1,0) edge[string=dPurp] (1,4)
+    (3,0) edge[string=dPurp] (3,4)
+    (5,0) edge[string=dRed] (5,4)
+    ;
+    \node at (4.1,2) {$\dots$};
+    \wallr{7}{4}{1}
+}

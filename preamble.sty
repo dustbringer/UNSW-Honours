@@ -53,6 +53,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc} % for coordinate calculations
 \usetikzlibrary{automata,arrows} % for transition diagrams
+\usetikzlibrary{decorations.pathreplacing} % for braces
 \usetikzlibrary{external} % compile tikz externally
 \tikzexternalize[prefix=figures/] % activate and define figures/ as cache folder
 \tikzset{external/only named=true} % only externalize when \tikzsetnextfilename{}
@@ -95,3 +96,16 @@
 \newtheorem{proposition}[equation]{Proposition}
 \newtheorem{corollary}[equation]{Corollary}
 
+% Subequations with different label
+\makeatletter
+\newenvironment{varsubequations}[1]
+ {%
+  \addtocounter{equation}{-1}%
+  \begin{subequations}
+  \renewcommand{\theparentequation}{#1}%
+  \def\@currentlabel{#1}%
+ }
+ {%
+  \end{subequations}\ignorespacesafterend
+ }
+\makeatother

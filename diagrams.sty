@@ -66,6 +66,29 @@
         }
 }
 
+% Drawing braces
+\tikzset{
+    overbrace/.style={
+        very thick,
+            decoration={
+                    brace,
+                    raise=2pt
+                },
+            decorate
+        }
+}
+\tikzset{
+    underbrace/.style={
+            very thick,
+            decoration={
+                    brace,
+                    mirror,
+                    raise=2pt
+                },
+            decorate
+        }
+}
+
 \newcommand{\bigbox}[3]{%
     \draw[rounded corners, fill=white] ($ #2 $) rectangle node{#1} ($ #3 $);
 }
