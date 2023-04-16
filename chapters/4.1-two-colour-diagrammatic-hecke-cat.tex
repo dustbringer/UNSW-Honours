@@ -61,7 +61,41 @@ In $\wtilde{S}_2$ products can be shortened by the relation $s^2 = t^2 = 1$. For
 
 Notice that there is a notational similarity between products in the group and words in $\cH(\wtilde{S}_2)$. This motivates the following definitions. Let $\phi: (\op{ob}(\cH(\wtilde{S}_2)), \tensor) \to (\wtilde{S}_2, *)$ be the monoid homomorphism mapping $\vn \mapsto 1$, $s \mapsto s$ and $t \mapsto t$. Also define the function $\psi: \wtilde{S}_2 \to \op{ob}(\cH(\wtilde{S}_2))$ to map elements $x \in \wtilde{S}_2$ to the tensor product of $s$ and $t$ in $\cH(\wtilde{S}_2)$ corresponding to the reduced product of $x$ in $\wtilde{S}_2$. This is well defined because reduced products are unique and two different reduced products cannot equal the same element of $\wtilde{S}_2$. Note that the image $\psi(\wtilde{S}_2)$ is the set containing $\vn$ and words of alternating $s$ and $t$. The composition $\psi\phi: \cH(\wtilde{S}_2) \to \cH(\wtilde{S}_2)$ maps words $w$ to the tensor of $s$ and $t$ corresponding to the reduced product of $\phi(w)$, and $\phi\psi$ is the identity map on $\wtilde{S}_2$.
 
-The following definition is a more general version of \autoref{def:subexpression-S2}.
+\begin{definition} (Jones--Wenzl Projectors)
+    Consider words $w$ in $\cH(\wtilde{S}_2)$ corresponding to reduced products in $\wtilde{S}_2$ i.e. alternating $s$ and $t$. Suppose that the leftmost generator in $w$ is $s$. Then \textit{Jones--Wenzl projector} $\JW^s_k \in \Hom(w,w)$ is defined recursively such that $\JW^s_0 = \id_\vn$, $\JW^s_1 = \id_s$, $\JW^s_2 = \id_{st}$ and for $k \geq 2$ even,
+    \begin{equation*}
+        \inputtikz{4.1/jw1} = \inputtikz{4.1/jw2} + \frac{k-1}{k} \inputtikz{4.1/jw3}.
+    \end{equation*}
+    For $k$ odd, we just swap red and blue to the right of the ellipsis. If $w$ starts with $t$, we can define $\JW^t_i$ by swapping all reds and blues in the recursive formula.
+\end{definition}
+
+\begin{example}
+    The first non-trivial JW-projector is
+    \begin{equation*}
+        \JW^s_3 = \inputtikz{4.1/jw-eg1} + \frac{1}{2} \inputtikz{4.1/jw-eg2}.
+    \end{equation*}
+\end{example}
+
+
+\begin{definition}
+    A \textit{pitchfork} is the diagram of the form
+    \begin{equation*}
+        \inputtikz{4.1/pitchfork}
+    \end{equation*}
+    possibly with the colours swapped or vertically reflected.
+\end{definition}
+
+\begin{proposition} \label{prop:JW-pitchfork}
+    The Jones--Wenzl projector is an idempotent, i.e. $\JW_k \circ \JW_k = \JW_k$, and is killed by pitchforks on the top or the bottom.
+\end{proposition}
+
+The JW-projectors are important idempotents in our category, as their images are all the indecomposables in the additive Karoubi envelope (see \cite[Section 5.4.2]{elias-dihedral-cathedral}).
+
+\begin{remark}
+    Jones--Wenzl projectors are originally defined to be elements in the Temperley--Lieb algebra satisfying certain properties. The above recursive formula was first shown in \cite{wenzl-jw-projectors}, which we just take for its definition. The functor given in \cite[Section 5.3.2]{elias-dihedral-cathedral} sends them into our diagrammatic category. The proof of the Temperley--Lieb version of \autoref{prop:JW-pitchfork} is a classical result and can be found in for example \cite{wenzl-jw-projectors} or \cite{morrison-jw-projectors}.
+\end{remark}
+
+As in the one-colour case, there are bases for morphism spaces in $\cH(\wtilde{S}_2)$ given by double leaves, which we will build up to. The following definition is a more general version of \autoref{def:subexpression-S2}.
 \begin{definition}[Subexpression]
     Given a word $w$ of length $n$, a \textit{subexpression} $e$ is a binary string of length $n$. A subexpression can be \textit{applied} to produce an word $w(e)$, which is $w$ where terms corresponding to $0$ in $e$ are replaced with $\vn$. For $1 \leq i \leq n$, we write $w(e,i)$ for the result of the first $i$ terms of $e$ applied to the first $i$ terms in $w$. Particularly $w(e,0) = \vn$ and $w(e,n) = w(e)$.
 \end{definition}

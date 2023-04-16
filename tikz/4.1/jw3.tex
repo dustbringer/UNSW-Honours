@@ -1,0 +1,35 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(-.75,0)}{(5.25,0)}
+    %
+    \path
+    (0,0) edge[string=dRed] (0,10)
+    (2,0) edge[string=dBlue] (2,10)
+    (3,0) edge[string=dRed] (3,2)
+    (4,0) edge[string=dBlue] (4,2)
+    ;
+    \path
+    (3,7) edge[string=dRed] (3,10)
+    (4,7) edge[string=dBlue] (4,10)
+    ;
+    \node at (1.1,3.5) {\dots};
+    \node at (1.1,.5) {\dots};
+    \node at (1.1,6.5) {\dots};
+    \node at (1.1,9.5) {\dots};
+    %
+    \diagmult[dRed]{3,3}{4,4.25}{5,3}{4,5}
+    \diagcomult[dRed]{3,7}{4,5.75}{5,7}{4,5}
+    \path[string=dRed]
+    (5,0) edge (5,3)
+    (5,7) edge (5,10)
+    ;
+    \path[string=dBlue]
+    (4,3) edge (4,3.5)
+    (4,7) edge (4,6.5)
+    ;
+    \node[enddot=dBlue] at (4,3.5) {};
+    \node[enddot=dBlue] at (4,6.5) {};
+    % 
+    \bigbox{\small$\JW^s_k$}{(-.5,1)}{(4.5,3)}
+    \bigbox{\small$\JW^s_{k-2}$}{(-.5,4)}{(3,6)}
+    \bigbox{\small$\JW^s_k$}{(-.5,7)}{(4.5,9)}
+}

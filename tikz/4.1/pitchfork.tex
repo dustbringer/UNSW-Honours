@@ -1,0 +1,8 @@
+\tikz[vcenter, scale=0.4]{
+    \draw[string=dRed] (0,0)
+    to[out=90,in=180+20,looseness=.9] (1,2.5)
+    to[out=-20,in=90,looseness=.9] (2,0);
+    \path (1,4) edge[string=dRed] (1,2.5);
+    \path (1,0) edge[string=dBlue] (1,1.25);
+    \node[enddot=dBlue] at (1,1.25) {};
+}
