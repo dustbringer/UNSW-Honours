@@ -15,7 +15,7 @@ Although need to work over $\C$ for $\Tilt(\fraksl_2)$, the diagrammatic categor
         = \inputtikz{4.2/relation-blue-wall}
         = 0.
     \end{equation}
-    In other words, if a red barbell or blue string can come close to the wall without anything in between, then the diagram is $0$. Note that these local relations involve the wall.
+    In other words, if a red barbell or blue string can come close to the wall without anything in between, then the diagram is $0$. Note that local relations in \eqref{rel:two-col-wall} involve the wall.
 \end{definition}
 
 
@@ -28,24 +28,30 @@ Although need to work over $\C$ for $\Tilt(\fraksl_2)$, the diagrammatic categor
 
 Using \eqref{rel:two-col-wall} we can extend \eqref{rel:two-col-barbell-forcing}.
 \begin{proposition}\label{prop:inj-proj-and-proj-inj}
-    For integers $k \geq 3$ the following relations hold, where the domain and codomain alternate colours, and \dPink{pink} and \dPurp{purple} represent different colours in \{\dRed{red}, \dBlue{blue}\}.
-    \addtocounter{equation}{-1}
+    In the following diagrams, the domain and codomain alternate colours and to the left of the ellipsis, \dPink{pink} and \dPurp{purple} represent different colours in \{\dRed{red}, \dBlue{blue}\}. For integers $k \geq 1$ 
     \begin{subequations}
         \begin{gather}
-            \label{rel:id-split-id-is-0}
-            \inputtikz{4.2/inj-proj/id-split-id} = 0
-            \\
+            \tag{\ref{prop:inj-proj-and-proj-inj}a}
             \label{rel:barbell-diff-is-split}
             \inputtikz{4.2/inj-proj/barbell-diff} = -2 \inputtikz{4.2/inj-proj/split}
             \\
+            \tag{\ref{prop:inj-proj-and-proj-inj}b}
             \label{rel:barbell-same-is-split}
             \inputtikz{4.2/inj-proj/barbell-same} = 2 \inputtikz{4.2/inj-proj/split}
+        \end{gather}
+    \end{subequations}
+    and for $k \geq 3$
+    \begin{subequations}
+        \begin{gather}
+            \tag{\ref{prop:inj-proj-and-proj-inj}c}
+            \label{rel:id-split-id-is-0}
+            \inputtikz{4.2/inj-proj/id-split-id} = 0.
         \end{gather}
     \end{subequations}
 \end{proposition}
 
 \begin{proof}
-    The second two relations also hold for $k\in \{1,2\}$. For $k=1$, pulling the barbell through the line using \eqref{rel:one-col-barbell-forcing} and \eqref{rel:two-col-barbell-forcing}, then applying \eqref{rel:two-col-wall} gives us
+    For $k \in \{1,2\}$, we check the second two relations by hand. For $k=1$, pulling the barbell through the line using \eqref{rel:one-col-barbell-forcing} and \eqref{rel:two-col-barbell-forcing}, then applying \eqref{rel:two-col-wall} gives us
     \begin{equation*}
         \inputtikz{4.2/inj-proj/proof-k1.1-1}
         = \inputtikz{4.2/inj-proj/proof-k1.1-2} + 2 \inputtikz{4.2/inj-proj/proof-k1.1-3} - 2 \inputtikz{4.2/inj-proj/proof-k1.1-4}
@@ -124,15 +130,15 @@ The objects of this category are identical to objects in $\cH(\wtilde{S}_2)$ and
 \end{lemma}
 
 \begin{proof}
-    We consider morphisms $\Hom(w,y)$ in $\mcal{DT}$ for fixed objects $w,y$, and write $\mathbb{LL} \coloneqq \pi(\mathbb{LL}(w,y))$ for the set of double leaves in $\mcal{DT}$. Any diagram in $\mcal{DT}$ can be written as a $\C$-linear combination of morphisms without floating diagrams by pulling floating diagrams to the right with \eqref{rel:one-col-barbell-forcing} and \eqref{rel:two-col-barbell-forcing} then applying the wall relation \eqref{rel:two-col-wall}. We can write each of these as a $\Z[\barbell, \barbell[dBlue]]$-linear combination of double leaves with a right action, and reduce it to a $\Z$-linear combination by \eqref{rel:two-col-wall}. This implies that $\mathbb{LL}$ spans $\Hom(w,y)$ as a $\Z$-module. Now $\mathbb{LL}$ may not be linearly independent because the two-colour wall relation \eqref{rel:two-col-wall} reduces all diagrams factoring through a word ending with $t$ to $0$. The set of light leaves after removing morphisms killed by \eqref{rel:two-col-wall}, i.e. $\mathbb{LL} \setminus \{0\}$, still spans $\Hom(w,y)$ by the argument above. This set is linearly independent since, by construction, \eqref{rel:two-col-wall} has no effect on $\Z$-linear combinations of $\mathbb{LL} \setminus \{0\}$. Then it follows from linear independence over $\Z[\barbell, \barbell[dBlue]]$ that this set is linearly independent over $\Z$ in $\mcal{DT}$.
+    Consider morphisms $\Hom(w,y)$ in $\mcal{DT}$ for fixed objects $w,y$, and write $\mathbb{LL} \coloneqq \pi(\mathbb{LL}(w,y))$ for the set of double leaves in $\mcal{DT}$. Any diagram in $\mcal{DT}$ can be written as a $\C$-linear combination of morphisms without floating diagrams by pulling floating diagrams to the right with \eqref{rel:one-col-barbell-forcing} and \eqref{rel:two-col-barbell-forcing} then applying the wall relation \eqref{rel:two-col-wall}. We can write each of these as a $\Z[\barbell, \barbell[dBlue]]$-linear combination of double leaves with a right action, and reduce it to a $\Z$-linear combination by \eqref{rel:two-col-wall}. This implies that $\mathbb{LL}$ spans $\Hom(w,y)$ as a $\Z$-module. Now $\mathbb{LL}$ may not be linearly independent because the two-colour wall relation \eqref{rel:two-col-wall} reduces all diagrams factoring through a word ending with $t$ to $0$. The set of light leaves after removing morphisms killed by \eqref{rel:two-col-wall}, i.e. $\mathbb{LL} \setminus \{0\}$, still spans $\Hom(w,y)$ by the argument above. This set is linearly independent since, by construction, \eqref{rel:two-col-wall} has no effect on $\Z$-linear combinations of $\mathbb{LL} \setminus \{0\}$. Then it follows from linear independence over $\Z[\barbell, \barbell[dBlue]]$ that this set is linearly independent over $\Z$ in $\mcal{DT}$.
 \end{proof}
 
-We will show that the additive Karoubi envelope of this diagrammatic category is equivalent to $\Tilt(\fraksl_2)$. From now on, we write $\mcal{DT}$ for the $\C$-linear $\cH_\C(\wtilde{S}_2)$-module category obtained by replacing $\Z$ with $\C$ and $\cH(\wtilde{S}_2)$ with $\cH_\C(\wtilde{S}_2)$ in \autoref{def:DT}. All the above discussion and results still apply to $\mcal{DT}$ over $\C$. Also write $\cT$ for $\Tilt(\fraksl_2)$.
+We aim to show that the additive Karoubi envelope of this diagrammatic category is equivalent to $\Tilt(\fraksl_2)$. From now on, we write $\mcal{DT}$ for the $\C$-linear $\cH_\C(\wtilde{S}_2)$-module category obtained by extending scalars from $\Z$ with $\C$. All the above discussion and results still apply to $\mcal{DT}$ over $\C$. For brevity we also write $\cT$ for $\Tilt(\fraksl_2)$.
 
 Since $\cH_\C(S_2)$ appears inside $\cH_\C(\wtilde{S}_2)$ for each colour, \autoref{lem:ss-equal-2s} provides explicit isomorphisms $ss \cong s \oplus s$ and $tt \cong t \oplus t$ in the additive closure of $\cH_\C(\wtilde{S}_2)$.
 
 \begin{definition}
-    Let $F: \mcal{DT}^\oplus \to \Tilt(\fraksl_2)$ to be the additive $\C$-linear $\cH_\C(\wtilde{S}_2)$-module functor defined as follows \red{What about gradings?}. Map the empty word $\vn$ to the trivial module $T(\vn)$ \red{Is that right to say?}. Given a general word $s_n \dots s_1$ in $\mcal{DT}$, for $s_i \in \{s,t\}$, map $F(s_n \dots s_1) = \Theta_{s_n} \dots \Theta_{s_1} T(\vn)$ where $\Theta_s, \Theta_t$ are translation functors associated to generators of $\wtilde{S}_2$.
+    Let $F: \mcal{DT}^\oplus \to \Tilt(\fraksl_2)$ to be the additive $\C$-linear $\cH_\C(\wtilde{S}_2)$-module functor defined as follows. Map the empty word $\vn$ to the trivial module $T(\vn)$ \red{Is that right to say?}. Given a general word $s_n \dots s_1$ in $\mcal{DT}$, for $s_i \in \{s,t\}$, map $F(s_n \dots s_1) = \Theta_{s_n} \dots \Theta_{s_1} T(\vn)$ where $\Theta_s, \Theta_t$ are translation functors associated to generators of $\wtilde{S}_2$.
 
     On morphisms, we define $F$ recursively. Note that we only have red strands on the right since otherwise \eqref{rel:two-col-wall} reduces it to 0. For $k \geq 0$, define
     \begin{gather*}
@@ -142,7 +148,7 @@ Since $\cH_\C(S_2)$ appears inside $\cH_\C(\wtilde{S}_2)$ for each colour, \auto
         \quad , \quad
         p^d_k \coloneqq \inputtikz{4.2/tilt-projection-k}
     \end{gather*}
-    where colours alternate and a red strand on the right when $k \neq 0$. Similarly we define $\id_k: \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_x \dots \Theta_s(T(\vn))$, $i_k: \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_y \Theta_x\dots \Theta_s(T(\vn))$ and $p_k: \Theta_y \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_x\dots \Theta_s(T(\vn))$ to be the identity, inclusion and projection maps in $\cT$, where the subscripts alternate $s,t$ and $\Theta_x \dots \Theta_s$ is a composition of $k$ functors. Let $F(\id^d_k) = \id_k$. On the generators \eqref{eq:two-col-gen} of $\mcal{DT}$, map
+    where colours alternate and a red strand on the right when $k \neq 0$. Similarly we define $\id_k: \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_x \dots \Theta_s(T(\vn))$, $i_k: \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_y \Theta_x\dots \Theta_s(T(\vn))$ and $p_k: \Theta_y \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_x\dots \Theta_s(T(\vn))$ to be the identity, inclusion and projection maps in $\cT$, where the subscripts alternate $s,t$ and $\Theta_x \dots \Theta_s$ is a composition of $k$ translation functors. Further we write $\tilde{p}_k \coloneqq \frac{1}{(-2)^{k+1}} p_k$. Let $F(\id^d_k) = \id_k$. On the generators \eqref{eq:two-col-gen} of $\mcal{DT}$, map
 
     \begin{align*}
         \inputtikz{4.2/tilt-gen-identity}
@@ -155,15 +161,15 @@ Since $\cH_\C(S_2)$ appears inside $\cH_\C(\wtilde{S}_2)$ for each colour, \auto
         \inputtikz{4.2/tilt-gen-inclusion}
          & \xmapsto{F}
         \begin{cases}
-            p_k, & \text{if $k$ even},  \\
-            \pvec{i_{k-1} \circ p_{k-1} \\ \id_k}, &\text{if $k$ odd},
+            \tilde{p}_k, & \text{if $k$ even},  \\
+            \pvec{i_{k-1} \circ \tilde{p}_{k-1} \\ \id_k}, &\text{if $k$ odd},
         \end{cases}
         \\
         \inputtikz{4.2/tilt-gen-projection}
          & \xmapsto{F}
         \begin{cases}
             i_k,        & \text{if $k$ even},                          \\
-            \pvec{\id_k & i_{k-1} \circ p_{k-1}}, & \text{if $k$ odd},
+            \pvec{\id_k & i_{k-1} \circ \tilde{p}_{k-1}}, & \text{if $k$ odd},
         \end{cases}
         \\
         \inputtikz{4.2/tilt-gen-multiplication}
@@ -184,7 +190,7 @@ Since $\cH_\C(S_2)$ appears inside $\cH_\C(\wtilde{S}_2)$ for each colour, \auto
     \begin{gather*}
         \inputtikz{4.2/tilt-identity-on-left} \xmapsto {F} \Theta_s F(f).
     \end{gather*}
-     We extend the functor by composition, additivity and linearity.
+    We extend the functor by composition, additivity and linearity.
     
     The mappings that don't involve matrices are summarised in the picture below.
     \begin{equation}
@@ -202,10 +208,10 @@ The definition on generators is a consequence of the isomorphism $\Theta_s \Thet
 
 
 \begin{lemma}
-    The functor $F$ is well defined as a functor between $\C$-linear $\cH(S_2)$-module categories.
+    The functor $F$ is well defined as a functor between additive $\C$-linear $\cH(S_2)$-module categories.
 \end{lemma}
 \begin{proof}
-    By \autoref{rk:tilt-functor-def}, the definition of $F$ defines an action of every morphism in $\mcal{DT}^\oplus$. It remains to check that all relations are preserved. As in the one-colour case, \cite[Proposition 5.84 and Lemma 5.87]{mazorchuk-lectures-sl2-modules} shows that translation functors $\Theta_s, \Theta_t$ are Frobenius objects in the category of endofunctors of $\cT$ \red{Is this right?} and there are unit, counit, multiplication and comultiplication natural transformations and corresponding relations from the Frobenius object structure. Applying these to $T(\vn)$ result in the same relations in $\cT$ for $T(\vn), \Theta_s T(\vn)$ and $\Theta_s^2(T(\vn))$. Note that $\unit$ and $\counit$ map to $i_0$ and $p_0$ which are exactly the unit and counit of $\Theta_s$ evaluated at $T(\vn)$, and the trivalent vertices defined with $\id^d_0$ are mapped exactly to the multiplication and comultiplication maps. Furthermore, in \red{Ref?} we see that $p_0 \circ i_0 = 0$, $p_{k+1} \circ i_{k+1} = i_k \circ p_k$ \red{Keep this one, or the copy below?} and \red{Is this right:} $\id_{\Theta_t(T(\vn))} = 0$ in $\cT$. These are analogous to the two-colour wall relations \eqref{rel:two-col-wall} and the relations in \autoref{prop:inj-proj-and-proj-inj} up to a scalar. Also, the proof in \cite{anderson-tubbenhauer-tilt}[Lemma 4.26] show that the relations \eqref{rel:one-col-needle}, \eqref{rel:one-col-barbell-forcing}, \eqref{rel:two-col-barbell-forcing} and \eqref{rel:two-col-wall} all hold in $\cT$. Hence all the relations in $\mcal{DT}$ are preserved by $F$. By construction, $F$ preserves direct sums, $\C$-linear combinations and the Soergel module structure from \red{Ref?}, so $F$ is well defined as a functor between $\C$-linear $\cH(S_2)$-module categories.
+    By \autoref{rk:tilt-functor-def}, the definition of $F$ defines an action of every morphism in $\mcal{DT}^\oplus$. It remains to check that all relations are preserved. It follows from \cite[Proposition 2.35]{anderson-tubbenhauer-tilt} \red{Check ref} translation functors $\Theta_s, \Theta_t$ are Frobenius objects in the category of endofunctors of $\cT$ and there are unit, counit, multiplication and comultiplication natural transformations and corresponding relations from the Frobenius object structure. Applying these to $T(\vn)$ result in Frobenius object relations in $\cT$ for $T(\vn), \Theta_s T(\vn)$ and $\Theta_s^2(T(\vn))$. Note that $\unit$ and $\counit$ map to $i_0$ and $\tilde{p}_0$ \red{Is the scaling here right?} which are exactly the unit and counit of $\Theta_s$ evaluated at $T(\vn)$ (up to scaling), and the trivalent vertices defined with $\id^d_0$ are mapped exactly to the multiplication and comultiplication maps. The isomorphism \autoref{lem:ss-equal-2s} we use to reduce domain and codomain has an analogue $\Theta_s \circ \Theta_s \cong \Theta_s \oplus \Theta_s$ as in \cite[Corollary 2.35(a)]{anderson-tubbenhauer-tilt}, and similarly for $t$. Furthermore, in \cite[Section 2.5]{anderson-tubbenhauer-tilt} we see that $p_0 \circ i_0 = 0$, $p_{k+1} \circ i_{k+1} = i_k \circ p_k$ that are analogous to the relations in \autoref{prop:inj-proj-and-proj-inj}, up to an adjusting scalar given in the definition. From \cite[Corollary 2.35]{anderson-tubbenhauer-tilt} the translation functors satisfy properties analogous to the two-colour wall relations \eqref{rel:two-col-wall}. The proof in \cite[Lemma 4.26]{anderson-tubbenhauer-tilt} show that the remaining relations \eqref{rel:one-col-needle}, \eqref{rel:one-col-barbell-forcing}, \eqref{rel:two-col-barbell-forcing} and \eqref{rel:two-col-wall} all hold in $\cT$. Hence all the relations in $\mcal{DT}$ are preserved by $F$. By construction, $F$ preserves direct sums, $\C$-linear combinations and the Soergel module structure, so $F$ is well defined as a functor between additive $\C$-linear $\cH(S_2)$-module categories.
 
     \red{Talk about how extending by composition makes sense.}
 \end{proof}
@@ -217,13 +223,13 @@ The following result states that $\mcal{DT}$ is indeed a diagrammatic incarnatio
 \red{Be clear that I don't understand $\Tilt$ very well.}
 
 \begin{theorem}[\red{???}]
-    The diagrammatic category $\Kar(\mcal{DT}(\fraksl_2))$ and $\Tilt(\fraksl_2)$ are equivalent as $\C$-linear $\cH_\C(\wtilde{S}_2)$-module categories.
+    The diagrammatic category $\Kar(\mcal{DT}(\fraksl_2))$ and $\Tilt(\fraksl_2)$ are equivalent as additive Karoubian $\C$-linear $\cH_\C(\wtilde{S}_2)$-module categories.
 \end{theorem}
 
 \begin{proof}
-    \red{Is this right? Ref?:} Since $\cT$ is additive and Karoubian, our functor $F$ extends uniquely \red{is this right?} to a functor $F': \Kar(\mcal{DT}) \to \cT$. By the argument in \cite{anderson-tubbenhauer-tilt}[Theorem 4.27], every element in $\cT$ is isomorphic to $F'$ applied to a direct sum of images of Jones--Wenzl projectors, so $F'$ is essentially surjective.
+    Since $\cT$ is additive and Karoubian, our functor $F$ extends uniquely to a functor $F': \Kar(\mcal{DT}) \to \cT$. By the argument in \cite[Theorem 4.27]{anderson-tubbenhauer-tilt}, every element in $\cT$ is isomorphic to $F'$ applied to a direct sum of images of Jones--Wenzl projectors, so $F'$ is essentially surjective. Particularly, this shows that the images of JW-projectors map exactly to the indecomposable `leading' tilting modules.
     
-    By \autoref{lem:ss-equal-2s} and \eqref{rel:two-col-wall}, we just consider words with alternating generators and ending with $s$. Write $T(...ts)$ for the \red{Is this the right word?} leading indecomposible summand of $...\Theta_t \Theta_s (T(\vn))$ in $\cT$, and write $b_{...ts}$ for the image of $\JW_{...ts}$. By \cite{elias-dihedral-cathedral}[Section 5.4.2], Jones--Wenzl projectors are primitive idempotents and their images are all the indecomposibles in $\mcal{DT}$. For full and faithfulness, it is sufficient to check that the dimensions of the morphism spaces between indecomposables $\Hom_\mcal{DT}(b_{x...ts}, b_{y...ts})$ and $\Hom_\cT(T(x...ts), T(y...ts))$ coincide. On the diagrammatic side, a morphism $b_{x...ts} \to b_{y...ts}$ is given by $\JW_{y...ts} f \JW_{x...ts}$ where $f: x...ts \to y... ts$. Now consider $f$ as a linear combination of double leaves. For $\JW_{y...ts} f \JW_{x...ts}$, all double leaves with pitchforks are killed. Since the domain and codomain alternate colours, the remaining diagrams are a tensor and composition of $\unit$, $\counit$ and identity strands. Notice that we have the relation
+    By \autoref{lem:ss-equal-2s} and \eqref{rel:two-col-wall}, we just consider words with alternating generators and ending with $s$. Write $T(...ts)$ for the leading indecomposable summand of $...\Theta_t \Theta_s (T(\vn))$ in $\cT$, and write $b_{...ts}$ for the image of $\JW_{...ts}$. By \cite[Section 5.4.2]{elias-dihedral-cathedral}, Jones--Wenzl projectors are primitive idempotents and their images are all the indecomposables in $\mcal{DT}$, and as mentioned above they map to the leading indecomposables in $\cT$. For full and faithfulness, it is sufficient to check that the dimensions of the morphism spaces between indecomposables $\Hom_\mcal{DT}(b_{x...ts}, b_{y...ts})$ and $\Hom_\cT(T(x...ts), T(y...ts))$ coincide. On the diagrammatic side, a morphism $b_{x...ts} \to b_{y...ts}$ is given by $\JW_{y...ts} f \JW_{x...ts}$ where $f: x...ts \to y... ts$. Now consider $f$ as a linear combination of double leaves. For $\JW_{y...ts} f \JW_{x...ts}$, all double leaves with pitchforks are killed \red{This is from \cite[Lemma 4.14]{anderson-tubbenhauer-tilt}, put in sec4.1}. Since the domain and codomain alternate colours, the remaining diagrams are a tensor and composition of $\unit$, $\counit$ and identity strands. Notice that we have the relation
     \begin{align*}
         \inputtikz{4.2/tilt-dot-line-dot-line-id1.1}
         = \inputtikz{4.2/tilt-dot-line-dot-line-id1.2}
@@ -239,16 +245,17 @@ The following result states that $\mcal{DT}$ is indeed a diagrammatic incarnatio
         & = \frac{1}{2} \inputtikz{4.2/tilt-dot-line-dot-line-id2.3} + \frac{2}{2} \inputtikz{4.2/tilt-dot-line-dot-line-id2.5} \\
         & = \frac{1}{2} \inputtikz{4.2/tilt-dot-line-dot-line-id2.3} + \inputtikz{4.2/tilt-dot-line-dot-line-id2.6}
     \end{align*}
-    where the third equality follows from \autoref{prop:inj-proj-and-proj-inj}. By induction the second term is a linear combination of diagrams with pitchforks, hence this diagram is a linear combinations of diagrams with pitchforks. Particularly, these are killed by Jones--Wenzl projectors. The same holds for the vertically reflected diagram. Along with \autoref{prop:inj-proj-and-proj-inj}, we can conclude that the only double leaves we should consider are $i^d_k$, $p^d_k$ and their composition $i^d_k \circ p^d_k$. This is informally summarised by the diagram below (similar to \eqref{img:tilt-functor}).
+    where the third equality follows from \autoref{prop:inj-proj-and-proj-inj}. By induction the second term is a linear combination of diagrams with pitchforks, hence this diagram is a linear combinations of diagrams with pitchforks. Particularly, these are killed by Jones--Wenzl projectors. The same holds for the vertically reflected diagram. Along with \autoref{prop:inj-proj-and-proj-inj}, we conclude that the only double leaves we should consider are $\id_k$, $i^d_k$, $p^d_k$ and their composition $i^d_k \circ p^d_k$. This is informally summarised by the diagram below (similar to \eqref{img:tilt-functor}).
     \begin{equation}
         \label{img:tilt-functor-indecomp}
         \inputtikz{4.2/tilt-proof-functor-indecomp}
     \end{equation}
-    Although not drawn, all the diagrams are flanked by Jones--Wenzl projectors, and the matching morphisms in $\cT$ are pre and post-composed with the idempotents corresponding to the appropriate JW-projectors. Putting JW-projectors above and below any of these diagrams clearly do not result in zero. Moreover, in the endomorphism space of each non-trivial indecomposable, the morphisms $\id^d_k$ and $i^d_{k-1} \circ p^d_{k-1}$, with JW-projectors before and after, can easily be checked to be linearly independent. Hence the bases for the spaces can be read off the picture \eqref{img:tilt-functor-indecomp}. In $\cT$, the analogous bases for the morphism spaces in \cite{anderson-tubbenhauer-tilt}[Corollary 2.3.1] have matching dimensions, hence $F'$ is fully faithful. Therefore the categories $\Kar(\mcal{DT})$ and $\Tilt(\fraksl_2)$ are equivalent as $\C$-linear $\cH_\C(\wtilde{S}_2)$-module categories. \red{Should this equivalence also include `additive'?}
+    Although not drawn, all the diagrams are flanked by Jones--Wenzl projectors, and the matching morphisms in $\cT$ are pre and post-composed with the idempotents corresponding to the appropriate JW-projectors. Putting JW-projectors above and below any of these diagrams clearly do not result in zero. Moreover, in the endomorphism space of each non-trivial indecomposable, the morphisms $\id^d_k$ and $i^d_{k-1} \circ p^d_{k-1}$, with JW-projectors before and after, can easily be checked to be linearly independent. Hence the bases for the spaces can be read off the picture \eqref{img:tilt-functor-indecomp}. In $\cT$, the analogous bases for the morphism spaces in \cite[Corollary 2.3.1]{anderson-tubbenhauer-tilt} have matching dimensions, hence $F'$ is fully faithful. Therefore the categories $\Kar(\mcal{DT})$ and $\Tilt(\fraksl_2)$ are equivalent as additive Karoubian $\C$-linear $\cH_\C(\wtilde{S}_2)$-module categories.
 \end{proof}
 
 \red{Comment on grading?}
 
 \red{Comment on consequences}
 
+\red{Say similaritied with proj(O)}
 
