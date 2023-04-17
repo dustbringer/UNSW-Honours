@@ -1,3 +1,32 @@
 \section{Module Categories}
 \label{sec:2.3}
 
+\red{Something about what this is used for}
+
+\begin{definition}
+    Let $(\mcal{M}, \tensor, \mathbbb{1})$ be a (strict) monoidal category. A \textit{(left) module category} over $\mcal{M}$ is a category $\mcal{C}$ and a bifunctor $\odot: \mcal{M} \times \mcal{C} \to \mcal{C}$ such that there are natural isomorphisms $(X \tensor Y) \odot A \cong X \odot (Y \odot A)$ and $\mathbbb{1} \odot A \cong A$ for $X,Y \in \mcal{M}$ and $A \in \mcal{C}$, satisfying coherence relations analogous to those for monoidal categories (see \cite{tensor-categories}[Definition 7.1.2]). A (left) module category over $\mcal{M}$ is \textit{strict} if the natural isomorphisms above are identity natural isomorphisms, i.e. $(X \tensor Y) \odot A = X \odot (Y \odot A)$ and $\mathbbb{1} \odot A = A$. We call $\odot$ the action of $\mcal{M}$ or the module product. 
+\end{definition}
+
+In the following examples, the module action is essentially the monoidal product, which we may denote by the same symbol $\tensor$. Note that module actions may not always be an underlying monoidal product.
+
+\begin{example}
+    A monoidal category is a module category over itself, where the action is its tensor product.
+\end{example}
+
+\begin{example}
+    Let $G$ be a finite group and $H \subseteq G$ a subgroup. Consider the categories of group representations $\Rep(G)$ and $\Rep(H)$ over a field $\Bbbk$. Recall that $\Rep(G)$ is a category where objects are pairs $(V, \rho)$ for $V$ a $\Bbbk$-vector space and $\rho: G \to \op{GL}(V)$ is a representation of $G$, and morphisms are equivariant maps i.e. linear maps that preserve the group action. There is a monoidal structure on $\Rep(G)$ (and similarly $\Rep(H)$) given by
+    \[
+        (V, \rho_V) \tensor (W, \rho_W) = (V \tensor W, \rho_{V \tensor W})
+    \]
+    where $V \tensor V$ is the usual tensor of vector spaces, and $\rho_{V \tensor W}$ is defined such that for $v \in V_1, w \in V_2$ and $g \in G$,
+    \[
+        (\rho_1 \tensor \rho_2)(g)(v \tensor w) = (\rho_1(g) v) \tensor (\rho_2(g) w)
+    \]
+    extended linearly. This is well defined by the universal property of tensor products. The monoidal unit is $\Bbbk$ with the trivial representation. The tensor product on morphisms $f$ and $g$ is defined by component-wise application, which is equivariant by equivariance of $f$ and $g$.
+
+    We have that $\Rep(H)$ is a left module category over $\Rep(G)$ with the following action. For an object $(V,\rho)$ in $\Rep(G)$, we can consider it as a representation over $H$ by the restriction
+    \[
+        \rho|_H: H \hookrightarrow G \xto{\rho} \op{GL}(V).
+    \]
+    The left action of $(V, \rho)$ is the left tensor of $(V,\rho|_H)$ in $\Rep(H)$. On morphisms we apply a similar restriction of equivariant maps.
+\end{example}

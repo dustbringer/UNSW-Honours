@@ -1,0 +1,17 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(-1-.5,0)}{(6+.5,0)}
+    %
+    \path
+    (0,2) edge[string=black] (1,1)
+    (2,2) edge[string=black] (1,1)
+    (1,1) edge[string=black] (1,0);
+    \diagcup[black]{-1,0}{0,-1}{1,0}
+    \diagcap[black]{0,2}{3,5}{6,2}
+    \diagcap[black]{2,2}{3,3.25}{4,2}
+    \path
+    (-1,0) edge[string=black] (-1,5)
+    (4,2) edge[string=black] (4,-1)
+    (6,2) edge[string=black] (6,-1)
+    ;
+    \draw[draw=grey, thick, dashed] (0,0) rectangle ++(2,2);
+}

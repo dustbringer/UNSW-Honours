@@ -1,0 +1,15 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(-1-.5,0)}{(7+.5,0)}
+    %
+    \path
+    (3,1) edge[string=black] (4,0)
+    (5,1) edge[string=black] (4,0)
+    (4,-1) edge[string=black] (4,0)
+    ;
+    \diagcup[black]{-1,0}{0,-1}{1,0} \path (1,0) edge[string=black] (1,1);
+    \diagcap[black]{1,1}{2,2}{3,1}
+    \diagcap[black]{5,1}{6,2}{7,1} \path (7,1) edge[string=black] (7,-1);
+    \path
+    (-1,0) edge[string=black] (-1,4)
+    ;
+}

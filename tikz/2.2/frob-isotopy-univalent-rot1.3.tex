@@ -1,0 +1,10 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(2-.25,2)}{(4+.25,2)}
+    %
+    \path
+    (2,4) edge[string=black] (2,2)
+    (4,2) edge[string=black] (4,2.5)
+    ;
+    \diagcup[black]{2,2}{3,1}{4,2};
+    \node[enddot=black] at (4,2.5) {};
+}

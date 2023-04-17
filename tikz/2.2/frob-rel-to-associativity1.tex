@@ -1,0 +1,15 @@
+\tikz[vcenter, scale=0.45]{
+    \tikzfixsize{(0,0)}{(3+.25,4)}
+    %
+    \path
+    (0,0) edge[string=black] (1,1)
+    (2,0) edge[string=black] (1,1)
+    (1,1) edge[string=black] (1,2);
+    \path
+    (1,2) edge[string=black, round] (2,3)
+    (3,2) edge[string=black, round] (2,3)
+    (2,3) edge[string=black] (2,4);
+    \path (3,0) edge[string=black] (3,2);
+    % 
+    \node[grey,circle,thick,dashed,draw] at (1,1) {};
+}

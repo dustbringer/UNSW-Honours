@@ -1,0 +1,15 @@
+\tikz[vcenter, scale=0.45]{
+    \tikzfixsize{(0,0)}{(3,3)}
+    %
+    \path
+    (0,0) edge[string=black] (1,1)
+    (2,0) edge[string=black] (1,1)
+    (1,1) edge[string=black] (1,1.75)
+    (0,2.75) edge[string=black, round] (1,1.75)
+    (2,2.75) edge[string=black, round] (1,1.75)
+    ;
+    \diagcap[black]{-1,2.75}{-.5,3.25}{0,2.75}
+    \path (-1,2.75) edge[string=black] (-1,0);
+    \path (2,2.75) edge[string=black] (2,3.5);
+    \node[grey,circle,thick,dashed,draw] at (1,1.75) {};
+}

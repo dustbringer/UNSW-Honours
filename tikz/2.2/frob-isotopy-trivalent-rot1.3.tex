@@ -1,0 +1,13 @@
+\tikz[vcenter, scale=0.4]{
+    % \tikzfixsize{(0,0)}{(6+.5,8)}
+    %
+    \path
+    (2,0) edge[string=black] (2,2)
+    (2,2) edge[string=black] (2.5,2.5)
+    (2,2) edge[string=black] (0,4)
+    ;
+    \draw[string=black] (2.5,2.5)
+    to[out=45,in=90,looseness=1.4] (4,2)
+    ;
+    \path (4,0) edge[string=black] (4,2) ;
+}
