@@ -1,0 +1,9 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(.5,0)}{(2.5,4)}
+    \squarecoord
+    %
+    \path
+    (top) edge[string=dRed] (bot)
+    (mid) edge[string=dRed] ($(mid) - (1,0)$);
+    \node [enddot=dRed] at ($(mid) - (1,0)$) {};
+}

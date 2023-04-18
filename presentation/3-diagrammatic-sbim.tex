@@ -1,6 +1,6 @@
 \begin{frame}
     \frametitle{Diagrammatic Soergel Bimodules}
-    A $\Z$-linear monoidal category $\cH$ with:
+    Let $\cD$ be the (diagrammatic) $\Z$-linear monoidal category with:
 
     Generating object $\dRed{\mathsf{I}}$.
 
@@ -20,74 +20,135 @@
 \begin{frame}
     \frametitle{Relations}
 
-    \begin{gather*}
-        \input{tikz/3/relation1-frob-unit.tex} = \input{tikz/3/relation1-identity.tex} \\
-        \input{tikz/3/relation2-frob-ass1.tex} = \input{tikz/3/relation2-frob-ass2.tex} \\
-        \input{tikz/3/relation3-needle.tex} = 0 \\
+    \begin{align*}
+        \input{tikz/3/relation1-frob-unit1.tex} = \input{tikz/3/relation1-identity.tex} = \input{tikz/3/relation1-frob-unit2.tex}
+        \quad & ,\quad\quad
+        \input{tikz/3/relation2-frob-ass1.tex} = \input{tikz/3/relation2-frob-ass2.tex}, \\
+        \input{tikz/3/relation3-needle.tex} = 0
+        \quad & ,\quad\quad
         \input{tikz/3/relation4-left-bar.tex} = 2 \input{tikz/3/relation4-split-line.tex} - \input{tikz/3/relation4-right-bar.tex}
-    \end{gather*}
+    \end{align*}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Relations}
+% Cups and caps
+% \begin{frame}
+%     \frametitle{Relations}
 
-    \begin{gather*}
-        \input{tikz/3/cap1.tex}
-        \quad \coloneqq \quad
-        \input{tikz/3/cap2.tex}
-    \end{gather*}
-    \begin{gather*}
-        \input{tikz/3/cup1.tex}
-        \quad \coloneqq \quad
-        \input{tikz/3/cup2.tex}
-    \end{gather*}
-\end{frame}
+%     \begin{gather*}
+%         \input{tikz/3/cap1.tex}
+%         \quad \coloneqq \quad
+%         \input{tikz/3/cap2.tex}
+%     \end{gather*}
+%     \begin{gather*}
+%         \input{tikz/3/cup1.tex}
+%         \quad \coloneqq \quad
+%         \input{tikz/3/cup2.tex}
+%     \end{gather*}
+% \end{frame}
 
 \begin{frame}
     \frametitle{Example 1}
 
     \begin{align*}
         \only<1>{
-            \input{tikz/3/relation-example1.tex}
+            \input{tikz/3/relation-example1-big.tex}
         }
-        \only<2>{
-            \input{tikz/3/relation-example2.tex}
-        }
-        \only<3>{
-            2 \input{tikz/3/relation-example3.1.tex} - \input{tikz/3/relation-example3.2.tex}
-        }
-        \only<4>{
-            2 \input{tikz/3/relation-example4.1.tex} - \input{tikz/3/relation-example4.2.tex}
+        \only<2->{
+            \onslide<2->{
+                \input{tikz/3/relation-example1.tex}
+                = \input{tikz/3/relation-example2.tex}
+            }
+            \onslide<4->{
+         & = 2 \input{tikz/3/relation-example3.1.tex} - \input{tikz/3/relation-example3.2.tex} \\
+            }
+            \only<6->{
+         & = 2 \input{tikz/3/relation-example4.1.tex} - \input{tikz/3/relation-example4.2.tex}
+            }
         }
     \end{align*}
+    \only<2>{
+        \vspace{-4em}
+        \begin{mdframed}[style=MyFrame,nobreak=true,align=center,userdefinedwidth=12em]
+            \vspace{-1em}
+            \begin{gather*}
+                \input{tikz/3/relation1-frob-unit1.tex} = \input{tikz/3/relation1-identity.tex} = \input{tikz/3/relation1-frob-unit2.tex}
+            \end{gather*}
+        \end{mdframed}
+    }
+    \only<3-4>{
+        \vspace{-4em}
+        \begin{mdframed}[style=MyFrame,nobreak=true,align=center,userdefinedwidth=12em]
+            \vspace{-1em}
+            \begin{gather*}
+                \input{tikz/3/relation4-left-bar.tex} = 2 \input{tikz/3/relation4-split-line.tex} - \input{tikz/3/relation4-right-bar.tex}
+            \end{gather*}
+        \end{mdframed}
+    }
+    \only<5>{
+        \vspace{-4em}
+        \begin{mdframed}[style=MyFrame,nobreak=true,align=center,userdefinedwidth=12em]
+            \vspace{-1em}
+            \begin{gather*}
+                \input{tikz/3/relation1-frob-unit1.tex} = \input{tikz/3/relation1-identity.tex} = \input{tikz/3/relation1-frob-unit2.tex}
+            \end{gather*}
+        \end{mdframed}
+    }
 \end{frame}
 
 \begin{frame}
     \frametitle{Example 2}
 
-    \begin{align*}
+    \begin{gather*}
         \only<1>{
             \input{tikz/3/bubbles-example1.tex}
         }
         \only<2>{
             \input{tikz/3/bubbles-example2.tex}
         }
-        \only<3>{
-            \input{tikz/3/bubbles-example3.tex}
+        \only<3->{
+            \input{tikz/3/bubbles-example2.tex}
+            \quad = \quad
+            \only<3>{
+                \input{tikz/3/bubbles-example3.tex}
+            }
+            \only<4->{
+                \input{tikz/3/bubbles-example4.tex}
+            }
+            \only<5>{
+                \quad = \quad
+                \input{tikz/3/bubbles-example5.tex}
+            }
+            \only<6->{
+                \quad = \quad
+                \input{tikz/3/bubbles-example6.tex}
+            }
+            \only<7->{
+                \quad = \quad
+                \input{tikz/3/bubbles-example7.tex}
+            }
+            \only<9->{
+                = 0
+            }
         }
-        \only<4>{
-            \input{tikz/3/bubbles-example4.tex}
-        }
-        \only<5>{
-            \input{tikz/3/bubbles-example5.tex}
-        }
-        \only<6>{
-            \input{tikz/3/bubbles-example6.tex}
-        }
-        \only<7>{
-            \input{tikz/3/bubbles-example7.tex} = 0
-        }
-    \end{align*}
+    \end{gather*}
+
+    \only<2-7>{
+        \begin{mdframed}[style=MyFrame,nobreak=true,align=center,userdefinedwidth=12em]
+            \vspace{-3em}
+            \begin{gather*}
+                \\ \input{tikz/3/relation2-frob-ass1.tex}
+                = \input{tikz/3/relation2-frob-ass2.tex}
+            \end{gather*}
+        \end{mdframed}
+    }
+    \only<8->{
+        \begin{mdframed}[style=MyFrame,nobreak=true,align=center,userdefinedwidth=7em]
+            \vspace{-3em}
+            \begin{gather*}
+                \\ \input{tikz/3/relation3-needle.tex} = 0
+            \end{gather*}
+        \end{mdframed}
+    }
 \end{frame}
 
 
@@ -95,7 +156,7 @@
     \frametitle{Soergel Bimodules}
 
     \begin{theorem}[Elias--Williamson, 2013]
-        The diagrammatic category $\Kar(\cH)$ and the category of Soergel Bimodules $\sbim$ over $S_2$ are equivalent as graded $\C$-linear monoidal categories.
+        The additive Karoubi envelope of $\cD$ is equivalent to the category of Soergel Bimodules $\sbim$ over $S_2$ as graded additive $\C$-linear monoidal categories.
     \end{theorem}
 \end{frame}
 
@@ -104,8 +165,8 @@
     \frametitle{Generalisations}
 
     \begin{itemize}
-        \item Coxeter groups e.g. $S_n$, $D_n$
-        \item Other categories
+        \item Over general Coxeter groups e.g. $S_n$, $D_n$
+        \item Diagrammatics for other categories of representations...
     \end{itemize}
     % Put some examples and dot points
 \end{frame}
@@ -115,8 +176,8 @@
     \frametitle{Further Applications}
 
     \begin{itemize}
-        \item Category $\cO$
-        \item Characteristic $p$
+        \item Diagrammatics for BGG Category $\cO$, Tilting modules
+        \item Changing scalars to fields of characteristic $p$
     \end{itemize}
 \end{frame}
 

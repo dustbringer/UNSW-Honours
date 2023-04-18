@@ -10,6 +10,20 @@
 % \usepackage{parskip} % removes indents and adds paragraph spacing
 % \setlength{\parindent}{0pt} % remove indents for new paragraphs
 
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{MyFrame}{%
+    linecolor=black!30,
+    outerlinewidth=1pt,
+    roundcorner=5pt,
+    innertopmargin=2pt,
+    innerbottommargin=2pt,
+    innerrightmargin=2pt,
+    innerleftmargin=2pt,
+    leftmargin = 2pt,
+    rightmargin = 2pt
+    %backgroundcolor=gray!50!white}
+}
+
 % Autoref names
 \def\sectionautorefname{Section}
 \def\chapterautorefname{Chapter}
