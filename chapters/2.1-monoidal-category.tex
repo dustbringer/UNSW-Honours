@@ -62,7 +62,7 @@ which holds up to vertical deformation of the diagram. This is our first glimpse
 \red{Reword this} Before looking at an example of a diagrammatic monoidal category, we mention some definitions.
 
 \begin{definition}
-    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear. An \textit{$R$-linear monoidal category} is a category that is both monoidal and $R$-linear such that the monoidal product on morphisms is $R$-bilinear.
+    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear. An \textit{$R$-linear monoidal category} is a category that is both monoidal and $R$-linear such that the monoidal product on morphisms is $R$-bilinear. A ($\Z$-)\textit{graded $R$-linear category} is a category where $\Hom(A,B)$ is a $\Z$-graded $R$-module. If we write $\Hom^i(A,B)$ for the homogeneous component of degree $i$, then we have $\Hom(A,B) = \bigoplus_{i \in \Z} \Hom^i(A,B)$ and $\Hom^i(B,C) \circ \Hom^i(A,B) \subseteq \Hom^{i+j}(A,C)$.
 \end{definition}
 
 \red{Put reference to somewhere with a better definition?}
@@ -72,7 +72,6 @@ Note that since composition and tensor products are bilinear, $0 \tensor f = (0 
 \begin{example}
     The category of vector spaces over a field $\Bbbk$, $\cat{Vect}_\Bbbk$, is a $\Bbbk$-linear monoidal category given by the usual tensor product of vector spaces and linear maps.
 \end{example}
-
 
 \begin{definition}
     A monoidal category $\mcal{C}$ is \textit{generated} by finite set $S_o$ of objects and $S_m$ of morphisms, when all non-unit objects are a finite tensor of objects in $S_o$ and all non-identity morphisms are a finite combination of tensors and compositions of morphisms in $S_m$.

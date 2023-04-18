@@ -83,13 +83,10 @@ Note that the local relations apply to any subdiagram.
     \begin{center}
         \inputtikz{3.1/bubbles-chain-example}.
     \end{center}
-    For a floating diagram without floating subdiagrams, it is either $0$ by \eqref{rel:one-col-needle}, or $\barbell$ which can be removed from any diagrams containing it via \eqref{rel:one-col-barbell-forcing}. Repeating this process produces a linear combination of diagrams where all floating diagrams are barbells.
+    For a floating diagram without floating subdiagrams, it is either $0$ by \eqref{rel:one-col-needle}, or $\barbell$ which can be removed from any floating diagrams containing it via \eqref{rel:one-col-barbell-forcing}. Repeating this process produces a linear combination of diagrams where all floating diagrams are barbells.
 \end{proof}
 
-The morphism space $\Hom(s^n, s^m)$ has a left (or right) $\Z[\barbell]$-basis called the \textit{double leaves} basis, as described in \cite{elias-williamson-soergel-calculus}. To define this basis, we must first define morphisms known as \textit{light leaves}.
-
-
-To make use of the group structure of $S_2$, we need to translate between words in $\cH(S_2)$ and elements in $S_2$. Let $\phi: (\op{ob}(\cH(S_2)), \tensor) \to (S_2, *)$ be the monoid homomorphism\footnote{A map that preserves the monoidal product and identity element.} mapping $s \mapsto s$ and $\vn \mapsto 1$, and $\psi: S_2 \to \op{ob}(\cH(S_2))$ be the function that maps $s \mapsto s$ and $1 \mapsto \vn$. \red{Should this be a definition?}
+The morphism space $\Hom(s^n, s^m)$ has a left (or right) $\Z[\barbell]$-basis called the \textit{double leaves} basis, as described in \cite{elias-williamson-soergel-calculus}. To define this basis, we must first define morphisms known as \textit{light leaves}. We will make use of the group structure of $S_2$ by translating between words in $\cH(S_2)$ and elements of the group. Let $\phi: (\op{ob}(\cH(S_2)), \tensor) \to (S_2, *)$ be the monoid homomorphism\footnote{A map that preserves the monoidal product and identity element.} mapping $s \mapsto s$ and $\vn \mapsto 1$, and $\psi: S_2 \to \op{ob}(\cH(S_2))$ be the function that maps $s \mapsto s$ and $1 \mapsto \vn$. \red{Should this be a definition?}
 The maps $\phi$ allows words $w = s^n$ to be seen as elements of $S_2$, and $\psi$ allows $1,s \in S_2$ to be seen as the objects $\vn, s \in \cH(S_2)$. Clearly, $\phi \psi$ is the identity map on $S_2$, and the map $\psi \phi: \cH(S_2) \to \cH(S_2)$ takes objects to one of $\vn$ or $s$ in $\cH(S_2)$ by considering them as elements in $S_2$.
 
 \begin{definition}(Subexpression for $S_2$)
@@ -186,7 +183,7 @@ The morphisms in this category can be graded such that the univalent vertices ha
 
 \red{Put example}
 
-The category $\cH(S_2)$ (under the additive Karoubi Envelope) is a diagrammatic version of the category of Soergel bimodules $\sbim$ for $S_2$. However $\sbim$ is not well behaved with morphisms over $\Z$, so we must first alter the morphisms spaces in $\cH(S_2)$ to be over $\C$ instead\footnote{The equivalence actually holds in more generality, but we choose $\C$ because it is easy to work with.}. Formally we merely tensor the morphism spaces on the left by the $\C$-$\Z$-bimodule $\C$, where the right action is induced by the inclusion $\Z \subset \C$. We write $\cH_\C(S_2)$ for this $\C$-linear monoidal category. This process is quite simple and does little to the category itself. In particular, double leaves in $\cH_\C(S_2)$ remain as $\C[\barbell]$-bases\footnote{It is not hard to check that double leaves tensored with $1 \in \C$ on the left form a basis.} for the morphisms.
+The category $\cH(S_2)$ (under the additive Karoubi Envelope) is a diagrammatic version of the category of Soergel bimodules $\sbim$ for $S_2$. However $\sbim$ is not well behaved with morphisms over $\Z$, so we must first alter the morphisms spaces in $\cH(S_2)$ to be over $\C$ instead\footnote{The equivalence actually holds in more generality, but we choose $\C$ because it is easy to work with.}. Formally we merely tensor the morphism spaces on the left by the $\C$-$\Z$-bimodule $\C$, where the right action is induced by the inclusion $\Z \subset \C$. We write $\cH_\C(S_2)$ for this $\C$-linear monoidal category. This process is quite simple and does little to the category itself. In particular, double leaves in $\cH_\C(S_2)$ remain as $\C[\barbell]$-bases\footnote{It is easy to check that double leaves tensored with $1 \in \C$ on the left form a basis.} for the morphisms.
 
 \begin{theorem}[Elias-Williamson {\cite[Theorem 6.30]{elias-williamson-soergel-calculus}}] \label{thm:one-col-sbim-equiv}
     The diagrammatic category $\Kar(\cH_\C(S_2))$ and the category of Soergel Bimodules $\sbim$ over $S_2$ are equivalent as graded $\C$-linear monoidal categories.

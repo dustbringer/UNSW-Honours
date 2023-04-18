@@ -42,7 +42,7 @@ We can formally add direct sums and direct summands into a preadditive category,
 \end{definition}
 
 % The additive closure is sometimes denoted by $\cat{Mat}(\mcal{C})$.
-It is clear that $\mcal{C}$ is a category that embeds in $\mcal{C}^\oplus$ and $\mcal{C}^\oplus$ is additive. In the case where $\mcal{C}$ is monoidal, $\mcal{C}^\oplus$ is monoidal by extending the monoidal product to be an additive functor in each input. If $\mcal{C}$ is $R$-linear, then $\mcal{C}$ is an $R$-linear category by assuming that the $R$-action on morphisms applies componentwise. If $\mcal{C}$ is a $\mcal{M}$-module category, then $\mcal{C}$ is a $\mcal{M}$-module category by additionally assuming that the module action applies componentwise.
+It is clear that $\mcal{C}$ is a category that embeds in $\mcal{C}^\oplus$ and that $\mcal{C}^\oplus$ is additive. In the case where $\mcal{C}$ is monoidal, $\mcal{C}^\oplus$ is monoidal by extending the monoidal product to be an additive functor in each input. If $\mcal{C}$ is $R$-linear, then $\mcal{C}$ is an $R$-linear category by assuming that the $R$-action on morphisms applies componentwise. If $\mcal{C}$ is a $\mcal{M}$-module category, then $\mcal{C}$ is a $\mcal{M}$-module category by additionally assuming that the module action applies componentwise.
 
 \begin{lemma}
     The additive closure satisfies the following universal property. For every preadditive functor $F: \mcal{C} \to \mcal{D}$ where $\mcal{D}$ is an additive category, there is a unique additive functor $F': \mcal{C}^\oplus \to \mcal{D}$ such that the composition $\mcal{C} \hookrightarrow \mcal{C}^\oplus \xto{F'} \mcal{D}$ is $F$.
@@ -68,8 +68,9 @@ A proof can be found at \cite[Lemma 11.17]{intro-soergel-bimodules}.
 
 This is another classical result. See \cite[Proposition 6.5.9 (1)]{borceux-categorical-algebra} for a proof.
 
+\red{What happens when we do this on monoidal, $R$-linear or additive categories? Are the structures preserved?}
 
-\red{What happens when we do this on monoidal, $R$-linear or additive categories?}
+\red{Why are these useful?}
 
 \red{Talk about diagrammatics, $\mcal{C}^\oplus$ is easy to describe diagrammatically (just matrices of diagrams) but $\op{Kar}$ is not easy to describe in general (we need to find idempotents and put them before and after a diagram)}
 
