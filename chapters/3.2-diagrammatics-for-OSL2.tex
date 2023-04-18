@@ -1,5 +1,5 @@
-\section{Diagrammatic $\mcal{O}(\fraksl_2)$}
-\label{sec:3.2}
+\section{Diagrammatic \texorpdfstring{$\mcal{O}(\fraksl_2)$}{O(sl2)}}
+\label{sec:diag-osl2}
 
 \red{A little bit about category $\cO$, and our example of $\mfrak{sl}_2$}
 
@@ -13,7 +13,7 @@ In \cite[Section 2.4]{soergel-category-O}, Soergel shows that the category $\cO$
 \end{remark}
 
 % \begin{remark}
-%     For $\fraksl_2(\C)$, the morphism spaces in $\proj(\cO_0)$ are $\C$-modules so the diagrammatic category $\cH(S_2)$ from \autoref{sec:3.1} must be extended from $\Z$ to $\C$. Formally this is just tensoring the morphism spaces on the left by the $\C$-$\Z$-bimodule $\C$, where the right action is induced by the inclusion $\Z \subset \C$. For the remainder of this section, $\cH(S_2)$ will refer to this $\C$-linear extension. Note that the above process does little to the category. In particular, double leaves in $\cH(S_2)$ become $\C[\barbell]$-bases\footnote{It is easy to see that double leaves tensored with $1 \in \C$ on the left form a basis.} for the morphisms and the equivalence in \autoref{thm:one-col-sbim-equiv} still holds.
+%     For $\fraksl_2(\C)$, the morphism spaces in $\proj(\cO_0)$ are $\C$-modules so the diagrammatic category $\cH(S_2)$ from \autoref{sec:one-col-sbim} must be extended from $\Z$ to $\C$. Formally this is just tensoring the morphism spaces on the left by the $\C$-$\Z$-bimodule $\C$, where the right action is induced by the inclusion $\Z \subset \C$. For the remainder of this section, $\cH(S_2)$ will refer to this $\C$-linear extension. Note that the above process does little to the category. In particular, double leaves in $\cH(S_2)$ become $\C[\barbell]$-bases\footnote{It is easy to see that double leaves tensored with $1 \in \C$ on the left form a basis.} for the morphisms and the equivalence in \autoref{thm:one-col-sbim-equiv} still holds.
 % \end{remark}
 
 % For basis, maybe see https://math.stackexchange.com/questions/3399387/basis-of-extension-of-scalars
@@ -120,7 +120,7 @@ As a shorthand, we write $\proj(\cO_0)$ for $\proj(\cO_0(\fraksl_2))$. The work 
     
     % We can similarly pull back the image, i.e. matrices of morphisms in $\proj(\cO_0)$, to a morphism between $\Theta_s^n(P(\vn))$ and $\Theta_s^m(P(\vn))$ via the analogous maps defining $\Theta_s \Theta_s \cong \Theta_s \oplus \Theta_s$. Therefore \eqref{img:osl2-functor} is enough to define $F$ for $\mcal{DO}_0$.
 
-    Next we check that all the relations are preserved. From classical results e.g. \cite[Proposition 5.84 and Lemma 5.87]{mazorchuk-lectures-sl2-modules}, it follows that $\Theta_s$ is a Frobenius object in the category of endofunctors of $\cO$. Then there are unit, counit, multiplication and comultiplication natural transformations satisfying coherence relations in the Frobenius object structure. Applying these to $P(\vn)$ result in the same relations in $\proj(\cO_0)$ for $P(\vn), P(s)$ and $\Theta_s^2(P(\vn))$. Note that the projection and inclusion maps above are exactly the unit and counit of $\Theta_s$ evaluated at $P(\vn)$, and the trivalent vertices provided by projecting the isomorphisms in \autoref{lem:ss-equal-2s} map exactly to the multiplication and comultiplication maps. Hence the Frobenius relations \eqref{rel:one-col-frob-unit} and \eqref{rel:one-col-frob-ass} are satisfied. \red{Ref for needle and barbell?} Furthermore, in \cite[Section 2.4]{soergel-category-O} we see that $p \circ i = 0$ in $\proj(\cO_0)$ which is analogous\footnote{This relation extends to the analogue of the local barbell-wall relation, as all `barbell on the right' morphisms in $\proj(\cO_0)$ are linear combinations of applications of $\Theta_s$ to $p \circ i$, which is $0$.} to the barbell-wall relation \eqref{rel:barbell-wall}. Hence all the relations in $\mcal{DO}_0$ are preserved by $F$. By construction, $F$ preserves $\C$-linear combinations and the Soregel module structure in \cite{soergel-category-O}, so $F$ is well defined as a functor between $\C$-linear $\cH(S_2)$-module categories.
+    Next we check that all the relations are preserved. From classical results e.g. \cite[Proposition 5.84 and Lemma 5.87]{mazorchuk-lectures-sl2-modules}, it follows that $\Theta_s$ is a Frobenius object in the category of endofunctors of $\cO$. Then there are unit, counit, multiplication and comultiplication natural transformations satisfying coherence relations in the Frobenius object structure. Applying these to $P(\vn)$ result in the same relations in $\proj(\cO_0)$ for $P(\vn), P(s)$ and $\Theta_s^2(P(\vn))$. Note that the projection and inclusion maps above are exactly the unit and counit of $\Theta_s$ evaluated at $P(\vn)$, and the trivalent vertices provided by projecting the isomorphisms in \autoref{lem:ss-equal-2s} map exactly to the multiplication and comultiplication maps. Hence the Frobenius relations \eqref{rel:one-col-frob-unit} and \eqref{rel:one-col-frob-ass} are satisfied. \red{Ref for needle and barbell?} Furthermore, in \cite[Section 2.4]{soergel-category-O} we see that $p \circ i = 0$ in $\proj(\cO_0)$ which is analogous\footnote{This relation extends to the analogue of the local barbell-wall relation, as all ``barbell on the right'' morphisms in $\proj(\cO_0)$ are linear combinations of applications of $\Theta_s$ to $p \circ i$, which is $0$.} to the barbell-wall relation \eqref{rel:barbell-wall}. Hence all the relations in $\mcal{DO}_0$ are preserved by $F$. By construction, $F$ preserves $\C$-linear combinations and the Soregel module structure in \cite{soergel-category-O}, so $F$ is well defined as a functor between $\C$-linear $\cH(S_2)$-module categories.
 \end{proof}
 
 \begin{theorem}[Soergel, {\cite[Endomorhihsmensatz 7, Struktursatz 9 and Section 2.4]{soergel-category-O}}]
@@ -142,7 +142,7 @@ This result is essentially due to Soergel \cite[Endomorhihsmensatz 7, Struktursa
 \red{Maybe talk about Soergel modules and $\cH(S_2)$-modules vs $\Kar(\cH(S_2))$-modules}
 
 \begin{remark}
-    The morphisms spaces in $\mcal{DO}_0$ are graded by the same grading as $\cH(S_2)$ in \autoref{sec:3.1}. The equivalence $\Kar(\mcal{DO}_0) \cong \proj(\cO_0)$ includes a grading of morphisms in $\proj(\cO_0)$ \red{Check!} and hence a grading morphisms of $\cO$, which is otherwise ungraded.
+    The morphisms spaces in $\mcal{DO}_0$ are graded by the same grading as $\cH(S_2)$ in \autoref{sec:one-col-sbim}. The equivalence $\Kar(\mcal{DO}_0) \cong \proj(\cO_0)$ includes a grading of morphisms in $\proj(\cO_0)$ \red{Check!} and hence a grading morphisms of $\cO$, which is otherwise ungraded.
 \end{remark}
 
 \red{Some more consequences}

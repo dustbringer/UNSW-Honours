@@ -1,10 +1,12 @@
 \section{Module Categories}
-\label{sec:2.3}
+\label{sec:module-cat}
 
 \red{Something about what this is used for}
 
+\red{Something about where this is seen}
+
 \begin{definition}
-    Let $(\mcal{M}, \tensor, \mathbbb{1})$ be a (strict) monoidal category. A \textit{(left) module category} over $\mcal{M}$ is a category $\mcal{C}$ and a bifunctor $\odot: \mcal{M} \times \mcal{C} \to \mcal{C}$ such that there are natural isomorphisms $(X \tensor Y) \odot A \cong X \odot (Y \odot A)$ and $\mathbbb{1} \odot A \cong A$ for $X,Y \in \mcal{M}$ and $A \in \mcal{C}$, satisfying coherence relations analogous to those for monoidal categories (see \cite{tensor-categories}[Definition 7.1.2]). A (left) module category over $\mcal{M}$ is \textit{strict} if the natural isomorphisms above are identity natural isomorphisms, i.e. $(X \tensor Y) \odot A = X \odot (Y \odot A)$ and $\mathbbb{1} \odot A = A$. We call $\odot$ the action of $\mcal{M}$ or the module product. 
+    Let $(\mcal{M}, \tensor, \mathbbb{1})$ be a (strict) monoidal category. A \textit{(left) module category over $\mcal{M}$} or \textit{$\mcal{M}$-module category} is a category $\mcal{C}$ and a bifunctor $\odot: \mcal{M} \times \mcal{C} \to \mcal{C}$ such that there are natural isomorphisms $(X \tensor Y) \odot A \cong X \odot (Y \odot A)$ and $\mathbbb{1} \odot A \cong A$ for $X,Y \in \mcal{M}$ and $A \in \mcal{C}$, satisfying coherence relations analogous to those for monoidal categories (see \cite[Definition 7.1.2]{tensor-categories}). A (left) $\mcal{M}$-module category is \textit{strict} if the natural isomorphisms above are identity natural isomorphisms, i.e. $(X \tensor Y) \odot A = X \odot (Y \odot A)$ and $\mathbbb{1} \odot A = A$. We call $\odot$ the \textit{action of $\mcal{M}$} or \textit{the module product}. 
 \end{definition}
 
 In the following examples, the module action is essentially the monoidal product, which we may denote by the same symbol $\tensor$. Note that module actions may not always be an underlying monoidal product.
@@ -30,3 +32,12 @@ In the following examples, the module action is essentially the monoidal product
     \]
     The left action of $(V, \rho)$ is the left tensor of $(V,\rho|_H)$ in $\Rep(H)$. On morphisms we apply a similar restriction of equivariant maps.
 \end{example}
+
+\begin{definition}
+    A (strict) module category $\mcal{C}$ over a monoidal category $\mcal{M}$ is \textit{generated} by finite set $S_o$ of objects and $S_m$ of morphisms in $\mcal{C}$, when all non-unit objects are of the form $X \odot A$ for $X \in \mcal{M}$ and $A \in S_o$, and non-identity morphisms in $\mcal{C}$ are defined similarly.
+\end{definition}
+
+\begin{definition}
+    Let $\mcal{M}$ be a (strict) $R$-linear monoidal category, and $\mcal{C}$ be a (strict) module category over $\mcal{M}$. We say that $\mcal{C}$ is a \textit{(strict) $R$-linear module category} if $\odot$ is $R$-bilinear on morphisms.
+\end{definition}
+

@@ -1,12 +1,9 @@
 \section{Frobenius Objects}
-\label{sec:2.2}
+\label{sec:frob-object}
 
-\red{Something something about }
-\red{Many relations in categorical structures can be written in diagrammatic terms - adjunctions, monoid}
+The structure of Frobenius objects give rise to useful diagrammatics that can be defined up to isotopy. This section gives some background to the objects we will encounter in \autoref{sec:one-col-sbim} and beyond.
 
-\red{Something about isotopy}
-
-Let $\mcal{C}$ be a (strict) monoidal category. We can define the following objects.
+Let $\mcal{C}$ be a (strict) monoidal category.
 
 \begin{definition}
     A \textit{monoid object} in $\mcal{C}$ is a triple $(M,\mu,\eta)$ for an object $M \in \mcal{C}$, a \textit{multiplication} map $\mu: M \tensor M \to M$ and a \textit{unit} map $\eta: \mathbbb{1} \to M$, such that
@@ -29,7 +26,7 @@ Let $\mcal{C}$ be a (strict) monoidal category. We can define the following obje
     \end{gather*}
 \end{definition}
 
-Monoid objects generalise monoids, i.e. sets with an identity equipped with an associative binary operation.
+Monoid objects generalise monoidsin algebra, i.e. sets with an identity equipped with an associative binary operation.
 
 \begin{definition}
     A \textit{Frobenius object} in $\mcal{C}$ is a quintuple $(A,\mu,\eta,\delta,\epsilon)$ such that $(A,\mu,\eta)$ is a monoid object, $(A,\delta,\epsilon)$ is a comonoid object, and the maps satisfy the \textit{Frobenius relations}
@@ -40,7 +37,7 @@ Monoid objects generalise monoids, i.e. sets with an identity equipped with an a
 \end{definition}
 
 
-The maps and relations for a Frobenius object $(A,\mu,\eta,\delta,\epsilon)$ have a nice description with the diagrams given in \autoref{sec:2.1}. The structure maps are drawn as
+The maps and relations for a Frobenius object $(A,\mu,\eta,\delta,\epsilon)$ have a pleasant description via the diagrams given in \autoref{sec:monoidal-cat}. The structure maps are drawn as
 \begin{gather*}
     \inputtikz{2.2/frob-multiplication}
     \quad , \quad
@@ -51,7 +48,7 @@ The maps and relations for a Frobenius object $(A,\mu,\eta,\delta,\epsilon)$ hav
     \inputtikz{2.2/frob-counit}.
 \end{gather*}
 
-For the rest of this section, we only work with the Frobenius object $A$ and $\mathbbb{1}$. We can stop putting the label $A$ by identifying $A$ with the identity strand $\mathsf{I} = \id_A$. Diagrammatically, the associativity relation $\mu \circ (\mu \tensor \id_M) = \mu \circ (\id_M \tensor \mu)$ is
+For the rest of this section, we will only work with the Frobenius object $A$ and $\mathbbb{1}$. We can stop putting the label $A$ by identifying $A$ with the identity strand $\mathsf{I} = \id_A$. Diagrammatically, the associativity relation $\mu \circ (\mu \tensor \id_M) = \mu \circ (\id_M \tensor \mu)$ is
 \begin{gather*}
     \inputtikz{2.2/frob-relation-associativity1}
     =
@@ -89,7 +86,7 @@ and the Frobenius relation $(\id_A \tensor \mu) \circ (\delta \tensor \id_A) = \
 \end{gather*}
 
 
-To simplify the diagrams, we stop labelling the functions and draw the structure maps as univalent and trivalent vertices
+To further simply the diagrams, we stop labelling the functions and draw the structure maps as univalent and trivalent vertices
 \begin{gather*}
     \inputtikz{2.2/frob-simple-multiplication}
     \quad , \quad
@@ -97,15 +94,18 @@ To simplify the diagrams, we stop labelling the functions and draw the structure
     \quad , \quad
     \inputtikz{2.2/frob-simple-comultiplication}
     \quad , \quad
-    \inputtikz{2.2/frob-simple-counit}.
+    \inputtikz{2.2/frob-simple-counit},
 \end{gather*}
-We put a large dot on the unit and counit to indicate that the string stops before reaching the other end. Then the relations become
-\begin{gather*}
+where the large dot on the unit and counit indicates that the string stops before reaching the other end. Then the relations become
+\begin{gather}
+    \tag{Frob1}\label{rel:frob-associativity}
     \inputtikz{2.2/frob-simple-relation-associativity1}
     = \inputtikz{2.2/frob-simple-relation-associativity2}
     \quad , \quad
     \inputtikz{2.2/frob-simple-relation-coassociativity1}
-    = \inputtikz{2.2/frob-simple-relation-coassociativity2}, \\
+    = \inputtikz{2.2/frob-simple-relation-coassociativity2},
+    \\
+    \tag{Frob2}\label{rel:frob-unit}
     \inputtikz{2.2/frob-simple-relation-unit1}
     = \inputtikz{2.2/frob-simple-relation-unit2}
     = \inputtikz{2.2/frob-simple-relation-unit3}
@@ -113,15 +113,16 @@ We put a large dot on the unit and counit to indicate that the string stops befo
     \inputtikz{2.2/frob-simple-relation-counit1}
     = \inputtikz{2.2/frob-simple-relation-counit2}
     = \inputtikz{2.2/frob-simple-relation-counit3},
-\end{gather*}
+\end{gather}
 and
-\begin{gather*}
+\begin{gather}
+    \tag{Frob3}\label{rel:frob-relation}
     \inputtikz{2.2/frob-simple-relation-frob1}
     =
     \inputtikz{2.2/frob-simple-relation-frob2}
     =
     \inputtikz{2.2/frob-simple-relation-frob3}.
-\end{gather*}
+\end{gather}
 
 Let us write cups and caps for the diagrams
 \begin{gather*}
@@ -141,9 +142,10 @@ Then the Frobenius object relations admit a more familiar form of (planar) isoto
     = \inputtikz{2.2/frob-isotopy-bend2}
     = \inputtikz{2.2/frob-isotopy-bend3},
 \end{gather}
-which resemble that we saw in the Temperley-Lieb-Jones category. For instance the first equality follows from the Frobenius relation and the (co)unit relations
+which we saw in for the Temperley-Lieb-Jones category. For instance the first equality follows from \eqref{rel:frob-relation} and \eqref{rel:frob-unit},
 \begin{gather*}
-    \inputtikz{2.2/frob-isotopy-bend-eg1}
+    \inputtikz{2.2/frob-isotopy-bend1}
+    = \inputtikz{2.2/frob-isotopy-bend-eg1}
     = \inputtikz{2.2/frob-isotopy-bend-eg2}
     = \inputtikz{2.2/frob-isotopy-bend-eg3}.
 \end{gather*}
@@ -172,7 +174,6 @@ Similarly we can deduce more isotopy relations
 \end{gather}
 which can be thought of as ``rotating of vertices''.
 
-\red{Rotating diagrams}
 Using these maps, we can rotate diagrams by putting caps and cups on a diagram.
 \begin{example}
     The unit relation can be rotated to the counit map
@@ -196,34 +197,37 @@ Using these maps, we can rotate diagrams by putting caps and cups on a diagram.
         \\ & = \inputtikz{2.2/example-rotation2.5}
         \\ & = \inputtikz{2.2/example-rotation2.6}.
     \end{align*}
-    where the equality follows from applying \eqref{rel:frob-isotopy3} three times and \eqref{rel:frob-isotopy1}.
+    where the equality follows from applying \eqref{rel:frob-isotopy3} three times then \eqref{rel:frob-isotopy1}.
 \end{example}
 
-We can therefore consider the diagrams generated by concatenations of Frobenius structure maps up to planar isotopy. That is, we let two diagrams be equal if one diagram can be continuous deformed to the other in the plane without crossing itself. This greatly simplifies calculations as we can now just use our physical intuition rather than the specific isotopy relations \eqref{rel:frob-isotopy1}-\eqref{rel:frob-isotopy3}. \red{aligns with our diagrammatic philosophy} We can also simplify our relations... \red{Fill this in}
+We can therefore consider the diagrams generated by concatenations of Frobenius structure maps up to planar isotopy. That is, we equate two diagrams if one diagram can be continuous deformed to the other in the plane without crossing itself. In this way, we can just use our visual intuition in place of applying specific isotopy relations \eqref{rel:frob-isotopy1}-\eqref{rel:frob-isotopy3}.
 
-\begin{gather}
-    \inputtikz{2.2/frob-rel-to-associativity1}
-    = \inputtikz{2.2/frob-rel-to-associativity2}
-    = \inputtikz{2.2/frob-rel-to-associativity3}
-    = \inputtikz{2.2/frob-rel-to-associativity4}
-\end{gather}
-
-
-\begin{gather}
+The Frobenius object relations \eqref{rel:frob-associativity}, \eqref{rel:frob-unit}, \eqref{rel:frob-relation} can be simplified as following. The unit and counit relations are
+\begin{gather*}
     \inputtikz{2.2/relation1.1}
     = \inputtikz{2.2/relation1.2}
     \left(
     = \inputtikz{2.2/relation1.3}
-    \right)
+    \right),
+\end{gather*}
+where the second equality follows from rotating the first one with cups and caps. Here the horizontal line has no innate meaning in the category but isotopically asserts equality between the ``bent up'' and ``bent down'' diagrams in \eqref{rel:frob-unit}.
+
+Note that the Frobenius relation \eqref{rel:frob-relation} implies the associativity and coassociativity relations \eqref{rel:frob-associativity} by isotopy. For instance, we have
+\begin{gather}
+    \inputtikz{2.2/frob-rel-to-associativity1}
+    = \inputtikz{2.2/frob-rel-to-associativity2}
+    = \inputtikz{2.2/frob-rel-to-associativity3}
+    = \inputtikz{2.2/frob-rel-to-associativity4},
+\end{gather}
+where the second equality is the Frobenius relation. For preciseness, this calculation shows the trivalent rotations \eqref{rel:frob-isotopy3}, but the reader is encouraged to think of the first and third equalities as isotopic deformations.
+
+Therefore, up to isotopy, the Frobenius object relations are summed by the unit and Frobenius relation
+\begin{gather}
+    \inputtikz{2.2/relation1.1}
+    = \inputtikz{2.2/relation1.2}
     \quad , \quad
     \inputtikz{2.2/relation2.1}
-    = \inputtikz{2.2/relation2.2}
+    = \inputtikz{2.2/relation2.2}.
 \end{gather}
-
-From now on, when we say `up to isotopy' we mean that isotopic diagrams are equal.
-
-\red{Talk about isotopy}
-
-
-\red{Maybe something about the (diagrammatic?) category Frob, capturing the data of a frobenius object}
+These objects will appear again in the context of diagrammatic Soergel bimodules in \autoref{sec:one-col-sbim}
 
