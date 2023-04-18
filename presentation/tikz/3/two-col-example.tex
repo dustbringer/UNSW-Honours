@@ -1,0 +1,42 @@
+\tikz[vcenter, scale=0.45]{
+    \squarecoord
+    \tikzfixsize{(0,0)}{(4,4)}
+    % \node (top) at ($(top)+(0,1)$) {};
+    \node (mid) at ($(mid)+(0,.5)$) {};
+    % centre blue
+    \path[string=dBlue]
+    ($(mid) + (-.5,0)$) edge ($(mid) + (.5,0)$)
+    ($(mid) + (-.5,0)$) edge ($(top) + (-1,0)$)
+    ($(mid) + (.5,0)$) edge ($(top) + (1,0)$)
+    ($(mid) + (-.5,0)$) edge ($(mid) + (-.8,-1)$)
+    ($(mid) + (.5,0)$) edge ($(mid) + (.7,-.75)$);
+    \draw[string=dBlue] (bot)
+    to[out=90,in=195] ($(mid) + (.7,-.75)$)
+    to[out=10,in=120] ($(mid) + (.7,-.75) + (.75,-.35)$);
+    \node[enddot=dBlue] at ($(mid) + (-.8,-1)$) {};
+    \node[enddot=dBlue] at ($(mid) + (.7,-.75) + (.75,-.35)$) {};
+    % red cap
+    \draw[string=dRed] ($(bot) + (.4,0)$)
+    to[out=90,in=180] ($(bot) + (.85,1.3)$)
+    to[out=0,in=90] ($(bot) + (1.3,0)$);
+    % stalactite and stalagmite
+    \path
+    ($(bot) + (-1.15,0)$) edge[string=dBlue] ($(bot) + (-1,.7)$)
+    (top) edge[string=dRed] ($(top) + (0,-.75)$)
+    ($(bot) + (.85,0)$) edge[string=dBlue] ($(bot) + (.85,.7)$);
+    \node[enddot=dBlue] at ($(bot) + (-1,.7)$) {};
+    \node[enddot=dRed] at ($(top) + (0,-.75)$) {};
+    \node[enddot=dBlue] at ($(bot) + (.85,.7)$) {};
+    % left barbells
+    \path[string=dBlue] (0,1.5) edge (0,2.5);
+    \draw[string=dRed] (-.65,1.5)
+    to[out=270,in=180] (0,.9)
+    to[out=0,in=270] (.65,1.5)
+    to (.65,2.5)
+    to[out=90,in=0] (0,3.1)
+    to[out=180,in=90] (-.65,2.5);
+    \node[enddot=dBlue] at (0,1.5) {};
+    \node[enddot=dBlue] at (0,2.5) {};
+    \node[enddot=dRed] at (-.65,1.5) {};
+    \node[enddot=dRed] at (-.65,2.5) {};
+}
