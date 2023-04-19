@@ -2,24 +2,24 @@
     \tikzfixsize{(-.25,0)}{(1,0)}
     % pink split
     \path
-    (1,0) edge[string=dPink] (1,1)
-    (1.5,4) edge[string=dPink] (1.5,2)
+    (1,0) edge[string=dBlue] (1,1)
+    (1.5,4) edge[string=dBlue] (1.5,2)
     ;
-    \node[enddot=dPink] at (1,1) {};
-    \node[enddot=dPink] at (1.5,2) {};
+    \node[enddot=dBlue] at (1,1) {};
+    \node[enddot=dBlue] at (1.5,2) {};
     %
-    \draw[string=dPurp] (0,0)
+    \draw[string=dRed] (0,0)
     to[out=90,in=180+20,looseness=.9] (1,1.75)
     to[out=0-20,in=90,looseness=.9] (2,0);
-    \path (1,1.75) edge[string=dPurp] (1,4);
+    \path (1,1.75) edge[string=dRed] (1,4);
     % purp split
-    \path (2.25,4) edge[string=dPurp] (2.25,3.5);
-    \draw[string=dPurp] (1.7,1.1) to[out=45,in=270,looseness=.9] (2.25,2.5);
-    \node[enddot=dPurp] at (2.25,3.5) {};
-    \node[enddot=dPurp] at (2.25,2.5) {};
+    \path (2.25,4) edge[string=dRed] (2.25,3.5);
+    \draw[string=dRed] (1.7,1.1) to[out=45,in=270,looseness=.9] (2.25,2.5);
+    \node[enddot=dRed] at (2.25,3.5) {};
+    \node[enddot=dRed] at (2.25,2.5) {};
     %
     \path
-    (3,0) edge[string=dPink] (3,4)
+    (3,0) edge[string=dBlue] (3,4)
     (5,0) edge[string=dRed] (5,4);
     \node at (4.1,2) {$\dots$};
     \draw[draw=grey, thick, dashed] (1.25,2.15) rectangle ++(4.25,1.7);

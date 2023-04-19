@@ -1,15 +1,13 @@
 \section{Module Categories}
 \label{sec:module-cat}
 
-\red{Something about what this is used for}
-
-\red{Something about where this is seen}
+Module categories are categories equipped with an action of a monoidal category. This generalises the notion of modules over a ring. In \autoref{sec:diag-osl2} and \autoref{sec:diag-tiltsl2}, we will see that the categories of interest appear as module categories over the category of Soergel bimodules.
 
 \begin{definition}
-    Let $(\mcal{M}, \tensor, \mathbbb{1})$ be a (strict) monoidal category. A \textit{(left) module category over $\mcal{M}$} or \textit{$\mcal{M}$-module category} is a category $\mcal{C}$ and a bifunctor $\odot: \mcal{M} \times \mcal{C} \to \mcal{C}$ such that there are natural isomorphisms $(X \tensor Y) \odot A \cong X \odot (Y \odot A)$ and $\mathbbb{1} \odot A \cong A$ for $X,Y \in \mcal{M}$ and $A \in \mcal{C}$, satisfying coherence relations analogous to those for monoidal categories (see \cite[Definition 7.1.2]{tensor-categories}). A (left) $\mcal{M}$-module category is \textit{strict} if the natural isomorphisms above are identity natural isomorphisms, i.e. $(X \tensor Y) \odot A = X \odot (Y \odot A)$ and $\mathbbb{1} \odot A = A$. We call $\odot$ the \textit{action of $\mcal{M}$} or \textit{the module product}. 
+    Let $(\mcal{M}, \tensor, \mathbbb{1})$ be a (strict) monoidal category. A \textit{(left) module category over $\mcal{M}$} or \textit{$\mcal{M}$-module category} is a category $\mcal{C}$ and a bifunctor $\odot: \mcal{M} \times \mcal{C} \to \mcal{C}$ such that there are natural isomorphisms $(X \tensor Y) \odot A \cong X \odot (Y \odot A)$ and $\mathbbb{1} \odot A \cong A$ for $X,Y \in \mcal{M}$ and $A \in \mcal{C}$ and similarly for morphisms, satisfying coherence relations analogous to those for monoidal categories (see \cite[Definition 7.1.2]{tensor-categories}). A (left) $\mcal{M}$-module category is \textit{strict} if the natural isomorphisms above are identity natural isomorphisms, i.e. $(X \tensor Y) \odot A = X \odot (Y \odot A)$ and $\mathbbb{1} \odot A = A$, similarly for morphisms. We call $\odot$ the \textit{action of $\mcal{M}$} or \textit{the module product}. 
 \end{definition}
 
-In the following examples, the module action is essentially the monoidal product, which we may denote by the same symbol $\tensor$. Note that module actions may not always be an underlying monoidal product.
+In the following examples, the module action is essentially the monoidal product, which we may denote by the same symbol $\tensor$. Note that module actions are not always an underlying monoidal product.
 
 \begin{example}
     A monoidal category is a module category over itself, where the action is its tensor product.

@@ -1,17 +1,19 @@
 \section{Drawing Monoidal Categories}
 \label{sec:monoidal-cat}
 
-\begin{definition}
-    A \textit{monoidal category} $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold (see \cite[Definition 2.1.1, 2.2.8]{tensor-categories}). The bifunctor $\tensor$ is called the \textit{tensor} or \textit{monoidal product}. A monoidal category is \textit{strict} if $A \tensor (B \tensor C) = (A \tensor B) \tensor C$ and $A = \mathbbb{1} \tensor A = A \tensor \mathbbb{1}$ for objects and similarly for morphisms.
-\end{definition}
-
-In this paper, we will assume that monoidal categories are strict. This does not pose any problems since all monoidal categories are monoidally equivalent to a strict one\footnote{See \cite[\nopp VII.2]{maclane-category-theory} or \cite[Thm 2.8.5]{tensor-categories}}. In this context, the details in the coherence relations are trivial.
+Monoidal categories are the main context in which we consider diagrammatics. For more details about monoidal categories the reader may refer to \cite{tensor-categories}, and a helpful survey of diagrams for various types of monoidal categories at \cite{selinger-survey-of-graphical-monoidal-categories}.
 
 \begin{definition}
-    A functor $F: \mcal{C} \to \mcal{D}$ between monoidal categories is called \textit{monoidal} if it preserves the monoidal product. That is $F(A \tensor B) = F(A) \tensor F(B)$.
+    A \textit{monoidal category} $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold, see \cite[Definition 2.1.1, 2.2.8]{tensor-categories}. The bifunctor $\tensor$ is called the \textit{tensor} or \textit{monoidal product}. A monoidal category is \textit{strict} if $A \tensor (B \tensor C) = (A \tensor B) \tensor C$ and $A = \mathbbb{1} \tensor A = A \tensor \mathbbb{1}$ for objects and similarly for morphisms.
 \end{definition}
 
-Structure preserving functors for other types of categories can be defined in a similar way.
+The functoriality of $\tensor$ means that the monoidal product commutes with composition in both variables.
+
+\begin{definition}
+    A functor $F: \mcal{C} \to \mcal{D}$ between monoidal categories is called \textit{(strict) monoidal} if it preserves the monoidal product, i.e. $F(A \tensor B) = F(A) \tensor F(B)$. Structure preserving functors for other types of categories can be defined in a similar way.
+\end{definition}
+
+In this paper, we will assume that monoidal categories and monoidal functors are strict. This does not pose any problems since all monoidal categories are monoidally equivalent to a strict one\footnote{See \cite[\nopp VII.2]{maclane-category-theory} or \cite[Thm 2.8.5]{tensor-categories}}, and similar strictification can be applied to the functor. In this context, the details in the coherence relations are trivial.
 
 The morphisms of a monoidal category $\mcal{C}$ can be drawn as string diagrams embedded in a planar strip. A diagram is a morphism when read from bottom to top, that is the domain is on the bottom of the strip and the codomain on the top. Functions that make up a morphism are drawn as tokens or boxes. For example
 \begin{center}
@@ -57,15 +59,13 @@ Written with string diagrams, this is
     = \inputtikz{2.1/interchange-law2}
     = \inputtikz{2.1/interchange-law3}
 \end{center}
-which holds up to vertical deformation of the diagram. This is our first glimpse of isotopy, but only in the vertical direction.
+which holds up to vertical deformation of the diagram. This is a small taste of isotopy, but only in the vertical direction.
 
-\red{Reword this} Before looking at an example of a diagrammatic monoidal category, we mention some definitions.
+Before looking at an example of a diagrammatic monoidal category, we just mention some definitions.
 
 \begin{definition}
-    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear. An \textit{$R$-linear monoidal category} is a category that is both monoidal and $R$-linear such that the monoidal product on morphisms is $R$-bilinear. A ($\Z$-)\textit{graded $R$-linear category} is a category where $\Hom(A,B)$ is a $\Z$-graded $R$-module. If we write $\Hom^i(A,B)$ for the homogeneous component of degree $i$, then we have $\Hom(A,B) = \bigoplus_{i \in \Z} \Hom^i(A,B)$ and $\Hom^i(B,C) \circ \Hom^i(A,B) \subseteq \Hom^{i+j}(A,C)$.
+    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear. An \textit{$R$-linear monoidal category} is a category that is both monoidal and $R$-linear such that the monoidal product on morphisms is $R$-bilinear. A ($\Z$-)\textit{graded $R$-linear category} is a category where $\Hom(A,B)$ is a $\Z$-graded $R$-module. That is, $\Hom(A,B) = \bigoplus_{i \in \Z} \Hom^i(A,B)$ where $\Hom^i(A,B)$ is the homogeneous component of degree $i$, and we have \[\Hom^i(B,C) \circ \Hom^i(A,B) \subseteq \Hom^{i+j}(A,C).\]
 \end{definition}
-
-\red{Put reference to somewhere with a better definition?}
 
 Note that since composition and tensor products are bilinear, $0 \tensor f = (0 + 0) \tensor f = 0 \tensor f + 0 \tensor f$ and similarly with composition, so composition and tensors with $0$ are also zero.
 
@@ -74,7 +74,7 @@ Note that since composition and tensor products are bilinear, $0 \tensor f = (0 
 \end{example}
 
 \begin{definition}
-    A monoidal category $\mcal{C}$ is \textit{generated} by finite set $S_o$ of objects and $S_m$ of morphisms, when all non-unit objects are a finite tensor of objects in $S_o$ and all non-identity morphisms are a finite combination of tensors and compositions of morphisms in $S_m$.
+    A monoidal category $\mcal{C}$ is \textit{generated} by finite set $S_o$ of objects and $S_m$ of morphisms, when all non-unit objects are a finite tensor of objects in $S_o$ and all non-identity morphisms are a finite combination of tensors and compositions of morphisms in $S_m$. Similarly, we may define \textit{generated} $R$-linear monoidal categories such that we also allow $R$-linear combinations of morphisms.
 \end{definition}
 
 \begin{example}
