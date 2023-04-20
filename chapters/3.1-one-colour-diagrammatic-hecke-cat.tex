@@ -18,9 +18,9 @@ The first one-colour diagrammatic category we explore is the \textit{one-colour 
         \quad , \quad
         \inputtikz{3.1/generator2},
     \end{align}
-    that are maps $s \to \vn$ and $ss \to s$ respectively, and their vertical reflections. We put a large dot on univalent vertices to signify that the line stops abruptly and does not connect to the top. The composition of such diagrams is appropriate vertical stacking, and the tensor product is horizontal concatenation (without intersection). We can also take formal $Z$-linear combinations of diagrams.
+    that are maps $s \to \vn$ and $ss \to s$ respectively, and their vertical reflections. Here, we identify the generating object $s$ with its identity morphism $\id_s = \dRed{\mathsf{I}}$ to avoid labelling the domain and codomain. We also put a large dot on univalent vertices to signify that the line stops abruptly and does not connect to the top. The composition of such diagrams is appropriate vertical stacking, and the tensor product is horizontal concatenation (without intersection). We can also take formal $\Z$-linear combinations of diagrams.
     %The free $\Z$-module structure on each morphism space $\Hom(s^n, s^m)$ produces $\Z$-linear combinations of such diagrams. \red{Something about composition/tensor and addition commuting -> this follows from bifunctoriality of tensor product}
-    To abuse notation, the empty diagram $\vn \to \vn$ will be denoted $\vn$. We may also identify the identity diagram $\id_s$ with $s$.
+    To abuse notation, the empty diagram $\vn \to \vn$ will be denoted $\vn$.
 
     % TODO: Something about the line being red, and not labelling domain and codomain (using identity strand as the label)
 
@@ -49,7 +49,7 @@ Note that ``local'' here means that we can apply these relations to any subdiagr
 
 
 \begin{remark}
-    The object $s$ is a Frobenius object in $\cH(S_2)$. The generators \eqref{eq:one-col-gen} and their vertical reflections are the unit, multiplication, counit and comultiplication maps. The unit, associativity and Frobenius relations are satisfied by the relations \eqref{rel:one-col-frob-unit} and \eqref{rel:one-col-frob-ass}.
+    It is clear that the $s$ is a Frobenius object in $\cH(S_2)$. By the universality of the construction, we see the generators \eqref{eq:one-col-gen} and their vertical reflections are the unit, multiplication, counit and comultiplication maps, satisfying the Frobenius object relations \eqref{rel:one-col-frob-unit} and \eqref{rel:one-col-frob-ass}.
 \end{remark}
 
 \begin{example}
@@ -63,16 +63,8 @@ Note that ``local'' here means that we can apply these relations to any subdiagr
     \end{align*}
 \end{example}
 
-\begin{proposition}
-    \label{prop:floating-diagram-barbell}
-    All diagrams with floating diagrams, i.e. diagrams not connected to the domain or codomain by a red strand, are linear combination of diagrams where all floating diagrams are barbells.
-\end{proposition}
-\begin{proof}
-    By isotopy and \eqref{rel:one-col-frob-unit}, floating diagrams can be drawn as barbells with ``bubbles'' and possibly floating subdiagrams inside each bubble. For example,
-    \begin{center}
-        \inputtikz{3.1/bubbles-example}.
-    \end{center}
-    The Frobenius relation \eqref{rel:one-col-frob-ass} allows us to ``straighten out'' the bubbles to a chain of individual bubbles. The diagram above becomes
+\begin{example}
+    We can simplify the following morphism in $\Hom(\vn, \vn)$ to
     \begin{gather*}
         \inputtikz{3.1/bubbles-example1}
         \quad = \quad \inputtikz{3.1/bubbles-example2}
@@ -80,12 +72,24 @@ Note that ``local'' here means that we can apply these relations to any subdiagr
         \quad = \quad \inputtikz{3.1/bubbles-chain-example}
         \quad = 0.
     \end{gather*}
-    For a floating diagram without floating subdiagrams, it is either $0$ by \eqref{rel:one-col-needle}, or $\barbell$ which can be removed from any floating diagrams containing it via \eqref{rel:one-col-barbell-forcing}. Repeating this process produces a linear combination of diagrams where all floating diagrams are barbells.
+    The first three equalities are the relations \eqref{rel:one-col-frob-ass} and the last equality follows from composition with \eqref{rel:one-col-needle}.
+\end{example}
+
+\begin{proposition}
+    \label{prop:floating-diagram-barbell}
+    A \textit{floating diagrams} is a diagram in $\Hom(\vn,\vn)$. All floating diagrams are a linear combination of diagrams in which all floating diagrams are barbells.
+\end{proposition}
+\begin{proof}
+    By isotopy and \eqref{rel:one-col-frob-unit}, floating diagrams can be drawn as barbells with ``bubbles'' and possibly floating subdiagrams inside each bubble. For example,
+    \begin{center}
+        \inputtikz{3.1/bubbles-example}.
+    \end{center}
+    The Frobenius relation \eqref{rel:one-col-frob-ass} allows us to ``straighten out'' the bubbles to a chain of individual circles. For a floating diagram without floating subdiagrams, it is either $0$ by \eqref{rel:one-col-needle}, or $\barbell$, which can be removed from any floating diagrams containing it via \eqref{rel:one-col-barbell-forcing}. Repeating this process produces a linear combination of diagrams where all floating diagrams are barbells.
 \end{proof}
 
 \subsection*{Double Leaves Basis}
 
-The morphism space $\Hom(s^n, s^m)$ has a left (or right) $\Z[\barbell]$-basis called the \textit{double leaves} basis, as described in \cite{elias-williamson-soergel-calculus}. To define this basis, we must first define morphisms known as \textit{light leaves}. This makes use of the group structure of $S_2$ to reduce words in $\cH(S_2)$.
+Let $\Z[\barbell]$ be the ring of formal integer polynomials with the variable $\barbell$. The morphism space $\Hom(s^n, s^m)$ has a left (or right) $\Z[\barbell]$-basis called the \textit{double leaves} basis, as described in \cite{elias-williamson-soergel-calculus}. To define this basis, we must first define morphisms known as \textit{light leaves}. This makes use of the group structure of $S_2$ to reduce words in $\cH(S_2)$.
 
 \begin{definition}
     Let $\phi: (\op{ob}(\cH(S_2)), \tensor) \to (S_2, *)$ be the monoid homomorphism\footnote{A map that preserves the monoidal product and identity element.} mapping $s \mapsto s$ and $\vn \mapsto 1$, and $\psi: S_2 \to \op{ob}(\cH(S_2))$ be the function that maps $s \mapsto s$ and $1 \mapsto \vn$.
@@ -181,14 +185,18 @@ A purely diagrammatic proof (of a more general theorem) can be found in \cite{el
     The above light leaves and double leaves, introduced in \cite{elias-williamson-soergel-calculus}, are diagrammatic analogues of Libedinsky's construction in \cite{libedinsky-lightleavesbasis}.
 \end{remark}
 
-The morphisms in this category can be graded such that the univalent vertices has degree $1$ and trivalent vertices have degree $-1$. The degree of a diagram is the sum of the degrees of the generators that appear in it. This makes $\cH(S_2)$ a $\Z$-graded category. For example, the diagrams from \autoref{eg:one-col-relations} are degree $3$.
+The morphisms in this category can be graded such that the univalent vertices has degree $1$ and trivalent vertices have degree $-1$. The degree of a diagram is the sum of the degrees of the generators that appear in it. We can easily check that the relations \eqref{eq:one-col-hecke-rel} preserve the grading, so this makes $\cH(S_2)$ a $\Z$-graded category. For example, the diagrams from \autoref{eg:one-col-relations} are degree $3$.
+
+
 
 \subsection*{Equivalence with $\sbim$}
 
-The category $\Kar(\cH(S_2))$ is a diagrammatic version of the category of Soergel bimodules $\sbim$ for $S_2$. However $\sbim$ is not well behaved with morphisms over $\Z$, so we must first extend the scalars of morphisms spaces in $\cH(S_2)$ to $\C$\footnote{The equivalence actually holds in more generality, but we choose $\C$ because it is easy to work with.}. Formally this is just a left $\Z$-tensor of the morphism spaces with the $\C$-$\Z$-bimodule $\C$, where the right action is induced by the inclusion $\Z \subset \C$. We write $\cH_\C(S_2)$ for this $\C$-linear monoidal category. This process is quite simple and does not change much about to the category itself. In particular, double leaves in $\cH_\C(S_2)$ are still $\C[\barbell]$-bases\footnote{It is easy to check that the set of double leaves tensored with $1 \in \C$ on the left form a basis.} for the morphisms.
+For a certain polynomial ring $R$ derived from the symmetric group $S_2$, the category of Bott--Samelson bimodules $\bsbim$ is a category of $R$-$R$-bimodules generated by a bimodule $B_s$. Soergel bimodules are $R$-$R$-bimodules that appear as direct summands of direct sums of Bott--Samelson bimodules. The category of Soergel bimodules is a categorification\footnote{See \cite{soergel-categorification}.} of the Hecke algebra associated to $S_2$, where the polynomials in the Kazhdan--Lusztig conjecture appear. These can be defined in more generality (see \cite{intro-soergel-bimodules} for details).
+
+The category $\Kar(\cH(S_2))$ is a diagrammatic version of the category of Soergel bimodules $\sbim$ for $S_2$. However $\sbim$ is not well behaved with morphisms over $\Z$, so we must first extend the scalars of morphisms spaces in $\cH(S_2)$ to\footnote{The equivalence actually holds in more generality, but we choose $\C$ because it is easy to work with.} $\C$. Formally this is just a left $\Z$-tensor of the morphism spaces with the $\C$-$\Z$-bimodule $\C$, where the right action is induced by the inclusion $\Z \subset \C$. We write $\cH_\C(S_2)$ for this $\C$-linear monoidal category. This process is quite simple and does not change much about to the category itself. In particular, double leaves in $\cH_\C(S_2)$ are still $\C[\barbell]$-bases\footnote{It is easy to check that the set of double leaves tensored with $1 \in \C$ on the left form a basis.} for the morphisms.
 
 \begin{theorem}[Elias-Williamson {\cite[Theorem 6.30]{elias-williamson-soergel-calculus}}] \label{thm:one-col-sbim-equiv}
     The diagrammatic category $\Kar(\cH_\C(S_2))$ and the category of Soergel Bimodules $\sbim$ over $S_2$ are equivalent as graded $\C$-linear monoidal categories.
 \end{theorem}
-The proof in \cite{elias-williamson-soergel-calculus} gives an equivalence of graded $\C$-linear monoidal categories $\cH_\C(S_2) \cong \bsbim$ where $\bsbim$ is the category of Bott-Samelson bimodules over $S_2$. Since $\Kar(\bsbim) \cong \sbim$, this first equivalence extends uniquely to $\Kar(\cH_\C(S_2)) \cong \sbim$.
+The proof in \cite{elias-williamson-soergel-calculus} gives an equivalence of graded $\C$-linear monoidal categories $\cH_\C(S_2) \cong \bsbim$. We can see this on objects by sending $s$ to $B_s$. By construction, $\Kar(\bsbim) \cong \sbim$, so this equivalence extends uniquely to $\Kar(\cH_\C(S_2)) \cong \sbim$.
 

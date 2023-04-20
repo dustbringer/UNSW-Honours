@@ -3,46 +3,65 @@
 \usepackage{commands}
 \usepackage{diagrams}
 
-\title{Diagrammatic Categories in Representation Theory\\
-Honours Thesis\\
-\red{(Draft)}}
-\author{Victor Zhang\\
-    % Supervisor: Dr Anna Romanov\\\\
-    UNSW Australia}
-% \date{2022 Term 2 - 2023 Term 1}
-\date{\today}
+% \title{
+%     Diagrammatic Categories in Representation Theory
+% }
+% \author{Victor Zhang \\ \vspace{1em}Supervisors:\\Dr Anna Romanov\\Dr Arnaud Brothier\\Dr Daniel Tubbenhauer\\
+%     UNSW Sydney}
+% % \date{2022 Term 2 - 2023 Term 1}
+% \date{\monthyeardate\today}
 
 
 \begin{document}
-\maketitle
 
-\chapter*{Acknowledgements}
-\thispagestyle{empty}
+% Logo and title page stuff
+\thispagestyle{empty} % no page number on title page
+\begin{figure} \begin{center}
+    \includegraphics[width=5cm]{start-files/2022-01-portraitcolourpos.eps}
+    \end{center} \end{figure}
+\vspace*{\fill}
+\begin{center}
+    {\LARGE
+    Diagrammatic Categories in Representation Theory\\
+    }
+    \vspace{4em}
+    {\large
+    Victor Zhang\\
+    }
+    \vspace{1.5em}
+    {\large
+    {\normalsize Supervisors:}\\Dr Anna Romanov\\Dr Arnaud Brothier\\Dr Daniel Tubbenhauer\\
+    }
+    \vspace{2em}
+    School of Mathematics and Statistics\\UNSW Sydney
+    \\ \vspace{3em}
+    \monthyeardate\today
+\end{center}
+\vspace*{\fill}
+\begin{center}
+    \small\textsc{Submitted in partial fulfillment of the
+    requirements of the degree of \\
+    Bachelor of Advanced Mathematics with Honours}
+\end{center}
 
-I like to acknowledge ... blah blah blah
-
+% Plagarism, acknowledgements, abstract
+\include{chapters/0-pre.tex}
 
 \tableofcontents
 \thispagestyle{empty}
 \clearpage
-
 \setcounter{page}{1}
 
 % Consider using `import' package, works with nesting
 % https://www.overleaf.com/learn/latex/Management_in_a_large_project
 
 \include{chapters/1-introduction}
-
 \include{chapters/2-background}
-
 \include{chapters/3-one-colour-diagrammatics.tex}
-
 \include{chapters/4-two-colour-diagrammatics.tex}
+\include{chapters/5-future-direction.tex}
 
-\include{chapters/5-future-directions.tex}
-
-% To be sorted
-
-\printbibliography
+\renewcommand{\bibname}{References}
+\printbibliography[heading=bibintoc]
 
 \end{document}

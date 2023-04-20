@@ -1,6 +1,10 @@
 \ProvidesPackage{preamble}
 
 \usepackage[margin=1.15in]{geometry}
+\usepackage{datetime}
+\usepackage{graphicx}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH], \THEYEAR}
+
 \usepackage{amsmath, amssymb, amsfonts, amscd}
 \usepackage{amsthm, thmtools}
 \usepackage{environ}

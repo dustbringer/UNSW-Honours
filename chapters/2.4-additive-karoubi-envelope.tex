@@ -17,11 +17,11 @@ In particular, $R$-linear categories are preadditive because $R$-modules are def
     An \textit{additive category} is a preadditive category that admits all finite biproducts.
 \end{definition}
 
-Biproducts are a generalisation of direct sums of modules, so we often write $\oplus$ and say ``direct sum''. In other words, additive categories are preadditive categories containing all direct sums.
+Biproducts are a generalisation of direct sums of modules, so we often write $\oplus$ and say ``direct sum''. In other words, additive categories are preadditive categories containing all direct sums. An easy example is the category of modules over a ring $R$.
 
 \begin{definition}
     An \textit{idempotent} is a endomorphism $e$ such that $e \circ e = e$.
-    We say that a preadditive category is \textit{Karoubian} or \textit{idempotent complete} if for every idempotent $e: X \to X$ there is a direct sum decomposition $X \cong Y \oplus Z$ such that $e$ is a projection onto $Y$.
+    We say that a preadditive category is \textit{Karoubian} or \textit{idempotent complete} if for every idempotent $e: X \to X$ there is a direct sum decomposition $X \cong Y \oplus Z$ such that $e$ is a projection onto the component $Y$.
 \end{definition}
 
 This is a formal way to say that a category contains all direct summands, as every direct summand is an image of an idempotent given by projection.
@@ -31,7 +31,7 @@ This is a formal way to say that a category contains all direct summands, as eve
 
 \subsection*{Additive Closure and Karoubi Envelope}
 
-The additive closure and Karoubi envelope are formal ways to add direct sums and direct summands into a preadditive category.
+The additive closure and Karoubi envelope are formal constructions that add direct sums and direct summands into a preadditive category. We will see applications of these in \autoref{chapter:one-col-diagrammatics} and \autoref{chapter:two-col-diagrammatics}.
 
 \begin{definition}
     Let $\mcal{C}$ be a preadditive category. The \textit{additive closure} $\mcal{C}^\oplus$ of $\mcal{C}$ is the category where objects are finite (possibly empty) formal direct sums $\bigoplus_{i=1}^n A_i$ for $A_i \in \op{ob}(\mcal{C})$. We call the empty direct sum the \textit{zero object} $0$. A morphism $f$ of $\Hom_{\mcal{C}^\oplus}(\bigoplus_{i=1}^n A_i, \bigoplus_{i=1}^m B_i)$ is an $m \times n$ matrix $f = (f_{j,i})$ of morphisms $f_{j,i} \in \Hom_\mcal{C}(A_i, B_j)$.
@@ -53,7 +53,7 @@ This is a classical result so we will not provide a proof. It can be observed by
 This is also known as the \textit{Karoubian closure} or \textit{idempotent completion}. We should think of the objects $(A,e)$ as ``the image of $e$''.
 
 \begin{proposition}
-    The Karoubi envelope $\op{Kar}(\mcal{C})$ is Karoubian.
+    For a preadditive category $\mcal{C}$, $\op{Kar}(\mcal{C})$ is Karoubian.
 \end{proposition}
 
 A proof can be found in \cite[Lemma 11.17]{intro-soergel-bimodules}.
@@ -64,9 +64,9 @@ A proof can be found in \cite[Lemma 11.17]{intro-soergel-bimodules}.
 
 This is another classical result. See \cite[Proposition 6.5.9 (1)]{borceux-categorical-algebra} for a proof.
 
-The structure of monoidal, $R$-linear, $\mcal{M}$-module or additive categories, or a combination thereof, can be naturally extended to its Karoubi envelope. If $\mcal{C}$ is monoidal, the monoidal product extends to $\op{Kar}(\mcal{C})$ by applying the monoidal product in $\mcal{C}$ componentwise. If $\mcal{C}$ is $R$-linear, then $\op{Kar}(\mcal{C})$ is naturally $R$-linear as morphisms are those of $\mcal{C}$ and composition in $\mcal{C}$ is $R$-linear. If $\mcal{C}$ is a module category over $\mcal{M}$, then the $\mcal{M}$-action can be extended to $\op{Kar}(\mcal{C})$ such that $M \odot (A,e) = (M \odot A, \id_M \odot e)$, where $\id_M \odot e$ is an idempotent by bifunctoriality of $\odot$. Finally if $\mcal{C}$ is additive, then $\op{Kar}(\mcal{C})$ is additive by applying direct sums componentwise. The \textit{additive Karoubi envelope} of a preadditive category $\mcal{C}$ is the idempotent complete additive category $\op{Kar}(\mcal{C}^\oplus)$ which we may denote $\Kar(\mcal{C})$.
+The structure of monoidal, $R$-linear, $\mcal{M}$-module or additive categories, or a combination thereof, can be naturally extended to its Karoubi envelope. If $\mcal{C}$ is monoidal, the monoidal product extends to $\op{Kar}(\mcal{C})$ by applying the monoidal product in $\mcal{C}$ componentwise. If $\mcal{C}$ is $R$-linear, then $\op{Kar}(\mcal{C})$ is naturally $R$-linear as morphisms are those of $\mcal{C}$ and composition in $\mcal{C}$ is $R$-linear. If $\mcal{C}$ is a module category over $\mcal{M}$, then the $\mcal{M}$-action can be extended to $\op{Kar}(\mcal{C})$ such that $M \odot (A,e) = (M \odot A, \id_M \odot e)$, where $\id_M \odot e$ is an idempotent by bifunctoriality of $\odot$. We can similarly extend $\op{Kar}(\mcal{M})$ to a module category over $\op{Kar}(\mcal{M})$. Finally if $\mcal{C}$ is additive, then $\op{Kar}(\mcal{C})$ is additive by applying direct sums componentwise. The \textit{additive Karoubi envelope} of a preadditive category $\mcal{C}$ is the idempotent complete additive category $\op{Kar}(\mcal{C}^\oplus)$ which we may denote $\Kar(\mcal{C})$.
 
-For diagrammatic monoidal categories $\mcal{C}$, its additive closure has an easy diagrammatic description with matrices of diagrams. However, in general, diagrams for $\op{Kar}(\mcal{C})$ or $\Kar(\mcal{C})$ are not so simple, since we need to identify every idempotent and place them around morphisms.
+For diagrammatic monoidal categories $\mcal{C}$, its additive closure has an easy diagrammatic description by matrices of diagrams. However, in general, diagrams for $\op{Kar}(\mcal{C})$ or $\Kar(\mcal{C})$ are not so simple, since we need to identify every idempotent and place them around morphisms.
 
 
 

@@ -3,11 +3,11 @@
 
 With the two-colour diagrammatic category, we can construct diagrammatics for the category of tilting modules $\Tilt(\fraksl_2)$. We give a brief overview of its structure.
 
-For a fixed $\ell \in \Z_{\geq 2}$, consider quantum\footnote{A generalisation of Lie algebras.} $\fraksl_2$ at a primitive complex $2\ell$-th root of unity, where we follow conventions from \cite[Section 2]{anderson-tubbenhauer-tilt}. An indecomposable module of this algebra is called \textit{tilting} if it appears as a direct summand of a tensor product of the defining two-dimensional representation of quantum $\fraksl_2$. A general tilting module is a finite direct sum of indecomposable tilting modules.
+For a fixed $\ell \in \Z_{\geq 2}$, consider quantum\footnote{Quantum groups are a generalisation of Lie algebras.} $\fraksl_2$ at a primitive complex $2\ell$-th root of unity, where we follow conventions from \cite[Section 2]{anderson-tubbenhauer-tilt}. An indecomposable module of this algebra is called \textit{tilting} if it appears as a direct summand of a tensor product of the defining two-dimensional representation of quantum $\fraksl_2$. A general tilting module is a finite direct sum of indecomposable tilting modules.
 
-Let $\Tilt(\fraksl_2)$ be the category of tilting modules of quantum $\fraksl_2$ at a primitive complex $2\ell$-th root of unity. According to, for example, \cite[Lemma 2.26]{anderson-tubbenhauer-tilt} $\Tilt(\fraksl_2)$ splits into a direct sum $\Tilt(\fraksl_2) \cong \bigoplus_{i \in {-1, ..., \ell-1}} \Tilt_i (\fraksl_2)$ such that the categories for indexes $-1$ and $\ell-1$ are semisimple, and all other categories are equivalent. We can thus focus on $\Tilt_0(\fraksl_2)$. This category is additive, idempotent complete , Krull--Schmidt and has indecomposables indexed by elements of $\wtilde{S}_2$ (see for example \cite[Lemma 2.26]{anderson-tubbenhauer-tilt}).
+Let $\Tilt(\fraksl_2)$ be the category of tilting modules of quantum $\fraksl_2$ at a primitive complex $2\ell$-th root of unity. According to, for example, \cite[Lemma 2.26]{anderson-tubbenhauer-tilt} $\Tilt(\fraksl_2)$ splits into a direct sum $\Tilt(\fraksl_2) \cong \bigoplus_{i \in {-1, ..., \ell-1}} \Tilt_i (\fraksl_2)$ such that the categories for indexes $-1$ and $\ell-1$ are semisimple, and all other categories are equivalent. We can thus focus on $\Tilt_0(\fraksl_2)$. This category is additive, idempotent complete, Krull--Schmidt and has indecomposables indexed by elements of $\wtilde{S}_2$ (see for example \cite[Lemma 2.26]{anderson-tubbenhauer-tilt}).
 
-Although need to be over $\C$ for $\Tilt(\fraksl_2)$, the following diagrammatic category can be defined more simply over $\Z$.
+Although we need to be over $\C$ for $\Tilt(\fraksl_2)$, the following diagrammatic category can be defined over $\Z$.
 
 \begin{definition}
     \label{def:DT}
@@ -30,7 +30,7 @@ Similar to $\mcal{DO}_0$, this is not a monoidal category due to the new relatio
 
 
 \begin{proposition}\label{prop:inj-proj-and-proj-inj}
-    In the following diagrams, the domain and codomain alternate colours and we only depict the case for odd $k$. For even $k$, just swap the colours red and blue on the left of the ellipsis. For integers $k \geq 1$ 
+    In the following diagrams, the domain and codomain alternate colours and we only depict the case for odd $k$. For even $k$, one can swap the colours red and blue on the left of the dots. For integers $k \geq 1$ 
     \begin{subequations}
         \begin{gather}
             \tag{\ref{prop:inj-proj-and-proj-inj}a}
@@ -99,7 +99,7 @@ Similar to $\mcal{DO}_0$, this is not a monoidal category due to the new relatio
         \\ & = 2 \inputtikz{4.2/inj-proj/proof-k3.3-2}.
     \end{align*}
 
-    Let $k \geq 4$ and assume the relations hold for diagrams with $k-1,k-2,...,1$. We will depict the diagrams with odd $k$, where the even $k$ case can be retrieved by swapping red and blue to the left of the ellipsis. Again, the argument to \eqref{rel:id-id-to-H} implies
+    Let $k \geq 4$ and assume the relations hold for diagrams with $k-1,k-2,...,1$. We will depict the diagrams with odd $k$, where the even $k$ case can be retrieved by swapping red and blue to the left of the dots. Again, the argument to \eqref{rel:id-id-to-H} implies
     \begin{align*}
         \inputtikz{4.2/inj-proj/proof-k4.1-1}
          & = \frac{1}{2} \inputtikz{4.2/inj-proj/proof-k4.1-2} + \frac{1}{2} \inputtikz{4.2/inj-proj/proof-k4.1-3}
@@ -107,7 +107,7 @@ Similar to $\mcal{DO}_0$, this is not a monoidal category due to the new relatio
         \\ & = \inputtikz{4.2/inj-proj/proof-k4.1-6} + \inputtikz{4.2/inj-proj/proof-k4.1-7}
         \\ & \overset{ind.}{=} 0
     \end{align*}
-    where the string to directly left of the ellipsis is the right red string when $k=4$. Furthermore, we have
+    where the string to directly left of the dots is the right red string when $k=4$. Furthermore, we have
     \begin{align*}
         \inputtikz{4.2/inj-proj/proof-k4.2-1}
          & = \inputtikz{4.2/inj-proj/proof-k4.2-2} + 2 \inputtikz{4.2/inj-proj/proof-k4.2-3} - 2 \inputtikz{4.2/inj-proj/proof-k4.2-4}
@@ -137,6 +137,8 @@ The objects of this category are identical to objects in $\cH(\wtilde{S}_2)$ and
 
 Since there exists light leaves with unbroken red strands on the right, this lemma implies that our category does not collapse by adding the module category structure and the wall relation \eqref{rel:two-col-wall}. Unlike \autoref{sec:diag-osl2}, we will not be using this result to prove the equivalence of categories.
 
+
+
 \subsection*{Equivalence with $\Tilt_0(\fraksl_2)$}
 
 We aim to show that the additive Karoubi envelope of this diagrammatic category is equivalent to $\Tilt_0(\fraksl_2)$. From now on, we write $\mcal{DT}_0$ for the $\C$-linear $\cH_\C(\wtilde{S}_2)$-module category obtained by extending scalars from $\Z$ with $\C$. All the above discussion and results still apply to $\mcal{DT}_0$ over $\C$. For brevity we may also write $\cT_0$ for $\Tilt_0(\fraksl_2)$.
@@ -144,7 +146,7 @@ We aim to show that the additive Karoubi envelope of this diagrammatic category 
 Since $\cH_\C(S_2)$ appears inside $\cH_\C(\wtilde{S}_2)$ for each colour, \autoref{lem:ss-equal-2s} provides explicit isomorphisms $ss \cong s \oplus s$ and $tt \cong t \oplus t$ in the additive closure of $\cH_\C(\wtilde{S}_2)$.
 
 \begin{definition}
-    Let $F: \mcal{DT}_0^\oplus \to \Tilt_0(\fraksl_2)$ to be the additive $\C$-linear $\cH_\C(\wtilde{S}_2)$-module functor defined as follows. Map the empty word $\vn$ to the trivial module $T(\vn)$. Given a general word $s_n \dots s_1$ in $\mcal{DT}_0$, for $s_i \in \{s,t\}$, map $F(s_n \dots s_1) = \Theta_{s_n} \dots \Theta_{s_1} T(\vn)$ where $\Theta_s, \Theta_t$ are translation functors associated to generators of $\wtilde{S}_2$.
+    Let $F: \mcal{DT}_0^\oplus \to \Tilt_0(\fraksl_2)$ to be the additive $\C$-linear $\cH_\C(\wtilde{S}_2)$-module functor defined as follows. Map the empty word $\vn$ to the trivial module $T(\vn)$. Given a general word $s_n \dots s_1$ in $\mcal{DT}_0$, for $s_i \in \{s,t\}$, map $F(s_n \dots s_1) = \Theta_{s_n} \dots \Theta_{s_1} T(\vn)$ where $\Theta_s, \Theta_t$ are translation functors\footnote{Translation functors for $\Tilt(\fraksl_2)$ are defined at \cite[Definition 2.33]{anderson-tubbenhauer-tilt}} associated to generators of $\wtilde{S}_2$.
 
     On morphisms, we define $F$ recursively. Note that we only have red strands on the right since \eqref{rel:two-col-wall} reduces right blue strands to 0. For $k \geq 0$, define for odd $k$
     \begin{gather*}
@@ -154,7 +156,7 @@ Since $\cH_\C(S_2)$ appears inside $\cH_\C(\wtilde{S}_2)$ for each colour, \auto
         \quad , \quad
         p^d_k \coloneqq \inputtikz{4.2/tilt-projection-k}
     \end{gather*}
-    where colours alternate and a red strand on the right when $k \neq 0$. For even $k$, we define these similarly with colours to the left of the ellipsis swapped. Similarly for $k \geq 0$, we define $\id_k: \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_x \dots \Theta_s(T(\vn))$, $i_k: \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_y \Theta_x\dots \Theta_s(T(\vn))$ and $p_k: \Theta_y \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_x\dots \Theta_s(T(\vn))$ to be the identity, inclusion and projection maps in $\cT_0$, where the subscripts alternate $s,t$ and $\Theta_x \dots \Theta_s$ is a composition of $k$ translation functors. Further we write $\tilde{p}_k \coloneqq (-1)^{k+1}\frac{1}{2^{k+1}} p_k$. Let $F(\id^d_k) = \id_k$. On the generators \eqref{eq:two-col-gen} of $\mcal{DT}_0$, map
+    where colours alternate and a red strand on the right when $k \neq 0$. For even $k$, we define these similarly with colours to the left of the dots swapped. Similarly for $k \geq 0$, we define $\id_k: \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_x \dots \Theta_s(T(\vn))$, $i_k: \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_y \Theta_x\dots \Theta_s(T(\vn))$ and $p_k: \Theta_y \Theta_x \dots \Theta_s(T(\vn)) \to \Theta_x\dots \Theta_s(T(\vn))$ to be the identity, inclusion and projection maps in $\cT_0$, where the subscripts alternate $s,t$ and $\Theta_x \dots \Theta_s$ is a composition of $k$ translation functors. Further we write $\tilde{p}_k \coloneqq (-1)^{k+1}\frac{1}{2^{k+1}} p_k$. Let $F(\id^d_k) = \id_k$. On the generators \eqref{eq:two-col-gen} of $\mcal{DT}_0$, map
 
     \begin{align*}
         \inputtikz{4.2/tilt-gen-identity}
@@ -217,7 +219,7 @@ The definition on generators is a consequence of the isomorphism $\Theta_s \Thet
     The functor $F$ is well defined as a functor between additive $\C$-linear $\cH(S_2)$-module categories.
 \end{lemma}
 \begin{proof}
-    By \autoref{rk:tilt-functor-def}, the definition of $F$ defines an action of every morphism in $\mcal{DT}_0^\oplus$. It remains to check that all relations are preserved. It follows from \cite[Proposition 2.34]{anderson-tubbenhauer-tilt} that the translation functors $\Theta_s, \Theta_t$ are Frobenius objects in the category of endofunctors of $\cT$ and there are unit, counit, multiplication and comultiplication natural transformations and corresponding relations from the Frobenius object structure. Applying these to $T(\vn)$ result in Frobenius object relations in $\cT_0$ for $T(\vn), \Theta_s T(\vn)$ and $\Theta_s^2(T(\vn))$, and similarly with $\Theta_t$. Note that $\unit$ and $\counit$ map to $i_0$ and $\tilde{p}_0$ \red{Is the scaling here right?} which are exactly the unit and counit of $\Theta_s$ evaluated at $T(\vn)$ (up to scaling), and the trivalent vertices defined with $\id^d_0$ are mapped exactly to the multiplication and comultiplication maps. The isomorphism \autoref{lem:ss-equal-2s} we use to reduce domain and codomain has an analogue $\Theta_s \circ \Theta_s \cong \Theta_s \oplus \Theta_s$ as in \cite[Corollary 2.35(a)]{anderson-tubbenhauer-tilt}, and similarly for $t$. Furthermore, in \cite[Proposition 2.30]{anderson-tubbenhauer-tilt} we see that $p_0 \circ i_0 = 0$, $p_{k+1} \circ i_{k+1} = i_k \circ p_k$ that are analogous to the relations in \autoref{prop:inj-proj-and-proj-inj}, up to an adjusting scalar given in the definition. From \cite[Corollary 2.35]{anderson-tubbenhauer-tilt} the translation functors satisfy properties analogous to the two-colour wall relations \eqref{rel:two-col-wall}. Checking that the remaining relations \eqref{rel:one-col-needle}, \eqref{rel:one-col-barbell-forcing}, \eqref{rel:two-col-barbell-forcing} and \eqref{rel:two-col-wall} hold in $\cT_0$ is straightforward (see \cite[Lemma 4.26]{anderson-tubbenhauer-tilt}). Therefore all the relations in $\mcal{DT}_0$ are preserved by $F$. By construction, $F$ preserves direct sums, $\C$-linear combinations and the Soergel module structure, so $F$ is well defined as a functor between additive $\C$-linear $\cH(S_2)$-module categories.
+    By \autoref{rk:tilt-functor-def}, the definition of $F$ defines an action of every morphism in $\mcal{DT}_0^\oplus$. It remains to check that all relations are preserved. It follows from \cite[Proposition 2.34]{anderson-tubbenhauer-tilt} that the translation functors $\Theta_s, \Theta_t$ are Frobenius objects in the category of endofunctors of $\cT$ and there are unit, counit, multiplication and comultiplication natural transformations and corresponding relations from the Frobenius object structure. Applying these to $T(\vn)$ result in Frobenius object relations in $\cT_0$ for $T(\vn), \Theta_s T(\vn)$ and $\Theta_s^2(T(\vn))$, and similarly with $\Theta_t$. Note that $\unit$ and $\counit$ map to $i_0$ and $\tilde{p}_0$ which are exactly the unit and counit of $\Theta_s$ evaluated at $T(\vn)$ (up to scaling), and the trivalent vertices defined with $\id^d_0$ are mapped exactly to the multiplication and comultiplication maps. The isomorphism \autoref{lem:ss-equal-2s} we use to reduce domain and codomain has an analogue $\Theta_s \circ \Theta_s \cong \Theta_s \oplus \Theta_s$ as in \cite[Corollary 2.35(a)]{anderson-tubbenhauer-tilt}, and similarly for $t$. Furthermore, in \cite[Proposition 2.30]{anderson-tubbenhauer-tilt} we see that $p_0 \circ i_0 = 0$, $p_{k+1} \circ i_{k+1} = i_k \circ p_k$ that are analogous to the relations in \autoref{prop:inj-proj-and-proj-inj}, up to an adjusting scalar given in the definition. From \cite[Corollary 2.35]{anderson-tubbenhauer-tilt} the translation functors satisfy properties analogous to the two-colour wall relations \eqref{rel:two-col-wall}. Checking that the remaining relations \eqref{rel:one-col-needle}, \eqref{rel:one-col-barbell-forcing}, \eqref{rel:two-col-barbell-forcing} and \eqref{rel:two-col-wall} hold in $\cT_0$ is straightforward (see \cite[Lemma 4.26]{anderson-tubbenhauer-tilt}). Therefore all the relations in $\mcal{DT}_0$ are preserved by $F$. By construction, $F$ preserves direct sums, $\C$-linear combinations and the Soergel module structure, so $F$ is well defined as a functor between additive $\C$-linear $\cH(S_2)$-module categories.
 \end{proof}
 
 \begin{theorem}[Andersen--Tubbenhauer, {\cite[Theorem 4.27]{anderson-tubbenhauer-tilt}}]
@@ -243,7 +245,7 @@ The definition on generators is a consequence of the isomorphism $\Theta_s \Thet
         & = \frac{1}{2} \inputtikz{4.2/tilt-dot-line-dot-line-id2.3} + \frac{2}{2} \inputtikz{4.2/tilt-dot-line-dot-line-id2.5} \\
         & = \frac{1}{2} \inputtikz{4.2/tilt-dot-line-dot-line-id2.3} + \inputtikz{4.2/tilt-dot-line-dot-line-id2.6}
     \end{align*}
-    for even length domain, where the third equality follows from \autoref{prop:inj-proj-and-proj-inj}. Swapping blue and red strands left of the ellipsis gives us the odd case. By induction the second term is a linear combination of diagrams with pitchforks, hence this diagram is a linear combinations of diagrams with pitchforks. Particularly, these are killed by Jones--Wenzl projectors. The same holds for the vertically reflected diagram. Along with \autoref{prop:inj-proj-and-proj-inj}, we conclude that the only double leaves we should consider are $\id_k$, $i^d_k$, $p^d_k$ and their composition $i^d_k \circ p^d_k$. This is informally summarised by the diagram below (similar to \eqref{img:tilt-functor}).
+    for even length domain, where the third equality follows from \autoref{prop:inj-proj-and-proj-inj}. Swapping blue and red strands left of the dots gives us the odd case. By induction the second term is a linear combination of diagrams with pitchforks, hence this diagram is a linear combinations of diagrams with pitchforks. Particularly, these are killed by Jones--Wenzl projectors by \autoref{prop:JW-pitchfork}. The same argument holds for the vertically reflected diagram. Along with \autoref{prop:inj-proj-and-proj-inj}, we conclude that the only double leaves we should consider are $\id_k$, $i^d_k$, $p^d_k$ and their composition $i^d_k \circ p^d_k$. This is informally summarised by the diagram below (similar to \eqref{img:tilt-functor}).
     \begin{equation}
         \label{img:tilt-functor-indecomp}
         \inputtikz{4.2/tilt-proof-functor-indecomp}
@@ -251,6 +253,11 @@ The definition on generators is a consequence of the isomorphism $\Theta_s \Thet
     Although not drawn, all the diagrams are flanked by Jones--Wenzl projectors, and the matching morphisms in $\cT_0$ are pre and post-composed with the idempotents corresponding to the appropriate JW-projectors. Putting JW-projectors above and below any of these diagrams clearly do not result in zero. Moreover, in the endomorphism space of each non-trivial indecomposable, the morphisms $\id^d_k$ and $i^d_{k-1} \circ p^d_{k-1}$, with JW-projectors before and after, can easily be checked to be linearly independent. Hence the bases for the spaces can be read off the picture \eqref{img:tilt-functor-indecomp}. In $\cT_0$, the analogous bases for the morphism spaces in \cite[Corollary 2.3.1]{anderson-tubbenhauer-tilt} have matching dimensions, hence $F'$ is fully faithful. Therefore the categories $\Kar(\mcal{DT}_0)$ and $\Tilt_0(\fraksl_2)$ are equivalent as (idempotent complete) additive $\C$-linear $\cH_\C(\wtilde{S}_2)$-module categories.
 \end{proof}
 
-This functor is defined similarly to that for $\proj(\cO_0)$ in \autoref{sec:diag-osl2}. However this is not apparent since Jones--Wenzl projectors for that category are trivial (just the red identity strand).
+% This can be uniquely extended to be $\Kar(\cH(\wtilde{S}_2))$-module category
 
+This functor is defined similarly to that for $\proj(\cO_0)$ in \autoref{sec:diag-osl2}. However this is not apparent since Jones--Wenzl projectors for that category are trivial (the red identity strand).
+
+\begin{remark}
+    Similarly to \autoref{sec:diag-osl2}, there is a grading for morphism spaces of $\mcal{DO}_0$ which induces a grading on $\Tilt_0(\fraksl_2)$ and hence $\Tilt(\fraksl_2)$, which would otherwise be ungraded.
+\end{remark}
 

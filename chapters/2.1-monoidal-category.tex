@@ -4,7 +4,7 @@
 Monoidal categories are the main context in which we consider diagrammatics. For more details about monoidal categories the reader may refer to \cite{tensor-categories}, and a helpful survey of diagrams for various types of monoidal categories at \cite{selinger-survey-of-graphical-monoidal-categories}.
 
 \begin{definition}
-    A \textit{monoidal category} $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold, see \cite[Definition 2.1.1, 2.2.8]{tensor-categories}. The bifunctor $\tensor$ is called the \textit{tensor} or \textit{monoidal product}. A monoidal category is \textit{strict} if $A \tensor (B \tensor C) = (A \tensor B) \tensor C$ and $A = \mathbbb{1} \tensor A = A \tensor \mathbbb{1}$ for objects and similarly for morphisms.
+    A \textit{monoidal category} $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold, see \cite[Definition 2.1.1, 2.2.8]{tensor-categories}. The bifunctor $\tensor$ is called the \textit{tensor} or \textit{monoidal product}. A monoidal category is \textit{strict} if we have equalities $A \tensor (B \tensor C) = (A \tensor B) \tensor C$ and $A = \mathbbb{1} \tensor A = A \tensor \mathbbb{1}$ for objects and similarly for morphisms.
 \end{definition}
 
 The functoriality of $\tensor$ means that the monoidal product commutes with composition in both variables.
@@ -13,9 +13,10 @@ The functoriality of $\tensor$ means that the monoidal product commutes with com
     A functor $F: \mcal{C} \to \mcal{D}$ between monoidal categories is called \textit{(strict) monoidal} if it preserves the monoidal product, i.e. $F(A \tensor B) = F(A) \tensor F(B)$. Structure preserving functors for other types of categories can be defined in a similar way.
 \end{definition}
 
-In this paper, we will assume that monoidal categories and monoidal functors are strict. This does not pose any problems since all monoidal categories are monoidally equivalent to a strict one\footnote{See \cite[\nopp VII.2]{maclane-category-theory} or \cite[Thm 2.8.5]{tensor-categories}}, and similar strictification can be applied to the functor. In this context, the details in the coherence relations are trivial.
+For this thesis, we will assume that monoidal categories and monoidal functors are strict. This does not pose any problems since all monoidal categories are monoidally equivalent to a strict one\footnote{See \cite[\nopp VII.2]{maclane-category-theory} or \cite[Thm 2.8.5]{tensor-categories}}, and similar strictification can be applied to the functor. In this context, the details in the coherence relations are trivial.
+% \red{Something about \cite{power-general-coherence}}
 
-The morphisms of a monoidal category $\mcal{C}$ can be drawn as string diagrams embedded in a planar strip. A diagram is a morphism when read from bottom to top, that is the domain is on the bottom of the strip and the codomain on the top. Functions that make up a morphism are drawn as tokens or boxes. For example
+The morphisms of a monoidal category $\mcal{C}$ can be drawn as string diagrams embedded in a planar strip. We fix the convention that a diagram is a morphism when read from bottom to top; that is, the domain is on the bottom of the strip and the codomain on the top. Morphisms that make up a diagram are drawn as tokens or boxes. For example
 \begin{center}
     \inputtikz{2.1/string-diagram-example}
 \end{center}
@@ -29,7 +30,7 @@ For identity morphisms we just draw a vertical line, so $\id_a$ is the diagram
 \begin{center}
     \inputtikz{2.1/string-diagram-example-identity}.
 \end{center}
-This is a sensible choice since composition with the identity should not change the function, which is clear diagrammatically. The tensor product of morphisms is the horizontal concatenation of diagrams, such that strings from separate functions don't interact. For example, given $h:x \to y$, the tensor product $f \tensor h: a \tensor x \to b \tensor c \tensor y$ is drawn as
+This is a sensible choice since composition with the identity should not change the diagram, which is clear diagrammatically. The tensor product of morphisms is the horizontal concatenation of diagrams, such that strings from separate diagrams don't interact. For example, given $h:x \to y$, the tensor product $f \tensor h: a \tensor x \to b \tensor c \tensor y$ is drawn as
 \begin{center}
     \inputtikz{2.1/string-diagram-example-tensor1}
     =
@@ -64,22 +65,22 @@ which holds up to vertical deformation of the diagram. This is a small taste of 
 Before looking at an example of a diagrammatic monoidal category, we just mention some definitions.
 
 \begin{definition}
-    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear. An \textit{$R$-linear monoidal category} is a category that is both monoidal and $R$-linear such that the monoidal product on morphisms is $R$-bilinear. A ($\Z$-)\textit{graded $R$-linear category} is a category where $\Hom(A,B)$ is a $\Z$-graded $R$-module. That is, $\Hom(A,B) = \bigoplus_{i \in \Z} \Hom^i(A,B)$ where $\Hom^i(A,B)$ is the homogeneous component of degree $i$, and we have \[\Hom^i(B,C) \circ \Hom^i(A,B) \subseteq \Hom^{i+j}(A,C).\]
+    For a commutative ring $R$, an \textit{$R$-linear category} is a category enriched over the category of $R$-modules. That is, for objects $a,b$, the set of morphisms $\Hom(a,b)$ is an $R$-module and the composition of morphisms is $R$-bilinear. An \textit{$R$-linear monoidal category} is a category that is both monoidal and $R$-linear such that the monoidal product on morphisms is $R$-bilinear. A ($\Z$-)\textit{graded $R$-linear category} is a category where $\Hom(A,B)$ is a $\Z$-graded $R$-module. That is, $\Hom(A,B) = \bigoplus_{i \in \Z} \Hom^i(A,B)$ where $\Hom^i(A,B)$ is the homogeneous component of degree $i$, and for $f \in \Hom^i(A,B)$ and $g \in \Hom^j(B,C)$, the composition $g \circ f$ is in $\Hom^{i+j}(A,C)$.
 \end{definition}
 
-Note that since composition and tensor products are bilinear, $0 \tensor f = (0 + 0) \tensor f = 0 \tensor f + 0 \tensor f$ and similarly with composition, so composition and tensors with $0$ are also zero.
+By the bilinearity of composition and tensor products, $0 \tensor f = (0 + 0) \tensor f = 0 \tensor f + 0 \tensor f$ and similarly with composition, so composition and tensors with $0$ are zero.
 
 \begin{example}
     The category of vector spaces over a field $\Bbbk$, $\cat{Vect}_\Bbbk$, is a $\Bbbk$-linear monoidal category given by the usual tensor product of vector spaces and linear maps.
 \end{example}
 
 \begin{definition}
-    A monoidal category $\mcal{C}$ is \textit{generated} by finite set $S_o$ of objects and $S_m$ of morphisms, when all non-unit objects are a finite tensor of objects in $S_o$ and all non-identity morphisms are a finite combination of tensors and compositions of morphisms in $S_m$. Similarly, we may define \textit{generated} $R$-linear monoidal categories such that we also allow $R$-linear combinations of morphisms.
+    A monoidal category $\mcal{C}$ is \textit{generated} by a set $G_o$ of objects and $G_m$ of morphisms, when all non-unit objects are finite tensor products of objects in $G_o$ and all non-identity morphisms are finite combinations of tensors and compositions of morphisms in $G_m$. Similarly, we may define \textit{generated} $R$-linear monoidal categories such that we also allow $R$-linear combinations of morphisms.
 \end{definition}
 
 \begin{example}
-    \label{eg:tlj-category}
-    Our first example of a diagrammatic monoidal category is the \textit{Temperley-Lieb-Jones category}. The Temperley-Lieb-Jones\footnote{Originally the Temperley--Lieb--Jones algebra was used by Temperley and Lieb in \cite{temperley-lieb-algebra-lattices} for statistical physics. Jones discovered the same structure and relations independently in his work.} category $\mcal{TLJ}$ is a strict $R$-linear monoidal category whose objects are generated by the vertical line $\mathsf{I}$ and morphisms generated by the cup $\cup: \mathbbb{1} \to \mathsf{I} \tensor \mathsf{I}$ and cap $\cap: \mathsf{I} \tensor \mathsf{I} \to \mathbbb{1}$, with the relation
+    \label{eg:tl-category}
+    The Temperley-Lieb-Jones category $\mcal{TL}$ is a (diagrammatic) strict $R$-linear monoidal category whose objects are generated by the vertical line $\mathsf{I}$ and morphisms generated by the cup $\cup: \mathbbb{1} \to \mathsf{I} \tensor \mathsf{I}$ and cap $\cap: \mathsf{I} \tensor \mathsf{I} \to \mathbbb{1}$, with the relation
     \begin{center}
         \inputtikz{2.1/tl-relation1}
         = \inputtikz{2.1/tl-relation2}
@@ -96,7 +97,6 @@ Note that since composition and tensor products are bilinear, $0 \tensor f = (0 
 
     \red{Comment on isotopy}
 \end{example}
-
 
 
 

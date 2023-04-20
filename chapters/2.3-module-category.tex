@@ -4,21 +4,21 @@
 Module categories are categories equipped with an action of a monoidal category. This generalises the notion of modules over a ring. In \autoref{sec:diag-osl2} and \autoref{sec:diag-tiltsl2}, we will see that the categories of interest appear as module categories over the category of Soergel bimodules.
 
 \begin{definition}
-    Let $(\mcal{M}, \tensor, \mathbbb{1})$ be a (strict) monoidal category. A \textit{(left) module category over $\mcal{M}$} or \textit{$\mcal{M}$-module category} is a category $\mcal{C}$ and a bifunctor $\odot: \mcal{M} \times \mcal{C} \to \mcal{C}$ such that there are natural isomorphisms $(X \tensor Y) \odot A \cong X \odot (Y \odot A)$ and $\mathbbb{1} \odot A \cong A$ for $X,Y \in \mcal{M}$ and $A \in \mcal{C}$ and similarly for morphisms, satisfying coherence relations analogous to those for monoidal categories (see \cite[Definition 7.1.2]{tensor-categories}). A (left) $\mcal{M}$-module category is \textit{strict} if the natural isomorphisms above are identity natural isomorphisms, i.e. $(X \tensor Y) \odot A = X \odot (Y \odot A)$ and $\mathbbb{1} \odot A = A$, similarly for morphisms. We call $\odot$ the \textit{action of $\mcal{M}$} or \textit{the module product}. 
+    Let $(\mcal{M}, \tensor, \mathbbb{1})$ be a (strict) monoidal category. A \textit{(left) module category over $\mcal{M}$} or \textit{$\mcal{M}$-module category} is a category $\mcal{C}$ and a bifunctor $\odot: \mcal{M} \times \mcal{C} \to \mcal{C}$ such that there are natural isomorphisms $(X \tensor Y) \odot A \cong X \odot (Y \odot A)$ and $\mathbbb{1} \odot A \cong A$ for $X,Y \in \mcal{M}$ and $A \in \mcal{C}$ and similarly for morphisms, satisfying coherence relations analogous to those for monoidal categories (see \cite[Definition 7.1.2]{tensor-categories}). A (left) $\mcal{M}$-module category is \textit{strict} if the natural isomorphisms above are identity natural isomorphisms, i.e. we have equality $(X \tensor Y) \odot A = X \odot (Y \odot A)$ and $\mathbbb{1} \odot A = A$, and similarly for morphisms. The functor $\odot$ is called the \textit{action of $\mcal{M}$} or \textit{the module product}. 
 \end{definition}
 
-In the following examples, the module action is essentially the monoidal product, which we may denote by the same symbol $\tensor$. Note that module actions are not always an underlying monoidal product.
+In the following examples, the module action is essentially the monoidal product, which we may denote by the same symbol $\tensor$. Note that, in general, module actions are not necessarily an underlying monoidal product.
 
 \begin{example}
     A monoidal category is a module category over itself, where the action is its tensor product.
 \end{example}
 
 \begin{example}
-    Let $G$ be a finite group and $H \subseteq G$ a subgroup. Consider the categories of group representations $\Rep(G)$ and $\Rep(H)$ over a field $\Bbbk$. Recall that $\Rep(G)$ is a category where objects are pairs $(V, \rho)$ for $V$ a $\Bbbk$-vector space and $\rho: G \to \op{GL}(V)$ is a representation of $G$, and morphisms are equivariant maps i.e. linear maps that preserve the group action. There is a monoidal structure on $\Rep(G)$ (and similarly $\Rep(H)$) given by
+    Let $G$ be a finite group and $H \subseteq G$ a subgroup. Consider the categories of group representations $\Rep(G)$ and $\Rep(H)$ over a field $\Bbbk$. Recall that $\Rep(G)$ is a category where objects are pairs $(V, \rho)$, for a finite dimensional $\Bbbk$-vector space $V$ and a $G$-representation $\rho: G \to \op{GL}(V)$, and morphisms are equivariant maps i.e. linear maps that preserve the group action. There is a monoidal structure on $\Rep(G)$ (and similarly $\Rep(H)$) given by
     \[
         (V, \rho_V) \tensor (W, \rho_W) = (V \tensor W, \rho_{V \tensor W})
     \]
-    where $V \tensor V$ is the usual tensor of vector spaces, and $\rho_{V \tensor W}$ is defined such that for $v \in V_1, w \in V_2$ and $g \in G$,
+    where $V \tensor W$ is the usual tensor of vector spaces, and $\rho_{V \tensor W}$ is defined such that for $v \in V_1, w \in V_2$ and $g \in G$,
     \[
         (\rho_1 \tensor \rho_2)(g)(v \tensor w) = (\rho_1(g) v) \tensor (\rho_2(g) w)
     \]
@@ -32,7 +32,7 @@ In the following examples, the module action is essentially the monoidal product
 \end{example}
 
 \begin{definition}
-    A (strict) module category $\mcal{C}$ over a monoidal category $\mcal{M}$ is \textit{generated} by finite set $S_o$ of objects and $S_m$ of morphisms in $\mcal{C}$, when all non-unit objects are of the form $X \odot A$ for $X \in \mcal{M}$ and $A \in S_o$, and non-identity morphisms in $\mcal{C}$ are defined similarly.
+    A (strict) module category $\mcal{C}$ over a monoidal category $\mcal{M}$ is \textit{generated} by a set $G_o$ of objects and $G_m$ of morphisms in $\mcal{C}$, when all non-unit objects are of the form $X \odot A$ for $X \in \mcal{M}$ and $A \in G_o$, and non-identity morphisms in $\mcal{C}$ are defined similarly.
 \end{definition}
 
 \begin{definition}
