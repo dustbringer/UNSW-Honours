@@ -1,0 +1,13 @@
+\tikz[vcenter, scale=0.4]{
+    \tikzfixsize{(.5,0)}{(4,4)}
+    \squarecoord
+    %
+    \path
+    ($(mid)+(0,1)$) edge[string=dRed] (top)
+    ($(mid)-(0,1)$) edge[string=dRed] (bot);
+    \draw[string=dRed, round] ($(mid)+(0,1)$) arc (90 : 180+90 : 1);
+    % 
+    \path (3.5,1.25) edge[string=dRed] (3.5,2.75);
+    \node[enddot=dRed] at (3.5,1.25) {};
+    \node[enddot=dRed] at (3.5,2.75) {};
+}

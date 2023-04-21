@@ -1,0 +1,9 @@
+\tikz[vcenter, scale=0.3]{
+    \tikzfixsize{(.5,0)}{(3.5,4)}
+    \squarecoord
+    %
+    \path
+    ($(mid)+(0,1)$) edge[string=dRed] (top)
+    ($(mid)-(0,1)$) edge[string=dRed] (bot);
+    \draw[string=dRed] ($(mid)+(0,1)$) arc (90 : 360+90 : 1);
+}

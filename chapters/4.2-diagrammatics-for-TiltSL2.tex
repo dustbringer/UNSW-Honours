@@ -1,11 +1,7 @@
 \section{Diagrammatic \texorpdfstring{$\Tilt(\fraksl_2)$}{Tilt(sl2)}}
 \label{sec:diag-tiltsl2}
 
-With the two-colour diagrammatic category, we can construct diagrammatics for the category of tilting modules $\Tilt(\fraksl_2)$. We give a brief overview of its structure.
-
-For a fixed $\ell \in \Z_{\geq 2}$, consider quantum\footnote{Quantum groups are a generalisation of Lie algebras.} $\fraksl_2$ at a primitive complex $2\ell$-th root of unity, where we follow conventions from \cite[Section 2]{anderson-tubbenhauer-tilt}. An indecomposable module of this algebra is called \textit{tilting} if it appears as a direct summand of a tensor product of the defining two-dimensional representation of quantum $\fraksl_2$. A general tilting module is a finite direct sum of indecomposable tilting modules.
-
-Let $\Tilt(\fraksl_2)$ be the category of tilting modules of quantum $\fraksl_2$ at a primitive complex $2\ell$-th root of unity. According to, for example, \cite[Lemma 2.26]{anderson-tubbenhauer-tilt} $\Tilt(\fraksl_2)$ splits into a direct sum $\Tilt(\fraksl_2) \cong \bigoplus_{i \in {-1, ..., \ell-1}} \Tilt_i (\fraksl_2)$ such that the categories for indexes $-1$ and $\ell-1$ are semisimple, and all other categories are equivalent. We can thus focus on $\Tilt_0(\fraksl_2)$. This category is additive, idempotent complete, Krull--Schmidt and has indecomposables indexed by elements of $\wtilde{S}_2$ (see for example \cite[Lemma 2.26]{anderson-tubbenhauer-tilt}).
+With the two-colour diagrammatic category, we can construct diagrammatics for the category of tilting modules $\Tilt(\fraksl_2)$. This category is described in \cite[Section 2]{anderson-tubbenhauer-tilt} so we just give a brief introduction. We consider quantum\footnote{Quantum groups are a generalisation of Lie algebras.} $\fraksl_2$ at a primitive complex $2\ell$-th root of unity, for a fixed $\ell \in \Z_{\geq 2}$. An indecomposable module of this algebra is \textit{tilting} if it appears as a direct summand of a tensor product of the defining two-dimensional representation of quantum $\fraksl_2$. A general tilting module is a finite direct sum of these indecomposable tilting modules, which collect into the category $\Tilt(\fraksl_2)$. This category splits\footnote{For example, in \cite[Lemma 2.26]{anderson-tubbenhauer-tilt}, $\Tilt(\fraksl_2)$} into a direct sum $\Tilt(\fraksl_2) \cong \bigoplus_{i \in {-1, ..., \ell-1}} \Tilt_i (\fraksl_2)$ such that the categories for indexes $-1$ and $\ell-1$ are semisimple\footnote{So morphisms are trivial by Schur's Lemma.}, and all other categories are equivalent. We can thus focus on $\Tilt_0(\fraksl_2)$, called the principal block of $\Tilt(\fraksl_2)$. This category is additive, idempotent complete, Krull--Schmidt and has indecomposables indexed by elements of $\wtilde{S}_2$.
 
 Although we need to be over $\C$ for $\Tilt(\fraksl_2)$, the following diagrammatic category can be defined over $\Z$.
 
@@ -17,15 +13,26 @@ Although we need to be over $\C$ for $\Tilt(\fraksl_2)$, the following diagramma
         = \inputtikz{4.2/relation-blue-wall}
         = 0.
     \end{equation}
-    In other words, if a red barbell or blue string can come close to the wall without anything in between, then the diagram is $0$. Note that local relations in \eqref{rel:two-col-wall} involve the wall.
+    In other words, if a red barbell or blue string can come close to the wall without anything in between, then the diagram is $0$. Note that local relations in \eqref{rel:two-col-wall} must include the wall.
 \end{definition}
 
 Similar to $\mcal{DO}_0$, this is not a monoidal category due to the new relations \eqref{rel:two-col-wall}.
 
 \begin{example}
-    The morphism in \autoref{eg:two-col-relations} collapses to $0$ because all the diagrams have either blue or barbell on the right.
+    In this category, the morphism in \autoref{eg:two-col-relations} collapses to $0$ because all the diagrams have either blue or barbell on the right.
+\end{example}
 
-    \red{TODO: Another example clarifying 'blue on the right'}
+\begin{example}
+    Consider the diagram
+    \begin{center}
+        \inputtikz{4.2/relation-example-blue-wall1}.
+    \end{center}
+    By isotopy and the local relation \eqref{rel:two-col-wall} we have that
+    \begin{gather*}
+        \inputtikz{4.2/relation-example-blue-wall1}
+        = \inputtikz{4.2/relation-example-blue-wall2}
+        = 0.
+    \end{gather*}
 \end{example}
 
 
@@ -245,7 +252,7 @@ The definition on generators is a consequence of the isomorphism $\Theta_s \Thet
         & = \frac{1}{2} \inputtikz{4.2/tilt-dot-line-dot-line-id2.3} + \frac{2}{2} \inputtikz{4.2/tilt-dot-line-dot-line-id2.5} \\
         & = \frac{1}{2} \inputtikz{4.2/tilt-dot-line-dot-line-id2.3} + \inputtikz{4.2/tilt-dot-line-dot-line-id2.6}
     \end{align*}
-    for even length domain, where the third equality follows from \autoref{prop:inj-proj-and-proj-inj}. Swapping blue and red strands left of the dots gives us the odd case. By induction the second term is a linear combination of diagrams with pitchforks, hence this diagram is a linear combinations of diagrams with pitchforks. Particularly, these are killed by Jones--Wenzl projectors by \autoref{prop:JW-pitchfork}. The same argument holds for the vertically reflected diagram. Along with \autoref{prop:inj-proj-and-proj-inj}, we conclude that the only double leaves we should consider are $\id_k$, $i^d_k$, $p^d_k$ and their composition $i^d_k \circ p^d_k$. This is informally summarised by the diagram below (similar to \eqref{img:tilt-functor}).
+    for even length domain, where the third equality follows from \autoref{prop:inj-proj-and-proj-inj}. Swapping blue and red strands left of the dots gives us the odd case. By induction the second term is a linear combination of diagrams with pitchforks, hence this diagram is a linear combinations of diagrams with pitchforks. Particularly, these are killed by Jones--Wenzl projectors by \autoref{prop:JW-pitchfork}. The same argument holds for the vertically reflected diagram. Along with \autoref{prop:inj-proj-and-proj-inj}, we conclude that the only double leaves we should consider are $\id^d_k$, $i^d_k$, $p^d_k$ and their composition $i^d_k \circ p^d_k$. This is informally summarised by the diagram below (similar to \eqref{img:tilt-functor}).
     \begin{equation}
         \label{img:tilt-functor-indecomp}
         \inputtikz{4.2/tilt-proof-functor-indecomp}
@@ -255,9 +262,9 @@ The definition on generators is a consequence of the isomorphism $\Theta_s \Thet
 
 % This can be uniquely extended to be $\Kar(\cH(\wtilde{S}_2))$-module category
 
-This functor is defined similarly to that for $\proj(\cO_0)$ in \autoref{sec:diag-osl2}. However this is not apparent since Jones--Wenzl projectors for that category are trivial (the red identity strand).
+This functor is defined similarly to that for $\proj(\cO_0)$ in \autoref{sec:diag-osl2}. However this is not apparent since as the corresponding Jones--Wenzl projectors are trivial (the red identity strand).
 
 \begin{remark}
-    Similarly to \autoref{sec:diag-osl2}, there is a grading for morphism spaces of $\mcal{DO}_0$ which induces a grading on $\Tilt_0(\fraksl_2)$ and hence $\Tilt(\fraksl_2)$, which would otherwise be ungraded.
+    Similar to \autoref{sec:diag-osl2}, there is a grading for morphism spaces of $\mcal{DO}_0$ which induces a grading on $\Tilt_0(\fraksl_2)$ and hence $\Tilt(\fraksl_2)$, which would otherwise be ungraded.
 \end{remark}
 

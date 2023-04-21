@@ -1,13 +1,13 @@
 \section{Diagrammatic \texorpdfstring{$\mcal{O}(\fraksl_2)$}{O(sl2)}}
 \label{sec:diag-osl2}
 
-For this section, our category of interest is the Bernstein-Gelfand-Gelfand category $\cO$ for the complex semisimple Lie algebra $\fraksl_2(\C)$. A description of $\cO$ can be found in general in {\cite[Sections 3.8--3.10]{humphreys-category-O}} or in {\cite[Section 5.2]{mazorchuk-lectures-sl2-modules}} for the case of $\fraksl_2(\C)$, so we will only give a brief overview. The category $\cO$ is a category of certain modules (i.e. representations) over a complex semisimple Lie algebra. It is a direct sum of subcategories, where, in the case of $\fraksl_2$ over $\C$, the non-trivial summands are equivalent as abelian categories to a subcategory $\cO_0$ called the principal block of $\mcal{O}$. Within this, we look to the full subcategory $\proj(\cO_0)$ of projective modules in $\cO_0$, which, in particular, is additive and idempotent complete.
+For this section, our category of interest is the Bernstein-Gelfand-Gelfand category $\cO$ for the complex semisimple Lie algebra $\fraksl_2(\C)$. A description of $\cO$ can be found in general in {\cite[Sections 3.8--3.10]{humphreys-category-O}}, or in {\cite[Section 5.2]{mazorchuk-lectures-sl2-modules}} for the case of $\fraksl_2(\C)$, so we will only give a brief overview. The category $\cO$ is a category of certain modules (i.e. representations) over a complex semisimple Lie algebra. It splits into a particular direct sum of subcategories, where, in the case of $\fraksl_2$ over $\C$, the non-trivial summands are equivalent as abelian categories to a subcategory $\cO_0$ called the principal block of $\mcal{O}$. Within this, we look to the full subcategory $\proj(\cO_0)$ of projective modules in $\cO_0$, which, in particular, is additive and idempotent complete.
 
 In \cite[Section 2.4]{soergel-category-O}, Soergel shows that the category $\cO$, and hence the subcategory $\proj(\cO_0)$, is a Soergel module category, that is it has an action of the monoidal category $\sbim$. By the equivalence in \autoref{thm:one-col-sbim-equiv} we will view $\proj(\cO)$ as a $\cH_\C(S_2)$-module category, extending via the additive Karoubi envelope. Since $\cH_\C(S_2)$ is diagrammatic, this action allows us to describe $\proj(\cO_0)$ (thus essentially $\cO_0$ and $\cO$) diagrammatically.
 
 \begin{remark}
     \label{rk:projO_0-to-O_0}
-    We can pass from $\proj(\cO_0)$ to $\cO_0$ by observing that the bounded homotopy category $K^b(\proj(\cO_0))$ is equivalent to the bounded derived category $D^b(\cO_0)$ as graded $\C$-linear monoidal triangulated categories. This is a standard trick in the field, for example see the introduction of \cite{riche-williamson-tilt-modules-p-canon-basis}\footnote{A self-contained summary of how diagrammatic categories can be related to abelian categories.}. However, for our purposes, it is not important to understand how this works.
+    We can pass from $\proj(\cO_0)$ to $\cO_0$ by observing that the bounded homotopy category $K^b(\proj(\cO_0))$ is equivalent to the bounded derived category\footnote{These categorical constructions can be found in \cite{weibel-homological-algebra}.} $D^b(\cO_0)$ as graded $\C$-linear monoidal triangulated categories. This is a standard trick in the field, for example see the introduction of \cite{riche-williamson-tilt-modules-p-canon-basis}\footnote{A self-contained summary of how diagrammatic categories can be related to abelian categories.}. However, for our purposes, it is not important to understand how this works.
 \end{remark}
 
 % \begin{remark}
@@ -32,7 +32,7 @@ Although we need to work over $\C$ for $\proj(\cO_0(\fraksl_2))$, the diagrammat
     Note that this local relation applies to any subdiagram \textit{involving the wall}.
 \end{definition}
 
-The objects of this category are identical to objects in $\cH(S_2)$ and the morphisms are the same modulo the wall relation \eqref{rel:barbell-wall}. Being a left module category, we can only concatenate diagrams on the left by means of the module action. This may seem no different from $\cH(S_2)$, however the wall relation \eqref{rel:barbell-wall} makes right tensors inconsistent. For instance, a barbell diagram is $0$ however tensoring by $\id_s$ on the right gives a non-zero diagram. In particular $\mcal{DO}_0$ is not a monoidal category.
+The objects of this category are identical to objects in $\cH(S_2)$ and the morphisms are the same modulo the wall relation \eqref{rel:barbell-wall}. Being a left module category, we can only concatenate diagrams on the left by means of the module action. This may seem no different from $\cH(S_2)$, however the wall relation \eqref{rel:barbell-wall} makes right tensors from $\cH(S_2)$ inconsistent. For instance, a barbell diagram is $0$ and concatenating $\id_s$ on the right gives a non-zero diagram. In particular $\mcal{DO}_0$ is not a monoidal category.
 
 
 \begin{example}
@@ -71,8 +71,8 @@ We aim to prove this diagrammatic category is equivalent to $\proj(\cO_0)$. To t
     In $\cH_\C(S_2)$ we have the relation
     \begin{align}
         \inputtikz{3.2/ss-id-calculation1}
-         & = \inputtikz{3.2/ss-id-calculation2} \nonumber                                                                                         \\
-         & = \frac{1}{2} \inputtikz{3.2/ss-id-calculation3.1} + \frac{1}{2} \inputtikz{3.2/ss-id-calculation3.2} \nonumber                        \\
+         & = \inputtikz{3.2/ss-id-calculation2} \nonumber                                                                                \\
+         & = \frac{1}{2} \inputtikz{3.2/ss-id-calculation3.1} + \frac{1}{2} \inputtikz{3.2/ss-id-calculation3.2} \nonumber               \\
          & = \frac{1}{2} \inputtikz{3.2/ss-id-calculation4.1} + \frac{1}{2} \inputtikz{3.2/ss-id-calculation4.2}. \label{rel:id-id-to-H}
     \end{align}
     This implies that in $\cH_\C(S_2)^\oplus$, we have maps
@@ -87,10 +87,85 @@ We aim to prove this diagrammatic category is equivalent to $\proj(\cO_0)$. To t
             \displaystyle \inputtikz{3.2/s+s-to-ss-morphism2}
         } : s \oplus s \to ss.
     \]
-    It follows from \eqref{rel:one-col-barbell-forcing}, \eqref{rel:one-col-needle} and the calculation \eqref{rel:id-id-to-H}, that these maps are inverses.
+    We just need to check that these maps are inverses. By \eqref{rel:one-col-barbell-forcing} and \eqref{rel:one-col-needle},
+    \begin{align*}
+        \inputtikz{3.2/ss-to-2s-proof/needle-inner-barbell1}
+        = 2 \inputtikz{3.2/ss-to-2s-proof/needle-open} - \inputtikz{3.2/ss-to-2s-proof/needle-barbell}
+        = 2 \inputtikz{3.2/ss-to-2s-proof/id}
+    \end{align*}
+    and
+    \begin{align*}
+        \inputtikz{3.2/ss-to-2s-proof/needle-inner-barbell2}
+        = 2 \inputtikz{3.2/ss-to-2s-proof/needle-open-barbell} - \inputtikz{3.2/ss-to-2s-proof/needle-inner-barbell1-barbell}
+        = 2 \inputtikz{3.2/ss-to-2s-proof/id-barbell} - 2 \inputtikz{3.2/ss-to-2s-proof/id-barbell}
+        = 0.
+    \end{align*}
+    Then
+    \[
+        \pvec{
+            \displaystyle \frac{1}{2} \inputtikz{3.2/ss-to-s+s-morphism1} \\
+            \displaystyle \frac{1}{2} \inputtikz{3.2/ss-to-s+s-morphism2}
+        }
+        \pvec{
+            \displaystyle \inputtikz{3.2/s+s-to-ss-morphism1} &
+            \displaystyle \inputtikz{3.2/s+s-to-ss-morphism2}
+        }
+        =
+        \frac{1}{2}
+        \pvec{
+            \inputtikz{3.2/ss-to-2s-proof/needle-inner-barbell1-small} & \inputtikz{3.2/ss-to-2s-proof/needle-inner-barbell2-small} \\
+            \inputtikz{3.2/ss-to-2s-proof/needle-small} & \inputtikz{3.2/ss-to-2s-proof/needle-inner-barbell1-small}
+        }
+        =
+        \pvec{
+            \dRed{\mathsf{I}} & 0 \\
+            0 & \dRed{\mathsf{I}}
+        }
+    \]
+    is the identity morphism on $s \oplus s$, and
+    \[
+        \pvec{
+            \displaystyle \inputtikz{3.2/s+s-to-ss-morphism1} &
+            \displaystyle \inputtikz{3.2/s+s-to-ss-morphism2}
+        }
+        \pvec{
+            \displaystyle \frac{1}{2} \inputtikz{3.2/ss-to-s+s-morphism1} \\
+            \displaystyle \frac{1}{2} \inputtikz{3.2/ss-to-s+s-morphism2}
+        }
+        =
+        \frac{1}{2} \inputtikz{3.2/ss-id-calculation4.1} + \frac{1}{2} \inputtikz{3.2/ss-id-calculation4.2}
+        =
+        \inputtikz{3.2/ss-id-calculation1}
+    \]
+    is the identity morphism on $ss$, by \eqref{rel:id-id-to-H}.
 \end{proof}
 
-By conjugating with these isomorphisms we can view morphisms as matrices of diagrams whose domain and codomain are in $\{\vn, s\}$.
+By composing with these isomorphisms we can view morphisms as matrices of diagrams whose domain and codomain are in $\{\vn, s\}$. We can also retrieve the original diagram by composing with the inverse.
+
+\begin{example}
+    The following morphism in $\Hom(ss,s)$ can be considered as a morphism $s \oplus s \to s$ by precomposing with the above isomorphism $s \oplus s \to ss$.
+    \[
+        \inputtikz{3.2/ss-to-2s-example/id-line-dot}
+        \leadsto
+        \inputtikz{3.2/ss-to-2s-example/id-line-dot}
+        \circ
+        \pvec{
+            \displaystyle \inputtikz{3.2/s+s-to-ss-morphism1} &
+            \displaystyle \inputtikz{3.2/s+s-to-ss-morphism2}
+        }
+        = 
+        \pvec{
+            \displaystyle \inputtikz{3.2/ss-to-2s-example/matrix-entry1} &
+            \displaystyle \inputtikz{3.2/ss-to-2s-example/matrix-entry2}
+        }
+        = 
+        \pvec{
+            \displaystyle \inputtikz{3.2/ss-to-2s-example/id} &
+            \displaystyle \inputtikz{3.2/ss-to-2s-example/id-barbell}
+        }
+    \]
+    For larger powers of $s$, we can apply this repeatedly each entry of the matrix.
+\end{example}
 
 As a shorthand, we write $\proj(\cO_0)$ for $\proj(\cO_0(\fraksl_2))$. The work of Soergel in \cite[Section 2.4]{soergel-category-O} shows that $\proj(\cO_0)$ is a Soergel module, i.e. it has a left action of the category of Soergel bimodules defined by applications of the translation functors $\Theta_\vn, \Theta_s \in \End(\cO)$ corresponding to elements in $S_2$. We will construct a functor that maps faithfully into a full subcategory of $\proj(\cO_0)$, which will is entirety of $\proj(\cO_0)$ under the additive Karoubi envelope. This is a similar strategy to the proof of \autoref{thm:one-col-sbim-equiv}.
 
@@ -111,7 +186,7 @@ Note that extending by composition is not problematic because the module action 
 \end{lemma}
 \begin{proof}
     From \cite[Proposition 5.90]{mazorchuk-lectures-sl2-modules}, there is a natural isomorphism $\Theta_s \Theta_s \cong \Theta_s \oplus \Theta_s$ analogous to the isomorphism $ss \cong s \oplus s$ given in the proof of \autoref{lem:ss-equal-2s}. Given a morphism in $\mcal{DO}_0^\oplus$ from $s^n$ to $s^m$, repeated precomposition and postcomposition with $ss \to s \oplus s$ and $s \oplus s \to ss$ from \autoref{lem:ss-equal-2s} results in a matrix of diagrams with domain and codomain in $\{\vn, s\}$. By \autoref{lem:DO_0-double-leaves} over $\C$, $\Hom(\vn, \vn)$ has a basis $\{\vn = \id_\vn\}$, $\Hom(s, \vn)$ has a basis $\{\unit\}$, $\Hom(\vn, s)$ has a basis $\{\counit\}$, and $\Hom(s, s)$ has a basis $\{\id_s, \counit \circ \unit\}$. Therefore, extending by linearity, the picture above completely describes the image of $F$.
-    
+
     % We can similarly pull back the image, i.e. matrices of morphisms in $\proj(\cO_0)$, to a morphism between $\Theta_s^n(P(\vn))$ and $\Theta_s^m(P(\vn))$ via the analogous maps defining $\Theta_s \Theta_s \cong \Theta_s \oplus \Theta_s$. Therefore \eqref{img:osl2-functor} is enough to define $F$ for $\mcal{DO}_0$.
 
     Next we check that all the relations are preserved. From classical results e.g. \cite[Proposition 5.84 and Lemma 5.87]{mazorchuk-lectures-sl2-modules}, it follows that $\Theta_s$ is a Frobenius object in the category of endofunctors of $\cO$. Then there are unit, counit, multiplication and comultiplication natural transformations satisfying coherence relations in the Frobenius object structure. Applying these to $P(\vn)$ result in the same relations in $\proj(\cO_0)$ for $P(\vn), P(s)$ and $\Theta_s^2(P(\vn))$. The projection and inclusion maps above are exactly the unit and counit of $\Theta_s$ evaluated at $P(\vn)$, and the trivalent vertices provided by projecting the isomorphisms in \autoref{lem:ss-equal-2s} map exactly to the multiplication and comultiplication maps. Hence the Frobenius relations \eqref{rel:one-col-frob-unit} and \eqref{rel:one-col-frob-ass} are satisfied. It follows from the Soergel module structure in \cite[Section 2.4]{soergel-category-O} that the relations \eqref{rel:one-col-needle} and \eqref{rel:one-col-barbell-forcing} hold in $\proj(\cO_0)$, and that $p \circ i = 0$ which is analogous\footnote{This relation extends to the analogue of the local barbell-wall relation as all ``barbell on the right'' morphisms in $\proj(\cO_0)$ are linear combinations of applications of $\Theta_s$ to $p \circ i$, which is $0$.} to the barbell-wall relation \eqref{rel:barbell-wall}. Hence all the relations in $\mcal{DO}_0$ are preserved by $F$. By construction, $F$ preserves $\C$-linear combinations and the Soregel module structure in \cite{soergel-category-O}, so $F$ is well defined as a functor between $\C$-linear $\cH(S_2)$-module categories.
