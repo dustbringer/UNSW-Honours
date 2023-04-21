@@ -1,7 +1,7 @@
 \section{Module Categories}
 \label{sec:module-cat}
 
-Module categories are categories equipped with an action of a monoidal category. This generalises the notion of modules over a ring. In \autoref{sec:diag-osl2} and \autoref{sec:diag-tiltsl2}, we will see that the categories of interest appear as module categories over the category of Soergel bimodules.
+Module categories are categories equipped with an action of a monoidal category. This generalises the notion of modules over a ring or monoid. In \autoref{sec:diag-osl2} and \autoref{sec:diag-tiltsl2}, we will see that the categories of interest appear as module categories over the category of Soergel bimodules.
 
 \begin{definition}
     Let $(\mcal{M}, \tensor, \mathbbb{1})$ be a (strict) monoidal category. A \textit{(left) module category over $\mcal{M}$} or \textit{$\mcal{M}$-module category} is a category $\mcal{C}$ and a bifunctor $\odot: \mcal{M} \times \mcal{C} \to \mcal{C}$ such that there are natural isomorphisms $(X \tensor Y) \odot A \cong X \odot (Y \odot A)$ and $\mathbbb{1} \odot A \cong A$ for $X,Y \in \mcal{M}$ and $A \in \mcal{C}$ and similarly for morphisms, satisfying coherence relations analogous to those for monoidal categories (see \cite[Definition 7.1.2]{tensor-categories}). A (left) $\mcal{M}$-module category is \textit{strict} if the natural isomorphisms above are identity natural isomorphisms, i.e. we have equality $(X \tensor Y) \odot A = X \odot (Y \odot A)$ and $\mathbbb{1} \odot A = A$, and similarly for morphisms. The functor $\odot$ is called the \textit{action of $\mcal{M}$} or \textit{the module product}. 
@@ -18,11 +18,11 @@ In the following examples, the module action is essentially the monoidal product
     \[
         (V, \rho_V) \tensor (W, \rho_W) = (V \tensor W, \rho_{V \tensor W})
     \]
-    where $V \tensor W$ is the usual tensor of vector spaces, and $\rho_{V \tensor W}$ is defined such that for $v \in V_1, w \in V_2$ and $g \in G$,
+    where $V \tensor W$ is the usual tensor of vector spaces, and $\rho_{V \tensor W}$ is defined such that for $v \in V, w \in W$ and $g \in G$,
     \[
-        (\rho_1 \tensor \rho_2)(g)(v \tensor w) = (\rho_1(g) v) \tensor (\rho_2(g) w)
+        (\rho_{V \tensor W})(g)(v \tensor w) = (\rho_V(g) v) \tensor (\rho_W(g) w)
     \]
-    extended linearly. This is well defined by the universal property of tensor products. The monoidal unit is $\Bbbk$ with the trivial representation. The tensor product on morphisms $f$ and $g$ is defined by component-wise application, which is equivariant by equivariance of $f$ and $g$.
+    extended linearly. This is well defined by the universal property of tensor products. The monoidal unit is $\Bbbk$ with the trivial representation. The tensor product on morphisms $f$ and $g$ is defined by component-wise application, which is equivariant by the equivariance of $f$ and $g$.
 
     We have that $\Rep(H)$ is a left module category over $\Rep(G)$ with the following action. For an object $(V,\rho)$ in $\Rep(G)$, we can consider it as a representation over $H$ by the restriction
     \[
@@ -32,7 +32,7 @@ In the following examples, the module action is essentially the monoidal product
 \end{example}
 
 \begin{definition}
-    A (strict) module category $\mcal{C}$ over a monoidal category $\mcal{M}$ is \textit{generated} by a set $G_o$ of objects and $G_m$ of morphisms in $\mcal{C}$, when all non-unit objects are of the form $X \odot A$ for $X \in \mcal{M}$ and $A \in G_o$, and non-identity morphisms in $\mcal{C}$ are defined similarly.
+    A (strict) module category $\mcal{C}$ over a monoidal category $\mcal{M}$ is \textit{generated} by a set $G_o$ of objects and $G_m$ of morphisms, when all non-unit objects are of the form $X \odot A$ for $X \in \mcal{M}$ and $A \in G_o$, and non-identity morphisms in $\mcal{C}$ are defined similarly.
 \end{definition}
 
 \begin{definition}

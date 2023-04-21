@@ -43,10 +43,10 @@ The definition is similar to the one-colour case, so we will be brief.
     where the last line uses linearity of the tensor product.
 \end{example}
 
-By restricting to one colour, we see $\cH(S_2)$ appears as a full subcategory in both red and blue.
+By restricting to one colour, we see $\cH(S_2)$ appears as a full subcategory in red, and in blue.
 
 \begin{remark}
-    Notice that the red and blue lines never cross as no generators allow crossings. This is a consequence of working over affine $S_2$ in which the generators $s$ and $t$ have no relation. In a group such as $S_3 = \angl{s,t \mid sts = tst}$, the relation $sts = tst$ provides another generator $sts \to tst$ (and its vertical reflection), depicted as a $6$-valent vertex, and a few more diagrammatic relations. On a diagram, these will appear as crossings.
+    Notice that the red and blue lines never cross as no generators allow crossings. This is a consequence of working over affine $S_2$ in which there are no relations between the generators $s$ and $t$. In a group such as $S_3 = \angl{s,t \mid sts = tst}$, the relation $sts = tst$ provides another generator $sts \to tst$ (and its vertical reflection), depicted as a $6$-valent vertex, and a few more diagrammatic relations. On a diagram, these will appear as crossings.
 \end{remark}
 
 In this two-colour case, \autoref{prop:floating-diagram-barbell} holds by replacing \eqref{rel:one-col-barbell-forcing} with \eqref{rel:two-col-barbell-forcing} in the proof. This handles the new possibility of floating subdiagrams with alternating colours.
@@ -86,7 +86,7 @@ The function $\psi$ is well defined because reduced products are unique and two 
 
 
 \begin{definition}
-    A \textit{pitchfork} is the diagram of the form
+    A \textit{pitchfork} is a diagram of the form
     \begin{equation*}
         \inputtikz{4.1/pitchfork}
     \end{equation*}
@@ -94,7 +94,7 @@ The function $\psi$ is well defined because reduced products are unique and two 
 \end{definition}
 
 \begin{proposition} \label{prop:JW-pitchfork}
-    The Jones--Wenzl projector is an idempotent, i.e. $\JW_k \circ \JW_k = \JW_k$, and is killed by pitchforks on the top or the bottom.
+    The Jones--Wenzl projector is an idempotent, i.e. $\JW_k \circ \JW_k = \JW_k$, and is killed by pitchforks on the top and the bottom.
 \end{proposition}
 
 This result follows from \cite[Theorem 5.29]{elias-dihedral-cathedral} and the below remark.

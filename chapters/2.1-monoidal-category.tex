@@ -1,7 +1,7 @@
 \section{Drawing Monoidal Categories}
 \label{sec:monoidal-cat}
 
-Monoidal categories are the main context in which we consider diagrammatics. For more details about monoidal categories the reader may refer to \cite{tensor-categories}, and a helpful survey of diagrams for various types of monoidal categories at \cite{selinger-survey-of-graphical-monoidal-categories}.
+Monoidal categories are the main context in which we consider diagrammatics. For more details about monoidal categories the reader can refer to \cite{tensor-categories}, and a survey of diagrams for various types of monoidal categories in \cite{selinger-survey-of-graphical-monoidal-categories}.
 
 \begin{definition}
     A \textit{monoidal category} $\mathcal{C}$ is a category equipped with a bifunctor $\tensor: \mathcal{C} \times \mathcal{C} \to \mathcal{C}$ and a unit object $\mathbbb{1}$, such that certain associativity and unit relations hold, see \cite[Definition 2.1.1, 2.2.8]{tensor-categories}. The bifunctor $\tensor$ is called the \textit{tensor} or \textit{monoidal product}. A monoidal category is \textit{strict} if we have equalities $A \tensor (B \tensor C) = (A \tensor B) \tensor C$ and $A = \mathbbb{1} \tensor A = A \tensor \mathbbb{1}$ for objects and similarly for morphisms.
@@ -74,7 +74,7 @@ By the bilinearity of composition and tensor products, $0 \tensor f = (0 + 0) \t
 \end{example}
 
 \begin{definition}
-    A monoidal category $\mcal{C}$ is \textit{generated} by a set $G_o$ of objects and $G_m$ of morphisms, when all non-unit objects are finite tensor products of objects in $G_o$ and all non-identity morphisms are finite combinations of tensors and compositions of morphisms in $G_m$. Similarly, we may define \textit{generated} $R$-linear monoidal categories such that we also allow $R$-linear combinations of morphisms.
+    A monoidal category $\mcal{C}$ is \textit{generated} by a set $G_o$ of objects and $G_m$ of morphisms, when all non-unit objects are finite tensor products of objects in $G_o$ and all non-identity morphisms are finite combinations of tensors and compositions of morphisms in $G_m$. Similarly, we define \textit{generated} $R$-linear monoidal categories such that we also allow $R$-linear combinations of morphisms.
 \end{definition}
 
 \begin{example}
